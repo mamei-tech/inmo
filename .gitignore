@@ -48,6 +48,7 @@ fabric.properties
 # Original Laravel .gitignore content
 
 /node_modules
+/node_modules/*
 /public/hot
 /public/storage
 /storage/*.key
