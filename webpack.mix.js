@@ -2,14 +2,50 @@ let mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
- | Mix Asset Management
+ | Mix Configuration SetUp
  |--------------------------------------------------------------------------
  |
- | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel application. By default, we are compiling the Sass
- | file for the application as well as bundling up all the JS files.
+ | Configuration for setting up all the conf we need
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+mix.setPublicPath('public/');
+mix.setResourceRoot('../../');
+
+
+/*
+ |--------------------------------------------------------------------------
+ | Mix Core
+ |--------------------------------------------------------------------------
+ |
+ | Core Mixes
+ |
+ */
+
+/* Assets Images */
+mix.copy('resources/assets/images', 'public/images');
+
+/* Assets Fonts */
+mix.copy('resources/assets/fonts', 'public/fonts');
+
+mix.sass('resources/assets/sass/app.scss', 'public/css/app.css')
+    .styles([
+        'resources/assets/css/bootstrap.css',
+        'resources/assets/css/mobirise.css',
+        'resources/assets/css/mobirise-slider.css',
+        'resources/assets/css/site.css',
+    ],
+    'public/css/app.css').sourceMaps();
+
+mix.js([
+    'resources/assets/js/app.js',
+    'resources/assets/js/smoothScroll.js',
+    'resources/assets/js/carousel-swipe.js',
+    'resources/assets/js/jarallax.js',
+    'resources/assets/js/mobirise.js',
+], 'public/js/app.js').sourceMaps();
+
+mix.js('resources/assets/js/views/home.js', 'public/js/home.js').sourceMaps();
+mix.js('resources/assets/js/views/neighborhood.js', 'public/js/neighborhood.js').sourceMaps();
+mix.js('resources/assets/js/views/houseInfo.js', 'public/js/houseInfo.js').sourceMaps();
+
