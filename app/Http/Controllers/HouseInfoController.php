@@ -18,7 +18,7 @@ class HouseInfoController extends Controller
     }*/
 
     /**
-     * Show the application dashboard.
+     * Show the house info page.
      *
      * @return \Illuminate\Http\Response
      */

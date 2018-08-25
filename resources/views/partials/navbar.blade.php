@@ -22,8 +22,8 @@
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white btn_nav_edu" href="{{ route('neighborhood') }}">NEIGHBORHOOD</a></li>
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white btn_nav_edu" href="https://mobirise.com">GUIDES</a></li>
                                 <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white btn_nav_edu" href="https://mobirise.com">TESTIMONIALS</a></li>
-                                <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white btn_nav_edu" href="about_me.html">ABOUT ME</a></li>
-                                <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white btn_nav_edu" href="contacts.html">CONTACTS</a></li></ul>
+                                <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white btn_nav_edu" href="{{ route('aboutMe') }}">ABOUT ME</a></li>
+                                <li class="mbr-navbar__item"><a class="mbr-buttons__link btn text-white btn_nav_edu" href="{{ route('contacts') }}">CONTACTS</a></li></ul>
 
                         </div>
                     </nav>

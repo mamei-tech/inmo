@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class NeighborhoodController extends Controller
+class AboutMeController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -18,12 +18,12 @@ class NeighborhoodController extends Controller
     }*/
 
     /**
-     * Show the neighborhood page.
+     * Show the about me page.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        return view('neighborhood');
+        return view('aboutMe');
     }
 }

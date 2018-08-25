@@ -48,4 +48,6 @@ mix.js([
 mix.js('resources/assets/js/views/home.js', 'public/js/home.js').sourceMaps();
 mix.js('resources/assets/js/views/neighborhood.js', 'public/js/neighborhood.js').sourceMaps();
 mix.js('resources/assets/js/views/houseInfo.js', 'public/js/houseInfo.js').sourceMaps();
+mix.js('resources/assets/js/views/aboutMe.js', 'public/js/aboutMe.js').sourceMaps();
+mix.js('resources/assets/js/views/contacts.js', 'public/js/contacts.js').sourceMaps();
 
