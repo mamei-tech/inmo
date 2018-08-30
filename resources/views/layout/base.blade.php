@@ -45,9 +45,9 @@
 {{-- End Content --}}
 
 {{-- Footer --}}
-@section('footer')
-    @include('partials.footer')
-@show
+{{--@section('footer')--}}
+    {{--@include('partials.footer')--}}
+{{--@show--}}
 {{-- End Footer --}}
 
 </body>

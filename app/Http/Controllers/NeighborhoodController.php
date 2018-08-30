@@ -26,4 +26,14 @@ class NeighborhoodController extends Controller
     {
         return view('neighborhood');
     }
+
+    /**
+     * Get house.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function loadHauses($page, $cantByPage = 8)
+    {
+        return null;
+    }
 }

@@ -293,7 +293,7 @@ html {
   background-size: 100% 64px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1024px) {
   .mbr-navbar--auto-collapse .mbr-navbar__container {
     position: relative;
   }

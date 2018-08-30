@@ -15,14 +15,14 @@
         this.carousel    = this.$element.data('bs.carousel')
         this.options     = $.extend({}, CarouselSwipe.DEFAULTS, this.carousel.options)
         this.startX      =
-        this.startY      =
-        this.startTime   =
-        this.cycling     =
-        this.$active     =
-        this.$items      =
-        this.$next       =
-        this.$prev       = 
-        this.dx          = null
+            this.startY      =
+                this.startTime   =
+                    this.cycling     =
+                        this.$active     =
+                            this.$items      =
+                                this.$next       =
+                                    this.$prev       =
+                                        this.dx          = null
 
         this.$element
             .on('touchstart', $.proxy(this.touchstart,this))
@@ -164,7 +164,7 @@
             return false;
         }
 
-        var el = document.createElement('p'), 
+        var el = document.createElement('p'),
             has3d,
             transforms = {
                 'webkitTransform':'-webkit-transform',

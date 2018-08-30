@@ -51,4 +51,50 @@ $(document).ready(function(){
         // TODO Ver esto bien
         window.location = "house";
     });
+
+    // $.ajax({ url: e, dataType: "script", type: 'GET' , async: false, success: function (r) { } });
+    //
+    // buildPaging: function (config){
+    //     var target = $('#paging ul');
+    //     if (!config.total) return;
+    //     target.empty();
+    //     var pagesToShow = 8;
+    //     var totalPages = Math.ceil(config.total / 8);
+    //     var currentPage = (config.page || 1) * 1;
+    //
+    //     if (totalPages == 1) return;
+    //
+    //     totalPages = totalPages > 20 ? 20 : totalPages;
+    //     var x = currentPage > 5 ? -5 : 1 - currentPage;
+    //
+    //     if (currentPage > 1)
+    //         target.append('<li class="pageNumber clickable" page="' + (currentPage - 1) + '"><a><b>Anterior</b></a></li>');
+    //
+    //     //Paginas anteriores
+    //     while (x < 0 && pagesToShow > 0) {
+    //         target.append('<li class="pageNumber clickable" page="' + (currentPage + x) + '"><a>' + (currentPage + x) + '</a></li>');
+    //         x++;
+    //         pagesToShow--;
+    //     }
+    //
+    //     //Pagina actual
+    //     target.append('<li class="pageNumber"><a><b>' + currentPage + '</b></a></li>');
+    //     x++;
+    //     pagesToShow--;
+    //
+    //     //Paginas siguientes
+    //     while (currentPage + x <= totalPages && pagesToShow > 0) {
+    //         target.append('<li class="pageNumber clickable" page="' + (currentPage + x) + '"><a>' + (currentPage + x) + '</a></li>');
+    //         x++;
+    //         pagesToShow--;
+    //     }
+    //
+    //     if (currentPage < totalPages)
+    //         target.append('<li class="pageNumber clickable" page="' + (currentPage + 1) + '"><a><b>Siguiente</b></a></li>');
+    //
+    //     var _that = this;
+    //     $('.pageNumber.clickable').click(function () {
+    //         _that.loadPage($(this).attr('page'));
+    //     });
+    // }
 });

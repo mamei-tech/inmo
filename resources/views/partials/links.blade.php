@@ -8,6 +8,6 @@
 {{--<link href="{{ asset('css/vendor/vendor.css') }}" rel="stylesheet">--}}
 
 {{-- CSS Files --}}
-<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<link href="{{ asset('css/site.css') }}" rel="stylesheet">
 
-{{-- JS Files --}}
+

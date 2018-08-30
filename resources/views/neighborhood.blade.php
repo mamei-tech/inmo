@@ -150,8 +150,11 @@
 
             <div class="mbr-section__row row">
                 <div class="mbr-section__col col-xs-8 col-sm-8">
-                    <div style="float: left;">
-                        <p>aki va el paginado</p>
+                    <div style="float: left;" id="paging">
+                        <nav>
+                            <ul class="pagination">
+                            </ul>
+                        </nav>
                     </div>
                 </div>
                 <div class="mbr-section__col col-xs-4 col-sm-4">
@@ -168,7 +171,6 @@
                     <h3 class="h4-edu">2095 Halm Beach Wear Water</h3>
                     <h3 class="h4-edu">2 Bath / 1234 ft / Single family</h3>
                     <h3 class="h4-edu">$ 390.00</h3>
-
                 </div>
                 <div class="mbr-section__col col-xs-12 col-sm-3 container-data-house hover-edu">
                     <div style="height: 110px; width: 100%;background-image: url('images/slide1.jpg')" class="img-edu"></div>
