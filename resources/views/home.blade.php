@@ -15,8 +15,7 @@
     {{--<a id="moveToUp" class="hidden" href="#slider-1"></a>--}}
 
     {{--Slider--}}
-    {{--TODO ver pq no pincha el slider--}}
-    <section class="mbr-slider mbr-section mbr-section--no-padding carousel slide" data-ride="carousel" data-wrap="true" data-interval="5000" id="slider-1" style="background-color: rgb(255, 255, 255);">
+    <section class="mbr-slider mbr-section mbr-section--no-padding carousel slide" data-ride="carousel" data-wrap="true" data-interval="500000000" id="slider-1" style="background-color: rgb(255, 255, 255);">
         <div class="mbr-section__container">
             <div>
                 <ol class="carousel-indicators">
@@ -36,7 +35,6 @@
                                         <h3 class="titular-1-edu">IS A PHONE CALL AWAY</h3>
                                         <h3 style="padding-top: 25px;" class="titular-2-edu">CALL ME TODAY!</h3>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

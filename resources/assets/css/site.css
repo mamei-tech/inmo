@@ -258,7 +258,7 @@
     }
 
     .language-brand-edu > .mbr-navbar__item-language{
-        padding-top: 20px;
+        padding-top: 32px;
     }
 
     .navbar__item-language{
@@ -310,6 +310,7 @@
     background: url('../images/slide3.jpg');
 }
 
+/***PC***/
 @media (min-width: 1025px){
     .container-text-slider-edu{
         top: -30px;
@@ -331,9 +332,57 @@
         right: 0;
         height: 230px;
     }
+}
 
-    .mbr-hero-text-slider-edu{
-        opacity: 1;
+/***TABLE***/
+@media (max-width: 1024px){
+    .container-text-slider-edu{
+        top: -30px;
+        position: relative;
+    }
+
+    .position-real-text{
+        width: 540px;
+        height: 230px;
+        margin-left: 242px;
+        float: left;
+        background-color: rgb(255, 255, 255);
+        opacity: 0.1;
+    }
+
+    .text-slider-edu{
+        width: 540px;
+        height: 230px;
+        padding: 50px 0;
+        text-align: center;
+        position: absolute;
+        left: 242px;
+    }
+}
+
+/***MOVIL***/
+@media (max-width: 450px){
+    .container-text-slider-edu{
+        top: -40px;
+        position: relative;
+    }
+
+    .position-real-text{
+        width: 360px;
+        height: 230px;
+        float: left;
+        background-color: rgb(255, 255, 255);
+        opacity: 0.1;
+        margin-left: 0;
+    }
+
+    .text-slider-edu{
+        width: 360px;
+        height: 230px;
+        padding: 50px 20px;
+        text-align: center;
+        position: absolute;
+        left: 0;
     }
 }
 
