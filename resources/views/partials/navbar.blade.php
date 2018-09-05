@@ -1,82 +1,117 @@
-{{--TODO Falta lo de la tipografia--}}
-{{--TODO Falta el tamaño del texto--}}
-{{--TODO Falta el espacio entre letras--}}
-{{--TODO Falta las imagenes de la firma y la otra--}}
+<?php $class = isset($inHome) ? "" : "scrolled"; ?>
 
-<section class="mbr-navbar mbr-navbar--freeze mbr-navbar--transparent mbr-navbar--sticky mbr-navbar--auto-collapse" id="section-menu">
-    <div class="mbr-navbar__section mbr-section">
-        <div class="mbr-section__container container">
-            <div class="mbr-navbar__container">
-                <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand first-brand-edu">
-                   <span class="mbr-brand__logo">
-                       <div class="first-logo-edu">
-                           <a href="{{ route('home') }}">
-                               <img src="{{ asset('images/bg3.jpg') }}" class="mbr-navbar__brand-img mbr-brand__img">
-                           </a>
-                       </div>
-                       <div class="second-logo-edu">
-                           <a href="{{ route('home') }}">
-                               <img src="{{ asset('images/bg5.jpg') }}" class="mbr-navbar__brand-img mbr-brand__img sub-img">
-                           </a>
-                       </div>
-                   </span>
-                </div>
-                <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand second-brand-edu">
-                       <span class="mbr-brand__logo">
-                           <div class="second-brand-second-logo-edu">
-                               <a href="{{ route('home') }}">
-                                   <img src="{{ asset('images/bg5.jpg') }}" class="mbr-navbar__brand-img mbr-brand__img">
-                               </a>
-                           </div>
-                       </span>
-                    </div>
-                <div class="mbr-navbar__column mbr-navbar__column--s mbr-navbar__brand language-brand-edu">
-                    <ul class="mbr-navbar__items mbr-navbar__item-language mbr-navbar__items--right mbr-buttons mbr-buttons--freeze mbr-buttons--right mbr-buttons--active mbr-buttons--only-links">
-                        <li class="mbr-navbar__item navbar__item-language">
-                            <span class="item-language color-gray btn_nav_edu" href="{{ route('neighborhood') }}">ESP</span>
-                        </li>
-                        <li class="mbr-navbar__item navbar__item-language navbar__item-language-separator">
-                            <span class="color-gray btn_nav_edu item-language-separator item-language">/</span>
-                        </li>
-                        <li class="mbr-navbar__item">
-                            <span class="item-language color-white btn_nav_edu" href="{{ route('neighborhood') }}">ENG</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="mbr-navbar__hamburger mbr-hamburger color-white"><span class="mbr-hamburger__line"></span></div>
-                <div class="mbr-navbar__column mbr-navbar__menu">
-                    <nav class="mbr-navbar__menu-box mbr-navbar__menu-box--inline-right">
-                        <div class="mbr-navbar__column">
-                            <ul class="mbr-navbar__items mbr-navbar__item-language mbr-navbar__items--right float-left mbr-buttons mbr-buttons--freeze mbr-buttons--right mbr-buttons--active mbr-buttons--only-links">
-                                <li class="mbr-navbar__item">
-                                    <span class="item-language color-white btn_nav_edu" href="{{ route('neighborhood') }}">ENG</span>
-                                </li>
-                                <li class="mbr-navbar__item navbar__item-language navbar__item-language-separator">
-                                    <span class="color-gray btn_nav_edu item-language-separator item-language">/</span>
-                                </li>
-                                <li class="mbr-navbar__item navbar__item-language">
-                                    <span class="item-language color-gray btn_nav_edu" href="{{ route('neighborhood') }}">ESP</span>
-                                </li>
-                            </ul>
-
-                            <ul class="mbr-navbar__items mbr-navbar__items--right float-left mbr-buttons mbr-buttons--freeze mbr-buttons--right btn-decorator mbr-buttons--active mbr-buttons--only-links">
-                                <li class="mbr-navbar__item">
-                                    <a class="mbr-buttons__link btn text-white btn_nav_edu" href="{{ route('neighborhood') }}">NEIGHBORHOODS</a>
-                                </li>
-                                <li class="mbr-navbar__item">
-                                    <a class="mbr-buttons__link btn text-white btn_nav_edu" href="https://mobirise.com">GUIDES</a>
-                                </li>
-                                <li class="mbr-navbar__item">
-                                    <a class="mbr-buttons__link btn text-white btn_nav_edu" href="{{ route('aboutMe') }}">ABOUT ME</a>
-                                </li>
-                                <li class="mbr-navbar__item">
-                                    <a class="mbr-buttons__link btn text-white btn_nav_edu" href="{{ route('contacts') }}">CONTACT</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
+<div class="nav-bar {{$class}}">  
+  <div class="container" style="position: relative;">
+    <div class="brand-ct">
+      <div class="brand-img">
+        <img src="/images/borroto.png">
+      </div>
+      <div class="brand-subimg">
+        <img src="/images/colfax.png">
+      </div>
     </div>
-</section>
+    <div class="menu-ct pc">
+      <ul>
+        <li class="lang-{{App::getLocale()}}" style="margin-right: 50px;">
+          <a class="lang-en hvr-underline-from-center" style="font-size: 9px; font-family: 'SinkinSans-500Medium';" href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
+          <a class="lang-es hvr-underline-from-center" style="font-size: 9px; font-family: 'SinkinSans-500Medium';" href="{{route(Route::currentRouteName(),["es"])}}">ESP</a>
+        </li>
+        <li class="hvr-underline-from-center">
+          <a href="{{Route("home")}}">@lang('app.home')</a>
+        </li>
+        <li class="hvr-underline-from-center">
+          <a href="">@lang('app.neighborhoods')</a>
+        </li>
+        <li class="hvr-underline-from-center">
+          <a href="">@lang('app.guides')</a>
+        </li>
+        <li class="hvr-underline-from-center">
+          <a href="">@lang('app.aboutMe')</a>
+        </li>
+        <li class="hvr-underline-from-center">
+          <a href="{{Route("contacts")}}">@lang('app.contact')</a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-ct mobile">
+      <ul>
+        <div class="phone-lang-buttons">   
+          <div class="brand-subimg">
+            <img src="/images/colfax.png">
+          </div>       
+          <li class="lang-{{App::getLocale()}}">
+            <a class="lang-en hvr-underline-from-center" style="font-size: 9px; font-family: 'SinkinSans-500Medium';" href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
+            <a class="lang-es hvr-underline-from-center" style="font-size: 9px; font-family: 'SinkinSans-500Medium';" href="{{route(Route::currentRouteName(),["es"])}}">ESP</a>
+          </li>
+        </div>
+        <div>
+          <li class="hvr-underline-from-center">
+            <a href="{{Route("home")}}">@lang('app.home')</a>
+          </li>
+        </div>
+        <div>
+          <li class="hvr-underline-from-center">
+            <a href="">@lang('app.neighborhoods')</a>
+          </li>
+        </div>
+        <div>
+          <li class="hvr-underline-from-center">
+            <a href="">@lang('app.guides')</a>
+          </li>
+        </div>
+        <div>
+          <li class="hvr-underline-from-center">
+            <a href="">@lang('app.aboutMe')</a>
+          </li>
+        </div>
+        <div>
+          <li class="hvr-underline-from-center">
+            <a href="{{Route("contacts")}}">@lang('app.contact')</a>
+          </li>
+        </div>
+      </ul>
+    </div>
+    <div class="mobile-buttons float-right">      
+        <div class="tablet-lang-buttons lang-{{App::getLocale()}} float-left" style="margin:2px 40px 0 0;">
+          <a class="lang-en hvr-underline-from-center" style="font-size: 9px; font-family: 'SinkinSans-500Medium';" href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
+          <a class="lang-es hvr-underline-from-center" style="font-size: 9px; font-family: 'SinkinSans-500Medium';" href="{{route(Route::currentRouteName(),["es"])}}">ESP</a>
+        </div>
+        <a class="button-toggle">
+          <span class="button-toggle-line"></span>
+        </a>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+@if(!isset($inHome))
+  var navbar = document.querySelector(".nav-bar");
+  navbar.classList.add("scrolled");
+
+  document.addEventListener("scroll",function () {
+   
+    if(window.prevScrollY < window.scrollY ){//bajando && window.scrollY > 100    
+       navbar.classList.add("scroll-down");
+       navbar.classList.remove("open");
+     }
+    else //subiendo
+      navbar.classList.remove("scroll-down");
+
+    window.prevScrollY = window.scrollY;
+
+  });
+@endif 
+
+document.querySelector('.mobile-buttons .button-toggle').addEventListener("click", function(){
+  var navbar = document.querySelector(".nav-bar");
+  var menuMobile = document.querySelector(".menu-ct.mobile");
+  if(navbar.classList.contains("open")){
+    navbar.classList.remove("open");
+  }
+  else{ 
+    navbar.classList.add("open");
+  }
+});
+
+</script>

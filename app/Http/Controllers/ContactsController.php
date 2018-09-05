@@ -26,15 +26,4 @@ class ContactsController extends Controller
     {
         return view('contacts');
     }
-
-    /**
-     * Send information of contact
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function send()
-    {
-        //TODO: ver como hacer esto
-        return view('contacts');
-    }
 }

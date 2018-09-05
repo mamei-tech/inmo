@@ -1,14 +1,7 @@
-@extends('layout.base')
+@extends('layouts.app')
 
 <title> Inmobiliaria / Contacts </title>
 
-@section('headLinks')
-    @parent
-@endsection
-
-@section('navBar')
-    @parent
-@endsection
 
 @section('content')
     <section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="header4-5" style="background-image: url('images/bg5.jpg');">
@@ -23,7 +16,7 @@
                                 </div>
 
                                 <div class="mbr-hero animated fadeInUp delay col-sm-12 no-padding-col-edu">
-                                    <form action="{{ route('sendContact') }}" method="post">
+                                    <form action="@{{ route('sendContact') }}" method="post">
 
                                         <div class="col-sm-6 no-padding-col-edu">
                                             <div class="form-group" style="padding-left: 5px;">
@@ -78,9 +71,4 @@
 
         </div>
     </section>
-@endsection
-
-@section('footerScripts')
-    @parent
-    <script src="{{ asset('js/contacts.js') }} " defer></script>
 @endsection

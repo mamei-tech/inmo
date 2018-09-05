@@ -64,7 +64,7 @@
                                     </div>
 
                                     <div class="col-sm-6 no-padding-col-edu">
-                                        <a class="mbr-buttons__btn btn btn-lg btn-default animated fadeInUp delay btn-edu-about-me" href="{{ route('contacts') }}">CONTACT ME</a>
+                                        <a class="mbr-buttons__btn btn btn-lg btn-default animated fadeInUp delay btn-edu-about-me" href="@{{ route('contacts') }}">CONTACT ME</a>
                                     </div>
                                 </div>
                             </div>
@@ -80,3 +80,5 @@
     @parent
     <script src="{{ asset('js/aboutMe.js') }} " defer></script>
 @endsection
+
+<?php var_dump(session("segment") ) ?>

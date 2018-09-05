@@ -3,10 +3,8 @@
 
 <head>
 
-    {{-- Meta, title, CSS, favicons, etc. --}}
     @section('metas')
 
-        {{--TODO benith the favicon sentecen benith--}}
         {{-- <link rel="icon" type="image/png" href="../assets/img/favicon.png"> --}}
 
         <meta charset="utf-8">
@@ -14,53 +12,38 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <meta name="description" content="Inmobiliaria Web">
         <meta name="author" content="Mamei">
-        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no'
-              name='viewport'/>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport'/>
 
         {{-- CSRF --}}
-        {{-- TODO Ver q es esto --}}
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
     @show
 
-    <title> {{ config('app.name', 'Inmobiliaria') }} </title>
+    <title>@yield('title') {{ config('app.name') }} </title>
 
-{{--Links--}}
-@section('headLinks')
-    @include('partials.links')
-@show
-{{-- End Links --}}
-
+    {{--Links--}}
+    @section('headLinks')
+        @include('partials.links')
+    @show
+    {{-- End Links --}}
+</head>
 <body>
 
-{{-- Navbar --}}
 @section('navBar')
-   @include('partials.navbar')
+   @@include('partials.navbar')
 @show
-{{-- End Navbar --}}
 
-{{-- Content --}}
-@section('content')
+<div style="background: red">  
+<a href="{{route(Route::currentRouteName(),["es"])}}">ESPAÑOL</a><br/>
+<a href="{{route(Route::currentRouteName(),["en"])}}">INGLES</a><br/>
+<a href="{{route("home")}}">Home</a><br/>
+<a href="{{route("aboutMe")}}">About</a><br/>
+
+</div>
+@yield('content')
+@section('footerScripts')
+    @include('partials.footerLinks')
 @show
-{{-- End Content --}}
-
-{{-- Footer --}}
-{{--@section('footer')--}}
-    {{--@include('partials.footer')--}}
-{{--@show--}}
-{{-- End Footer --}}
 
 </body>
 
-{{--Links Footer--}}
-@section('footerScripts')
-    @include('partials.footerLinks')
-    {{--   Core JS Files and + plus  --}}
-
-@show
-{{-- End Links Footer --}}
-
 </html>
-
-
-
