@@ -2,38 +2,85 @@
 
 @section('content')
 
-@php 
-    $inHome = true;
-@endphp
+    @php
+        $inHome = true;
+    @endphp
 
 
-@include('partials.slider')
+    @include('partials.slider')
 
-{{--Section 1--}}
-<div class="home-section-1">
-    <div class="light-gray-block float-right">
-        <h1 class="" style="margin-bottom: 15px;">DO YOU KNOW THAT?</h1>
-        <p class=" color-white">asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas dasdsadasdsad dasas dasd asdasdas dasas das d</p>
-        <div class="">
+    {{--Section 0--}}
+    <div class="home-section-0">
+
+            <div class="lang-{{App::getLocale()}} first-div" >
+                <a class="lang-en hvr-underline-from-center"
+                   style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
+                   href="{{route(Route::currentRouteName(),["en"])}}">ENG</a>
+                /
+                <a class="lang-es hvr-underline-from-center"
+                   style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
+                   href="{{route(Route::currentRouteName(),["es"])}}">ESP</a>
+            </div>
+
+            <div>
+                <a class="hvr-underline-from-center" href="">@lang('app.neighborhoods')</a>
+            </div>
+            <div>
+                <a class="hvr-underline-from-center" href="">@lang('app.guides')</a>
+            </div>
+            <div>
+                <a class="hvr-underline-from-center" href="">@lang('app.aboutMe')</a>
+            </div>
+            <div class="last-div">
+                <a class="hvr-underline-from-center" href="{{Route("contacts")}}">@lang('app.contact')</a>
+            </div>
+
+    </div>
+
+    {{--Section 1--}}
+    <div class="home-section-1">
+        <div class="light-gray-block float-right">
+            <h1 class="" style="margin-bottom: 15px;">DO YOU KNOW THAT?</h1>
+            <p class=" color-white">asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
+                dasdsadasdsad dasas dasd asdasdas dasas das d</p>
+            <div class="">
+                <button class="btn btn-white">LEARN MORE</button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+    {{--Section 2--}}
+    <div class="home-section-2">
+        <div class="dark-gray-block">
+            <h1 style="margin-bottom: 15px;">TODAY IS YOUR DAY!</h1>
+            <p class="color-white">asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
+                dasdsadasdsad dasas dasd asdasdas dasas das d</p>
             <button class="btn btn-white">LEARN MORE</button>
         </div>
     </div>
-    <div class="clearfix"></div>
-</div>
 
-{{--Section 2--}}
-<div class="home-section-2">
-    <div class="dark-gray-block">
-        <h1 style="margin-bottom: 15px;">TODAY IS YOUR DAY!</h1>
-        <p class="color-white" style="margin-right: 25px;">asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas dasdsadasdsad dasas dasd asdasdas dasas das d</p>
-        <button class="btn btn-white">LEARN MORE</button>
+    {{--Section 3--}}
+    <div class="home-section-3">
+        <div class="column-section-3 first-col">
+            <h1 style="margin-bottom: 15px;">YOUR HOME FROM THE BEACH</h1>
+            <p class="color-gray">asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
+                dasdsadasdsad dasas dasd asdasdas dasas das d</p>
+            <button class="btn btn-gray">LEARN MORE</button>
+        </div>
+        <div class="column-section-3">
+            <h1 style="margin-bottom: 15px;">GREAT HOMES IN BRICKELL TO LOW PRICES</h1>
+            <p class="color-gray">asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
+                dasdsadasdsad dasas dasd asdasdas dasas das d</p>
+            <button class="btn btn-gray">LEARN MORE</button>
+        </div>
+        <div class="column-section-3 old-col">
+            <h1 style="margin-bottom: 15px;">ROLAND FRANK</h1>
+            <p class="color-gray">asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
+                dasdsadasdsad dasas dasd asdasdas dasas das d</p>
+            <button class="btn btn-gray">LEARN MORE</button>
+        </div>
     </div>
-</div>
-
-{{--Section 3--}}
-<div>
-
-</div>
 
 @endsection
 
