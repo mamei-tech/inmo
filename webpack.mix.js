@@ -14,7 +14,11 @@ let mix = require('laravel-mix');
 //mix.js('resources/assets/js/app.js', 'public/js');
 mix.copy('resources/assets/js/bootstrap.min.js', 'public/js');
 mix.copy('resources/assets/js/jquery.min.js', 'public/js');
-//mix.sass('resources/assets/sass/app.scss', 'public/css');
+mix.copy('resources/assets/js/jquery.localScroll.js', 'public/js');
+mix.copy('resources/assets/js/jquery.parallax.js', 'public/js');
+mix.copy('resources/assets/js/jquery.scrollTo.js', 'public/js');
+mix.copy('resources/assets/js/views/home.js', 'public/js');
+
 mix.styles([
     'resources/assets/css/bootstrap.min.css',
     'resources/assets/css/site.css'

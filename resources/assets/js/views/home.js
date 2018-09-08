@@ -1,39 +1,7 @@
 $(document).ready(function(){
-    $("#section-menu").addClass("mbr-navbar--absolute");
-
-
-//     var isDown = false;
-//     var oldScrooll = $(window).scrollTop();
-//     var scrollTop = $(window).scrollTop();
-//     var limitedSection1 = 1;
-//
-//     $('.mbr-navbar--sticky').each(function(){
-//         var method = scrollTop >= limitedSection1 ? 'addClass' : 'removeClass';
-//         $(this)[method]('mbr-navbar--stuck')
-//             .not('.mbr-navbar--open')[method]('mbr-navbar--short');
-//     });
-//
-//     $(window).scroll(function(){
-//         limitedSection1 = 1;
-//         scrollTop = $(window).scrollTop();
-//
-//         if (oldScrooll < scrollTop) {
-//             isDown = true;
-//             //Falta esto
-//         }
-//         //Si va para arriba
-//         else
-//         {
-//             isDown = false;
-//             if (scrollTop < limitedSection1) {
-//                 $('.mbr-navbar--sticky').each(function(){
-//                     var method = 'removeClass';
-//                     $(this)[method]('mbr-navbar--stuck')
-//                         .not('.mbr-navbar--open')[method]('mbr-navbar--short');
-//                 });
-//             }
-//         }
-//
-//         oldScrooll =  scrollTop;
-//     });
-});
+    //.parallax(xPosition, speedFactor, outerHeight) options:
+    //xPosition - Horizontal position of the element
+    //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
+    //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
+    //$('.parallax-section-1').parallax("100%", 1, true);
+})

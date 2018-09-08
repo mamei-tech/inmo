@@ -4,10 +4,10 @@
   <div class="container" style="position: relative;">
     <div class="brand-ct">
       <div class="brand-img">
-        <img src="/images/borroto.png">
+        <img src="../images/borroto.png">
       </div>
       <div class="brand-subimg">
-        <img src="/images/colfax.png">
+        <img src="../images/colfax.png">
       </div>
     </div>
     <div class="menu-ct pc">
@@ -37,7 +37,7 @@
       <ul>
         <div class="phone-lang-buttons">   
           <div class="brand-subimg">
-            <img src="/images/colfax.png">
+            <img src="../images/colfax.png">
           </div>       
           <li class="lang-{{App::getLocale()}}">
             <a class="lang-en hvr-underline-from-center" style="font-size: 9px; font-family: 'SinkinSans-500Medium';" href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
