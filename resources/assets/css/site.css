@@ -608,12 +608,7 @@ section {
 }
 /*Fin slider*/
 
-/*home-section-1*/
-
-.section {
-    /*padding: 50px 120px 40px 120px;*/
-}
-
+/*home-section-1 y 2*/
 .dark-gray-block,
 .light-gray-block {
     height: 384px;
@@ -693,107 +688,4 @@ section {
     }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-.parallax-section-1{
-
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: flex-end;
-}
-
-.section-1-text{
-	width: 578px;
-	padding: 50px 120px 40px 80px;
-	text-align: right;
-	position: relative;
-}
-
-.section-1-text h5{
-	margin-left: 25px;
-}
-
-.container-btn{
-	position: absolute;
-	bottom: 60px;
-	right: 120px;
-}
-
-@media (max-width: 1249px){
-	.section-1-text{
-		width: 500px;
-		padding: 50px 100px 40px 0;
-		text-align: right;
-		position: relative;
-	}
-
-	.section-1-text h5{
-		margin-left: 100px;
-	}
-
-	.container-btn{
-		right: 100px;
-		bottom: 50px;
-	}
-}
-@media (max-width: 767px){
-	.parallax-section-1{
-		height: 320px;
-	}
-
-	.section-1-text{
-		width: 360px;
-		padding: 30px;
-		text-align: center;
-		position: relative;
-	}
-
-	.section-1-text h5{
-		margin-left: 0;
-	}
-
-	.container-btn{
-		right: 51%;
-		left: 51%;
-		bottom: 40px;
-	}
-}
-
-/*fin home-section-1*/
-
-/*home-section-2*/
-.parallax-section-2{
-	background: url("../images/parallax2.jpg") top center /cover;
-	height: 384px;
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: flex-start;
-}
-
-.section-2-text{
-	background-color:  rgba(50, 50, 50, 0.7);
-	width: 578px;
-	padding: 50px 80px 40px 120px;
-	text-align: left;
-	position: relative;
-}
-
-.section-2-text button{
-	position: absolute;
-	bottom: 60px;
-	left: 120px;
-}
-
-/*Fin home-section-2*/
+/*fin home-section-1 y 2*/
