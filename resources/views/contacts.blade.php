@@ -1,74 +1,130 @@
 @extends('layouts.app')
 
-<title> Inmobiliaria / Contacts </title>
-
+@section('title')
+    @lang('app.contact')
+@endsection
 
 @section('content')
-    <section class="mbr-box mbr-section mbr-section--relative mbr-section--fixed-size mbr-section--full-height mbr-section--bg-adapted mbr-parallax-background" id="header4-5" style="background-image: url('images/bg5.jpg');">
-        <div class="mbr-box__magnet--sm-padding mbr-box__magnet--center-left">
-            <div class="mbr-box__container mbr-section__container container">
-                <div class="mbr-box mbr-box--stretched"><div class="mbr-box__magnet mbr-box__magnet--center-left">
-                        <div class="row">
-                            <div class=" col-sm-6 col-sm-offset-6">
-                                <div class="mbr-hero animated fadeInUp col-sm-12 no-padding-col-edu">
-                                    <h3 class="active-edu" style="font-size: 28px;text-align: right;letter-spacing: 2px;">CONTACT ME</h3>
-                                    <h3 class="mbr-hero__text" style="font-size: 16px;text-align: right;line-height: 15px;">GET MORE INFORMATION</h3>
-                                </div>
+    <div class="contact-section-0">
+        <div></div>
+        <div>
+            <h1>@lang('app.contactMe')</h1>
+            <h3>@lang('app.moreInformation')</h3>
+            <form action="@{{ route('sendContact') }}" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="email" required="" placeholder="@lang('app.yourEmail')">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="phone" required="" placeholder="@lang('app.yourPhone')">
+                </div>
+                <div class="form-group">
+                <textarea rows="3" class="form-control" name="writeMe" required=""
+                          placeholder="@lang('app.writeMe')"></textarea>
+                </div>
 
-                                <div class="mbr-hero animated fadeInUp delay col-sm-12 no-padding-col-edu">
-                                    <form action="@{{ route('sendContact') }}" method="post">
+                <div class="container-social-buttom">
+                    <div>
+                        <a href="https://www.facebook.com/pages/Mobirise/1616226671953247">
+                            <svg xmlns="http://www.w3.org/2000/svg" style="height: 30px;width: 15px;margin-top:5px;"
+                                 viewBox="0 0 11 26">
+                                <defs>
+                                    <style>.cls-1 {
+                                            fill: #fff;
+                                        }</style>
+                                </defs>
+                                <title>Facebook</title>
+                                <g id="Capa_2" data-name="Capa 2">
+                                    <g id="Capa_1-2" data-name="Capa 1">
+                                        <path class="cls-1"
+                                              d="M11.15,7.84,10.72,12H7.42v12h-5V12H0V7.84H2.47V5.36C2.47,2,3.86,0,7.83,0h3.3V4.13H9.06c-1.54,0-1.64.58-1.64,1.66V7.84Z"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
 
-                                        <div class="col-sm-6 no-padding-col-edu">
-                                            <div class="form-group" style="padding-left: 5px;">
-                                                <input type="text" class="form-control form-control-edu-contacts" name="name" required="" placeholder="Name*">
-                                            </div>
-                                        </div>
+                        <a class="mbr-social-icons__icon social-icon-edu" title="Instagram" target="_blank"
+                           href="https://instagram.com/mobirise/">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="7 0 11 25"
+                                 style="height: 30px;width: 30px;margin-top:5px;">
+                                <defs>
+                                    <style>.cls-1 {
+                                            fill: #fff;
+                                        }</style>
+                                </defs>
+                                <title>Instagram</title>
+                                <g id="Capa_2" data-name="Capa 2">
+                                    <g id="Capa_1-2" data-name="Capa 1">
+                                        <path class="cls-1"
+                                              d="M18.3,0H5.63A5.65,5.65,0,0,0,0,5.63V18.3a5.65,5.65,0,0,0,5.63,5.63H18.3a5.65,5.65,0,0,0,5.63-5.63V5.63A5.65,5.65,0,0,0,18.3,0Zm4.22,18.3a4.23,4.23,0,0,1-4.22,4.22H5.63A4.23,4.23,0,0,1,1.41,18.3V9.86H5.92a6.61,6.61,0,0,0-.64,2.82,6.69,6.69,0,0,0,13.38,0A6.61,6.61,0,0,0,18,9.86h4.52Zm-5.28-5.63A5.28,5.28,0,1,1,12,7.39,5.29,5.29,0,0,1,17.25,12.67Zm-.14-4.22a6.6,6.6,0,0,0-10.28,0H1.41V5.63A4.23,4.23,0,0,1,5.63,1.41H18.3a4.23,4.23,0,0,1,4.22,4.22V8.45Zm3.24-4.62V5.66a.77.77,0,0,1-.76.76H17.66a.77.77,0,0,1-.77-.76V3.83a.77.77,0,0,1,.77-.76h1.93A.77.77,0,0,1,20.35,3.83Z"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                        <a class="mbr-social-icons__icon social-icon-edu" title="Twitter" target="_blank"
+                           href="https://twitter.com/mobirise/">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26"
+                                 style="height: 30px;width: 30px;margin-top:5px;">
+                                <defs>
+                                    <style>.cls-1 {
+                                            fill: #fff;
+                                        }</style>
+                                </defs>
+                                <title>Twitter</title>
+                                <g id="Capa_2" data-name="Capa 2">
+                                    <g id="Capa_1-2" data-name="Capa 1">
+                                        <path class="cls-1"
+                                              d="M.3,7.8H5.45V24H.3ZM2.91,0A2.74,2.74,0,0,0,0,2.8a2.72,2.72,0,0,0,2.84,2.8h0A2.73,2.73,0,0,0,5.78,2.8,2.72,2.72,0,0,0,2.91,0ZM18.08,7.42a5.05,5.05,0,0,0-4.64,2.68V7.8H8.3s.06,1.52,0,16.2h5.14V15a4.28,4.28,0,0,1,.17-1.32,2.83,2.83,0,0,1,2.64-2c1.86,0,2.61,1.49,2.61,3.66V24H24V14.71C24,9.74,21.47,7.42,18.08,7.42Z"/>
+                                    </g>
+                                </g>
+                            </svg>
+                        </a>
+                    </div>
 
-                                        <div class="col-sm-6 no-padding-col-edu">
-                                            <div class="form-group" style="padding-left: 5px;">
-                                                <input type="text" class="form-control form-control-edu-contacts" name="lastname" required="" placeholder="Last Name*">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 no-padding-col-edu">
-                                            <div class="form-group" style="padding-left: 5px;">
-                                                <input type="email" class="form-control form-control-edu-contacts" name="email" required="" placeholder="Email*">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 no-padding-col-edu">
-                                            <div class="form-group" style="padding-left: 5px;">
-                                                <input type="tel" class="form-control form-control-edu-contacts" name="phone" placeholder="Phone">
-                                            </div>
-                                        </div>
-
-                                        <div class="col-sm-12 no-padding-col-edu">
-                                            <div class="form-group" style="padding-left: 5px;">
-                                                <textarea class="form-control form-control-edu-contacts" name="message" rows="7" placeholder="Message"></textarea>
-                                            </div>
-                                        </div>
-
-                                        <div class="mbr-hero animated fadeInUp delay col-sm-12 no-padding-col-edu" style="padding-top: 25px;">
-                                            <div class="mbr-social-icons mbr-social-icons--style-1 col-sm-6 no-padding-col-edu">
-                                                <a class="mbr-social-icons__icon social-icon-edu" title="Facebook" target="_blank" href="https://www.facebook.com/pages/Mobirise/1616226671953247"><i class="socicon socicon-facebook"></i></a>
-                                                <a class="mbr-social-icons__icon social-icon-edu" title="Twitter" target="_blank" href="https://twitter.com/mobirise"><i class="socicon socicon-twitter"></i></a>
-                                                <a class="mbr-social-icons__icon social-icon-edu" title="Instagram" target="_blank" href="https://instagram.com/mobirise/"><i class="socicon socicon-instagram"></i></a>
-                                            </div>
-
-                                            <div class="col-sm-6 no-padding-col-edu">
-                                                <button type="submit" class="mbr-buttons__btn mbr-buttons--right btn btn-lg btn-default animated fadeInUp delay btn-edu-about-me" style="margin: 0" href="contact.html">SEND</button>
-                                            </div>
-                                        </div>
-
-                                        <!-- <div class="mbr-buttons mbr-buttons--right"><button type="submit" class="mbr-buttons__btn btn btn-lg btn-danger">SEND</button></div> -->
-                                    </form>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div></div>
-            </div>
-
+                    <div>
+                        <button type="submit" class="btn btn-yellow">@lang('app.send')</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </section>
+
+    </div>
+    <div class="contact-section-testimonials">
+        <div>
+            <h1>@lang('app.testimonials')</h1>
+            <h3 class="color-gray">@lang('app.expressOpinion')</h3>
+        </div>
+
+        <div>
+            <div>
+                <div class="container-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="color-gray" viewBox="0 0 170 170"><defs><style>.cls-1 {
+                                        fill: #fff;
+                                    }
+
+                                    .cls-2 {
+                                        fill: #aaa;
+                                    }</style></defs><g id="Capa_2" data-name="Capa 2"><g
+                                        id="Capa_1-2" data-name="Capa 1"><rect class="cls-1" width="170" height="170"/><path
+                                            class="cls-2"
+                                            d="M97.69,85.8H86.47V97h-1.6V85.8H73.64V84.2H84.86V73h1.6V84.2H97.69Z"/></g></g></svg>
+
+                </div>
+            </div>
+            <form action="@{{ route('sendTestimonials') }}" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')">
+                </div>
+
+                <div class="form-group">
+                    <textarea rows="5" class="form-control" name="testimonials" required=""
+                              placeholder="@lang('app.yourtestimonials')"></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-yellow">@lang('app.send')</button>
+            </form>
+        </div>
+    </div>
 @endsection

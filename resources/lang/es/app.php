@@ -2,11 +2,21 @@
 
 return [
     'lang' => 'Idioma',
-    'home' => 'INICIO',
-    'neighborhoods' => 'VECINDARIOS',
-    'guides' => 'GUIAS',
-    'aboutMe' => 'ACERCA DE MI',
-    'contact' => 'CONTACTO',
+    'home' => 'Inicio',
+    'neighborhoods' => 'Vecindarios',
+    'guides' => 'Guias',
+    'aboutMe' => 'Acerca de mi',
+    'contact' => 'Contacto',
+    'contactMe' => 'Contáctame',
+    'moreInformation' => 'Obtener más información',
+    'yourName' => 'tu nombre',
+    'yourEmail' => 'tu correo',
+    'yourPhone' => 'tu teléfono',
+    'writeMe' => 'escríbeme',
+    'send' => 'enviar',
+    'testimonials' => 'testimonials', //TODO Buscar traduccion pa esto
+    'expressOpinion' => 'tu puedes expresar tu opinión acerca de mis servicios',
+    'yourtestimonials' => 'tu testimonials', //TODO Buscar traduccion pa esto
     'slide1-h1-1' => 'SU NUEVO HOGAR',
     'slide1-h1-2' => 'ESTÁ A UNA LLAMADA DE DISTANCIA',
     'slide1-h2' => '¡llámame hoy!',

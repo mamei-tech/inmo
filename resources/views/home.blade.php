@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('title')
+    @lang('app.home')
+@endsection
+
 @section('content')
 
     @php

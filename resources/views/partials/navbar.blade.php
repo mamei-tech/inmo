@@ -111,7 +111,7 @@
 
     document.addEventListener("scroll", function () {
 
-        if (window.prevScrollY < window.scrollY) {//bajando && window.scrollY > 100
+        if (window.prevScrollY < window.scrollY && window.scrollY > 80) {//bajando
             navbar.classList.add("scroll-down");
             navbar.classList.remove("open");
         }
