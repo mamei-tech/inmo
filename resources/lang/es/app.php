@@ -23,7 +23,7 @@ return [
     'yourPhone' => 'tu teléfono',
     'writeMe' => 'escríbeme',
     'send' => 'enviar',
-    'testimonials' => 'testimonials', //TODO Buscar traduccion pa esto
+    'testimonials' => 'testimonios',
     'expressOpinion' => 'puedes expresar tu opinión acerca de mis servicios',
-    'yourtestimonials' => 'tu testimonials', //TODO Buscar traduccion pa esto
+    'yourtestimonials' => 'tu testimonio'
 ];

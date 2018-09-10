@@ -15,8 +15,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $flights = test::all();
-
         return view('home', compact(['flights']));
     }
 }

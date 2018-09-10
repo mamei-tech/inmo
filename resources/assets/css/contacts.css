@@ -1,0 +1,206 @@
+
+/*contact-section-0*/
+.contact-section-0 {
+    height: 540px;
+    background: url('../images/lg/8.jpg') top center /cover;
+    padding: 50px 120px;
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+}
+
+.contact-section-0 div:first-child {
+    flex: 2;
+}
+.contact-section-0 div:last-child {
+    flex: 1;
+}
+
+.contact-section-0 h3{
+    padding: 15px 0 40px;
+}
+
+.contact-section-0 .form-group{
+    margin-bottom: 20px;
+}
+
+.contact-section-0 .form-control{
+}
+
+.container-social-buttom{
+    padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.container-social-buttom div{
+    flex: 1;
+}
+
+.container-social-buttom div:first-child{
+    text-align: left;
+}
+
+.container-social-buttom div:last-child{
+    text-align: right;
+}
+
+.container-social-buttom div a{
+    margin-right: 30px;
+}
+
+.container-social-buttom div svg:hover{
+    transition: all 0.2s 0.1s ease-in-out;
+    transform: scale(1.1);
+}
+
+.container-social-buttom div a:last-child{
+    margin-right: 0;
+}
+
+.container-social-buttom div button{
+    margin: 0;
+}
+
+
+@media (max-width: 1249px) {
+    .contact-section-0 {
+        background: url('../images/md/10.jpg') top center /cover;
+        padding: 50px 100px;
+    }
+}
+
+@media (max-width: 960px) {
+    .contact-section-0 {
+        background: url('../images/sm/10.jpg') center center /cover;
+        padding: 30px;
+        height: 560px;
+        text-align: center;
+    }
+
+    .contact-section-0 div:first-child {
+        flex: 0;
+    }
+
+    .container-social-buttom {
+        flex-direction: column;
+    }
+
+    .container-social-buttom div button
+    {
+        margin-left: -15px;
+    }
+
+    .container-social-buttom div:first-child
+    {
+        margin-bottom: 20px;
+    }
+
+    .container-social-buttom div:first-child,
+    .container-social-buttom div:last-child
+    {
+        text-align: center;
+    }
+}
+/*fin contact-section-0*/
+
+/*contact-section-testimonials*/
+.contact-section-testimonials{
+    background-color: rgb(228, 228, 228);
+    padding: 70px 120px;
+}
+
+.contact-section-testimonials div:first-child{
+    text-align: right;
+}
+
+.contact-section-testimonials div:first-child > h3{
+    margin: 20px 0 50px;
+}
+
+.contact-section-testimonials div:last-child{
+    display: flex;
+    flex-direction: row;
+}
+
+.contact-section-testimonials div:last-child > div{
+    flex: 1;
+    text-align: left;
+}
+
+.contact-section-testimonials div:last-child > form{
+    flex: 2;
+    text-align: right;
+}
+
+.contact-section-testimonials div:last-child .form-group{
+    margin-bottom: 30px;
+}
+
+.contact-section-testimonials div:last-child .container-image{
+    height: 202px;
+    width: 202px;
+    background-color: rgb(255,255,255);
+}
+
+.contact-section-testimonials div:last-child .container-image svg{
+    height: 202px;
+    width: 202px;
+}
+
+.contact-section-testimonials div:last-child .form-group:first-child{
+    width: 50%;
+    float: right;
+}
+
+
+
+@media (max-width: 1249px) {
+    .contact-section-testimonials{
+        padding: 70px 100px;
+    }
+}
+
+@media (max-width: 960px) {
+    .contact-section-testimonials{
+        padding: 50px 30px;
+    }
+
+    .contact-section-testimonials div:first-child{
+        text-align: center;
+    }
+
+    .contact-section-testimonials div:last-child{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-section-testimonials > div:last-child > div{
+        flex: 1;
+    }
+
+    .contact-section-testimonials div:last-child > form{
+        flex: 1;
+        width: 100%;
+        text-align: center;
+    }
+
+    .contact-section-testimonials div:last-child .container-image{
+        height: 120px;
+        width: 120px;
+        margin-bottom: 40px;
+    }
+
+    .contact-section-testimonials div:last-child .container-image svg{
+        height: 120px;
+        width: 120px;
+    }
+
+    .contact-section-testimonials div:last-child .form-group:first-child{
+        width: 100%;
+        float: none;
+    }
+
+}
+/*fin contact-section-testimonials*/

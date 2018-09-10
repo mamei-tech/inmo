@@ -28,16 +28,16 @@
                 @endunless
 
                 <li class="hvr-underline-from-center">
-                    <a href="">@lang('app.neighborhoods')</a>
+                    <a class="link-neighborhoods" href="{{Route("neighborhoods")}}">@lang('app.neighborhoods')</a>
                 </li>
                 <li class="hvr-underline-from-center">
-                    <a href="">@lang('app.guides')</a>
+                    <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
                 </li>
                 <li class="hvr-underline-from-center">
-                    <a href="">@lang('app.aboutMe')</a>
+                    <a class="link-about" href="{{Route("about")}}">@lang('app.aboutMe')</a>
                 </li>
                 <li class="hvr-underline-from-center">
-                    <a href="{{Route("contacts")}}">@lang('app.contact')</a>
+                    <a class="link-contacts" href="{{Route("contacts")}}">@lang('app.contact')</a>
                 </li>
             </ul>
         </div>
@@ -67,22 +67,22 @@
 
                 <div>
                     <li class="hvr-underline-from-center">
-                        <a href="">@lang('app.neighborhoods')</a>
+                        <a class="link-neighborhoods" href="{{Route("neighborhoods")}}">@lang('app.neighborhoods')</a>
                     </li>
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
-                        <a href="">@lang('app.guides')</a>
+                        <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
                     </li>
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
-                        <a href="">@lang('app.aboutMe')</a>
+                        <a class="link-about" href="{{Route("about")}}">@lang('app.aboutMe')</a>
                     </li>
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
-                        <a href="{{Route("contacts")}}">@lang('app.contact')</a>
+                        <a class="link-contacts" href="{{Route("contacts")}}">@lang('app.contact')</a>
                     </li>
                 </div>
             </ul>
@@ -102,36 +102,37 @@
         </div>
     </div>
 </div>
+@push('scripts')
+    <script type="text/javascript">
+        document.querySelector(".nav-bar .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
 
-<script type="text/javascript">
+        @if(!isset($inHome))
+            var navbar = document.querySelector(".nav-bar");
+            navbar.classList.add("scrolled");
 
-            @if(!isset($inHome))
-    var navbar = document.querySelector(".nav-bar");
-    navbar.classList.add("scrolled");
+            document.addEventListener("scroll", function () {
 
-    document.addEventListener("scroll", function () {
+                if (window.prevScrollY < window.scrollY && window.scrollY > 80) {//bajando
+                    navbar.classList.add("scroll-down");
+                    navbar.classList.remove("open");
+                }
+                else //subiendo
+                    navbar.classList.remove("scroll-down");
 
-        if (window.prevScrollY < window.scrollY && window.scrollY > 80) {//bajando
-            navbar.classList.add("scroll-down");
-            navbar.classList.remove("open");
-        }
-        else //subiendo
-            navbar.classList.remove("scroll-down");
+                window.prevScrollY = window.scrollY;
 
-        window.prevScrollY = window.scrollY;
+            });
+        @endif
 
-    });
-    @endif
-
-    document.querySelector('.mobile-buttons .button-toggle').addEventListener("click", function () {
-        var navbar = document.querySelector(".nav-bar");
-        var menuMobile = document.querySelector(".menu-ct.mobile");
-        if (navbar.classList.contains("open")) {
-            navbar.classList.remove("open");
-        }
-        else {
-            navbar.classList.add("open");
-        }
-    });
-
-</script>
+        document.querySelector('.mobile-buttons .button-toggle').addEventListener("click", function () {
+            var navbar = document.querySelector(".nav-bar");
+            var menuMobile = document.querySelector(".menu-ct.mobile");
+            if (navbar.classList.contains("open")) {
+                navbar.classList.remove("open");
+            }
+            else {
+                navbar.classList.add("open");
+            }
+        });
+    </script>
+@endpush

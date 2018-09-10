@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
-@section('title')
-    @lang('app.home')
-@endsection
+@section('title', __('app.home'))
+
+@push('styles')
+    <link href="{{ asset('css/home.css') }}" rel="stylesheet"></link>
+@endpush
 
 @section('content')
 
@@ -14,9 +16,9 @@
     @include('partials.slider')
 
     {{--Section 0--}}
-    <div class="home-section-0">
+    <div class="home-section-menu hiden-pc">
 
-            <div class="lang-{{App::getLocale()}} first-div" >
+            <div class="lang-{{App::getLocale()}}" >
                 <a class="lang-en hvr-underline-from-center"
                    style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                    href="{{route(Route::currentRouteName(),["en"])}}">ENG</a>
@@ -35,7 +37,7 @@
             <div>
                 <a class="hvr-underline-from-center" href="">@lang('app.aboutMe')</a>
             </div>
-            <div class="last-div">
+            <div>
                 <a class="hvr-underline-from-center" href="{{Route("contacts")}}">@lang('app.contact')</a>
             </div>
 
@@ -88,7 +90,7 @@
 
 @endsection
 
-@section('scripts')
+@push('scripts')
     <script src="{{ asset('js/home.js') }} " defer></script>
-@endsection
+@endpush
 

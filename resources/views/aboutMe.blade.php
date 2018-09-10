@@ -1,4 +1,4 @@
-@extends('layout.base')
+@extends('layouts.app')
 
 <title> Inmobiliaria / About Me </title>
 

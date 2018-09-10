@@ -1,0 +1,351 @@
+/*Slider*/
+.carousel {
+    height: 100vh;
+}
+
+.carousel-item .container {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 672px;
+    max-width: initial;
+}
+
+.carousel-item .carousel-caption {
+    right: 0;
+    left: 0;
+    bottom: -115px;
+    height: 230px;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: right;
+    padding: 0 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.carousel-indicators {
+    margin-bottom: 0;
+    bottom: 0;
+}
+
+.carousel-indicators li {
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    height: 14px;
+    width: 14px;
+    background: transparent;
+    cursor: pointer;
+    margin: 0 10px 40px;
+    transition: all 0.2s 0s ease-out;
+}
+
+.carousel-indicators li:hover {
+    transform: scale(1.2);
+}
+
+@media (max-width: 1249px) {
+    .carousel-item .container {
+        width: 100%;
+    }
+
+    .carousel-item .carousel-caption {
+        width: 540px;
+        padding: 0 20px;
+        text-align: center;
+        margin: auto;
+    }
+}
+
+@media (max-width: 960px) {
+    .carousel-item .container {
+        width: 100%;
+    }
+
+    .carousel-item .carousel-caption {
+        width: 100%;
+        padding: 0 30px;
+        text-align: center;
+    }
+}
+
+.first-slide {
+    height: 100vh;
+    background: url("../images/lg/1.jpg") top center /cover;
+}
+
+.second-slide {
+    height: 100vh;
+    background: url("../images/lg/2.jpg") top center /cover;
+}
+
+.third-slide {
+    height: 100vh;
+    background: url("../images/lg/3.jpg") top center /cover;
+}
+
+@media (max-width: 1249px) {
+    .first-slide {
+        background: url("../images/md/1.jpg") top center /cover;
+    }
+
+    .second-slide {
+        background: url("../images/md/2.jpg") top center /cover;
+    }
+
+    .third-slide {
+        background: url("../images/md/3.jpg") top center /cover;
+    }
+}
+
+@media (max-width: 960px) {
+
+    .first-slide {
+        background: url("../images/sm/1.jpg") top center /cover;
+    }
+
+    .second-slide {
+        background: url("../images/sm/2.jpg") top center /cover;
+    }
+
+    .third-slide {
+        background: url("../images/sm/3.jpg") top center /cover;
+    }
+}
+
+/*Fin slider*/
+
+.hiden-pc {
+    display: none;
+}
+
+@media (max-width: 1249px) {
+    .hiden-pc {
+        display: initial;
+    }
+}
+
+@media (max-width: 960px) {
+    .hiden-pc {
+        display: initial;
+    }
+}
+
+/*home-section-menu*/
+@media (max-width: 1249px) {
+    .home-section-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        height: 431px;
+        background: url('../images/md/4.jpg') top center /cover;
+    }
+
+    .home-section-menu > div:first-child {
+        padding-top: 60px;
+    }
+
+    .home-section-menu div {
+        flex: 1;
+    }
+
+    .home-section-menu a {
+        color: rgb(255, 255, 255);
+        font-size: 13px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 5px 15px;
+    }
+}
+
+@media (max-width: 960px) {
+    .home-section-menu {
+        height: 640px;
+        background: url('../images/sm/4.jpg') top center /cover;
+    }
+
+    .home-section-menu > div:first-child {
+        flex: 3;
+    }
+
+    .home-section-menu > div:last-child {
+        flex: 3;
+    }
+}
+
+/*fin home-section-menu*/
+
+/*home-section-1 y 2*/
+.dark-gray-block,
+.light-gray-block {
+    height: 384px;
+    width: 578px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dark-gray-block p,
+.light-gray-block p {
+    flex: 1;
+}
+
+.light-gray-block {
+    align-items: flex-end;
+    background-color: rgba(50, 50, 50, 0.3);
+    padding: 50px 120px 60px 80px;
+    text-align: right;
+}
+
+.dark-gray-block {
+    align-items: flex-start;
+    background-color: rgba(50, 50, 50, 0.7);
+    padding: 50px 80px 60px 120px;
+}
+
+.dark-gray-block p {
+    margin-right: 25px;
+}
+
+.light-gray-block p {
+    margin-left: 25px;
+}
+
+@media (max-width: 1249px) {
+    .dark-gray-block,
+    .light-gray-block {
+        width: 500px;
+    }
+
+    .light-gray-block {
+        padding: 50px 100px 60px 80px;
+    }
+
+    .dark-gray-block {
+        padding: 50px 80px 60px 100px;
+    }
+}
+
+@media (max-width: 960px) {
+    .dark-gray-block,
+    .light-gray-block {
+        height: 320px;
+        width: 100%;
+        padding: 20px 30px 20px 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .dark-gray-block p,
+    .light-gray-block p {
+        margin: 0;
+    }
+}
+
+.home-section-1 {
+    background: url('../images/lg/4.jpg') top center /cover;
+}
+
+.home-section-2 {
+    background: url('../images/lg/5.jpg') top center /cover;
+}
+
+@media (max-width: 1249px) {
+    .home-section-1 {
+        background: url('../images/md/5.jpg') top center /cover;
+    }
+
+    .home-section-2 {
+        background: url('../images/md/6.jpg') top center /cover;
+    }
+}
+
+@media (max-width: 960px) {
+    .home-section-1 {
+        background: url('../images/sm/5.jpg') top center /cover;
+    }
+
+    .home-section-2 {
+        background: url('../images/sm/6.jpg') top center /cover;
+    }
+
+}
+
+/*fin home-section-1 y 2*/
+
+/*home-section-3*/
+.home-section-3 {
+    padding: 50px 120px 40px;
+    background-color: rgb(228, 228, 228);
+    display: flex;
+    flex-direction: row;
+}
+
+.home-section-3 > div {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.home-section-3 > div > p {
+    flex: 1;
+    padding-bottom: 15px;
+    margin-right: 25px;
+}
+
+.home-section-3 > div > button {
+    margin-bottom: 20px;
+}
+
+.home-section-3 > div:first-child {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.home-section-3 > div:last-child {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+@media (max-width: 1249px) {
+    .home-section-3 {
+        padding: 50px 100px 40px;
+    }
+
+    .home-section-3 > div:last-child {
+        display: none;
+    }
+
+    .home-section-3 > div {
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-section-3 > div p {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 960px) {
+    .home-section-3 {
+        padding: 40px 30px 20px;
+        flex-direction: column;
+    }
+
+    .home-section-3 > div {
+        padding: 0;
+        margin-bottom: 60px;
+    }
+
+    .home-section-3 > div:last-child {
+        display: initial;
+        margin-bottom: 0;
+    }
+}
+
+/*fin home-section-3*/

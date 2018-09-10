@@ -1,8 +1,10 @@
 @extends('layouts.app')
 
-@section('title')
-    @lang('app.contact')
-@endsection
+@section('title', __('app.contact'))
+
+@push('styles')
+    <link href="{{ asset('css/contacts.css') }}" rel="stylesheet"></link>
+@endpush
 
 @section('content')
     <div class="contact-section-0">
@@ -15,10 +17,12 @@
                     <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="email" required="" placeholder="@lang('app.yourEmail')">
+                    <input type="text" class="form-control" name="email" required=""
+                           placeholder="@lang('app.yourEmail')">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="phone" required="" placeholder="@lang('app.yourPhone')">
+                    <input type="text" class="form-control" name="phone" required=""
+                           placeholder="@lang('app.yourPhone')">
                 </div>
                 <div class="form-group">
                 <textarea rows="3" class="form-control" name="writeMe" required=""
@@ -100,16 +104,26 @@
         <div>
             <div>
                 <div class="container-image">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="color-gray" viewBox="0 0 170 170"><defs><style>.cls-1 {
-                                        fill: #fff;
-                                    }
+                    <svg xmlns="http://www.w3.org/2000/svg" class="color-gray" viewBox="0 0 170 170">
+                        <defs>
+                            <style>.cls-1 {
+                                    fill: #fff;
+                                }
 
-                                    .cls-2 {
-                                        fill: #aaa;
-                                    }</style></defs><g id="Capa_2" data-name="Capa 2"><g
-                                        id="Capa_1-2" data-name="Capa 1"><rect class="cls-1" width="170" height="170"/><path
-                                            class="cls-2"
-                                            d="M97.69,85.8H86.47V97h-1.6V85.8H73.64V84.2H84.86V73h1.6V84.2H97.69Z"/></g></g></svg>
+                                .cls-2 {
+                                    fill: #aaa;
+                                }</style>
+                        </defs>
+                        <g id="Capa_2" data-name="Capa 2">
+                            <g
+                                    id="Capa_1-2" data-name="Capa 1">
+                                <rect class="cls-1" width="170" height="170"/>
+                                <path
+                                        class="cls-2"
+                                        d="M97.69,85.8H86.47V97h-1.6V85.8H73.64V84.2H84.86V73h1.6V84.2H97.69Z"/>
+                            </g>
+                        </g>
+                    </svg>
 
                 </div>
             </div>
