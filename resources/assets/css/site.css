@@ -113,6 +113,47 @@ section {
     padding-bottom: 40px;
 }
 
+.display-pc{
+    display: block;
+}
+
+.display-table{
+    display: none;
+}
+
+.display-mobile{
+    display: none;
+}
+
+@media (max-width: 1249px) {
+    .display-pc{
+        display: none;
+    }
+
+    .display-table{
+        display: block;
+    }
+
+    .display-mobile{
+        display: none;
+    }
+}
+
+@media (max-width: 960px) {
+    .display-pc{
+        display: none;
+    }
+
+    .display-table{
+        display: none;
+    }
+
+
+    .display-mobile{
+        display: block;
+    }
+}
+
 /*Navbar*/
 .nav-bar {
     position: absolute;

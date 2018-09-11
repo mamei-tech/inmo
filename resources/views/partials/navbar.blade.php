@@ -104,7 +104,8 @@
 </div>
 @push('scripts')
     <script type="text/javascript">
-        document.querySelector(".nav-bar .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
+        document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
+        document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
 
         @if(!isset($inHome))
             var navbar = document.querySelector(".nav-bar");

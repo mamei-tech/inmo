@@ -29,13 +29,13 @@
             </div>
 
             <div>
-                <a class="hvr-underline-from-center" href="">@lang('app.neighborhoods')</a>
+                <a class="hvr-underline-from-center"  href="{{Route("neighborhoods")}}">@lang('app.neighborhoods')</a>
             </div>
             <div>
-                <a class="hvr-underline-from-center" href="">@lang('app.guides')</a>
+                <a class="hvr-underline-from-center" href="{{Route("guides")}}">@lang('app.guides')</a>
             </div>
             <div>
-                <a class="hvr-underline-from-center" href="">@lang('app.aboutMe')</a>
+                <a class="hvr-underline-from-center" href="{{Route("about")}}">@lang('app.aboutMe')</a>
             </div>
             <div>
                 <a class="hvr-underline-from-center" href="{{Route("contacts")}}">@lang('app.contact')</a>

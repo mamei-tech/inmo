@@ -30,7 +30,7 @@
             </ul>
         </div>
         <div class="footer-copyright">
-            <p class="color-gray">COPYRIGHTS 2018 ALL RIGHTS RESERVED. JORGE E. HIDALGO BORROTO, LLC</p>
+            <p class="color-gray">@lang('app.copyright')</p>
         </div>
     </div>
 </div>

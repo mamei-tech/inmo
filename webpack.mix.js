@@ -18,11 +18,16 @@ mix.copy('resources/assets/js/jquery.localScroll.js', 'public/js');
 mix.copy('resources/assets/js/jquery.parallax.js', 'public/js');
 mix.copy('resources/assets/js/jquery.scrollTo.js', 'public/js');
 mix.copy('resources/assets/js/views/home.js', 'public/js');
+mix.copy('resources/assets/js/views/neighborhood.js', 'public/js');
 
 mix.styles([
     'resources/assets/css/bootstrap.min.css',
     'resources/assets/css/site.css'
 ], 'public/css/site.css');
+
+mix.copy('resources/assets/css/home.css', 'public/css');
+mix.copy('resources/assets/css/contacts.css', 'public/css');
+mix.copy('resources/assets/css/neighborhood.css', 'public/css');
 
 mix.copy('resources/assets/images', 'public/images');
 mix.copy('resources/assets/fonts', 'public/fonts');
