@@ -155,7 +155,7 @@
 }
 
 .container-open-ligh-gray,
-.container-open-dark-gray { /*TODO revisar esto aki*/
+.container-open-dark-gray { /*TODO revisar el efecto que hace q c ve un fondo blanco abajo*/
     display: none;
     background-color: rgb(228, 228, 228);
 }
