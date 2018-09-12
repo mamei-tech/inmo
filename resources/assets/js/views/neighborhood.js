@@ -3,16 +3,16 @@ $(document).ready(function () {
         if ($(node.currentTarget).hasClass('light-block')) {
             let hasClass = $('.arrow-floating.light-block .arrow-toggle-line').toggleClass('open').hasClass('open');
             if (hasClass)
-                $('.container-open-ligh-gray').fadeIn();
+                $('.container-open-ligh-gray').slideDown();
             else
-                $('.container-open-ligh-gray').fadeOut();
+                $('.container-open-ligh-gray').slideUp();
         }
         else{
             let hasClass = $('.arrow-floating.dark-block .arrow-toggle-line').toggleClass('open').hasClass('open');
             if (hasClass)
-                $('.container-open-dark-gray').fadeIn();
+                $('.container-open-dark-gray').slideDown();
             else
-                $('.container-open-dark-gray').fadeOut();
+                $('.container-open-dark-gray').slideUp();
         }
 
 

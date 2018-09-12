@@ -111,5 +111,5 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/neighborhood.js') }} " defer></script>
+    <script src="{{ asset('js/views/neighborhood.js') }} " defer></script>
 @endpush

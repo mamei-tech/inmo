@@ -1,10 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title','Admin')
-
-@section('navbar')       
-    @include('partials.admin_navbar')
-@endsection
 
 @section('content')
 

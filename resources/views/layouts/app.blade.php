@@ -14,6 +14,7 @@
     <script src="{{ asset('js/bootstrap.min.js') }}" defer></script>
 
     <!-- Styles -->
+    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/site.css') }}" rel="stylesheet">
     @stack('styles')
 
@@ -31,7 +32,7 @@
 
     @include('partials.footer')
 </div>
+@stack('scripts')
 </body>
 </html>
 
-@stack('scripts')

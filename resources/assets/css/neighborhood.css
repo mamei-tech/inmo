@@ -155,7 +155,7 @@
 }
 
 .container-open-ligh-gray,
-.container-open-dark-gray { /*TODO revisar el efecto que hace q c ve un fondo blanco abajo*/
+.container-open-dark-gray {
     display: none;
     background-color: rgb(228, 228, 228);
 }
@@ -176,7 +176,7 @@
 
 .text-brickell p {
     columns: 3;
-    column-gap: 35px;
+    column-gap: 25px;
     margin-bottom: 0;
 }
 
@@ -242,7 +242,7 @@
 
    .text-brickell p {
         columns: 2;
-        column-gap: 28px;
+        column-gap: 25px;
     }
 
    .first-img-brickell {

@@ -15,6 +15,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home', compact(['flights']));
+        return view('home');
     }
 }
