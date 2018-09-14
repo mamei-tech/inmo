@@ -32,7 +32,7 @@
     <div class="container-open-ligh-gray">
         <div class="text-brickell">
             <p class="color-gray display-pc">@lang('app.firstTextBrickell')</p>
-            <p class="color-gray display-table">@lang('app.firstTextBrickellTable')</p>
+            <p class="color-gray display-tablet">@lang('app.firstTextBrickellTable')</p>
             <p class="color-gray display-mobile">@lang('app.firstTextBrickellMobile')</p>
         </div>
 
@@ -40,7 +40,7 @@
 
         <div class="text-brickell">
             <p class="color-gray display-pc">@lang('app.secondTextBrickell')</p>
-            <p class="color-gray display-table">@lang('app.secondTextBrickellTable')</p>
+            <p class="color-gray display-tablet">@lang('app.secondTextBrickellTable')</p>
             <p class="color-gray display-mobile">@lang('app.secondTextBrickellMobile')</p>
         </div>
 
@@ -48,7 +48,7 @@
 
         <div class="text-brickell">
             <p class="color-gray column-especial display-pc">@lang('app.thirthTextBrickell')</p>
-            <p class="color-gray display-table">@lang('app.thirthTextBrickellTable')</p>
+            <p class="color-gray display-tablet">@lang('app.thirthTextBrickellTable')</p>
             <p class="color-gray display-mobile">@lang('app.thirthTextBrickellMobile')</p>
         </div>
 
@@ -80,7 +80,7 @@
     <div class="container-open-dark-gray">
         <div class="text-brickell">
             <p class="color-gray display-pc">@lang('app.firstTextDowntown')</p>
-            <p class="color-gray display-table">@lang('app.firstTextDowntownTable')</p>
+            <p class="color-gray display-tablet">@lang('app.firstTextDowntownTable')</p>
             <p class="color-gray display-mobile">@lang('app.firstTextDowntownMobile')</p>
         </div>
 
@@ -88,7 +88,7 @@
 
         <div class="text-brickell">
             <p class="color-gray display-pc column-especial">@lang('app.secondTextDowntown')</p>
-            <p class="color-gray display-table">@lang('app.secondTextDowntownTable')</p>
+            <p class="color-gray display-tablet">@lang('app.secondTextDowntownTable')</p>
             <p class="color-gray display-mobile">@lang('app.secondTextDowntownMobile')</p>
         </div>
 
@@ -96,7 +96,7 @@
 
         <div class="text-brickell display-mobile">
             <p class="color-gray display-pc column-especial">@lang('app.thirthTextDowntown')</p>
-            <p class="color-gray display-table">@lang('app.thirthTextDowntownTable')</p>
+            <p class="color-gray display-tablet">@lang('app.thirthTextDowntownTable')</p>
             <p class="color-gray display-mobile">@lang('app.thirthTextDowntownMobile')</p>
         </div>
 
