@@ -2,7 +2,6 @@
 
 return [
     'lang' => 'Language',
-    
     'home' => 'Home',
     'neighborhoods' => 'Neighborhoods',
     'guides' => 'Guides',

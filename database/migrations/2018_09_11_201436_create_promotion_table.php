@@ -20,7 +20,7 @@ class CreatePromotionTable extends Migration
             $table->string('text_en');
             $table->string('text_es');
             $table->string('link');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
