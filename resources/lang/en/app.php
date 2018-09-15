@@ -7,6 +7,11 @@ return [
     'guides' => 'Guides',
     'aboutMe' => 'About Me',
     'contact' => 'Contact',
+
+    'learn_more' => 'Learn More',
+
+
+
     'slide1-h1-1' => 'YOUR NEW HOME',
     'slide1-h1-2' => 'IS A PHONE CALL AWAY',
     'slide1-h2' => 'call me today!',
@@ -33,6 +38,10 @@ return [
     'rentals' => 'rentals',
     'downtownMiami' => 'DOWNTOWN MIAMI',
     'magicCity' => '"THE MAGIC CITY"',
+
+
+
+
     'firstTextBrickell' => 'BRICKELL <br> 
 "MORE THAN JUST A COMMUNITY" <br><br>
 When thinking of relocating to Miami, one neighborhood you may want to consider is Brickell, which is South Florida\'s central financial region. <br><br>

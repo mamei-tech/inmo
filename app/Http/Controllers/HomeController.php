@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\test;
+use App\Promotion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -15,6 +16,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $promotions = Promotion::query()->whereNotNull("image")->get();
+        $promotionsSecond = Promotion::query()->whereNull("image")->get();
+        return view('home', compact(["promotions", "promotionsSecond"]));
     }
 }

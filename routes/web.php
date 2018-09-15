@@ -22,7 +22,7 @@ Route::post('/contacts/send', 'ContactsController@send') -> name('sendContact');
 
 
 
-Route::prefix('{lang?}')->middleware('locale')->group(function () {
+Route::prefix('{lang?}')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::any('/promotion/read', 'PromotionController@read')->name('promotion.read');
         Route::any('/promotion/readMain', 'PromotionController@readMain')->name('promotion.readMain');

@@ -7,6 +7,7 @@ use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 
 class PromotionController extends Controller
 {
@@ -27,7 +28,7 @@ class PromotionController extends Controller
 
     public function create(Request $request)
     {
-        return view('Admin.Promotion.create', ["type"=>$request->type]);
+        return view('Admin.Promotion.create', ["type" => $request->type, "url" => Storage::url('file.jpg')]);
     }
 
     public function readMain(Request $request)
@@ -65,6 +66,10 @@ class PromotionController extends Controller
      */
     public function store(Request $request, $locale)
     {
+        $path = null;
+        if ($request->type == "main")
+            $path = $request->file('image')->store('public/promotions');
+
         DB::table('Promotion')->insert(
             [
                 'title_es' => $request->title_es,
@@ -72,7 +77,7 @@ class PromotionController extends Controller
                 'text_es' => $request->text_es,
                 'text_en' => $request->text_en,
                 'link' => $request->link,
-                'image' => $request->image,
+                'image' => $path ? Storage::url($path) : null,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             ]

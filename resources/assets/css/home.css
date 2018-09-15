@@ -242,54 +242,20 @@
         margin: 0;
     }
 }
-
-.home-section-1 {
-    background: url('../images/lg/4.jpg') top center /cover;
-}
-
-.home-section-2 {
-    background: url('../images/lg/5.jpg') top center /cover;
-}
-
-@media (max-width: 1249px) {
-    .home-section-1 {
-        background: url('../images/md/5.jpg') top center /cover;
-    }
-
-    .home-section-2 {
-        background: url('../images/md/6.jpg') top center /cover;
-    }
-}
-
-@media (max-width: 960px) {
-    .home-section-1 {
-        background: url('../images/sm/5.jpg') top center /cover;
-    }
-
-    .home-section-2 {
-        background: url('../images/sm/6.jpg') top center /cover;
-    }
-
-}
-
 /*fin home-section-1 y 2*/
 
 /*home-section-3*/
 .home-section-3 {
-    padding: 50px 120px 40px;
+    padding: 50px 120px 0;
     background-color: rgb(228, 228, 228);
-    display: flex;
-    flex-direction: row;
 }
 
 .home-section-3 > div {
-    margin: 0 10px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 1;
     text-align: left;
-    padding: 0 20px;
+    padding: 0 20px 60px;
 }
 
 .home-section-3 > div > p {
@@ -302,23 +268,22 @@
     margin-bottom: 20px;
 }
 
-.home-section-3 > div:first-child {
-    padding-left: 0;
-    margin-left: 0;
+@media (min-width: 1250px) {
+    .home-section-3 > div:nth-child(3n+1) {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .home-section-3 > div:nth-child(3n) {
+        padding-right: 0;
+        margin-right: 0;
+    }
 }
 
-.home-section-3 > div:last-child {
-    padding-right: 0;
-    margin-right: 0;
-}
 
 @media (max-width: 1249px) {
     .home-section-3 {
-        padding: 50px 100px 40px;
-    }
-
-    .home-section-3 > div:last-child {
-        display: none;
+        padding: 50px 100px 0;
     }
 
     .home-section-3 > div {
@@ -329,22 +294,26 @@
     .home-section-3 > div p {
         margin-right: 0;
     }
+
+    .home-section-3 > div:nth-child(2n+1) {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .home-section-3 > div:nth-child(2n) {
+        padding-right: 0;
+        margin-right: 0;
+    }
 }
 
 @media (max-width: 960px) {
     .home-section-3 {
-        padding: 40px 30px 20px;
-        flex-direction: column;
+        padding: 40px 30px 0;
     }
 
     .home-section-3 > div {
         padding: 0;
         margin-bottom: 60px;
-    }
-
-    .home-section-3 > div:last-child {
-        display: initial;
-        margin-bottom: 0;
     }
 }
 

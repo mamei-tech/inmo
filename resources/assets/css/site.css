@@ -86,13 +86,13 @@ h3 {
     transform: scale(1.1);
 }
 
-.btn-white {
+.btn-white, .btn-white:hover {
     color: rgb(255, 255, 255);
     border-color: rgb(255, 255, 255);
     text-transform: uppercase;
 }
 
-.btn-gray {
+.btn-gray , .btn-gray:hover {
     color: rgb(142, 142, 142);
     border-color: rgb(142, 142, 142);
     text-transform: uppercase;

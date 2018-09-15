@@ -29,6 +29,10 @@ class Locale
             session(['locale' => $segment]);
             app()->setLocale($segment);
         }
+        else{
+            $fallback = session('locale') ?: config('app.fallback_locale');
+            app()->setLocale($fallback);
+        }
 
         return $next($request);
     }

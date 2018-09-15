@@ -7,6 +7,10 @@ return [
     'guides' => 'Guias',
     'aboutMe' => 'Acerca de mi',
     'contact' => 'Contacto',
+
+    'learn_more' => 'Leer Más',
+
+
     'slide1-h1-1' => 'SU NUEVO HOGAR',
     'slide1-h1-2' => 'ESTÁ A UNA LLAMADA DE DISTANCIA',
     'slide1-h2' => '¡llámame hoy!',
