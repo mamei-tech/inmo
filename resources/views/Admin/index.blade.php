@@ -1,9 +1,11 @@
 @extends('layouts.admin')
 
-@section('title','Admin')
+@section('title', __('app.admin'))
 
 @section('content')
 
-Hello world!!
+    <div class="container">
+        Hello world!!
+    </div>
 
 @endsection

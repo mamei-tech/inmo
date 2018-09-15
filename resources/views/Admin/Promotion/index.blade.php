@@ -1,17 +1,14 @@
-
-
-
 @extends("layouts.admin")
 
-
+@section('title', __('app.promotion'))
 
 @section('content')
     <div class="container">
-        <h2>Promociones principales</h2>
+        <h2>{{__('app.main_promotion') }}</h2>
         <div id="tbCt" style="text-align:right;"></div>
         <div id="grid" style="height: 300px;"></div>
         <br/>
-        <h2>Promociones secundarias</h2>
+        <h2>{{ __('app.second_promotion') }}</h2>
         <div id="tbCt2" style="text-align:right;"></div>
         <div id="grid2" style="height: 300px;"></div>
     </div>
@@ -39,11 +36,11 @@
             var dataView = utils.createKendoGrid("#grid",
                 {
                     columns: [{
-                        title: "Titulo [{{App::getLocale()}}]",
+                        title: "{{ __('app.title') }}",
                         field: "title_{{App::getLocale()}}",
                         filterable: false
                     }, {
-                        title: "Fecha",
+                        title: "{{ __('app.date') }}",
                         field: "created_at",
                         filterable: false
                     }, {
@@ -51,7 +48,7 @@
                         command: [
                             {
                                 name: "det",
-                                template: "<a class='k-grid-det btn btn-default btn-sm pe-7s-info' title='Detalles'>D</a> ",
+                                template: "<a class='k-grid-det btn btn-default btn-sm pe-7s-info' title='{{ __('app.details') }}'>D</a> ",
                                 click: function (e) {
                                     e.preventDefault();
                                     var tr = $(e.target).closest("tr");
@@ -61,7 +58,7 @@
                             },
                             {
                                 name: "edit",
-                                template: " <a class='k-grid-edit btn btn-default btn-sm pe-7s-note' title='Editar'>E</a>",
+                                template: " <a class='k-grid-edit btn btn-default btn-sm pe-7s-note' title='{{ __('app.edit') }}'>E</a>",
                                 click: function (e) {
 
                                     e.preventDefault();
@@ -72,7 +69,7 @@
                             },
                             {
                                 name: "rem",
-                                template: " <a class='k-grid-rem btn btn-danger btn-sm pe-7s-trash' title='Eliminar'>R</a>",
+                                template: " <a class='k-grid-rem btn btn-danger btn-sm pe-7s-trash' title='{{ __('app.delete') }}'>R</a>",
                                 click: function (e) {
                                     e.preventDefault();
                                     var tr = $(e.target).closest("tr");
@@ -95,8 +92,8 @@
             tb.add({
                 type: "button",
                 spriteCssClass: "fa fa-plus",
-                text: "Adicionar",
-                attributes: {"title": "Nuevo"},
+                text: "{{ __('app.add') }}",
+                attributes: {"title": "{{ __('app.add') }}"},
                 click: function () {
                     location.href="{{route("promotion.create", [App::getLocale(), "type"=>"main"])}}";
                 }
@@ -122,13 +119,12 @@
                 }
             });
             var dataView2 = utils.createKendoGrid("#grid2",
-                {
-                    columns: [{
-                        title: "Titulo [{{App::getLocale()}}]",
+                {columns: [{
+                        title: "{{ __('app.title') }}",
                         field: "title_{{App::getLocale()}}",
                         filterable: false
                     }, {
-                        title: "Fecha",
+                        title: "{{ __('app.date') }}",
                         field: "created_at",
                         filterable: false
                     }, {
@@ -136,7 +132,7 @@
                         command: [
                             {
                                 name: "det",
-                                template: "<a class='k-grid-det btn btn-default btn-sm pe-7s-info' title='Detalles'>D</a> ",
+                                template: "<a class='k-grid-det btn btn-default btn-sm pe-7s-info' title='{{ __('app.details') }}'>D</a> ",
                                 click: function (e) {
                                     e.preventDefault();
                                     var tr = $(e.target).closest("tr");
@@ -146,7 +142,7 @@
                             },
                             {
                                 name: "edit",
-                                template: " <a class='k-grid-edit btn btn-default btn-sm pe-7s-note' title='Editar'>E</a>",
+                                template: " <a class='k-grid-edit btn btn-default btn-sm pe-7s-note' title='{{ __('app.edit') }}'>E</a>",
                                 click: function (e) {
 
                                     e.preventDefault();
@@ -157,7 +153,7 @@
                             },
                             {
                                 name: "rem",
-                                template: " <a class='k-grid-rem btn btn-danger btn-sm pe-7s-trash' title='Eliminar'>R</a>",
+                                template: " <a class='k-grid-rem btn btn-danger btn-sm pe-7s-trash' title='{{ __('app.delete') }}'>R</a>",
                                 click: function (e) {
                                     e.preventDefault();
                                     var tr = $(e.target).closest("tr");
@@ -180,8 +176,8 @@
             tb2.add({
                 type: "button",
                 spriteCssClass: "fa fa-plus",
-                text: "Adicionar",
-                attributes: {"title": "Nuevo"},
+                text: "{{ __('app.add') }}",
+                attributes: {"title": "{{ __('app.add') }}"},
                 click: function () {
                     location.href="{{route("promotion.create", [App::getLocale(), "type"=>"second"])}}";
                 }

@@ -31,7 +31,7 @@
 <body>
 <div id="app">
     @include('partials.admin_navbar')
-    <main class="">
+    <main class="" style="margin: 30px 0;">
         @yield('content')
     </main>
 </div>

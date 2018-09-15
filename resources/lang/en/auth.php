@@ -18,8 +18,10 @@ return [
     'Login' => 'Login',
     'Logout' => 'Logout',
     'Register' => 'Register',
+    'Name' => 'Name',
     'E-Mail Address' => 'E-Mail Address',
     'Password' => 'Password',
+    'ConfirmPassword' => 'Confirm Password',
     'ForgotYourPassword' => 'Forgot Your Password?',
     'RememberMe' => 'Remember Me'
 

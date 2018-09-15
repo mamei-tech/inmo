@@ -417,6 +417,7 @@ section {
     cursor: pointer;
     height: 23px;
     width: 30px;
+    right: 10px;
 }
 
 .button-toggle:focus {

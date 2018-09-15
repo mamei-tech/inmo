@@ -4,7 +4,7 @@ utils = {
     lockCount: 0
 };
 
-Resources = {}
+Resources = {};
 
 function intToTimespan(v) {
     var s = v % 60;

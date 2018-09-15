@@ -18,8 +18,10 @@ return [
     'Login' => 'Iniciar sesión',
     'Logout' => 'Salir',
     'Register' => 'Registrarse',
+    'Name' => 'Nombre',
     'E-Mail Address' => 'Correo',
     'Password' => 'Contraseña',
+    'ConfirmPassword' => 'Confirmar Contraseña',
     'ForgotYourPassword' => 'Olvido su contraseña',
     'RememberMe' => 'Recordarme'
 

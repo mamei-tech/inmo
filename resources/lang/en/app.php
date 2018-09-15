@@ -10,6 +10,24 @@ return [
 
     'learn_more' => 'Learn More',
 
+    'admin' => 'Admin',
+    'promotion' => 'Promotion',
+    'main_promotion' => 'Main Promotions',
+    'second_promotion' => 'Second Promotions', //TODO Traducir esto bien
+    'title' => 'Title',
+    'date' => 'Date',
+    'details' => 'Details',
+    'delete' => 'Delete',
+    'add' => 'Add',
+    'edit' => 'Edit',
+    'create_promo' => 'Create Promo',
+    'back_to_list' => 'Back to list',
+    'title_en' => 'Title in English',
+    'title_es' => 'Title in Spanish',
+    'text_en' => 'Text in English',
+    'text_es' => 'Text in Spanish',
+    'link' => 'Link',
+    'image' => 'Image',
 
 
     'slide1-h1-1' => 'YOUR NEW HOME',
@@ -27,7 +45,7 @@ return [
     'yourEmail' => 'your email',
     'yourPhone' => 'your phone',
     'writeMe' => 'write me',
-    'send' => 'send',
+    'send' => 'Send',
     'testimonials' => 'testimonials',
     'expressOpinion' => 'you can express your opinion about my services',
     'yourtestimonials' => 'your testimonials',
