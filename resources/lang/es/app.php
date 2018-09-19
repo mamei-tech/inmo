@@ -21,6 +21,7 @@ return [
     'add' => 'Adicionar',
     'edit' => 'Editar',
     'create_promo' => 'Crear Promoción',
+    'edit_promo' => 'Editar Promoción',
     'back_to_list' => 'Volver a la lista',
     'title_en' => 'Título en Ingles',
     'title_es' => 'Título en Español',
@@ -29,6 +30,8 @@ return [
     'link' => 'Vínculo',
     'image' => 'Imagen',
 
+    'promotion_delete_success' => 'promoción eliminada satisfactoriamente',
+    'promotion_delete_confirm' => '¿Esta seguro que desea eliminar esta promoción?',
 
     'slide1-h1-1' => 'SU NUEVO HOGAR',
     'slide1-h1-2' => 'ESTÁ A UNA LLAMADA DE DISTANCIA',

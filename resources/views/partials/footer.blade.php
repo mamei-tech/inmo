@@ -37,6 +37,8 @@
 
 @push('scripts')
     <script type="text/javascript">
+        @if(!isset($inHome))
         document.querySelector(".footer .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
+        @endif
     </script>
 @endpush

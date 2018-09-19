@@ -46,8 +46,9 @@
     @foreach ($promotions as $p)
         @php $even = !$even;
         @endphp
-        <div style="background: url('../{{$p->image}}') center center / cover ">
-            <div class="{{$even?"light":"dark"}}-gray-block {{$even?"float-right":""}}">
+        <div class="promotion">
+            <img class="promotion-background" src="{{$p->ImagePath}}">
+            <div class="promotion-text {{$even?"light":"dark"}}-gray-block">
                 <h1 class="" style="margin-bottom: 15px;">{{ App::getLocale()=="es"? $p->title_es : $p->title_en }}</h1>
                 <p class="color-white">{{ App::getLocale()=="es"? $p->text_es : $p->text_en }}</p>
                 <div class="">
@@ -59,7 +60,7 @@
     @endforeach
 
     {{--Section 3--}}
-    <div class="home-section-3 row">
+    <div class="home-section-3 row" style="margin: 0">
         @foreach ($promotionsSecond as $p)
             <div class="col-lg-4 col-md-6 col-sm-12">
                 <h1 style="margin-bottom: 15px;">{{ App::getLocale()=="es"? $p->title_es : $p->title_en }}</h1>

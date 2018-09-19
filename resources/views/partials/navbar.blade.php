@@ -104,25 +104,25 @@
 </div>
 @push('scripts')
     <script type="text/javascript">
-        document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
-        document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
 
         @if(!isset($inHome))
-            var navbar = document.querySelector(".nav-bar");
-            navbar.classList.add("scrolled");
+        document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
+        document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
+        var navbar = document.querySelector(".nav-bar");
+        navbar.classList.add("scrolled");
 
-            document.addEventListener("scroll", function () {
+        document.addEventListener("scroll", function () {
 
-                if (window.prevScrollY < window.scrollY && window.scrollY > 80) {//bajando
-                    navbar.classList.add("scroll-down");
-                    navbar.classList.remove("open");
-                }
-                else //subiendo
-                    navbar.classList.remove("scroll-down");
+            if (window.prevScrollY < window.scrollY && window.scrollY > 80) {//bajando
+                navbar.classList.add("scroll-down");
+                navbar.classList.remove("open");
+            }
+            else //subiendo
+                navbar.classList.remove("scroll-down");
 
-                window.prevScrollY = window.scrollY;
+            window.prevScrollY = window.scrollY;
 
-            });
+        });
         @endif
 
         document.querySelector('.mobile-buttons .button-toggle').addEventListener("click", function () {

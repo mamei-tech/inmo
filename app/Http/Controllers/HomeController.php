@@ -16,8 +16,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $promotions = Promotion::query()->whereNotNull("image")->get();
-        $promotionsSecond = Promotion::query()->whereNull("image")->get();
+        $promotions = Promotion::query()->whereNotNull("image")->orderByDesc("created_at")->get();
+        $promotionsSecond = Promotion::query()->whereNull("image")->orderByDesc("created_at")->get();
         return view('home', compact(["promotions", "promotionsSecond"]));
     }
 }

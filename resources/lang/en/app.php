@@ -21,6 +21,7 @@ return [
     'add' => 'Add',
     'edit' => 'Edit',
     'create_promo' => 'Create Promo',
+    'edit_promo' => 'Edit Promo',
     'back_to_list' => 'Back to list',
     'title_en' => 'Title in English',
     'title_es' => 'Title in Spanish',
@@ -28,6 +29,9 @@ return [
     'text_es' => 'Text in Spanish',
     'link' => 'Link',
     'image' => 'Image',
+
+    'promotion_delete_success' => 'promotion deleted sucessfully',
+    'promotion_delete_confirm' => 'Are you sure you want delete this promotion?',
 
 
     'slide1-h1-1' => 'YOUR NEW HOME',

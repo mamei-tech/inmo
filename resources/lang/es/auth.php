@@ -23,6 +23,7 @@ return [
     'Password' => 'Contraseña',
     'ConfirmPassword' => 'Confirmar Contraseña',
     'ForgotYourPassword' => 'Olvido su contraseña',
-    'RememberMe' => 'Recordarme'
+    'RememberMe' => 'Recordarme',
+    'ChangePassword' => 'Cambiar Contraseña',
 
 ];

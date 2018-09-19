@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class DatabaseSeeder extends Seeder
 {
@@ -9,7 +10,7 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         // $this->call(UsersTableSeeder::class);
 
@@ -21,66 +22,67 @@ class DatabaseSeeder extends Seeder
             'updated_at' => new DateTime()
         ]);
 
+        factory(App\User::class, 20)->create()->each(function ($u) {
+            //$u->posts()->save(factory(App\Post::class)->make());
+        });
+
         DB::table('promotion')->insert([
             'title_es' => '¿SABES QUE?',
             'title_en' => 'DO YOU KNOW THAT?',
-            'text_es' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'text_en' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'link' => 'Antonio',
-            'image' => '/storage/promotions/O7rubZ6qjaXArZ9OcgXXOMyFU3eAkHcPtLd4mhHi.jpeg',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'image' => 'public/promotions/gbxatWeHx2daxP4NdZPbDgdrJ7alqXSfprmFPFqi.jpeg',
+            'text_es' =>  $faker->paragraph,
+            'text_en' =>  $faker->paragraph,
+            'link' => $faker->url,
+            'created_at' => '2012-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
         ]);
 
         DB::table('promotion')->insert([
             'title_es' => 'HOY ES TU DIA!',
             'title_en' => 'TODAY IS YOUR DAY!',
-            'text_es' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'text_en' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'link' => 'Antonio',
-            'image' => '/storage/promotions/oPdonVXG2jEvebYU9pcaAc0R3ser2f2iEcB3Ovh0.jpeg',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'image' => 'public/promotions/pRuKbSK0Fq34k80PYhumiDODf3MzR10PwBGqlDoF.jpeg',
+            'text_es' =>  $faker->paragraph,
+            'text_en' =>  $faker->paragraph,
+            'link' => $faker->url,
+            'created_at' => '2011-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
         ]);
 
         DB::table('promotion')->insert([
             'title_es' => 'YOUR HOME FROM THE BEACH',
             'title_en' => 'YOUR HOME FROM THE BEACH',
-            'text_es' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'text_en' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'link' => 'Antonio',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'text_es' =>  $faker->paragraph,
+            'text_en' =>  $faker->paragraph,
+            'link' => $faker->url,
+            'created_at' => $faker->dateTime,
+            'updated_at' => $faker->dateTime
         ]);
 
         DB::table('promotion')->insert([
             'title_es' => 'GREAT HOMES IN BRICKELL TO LOW PRICES',
             'title_en' => 'GREAT HOMES IN BRICKELL TO LOW PRICES',
-            'text_es' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'text_en' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'link' => 'Antonio',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'text_es' =>  $faker->paragraph,
+            'text_en' =>  $faker->paragraph,
+            'link' => $faker->url,
+            'created_at' => $faker->dateTime,
+            'updated_at' => $faker->dateTime
         ]);
 
         DB::table('promotion')->insert([
             'title_es' => 'ROLAND FRANK',
             'title_en' => 'ROLAND FRANK',
-            'text_es' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'text_en' => 'asdas as dasdas das das das dasas dasdasasas das das dasd assad asd asd asdas
-                dasdsadasdsad dasas dasd asdasdas dasas das',
-            'link' => 'Antonio',
-            'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'text_es' =>  $faker->paragraph,
+            'text_en' =>  $faker->paragraph,
+            'link' => $faker->url,
+            'created_at' => $faker->dateTime,
+            'updated_at' => $faker->dateTime
         ]);
+
+        //Ejecutar otro seeder
+       /* $this->call([
+            UsersTableSeeder::class,
+            PostsTableSeeder::class,
+            CommentsTableSeeder::class,
+        ]);*/
     }
 }

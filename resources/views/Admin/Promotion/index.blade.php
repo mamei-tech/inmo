@@ -14,13 +14,15 @@
     </div>
 @endsection
 
+
+
 @push('scripts')
     <script type="text/javascript">
         $(document).ready(function () {
 
             var dataSource = utils.createKendoDataSource({
                 type: 'aspnetmvc-ajax',
-                pageSize: 10,
+                pageSize: 5,
                 transport: {
                     read: "{{ route('promotion.readMain', [App::getLocale()]) }}",
                 },
@@ -28,7 +30,7 @@
                     data: "Data",
                     total: "Count",
                     model: {
-                        id: "Id",
+                        id: "id",
                         fields: {}
                     }
                 }
@@ -44,37 +46,28 @@
                         field: "created_at",
                         filterable: false
                     }, {
-                        width: 160,
+                        width: 120,
                         command: [
                             {
-                                name: "det",
-                                template: "<a class='k-grid-det btn btn-default btn-sm pe-7s-info' title='{{ __('app.details') }}'>D</a> ",
-                                click: function (e) {
-                                    e.preventDefault();
-                                    var tr = $(e.target).closest("tr");
-                                    var data = this.dataItem(tr);
-                                    location.href = window._baseUrl + "Countries/Details/" + data.Id;
-                                }
-                            },
-                            {
                                 name: "edit",
-                                template: " <a class='k-grid-edit btn btn-default btn-sm pe-7s-note' title='{{ __('app.edit') }}'>E</a>",
+                                template: " <a class='k-grid-edit btn btn-default btn-sm fa fa-pencil-square-o' style='height:12px;' title='{{ __('app.edit') }}'></a>",
                                 click: function (e) {
-
                                     e.preventDefault();
                                     var tr = $(e.target).closest("tr");
                                     var data = this.dataItem(tr);
-                                    location.href = window._baseUrl + "Countries/Edit/" + data.Id;
+
+                                    var href = "{{route("promotion.edit",[App::getLocale(), 0])}}";
+                                    location.href = href.replace('0' , data.id);
                                 }
                             },
                             {
                                 name: "rem",
-                                template: " <a class='k-grid-rem btn btn-danger btn-sm pe-7s-trash' title='{{ __('app.delete') }}'>R</a>",
+                                template: " <a class='k-grid-rem btn btn-default btn-sm fa fa-trash' style='height:16px;' title='{{ __('app.delete') }}'></a>",
                                 click: function (e) {
                                     e.preventDefault();
                                     var tr = $(e.target).closest("tr");
                                     var data = this.dataItem(tr);
-                                    location.href = window._baseUrl + "Countries/Delete/" + data.Id;
+                                    AppointmentConfirm(data.id);
                                 }
                             }]
                     }
@@ -85,7 +78,7 @@
 
             var tb = utils.createKendoToolBar("#tbCt", {
                 dataSource: dataSource,
-                dataModel: { },
+                dataModel: {},
                 dataView: dataView
             });
 
@@ -95,17 +88,16 @@
                 text: "{{ __('app.add') }}",
                 attributes: {"title": "{{ __('app.add') }}"},
                 click: function () {
-                    location.href="{{route("promotion.create", [App::getLocale(), "type"=>"main"])}}";
+                    location.href = "{{route("promotion.create", [App::getLocale(), "type"=>"main"])}}";
                 }
             });
             tb.addRefreshBtn();
             tb.resize();
 
 
-
             var dataSource2 = utils.createKendoDataSource({
                 type: 'aspnetmvc-ajax',
-                pageSize: 10,
+                pageSize: 5,
                 transport: {
                     read: "{{ route('promotion.read', [App::getLocale()]) }}",
                 },
@@ -113,13 +105,14 @@
                     data: "Data",
                     total: "Count",
                     model: {
-                        id: "Id",
+                        id: "id",
                         fields: {}
                     }
                 }
             });
             var dataView2 = utils.createKendoGrid("#grid2",
-                {columns: [{
+                {
+                    columns: [{
                         title: "{{ __('app.title') }}",
                         field: "title_{{App::getLocale()}}",
                         filterable: false
@@ -128,37 +121,27 @@
                         field: "created_at",
                         filterable: false
                     }, {
-                        width: 160,
+                        width: 120,
                         command: [
                             {
-                                name: "det",
-                                template: "<a class='k-grid-det btn btn-default btn-sm pe-7s-info' title='{{ __('app.details') }}'>D</a> ",
-                                click: function (e) {
-                                    e.preventDefault();
-                                    var tr = $(e.target).closest("tr");
-                                    var data = this.dataItem(tr);
-                                    location.href = window._baseUrl + "Countries/Details/" + data.Id;
-                                }
-                            },
-                            {
                                 name: "edit",
-                                template: " <a class='k-grid-edit btn btn-default btn-sm pe-7s-note' title='{{ __('app.edit') }}'>E</a>",
+                                template: " <a class='k-grid-edit btn btn-default btn-sm fa fa-pencil-square-o' style='height:12px;' title='{{ __('app.edit') }}'></a>",
                                 click: function (e) {
-
                                     e.preventDefault();
                                     var tr = $(e.target).closest("tr");
                                     var data = this.dataItem(tr);
-                                    location.href = window._baseUrl + "Countries/Edit/" + data.Id;
+                                    var href = "{{route("promotion.edit",[App::getLocale(), 0])}}";
+                                    location.href = href.replace('0' , data.id);
                                 }
                             },
                             {
                                 name: "rem",
-                                template: " <a class='k-grid-rem btn btn-danger btn-sm pe-7s-trash' title='{{ __('app.delete') }}'>R</a>",
+                                template: "<a class='k-grid-rem btn btn-default btn-sm fa fa-trash' style='height:16px;' title='{{ __('app.delete') }}'></a>",
                                 click: function (e) {
                                     e.preventDefault();
                                     var tr = $(e.target).closest("tr");
                                     var data = this.dataItem(tr);
-                                    location.href = window._baseUrl + "Countries/Delete/" + data.Id;
+                                    AppointmentConfirm(data.id);
                                 }
                             }]
                     }
@@ -169,7 +152,7 @@
 
             var tb2 = utils.createKendoToolBar("#tbCt2", {
                 dataSource: dataSource2,
-                dataModel: { },
+                dataModel: {},
                 dataView: dataView2
             });
 
@@ -179,14 +162,34 @@
                 text: "{{ __('app.add') }}",
                 attributes: {"title": "{{ __('app.add') }}"},
                 click: function () {
-                    location.href="{{route("promotion.create", [App::getLocale(), "type"=>"second"])}}";
+                    location.href = "{{route("promotion.create", [App::getLocale(), "type"=>"second"])}}";
                 }
             });
             tb2.addRefreshBtn();
             tb2.resize();
 
+            //TODO Ver idioma del alertify
+            window.AppointmentConfirm = function(appointmentId) {
+                alertify.confirm("{{ __('app.promotion_delete_confirm') }} ",
+                function(r) {
+                    var href = "{{route("promotion.destroy",[App::getLocale(), "@#id"])}}";
 
+                    if (r) {
+                        utils.ajax({
+                            method: 'post',
+                            url: href.replace("@#id" , appointmentId),
+                            data: { _method: "delete", _token: window._token},
+                            success: function(result) {
+                                if (result.success) {
+                                    dataSource.read();
+                                    dataSource2.read();
+                                    alertify.log("{{ __('app.promotion_delete_success') }}");
+                                }
+                            }
+                        });
+                    }
+                });
+            };
         });
-
     </script>
 @endpush

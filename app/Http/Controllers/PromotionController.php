@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Promotion;
 use DateTime;
+use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redirect;
@@ -11,8 +12,11 @@ use Illuminate\Support\Facades\Storage;
 
 class PromotionController extends Controller
 {
-    public function __construct()
+    protected $promotions;
+
+    public function __construct(Promotion $promotions)
     {
+        $this->promotions = $promotions;
         $this->middleware('auth');
     }
 
@@ -28,7 +32,7 @@ class PromotionController extends Controller
 
     public function create(Request $request)
     {
-        return view('Admin.Promotion.create', ["type" => $request->type, "url" => Storage::url('file.jpg')]);
+        return view('Admin.Promotion.create', ["type" => $request->type]);
     }
 
     public function readMain(Request $request)
@@ -103,10 +107,12 @@ class PromotionController extends Controller
      * @param  \App\Promotion $promotion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Promotion $promotion)
+    public function edit(string $lang, Promotion $promotion)
     {
-        //
+        $type = $promotion->image ? "main" : "second" ;
+        return view('Admin.Promotion.edit', ["type" => $type, "promotion" => $promotion]);
     }
+
 
     /**
      * Update the specified resource in storage.
@@ -115,19 +121,41 @@ class PromotionController extends Controller
      * @param  \App\Promotion $promotion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Promotion $promotion)
+    public function update(Request $request, string $lang, Promotion $promotion)
     {
-        //
+        $path = null;
+        if ($request->type == "main")
+        {
+            $uploadedImage = $request->file('image');
+            if($uploadedImage){
+                Storage::delete($promotion->image);
+                $path = $uploadedImage->store('public/promotions');
+            }
+        }
+
+        $promotion->fill([
+            'title_es' => $request->title_es,
+            'title_en' => $request->title_en,
+            'text_es' => $request->text_es,
+            'text_en' => $request->text_en,
+            'link' => $request->link,
+            'image' => $path ? $path : $promotion->image,
+            'updated_at' => new DateTime()
+        ]);
+        $promotion->save();
+
+        return Redirect::route("promotion.index", [$lang]);
     }
 
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Promotion $promotion
-     * @return \Illuminate\Http\Response
+     * @return array
+     * @throws Exception
      */
-    public function destroy(Promotion $promotion)
+    public function destroy(string $lang, Promotion $promotion)
     {
-        //
+        return ["success" => $promotion->delete()];
     }
 }

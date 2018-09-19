@@ -864,7 +864,7 @@ utils.createKendoToolBar = function (target, config) {
             spriteCssClass: "fa fa-refresh",
             text: "Refresh",
             showText: "overflow",
-            attributes: {"title": "Refrescar"},
+            attributes: {"title": "Refrescar"},//TODO Ver como cambiarle el idioma a esto
             click: function () {
                 this.options.dataSource.read();
             }
@@ -955,7 +955,7 @@ utils.createKendoGrid = function (target, config) {
     if (config.pageable !== false)
         config.pageable = {
             buttonCount: 5,
-            "messages": {
+            /*"messages": {
                 "display": "Mostrando del {0} al {1} de {2} elementos",
                 "empty": "No hay datos.",
                 "page": "Página",
@@ -967,7 +967,7 @@ utils.createKendoGrid = function (target, config) {
                 "last": "Ir a la última página",
                 "refresh": "Actualizar",
                 "morePages": "Mas paginas"
-            }
+            }*/
         };
 
     if (config.checkColumn) {
