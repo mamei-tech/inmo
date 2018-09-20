@@ -145,6 +145,8 @@ return [
         "old_password"=>"Old password",
         "new_password"=>"New password",
         "new_password_confirmation"=>"New password confirmed",
+        'logo_company' => 'Company logo',
+        'logo_personal' => 'Personal logo',
 
     ],
 

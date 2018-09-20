@@ -7,6 +7,8 @@ Route::prefix('{lang?}')->group(function () {
         Route::resources([
             "promotion" => "PromotionController"
         ]);
+        Route::get('config/logo', 'ConfigController@showConfigLogo')->name('config.logo');
+        Route::post('config/logo', 'ConfigController@configLogo');
     });
     //Route::auth();
 
@@ -15,6 +17,8 @@ Route::prefix('{lang?}')->group(function () {
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('password/set', 'Auth\ResetPasswordController@showSetForm')->name('password.set');
     Route::post('password/set', 'Auth\ResetPasswordController@setPassword');
+
+
 
     Route::get('', 'HomeController@index')->name('home');
     Route::get('admin', 'AdminController@Index')->name('admin');

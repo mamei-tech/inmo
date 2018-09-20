@@ -1,0 +1,3 @@
+window.messages = {
+    "refresh" : "Refresh"
+};

@@ -22,9 +22,9 @@ class DatabaseSeeder extends Seeder
             'updated_at' => new DateTime()
         ]);
 
-        factory(App\User::class, 20)->create()->each(function ($u) {
-            //$u->posts()->save(factory(App\Post::class)->make());
-        });
+//        factory(App\User::class, 20)->create()->each(function ($u) {
+//            //$u->posts()->save(factory(App\Post::class)->make());
+//        });
 
         DB::table('promotion')->insert([
             'title_es' => '¿SABES QUE?',

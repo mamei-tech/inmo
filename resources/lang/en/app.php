@@ -11,7 +11,7 @@ return [
     'learn_more' => 'Learn More',
 
     'admin' => 'Admin',
-    'promotion' => 'Promotion',
+    'promotion' => 'Promotions',
     'main_promotion' => 'Main Promotions',
     'second_promotion' => 'Second Promotions', //TODO Traducir esto bien
     'title' => 'Title',
@@ -32,6 +32,11 @@ return [
 
     'promotion_delete_success' => 'promotion deleted sucessfully',
     'promotion_delete_confirm' => 'Are you sure you want delete this promotion?',
+
+    'config_logo' => 'Config logo',
+    'logo' => 'Logo',
+    'config' => 'Configuration',
+    'manage' => 'Manage',
 
 
     'slide1-h1-1' => 'YOUR NEW HOME',

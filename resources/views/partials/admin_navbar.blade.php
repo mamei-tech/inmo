@@ -14,7 +14,7 @@
             </ul>
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item float-left">
+                <li class="nav-item lang-{{App::getLocale()}}">
                     @php
                         $params = Route::current()->parameters;
                         $params = array_merge($params, request()->query());
@@ -23,13 +23,13 @@
                         $params["lang"]="en";
                         $ruta_en = route(Route::currentRouteName(), $params);
                     @endphp
-                    <a class="nav-link" href="{{$ruta_en}}">ENG</a>
+                    <a class="nav-link lang-en" href="{{$ruta_en}}">ENG</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link"> /</a>
                 </li>
-                <li class="nav-item"  style="margin-right: 25px;">
-                    <a class="nav-link" href="{{$ruta_es}}">ESP</a>
+                <li class="nav-item lang-{{App::getLocale()}}"  style="margin-right: 25px;">
+                    <a class="nav-link lang-es" href="{{$ruta_es}}">ESP</a>
                 </li>
                 <!-- Authentication Links -->
                 @guest

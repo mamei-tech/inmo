@@ -864,7 +864,7 @@ utils.createKendoToolBar = function (target, config) {
             spriteCssClass: "fa fa-refresh",
             text: "Refresh",
             showText: "overflow",
-            attributes: {"title": "Refrescar"},//TODO Ver como cambiarle el idioma a esto
+            attributes: {"title": window.messages.refresh},
             click: function () {
                 this.options.dataSource.read();
             }

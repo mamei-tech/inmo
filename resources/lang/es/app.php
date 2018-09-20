@@ -33,6 +33,11 @@ return [
     'promotion_delete_success' => 'promoción eliminada satisfactoriamente',
     'promotion_delete_confirm' => '¿Esta seguro que desea eliminar esta promoción?',
 
+    'config_logo' => 'Configurar logotipo',
+    'logo' => 'Logotipo',
+    'config' => 'Configuración',
+    'manage' => 'Administrar',
+
     'slide1-h1-1' => 'SU NUEVO HOGAR',
     'slide1-h1-2' => 'ESTÁ A UNA LLAMADA DE DISTANCIA',
     'slide1-h2' => '¡llámame hoy!',

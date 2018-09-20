@@ -15,6 +15,7 @@
     <script src="{{ asset('js/kendo/kendo.all.min.js') }}"></script>
     <script src="{{ asset('js/kendo/kendo.culture.'.App::getLocale().'.min.js') }}"></script>
     <script src="{{ asset('js/kendo/kendo.messages.'.App::getLocale().'.min.js') }}"></script>
+    <script src="{{ asset('js/messages.'.App::getLocale().'.js') }}"></script>
     <script src="{{ asset('js/kendo/kendo.aspnetmvc.min.js') }}"></script>
     <script src="{{ asset('js/underscore.min.js') }}"></script>
     <script src="{{ asset('js/alertify.js') }}"></script>

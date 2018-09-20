@@ -1,6 +1,27 @@
-@font-face {
-    font-family: 'FontAwesome';
-    src: url('../fonts/FontAwesome.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
+.navbar .navbar-nav .lang-es .nav-link.lang-es, .navbar .navbar-nav .lang-en .nav-link.lang-en {
+    color: #0277BD;
+    font-weight: bold;
+}
+
+.container-btn-links{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s 0s ease-in-out;
+}
+
+.container-btn-links:hover{
+    background-color: #005cbf;
+    color:white;
+}
+
+.container-btn a{
+    color:inherit;
+}
+
+.container-btn a:hover{
+    text-decoration: none;
+    color:inherit;
 }

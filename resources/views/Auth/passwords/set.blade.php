@@ -43,6 +43,7 @@
                                     @endif
                                 </div>
                             </div>
+
                             <div class="form-group row">
                                 <label for="new_password_confirmation"
                                        class="col-md-3 col-form-label text-md-right">{{ __('validation.attributes.new_password_confirmation') }}</label>

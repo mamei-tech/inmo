@@ -144,6 +144,8 @@ return [
     'attributes' => [
         "old_password"=>"Contraseña anterior",
         "new_password"=>"Contraseña nueva",
-        "new_password_confirmation"=>"Confirmar nueva contraseña"
+        "new_password_confirmation"=>"Confirmar nueva contraseña",
+        'logo_company' => 'Logo de la compañía',
+        'logo_personal' => 'Logo personal',
     ],
 ];

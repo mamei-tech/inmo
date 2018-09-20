@@ -124,7 +124,7 @@
                                 </div>
                                 <div  class="form-group row">
                                     <div class="col-md-12">
-                                        <img style="width: 100%" src="{{$promotion->ImagePath  }}"/>
+                                        <img class="img-thumbnail" style="width: 100%" src="{{$promotion->ImagePath  }}"/>
                                     </div>
                                 </div>
 
@@ -132,7 +132,7 @@
 
 
                             <div class="form-group row mb-0">
-                                <div class="col-md-9 offset-md-4">
+                                <div class="col-md-9 offset-md-3">
                                     <button type="submit" class="btn btn-primary">
                                         {{ __('app.send') }}
                                     </button>

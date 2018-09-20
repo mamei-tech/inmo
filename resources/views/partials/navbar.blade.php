@@ -4,10 +4,10 @@
     <div class="container" style="position: relative;">
         <div class="brand-ct">
             <div class="brand-img">
-                <img src="../images/borroto.png">
+                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/personal.png')  }}?{{time()}}"/>
             </div>
             <div class="brand-subimg">
-                <img src="../images/colfax.png">
+                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}?{{time()}}"/>
             </div>
         </div>
         <div class="menu-ct pc">
@@ -45,7 +45,7 @@
             <ul>
                 <div class="phone-lang-buttons">
                     <div class="brand-subimg">
-                        <img src="../images/colfax.png">
+                        <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}?{{time()}}"/>
                     </div>
                     <li class="lang-{{App::getLocale()}}">
                         <a class="lang-en hvr-underline-from-center"
