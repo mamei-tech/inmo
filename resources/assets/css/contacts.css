@@ -9,10 +9,10 @@
     text-align: right;
 }
 
-.contact-section-0 div:first-child {
+.contact-section-0 > div:first-child {
     flex: 1;
 }
-.contact-section-0 div:last-child {
+.contact-section-0 > div:last-child {
     flex: 1;
     padding-left: 150px;
 }
@@ -23,9 +23,6 @@
 
 .contact-section-0 .form-group{
     margin-bottom: 20px;
-}
-
-.contact-section-0 .form-control{
 }
 
 .container-social-buttom{
@@ -66,27 +63,29 @@
 
 @media (max-width: 1249px) {
     .contact-section-0 {
-        /*background: url('../images/md/10.jpg') top center /cover;*/
         padding: 50px 100px;
     }
 
-    .contact-section-0 div:first-child {
+    .contact-section-0 > div:last-child {
+        padding-left: 50px;
+    }
+
+    .contact-section-0 > div:first-child {
         flex: 1;
     }
 }
 
 @media (max-width: 960px) {
     .contact-section-0 {
-        background: url('../images/sm/10.jpg') top center /cover;
         padding: 30px;
         height: 560px;
         text-align: center;
     }
 
-    .contact-section-0 div:first-child {
+    .contact-section-0 > div:first-child {
         flex: 0;
     }
-    .contact-section-0 div:last-child {
+    .contact-section-0 > div:last-child {
         padding-left: 0;
     }
 

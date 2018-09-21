@@ -12,6 +12,7 @@
 
     {{--Section light gray--}}
     <div class="container-ligh-gray">
+        <img class="container-ligh-gray-background" src="/images/lg/9.jpg">
         <div class="light-gray-block float-right">
             <h1>@lang('app.brickell')</h1>
             <h2>@lang('app.moreThanCommunity')</h2>
@@ -62,6 +63,7 @@
 
     {{--Section dark gray--}}
     <div class="container-dark-gray">
+        <img class="container-dark-gray-background" src="/images/lg/10.jpg">
         <div class="dark-gray-block">
             <h1>@lang('app.downtownMiami')</h1>
             <h2>@lang('app.magicCity')</h2>

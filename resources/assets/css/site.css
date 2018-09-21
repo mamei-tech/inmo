@@ -704,3 +704,7 @@ section {
     background-repeat: no-repeat;
     background-size: cover !important;
 }
+
+textarea {
+    resize: none;
+}

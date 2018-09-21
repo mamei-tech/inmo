@@ -26,7 +26,7 @@
                 </div>
                 <div class="form-group">
                 <textarea rows="3" class="form-control" name="writeMe" required=""
-                          placeholder="@lang('app.writeMe')"></textarea>
+                          placeholder="@lang('app.writeMe')" ></textarea>
                 </div>
 
                 <div class="container-social-buttom">

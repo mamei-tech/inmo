@@ -54,7 +54,7 @@ class DatabaseSeeder extends Seeder
             'text_es' =>  $faker->paragraph,
             'text_en' =>  $faker->paragraph,
             'link' => $faker->url,
-            'created_at' => $faker->dateTime,
+            'created_at' => '2011-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
 
@@ -64,7 +64,7 @@ class DatabaseSeeder extends Seeder
             'text_es' =>  $faker->paragraph,
             'text_en' =>  $faker->paragraph,
             'link' => $faker->url,
-            'created_at' => $faker->dateTime,
+            'created_at' => '2010-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
 
@@ -74,7 +74,7 @@ class DatabaseSeeder extends Seeder
             'text_es' =>  $faker->paragraph,
             'text_en' =>  $faker->paragraph,
             'link' => $faker->url,
-            'created_at' => $faker->dateTime,
+            'created_at' => '2009-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
 

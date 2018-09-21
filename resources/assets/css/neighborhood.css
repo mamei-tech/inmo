@@ -1,9 +1,18 @@
-.container-ligh-gray {
-    background: url("../images/lg/9.jpg") top center /cover;
+.container-ligh-gray,
+.container-dark-gray{
+    position: relative;
+    overflow: hidden;
 }
 
-.container-dark-gray {
-    background: url("../images/lg/10.jpg") top center /cover;
+.container-ligh-gray .container-ligh-gray-background,
+.container-dark-gray .container-dark-gray-background {
+    position: absolute;
+    transition: all 0.4s 0s ease-in-out;
+}
+
+.container-ligh-gray:hover .container-ligh-gray-background ,
+.container-dark-gray:hover .container-dark-gray-background {
+    transform: scale(1.1);
 }
 
 .light-gray-block,
@@ -206,14 +215,6 @@
 }
 
 @media (max-width: 1249px) {
-    .container-ligh-gray {
-        background: url("../images/md/11.jpg") top center /cover;
-    }
-
-    .container-dark-gray {
-        background: url("../images/md/12.jpg") top center /cover;
-    }
-
     .light-gray-block,
     .dark-gray-block {
         width: 100%;
@@ -267,13 +268,7 @@
 }
 
 @media (max-width: 960px) {
-    .container-ligh-gray {
-        background: url("../images/sm/11.jpg") top center /cover;
-    }
 
-    .container-dark-gray {
-        background: url("../images/sm/12.jpg") top center /cover;
-    }
 
     .light-gray-block,
     .dark-gray-block {
@@ -300,30 +295,30 @@
         columns: 1;
     }
 
-    /*.first-img-brickell {*/
-        /*height: 314px;*/
+    .first-img-brickell {
+        height: 314px;
         /*background: url("../images/sm/13.jpg") top center /cover;*/
-    /*}*/
+    }
 
-    /*.second-img-brickell {*/
-        /*height: 314px;*/
+    .second-img-brickell {
+        height: 314px;
         /*background: url("../images/sm/14.jpg") top center /cover;*/
-    /*}*/
+    }
 
-   /*.thirth-img-brickell {*/
-        /*height: 314px;*/
+   .thirth-img-brickell {
+        height: 314px;
         /*background: url("../images/sm/15.jpg") top center /cover;*/
-    /*}*/
+    }
 
-    /*.first-img-downtown {*/
-        /*height: 314px;*/
+    .first-img-downtown {
+        height: 314px;
         /*background: url("../images/sm/16.jpg") top center /cover;*/
-    /*}*/
+    }
 
-    /*.second-img-downtown {*/
-        /*height: 314px;*/
+    .second-img-downtown {
+        height: 314px;
         /*background: url("../images/sm/17.jpg") top center /cover;*/
-    /*}*/
+    }
 
     .thirth-img-downtown {
         height: 314px;
