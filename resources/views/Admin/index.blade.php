@@ -28,7 +28,7 @@
             <div class="col-md-3 container-btn">
                 <a href="{{ route('slider.index', [App::getLocale()]) }}">
                     <div class="container-btn-links">
-                        <span class="fa fa-3x fa-tags"></span>
+                        <span class="fa fa-3x fa-sliders"></span>{{--object-ungroup--}}
                         <span style="font-size: 20px;">{{ __('app.slider') }}</span>
                     </div>
                 </a>
