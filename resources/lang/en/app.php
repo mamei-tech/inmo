@@ -15,6 +15,7 @@ return [
     'main_promotion' => 'Main Promotions',
     'second_promotion' => 'Second Promotions', //TODO Traducir esto bien
     'title' => 'Title',
+    'subtitle' => 'Subtitle',
     'date' => 'Date',
     'details' => 'Details',
     'delete' => 'Delete',
@@ -25,6 +26,8 @@ return [
     'back_to_list' => 'Back to list',
     'title_en' => 'Title in English',
     'title_es' => 'Title in Spanish',
+    'subtitle_en' => 'Subtitle in English',
+    'subtitle_es' => 'Subtitle in Spanish',
     'text_en' => 'Text in English',
     'text_es' => 'Text in Spanish',
     'link' => 'Link',
@@ -38,6 +41,12 @@ return [
     'config' => 'Configuration',
     'manage' => 'Manage',
 
+
+    'create_slider' => 'Create Slide',
+    'edit_slider' => 'Edit Slide',
+    'slider' => 'Slider',
+    'slider_delete_success' => 'slide deleted sucessfully',
+    'slider_delete_confirm' => 'Are you sure you want delete this slide?',
 
     'slide1-h1-1' => 'YOUR NEW HOME',
     'slide1-h1-2' => 'IS A PHONE CALL AWAY',
