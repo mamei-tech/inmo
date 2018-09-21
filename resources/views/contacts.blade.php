@@ -7,7 +7,7 @@
 @endpush
 
 @section('content')
-    <div class="contact-section-0">
+    <div class="contact-section-0 img-parallax">
         <div></div>
         <div>
             <h1>@lang('app.contactMe')</h1>
@@ -93,7 +93,6 @@
                 </div>
             </form>
         </div>
-
     </div>
     <div class="contact-section-testimonials">
         <div>
