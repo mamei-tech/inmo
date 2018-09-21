@@ -13,8 +13,7 @@
 }
 
 .container-btn-links:hover{
-    background-color: #005cbf;
-    color:white;
+    background-color: rgb(228, 228, 228);
 }
 
 .container-btn a{
