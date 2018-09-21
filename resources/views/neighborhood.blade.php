@@ -36,7 +36,8 @@
             <p class="color-gray display-mobile">@lang('app.firstTextBrickellMobile')</p>
         </div>
 
-        <div class="first-img-brickell"></div>
+        <div class="first-img-brickell img-parallax">
+        </div>
 
         <div class="text-brickell">
             <p class="color-gray display-pc">@lang('app.secondTextBrickell')</p>
@@ -44,7 +45,7 @@
             <p class="color-gray display-mobile">@lang('app.secondTextBrickellMobile')</p>
         </div>
 
-        <div class="second-img-brickell"></div>
+        <div class="second-img-brickell img-parallax"></div>
 
         <div class="text-brickell">
             <p class="color-gray column-especial display-pc">@lang('app.thirthTextBrickell')</p>
@@ -52,7 +53,7 @@
             <p class="color-gray display-mobile">@lang('app.thirthTextBrickellMobile')</p>
         </div>
 
-        <div class="thirth-img-brickell"></div>
+        <div class="thirth-img-brickell img-parallax"></div>
 
         <div class="text-brickell display-mobile">
             <p class="color-gray">@lang('app.fourthTextBrickellMobile')</p>
@@ -84,7 +85,7 @@
             <p class="color-gray display-mobile">@lang('app.firstTextDowntownMobile')</p>
         </div>
 
-        <div class="first-img-downtown"></div>
+        <div class="first-img-downtown img-parallax"></div>
 
         <div class="text-brickell">
             <p class="color-gray display-pc column-especial">@lang('app.secondTextDowntown')</p>
@@ -92,7 +93,7 @@
             <p class="color-gray display-mobile">@lang('app.secondTextDowntownMobile')</p>
         </div>
 
-        <div class="second-img-downtown"></div>
+        <div class="second-img-downtown img-parallax"></div>
 
         <div class="text-brickell display-mobile">
             <p class="color-gray display-pc column-especial">@lang('app.thirthTextDowntown')</p>
@@ -100,7 +101,7 @@
             <p class="color-gray display-mobile">@lang('app.thirthTextDowntownMobile')</p>
         </div>
 
-        <div class="thirth-img-downtown display-mobile"></div>
+        <div class="thirth-img-downtown img-parallax display-mobile"></div>
 
         <div class="text-brickell display-mobile">
             <p class="color-gray">@lang('app.fourthTextDowntownMobile')</p>

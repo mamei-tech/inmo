@@ -14,7 +14,5 @@ $(document).ready(function () {
             else
                 $('.container-open-dark-gray').slideUp();
         }
-
-
     })
 });

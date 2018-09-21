@@ -697,3 +697,10 @@ section {
         display: block;
     }
 }
+
+.img-parallax{
+    background-attachment: fixed !important;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+}

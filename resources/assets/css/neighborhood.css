@@ -182,27 +182,27 @@
 
 .first-img-brickell {
     height: 384px;
-    background: url("../images/lg/11.jpg") top center /cover;
+    background-image: url("../images/lg/11.jpg");
 }
 
 .second-img-brickell {
     height: 384px;
-    background: url("../images/lg/12.jpg") top center /cover;
+    background-image: url("../images/lg/12.jpg");
 }
 
 .thirth-img-brickell {
     height: 384px;
-    background: url("../images/lg/13.jpg") top center /cover;
+    background-image: url("../images/lg/13.jpg");
 }
 
 .first-img-downtown {
     height: 384px;
-    background: url("../images/lg/14.jpg") top center /cover;
+    background-image: url("../images/lg/14.jpg");
 }
 
 .second-img-downtown {
     height: 384px;
-    background: url("../images/lg/15.jpg") top center /cover;
+    background-image: url("../images/lg/15.jpg");
 }
 
 @media (max-width: 1249px) {
@@ -245,25 +245,25 @@
         column-gap: 25px;
     }
 
-   .first-img-brickell {
-        background: url("../images/md/13.jpg") top center /cover;
-    }
+   /*.first-img-brickell {*/
+       /*background-image: url("../images/md/13.jpg");*/
+    /*}*/
 
-    .second-img-brickell {
-        background: url("../images/md/14.jpg") top center /cover;
-    }
+    /*.second-img-brickell {*/
+        /*background: url("../images/md/14.jpg") top center /cover;*/
+    /*}*/
 
-   .thirth-img-brickell {
-        background: url("../images/md/15.jpg") top center /cover;
-    }
+   /*.thirth-img-brickell {*/
+        /*background: url("../images/md/15.jpg") top center /cover;*/
+    /*}*/
 
-    .first-img-downtown {
-        background: url("../images/md/16.jpg") top center /cover;
-    }
+    /*.first-img-downtown {*/
+        /*background: url("../images/md/16.jpg") top center /cover;*/
+    /*}*/
 
-    .second-img-downtown {
-          background: url("../images/md/17.jpg") top center /cover;
-    }
+    /*.second-img-downtown {*/
+          /*background: url("../images/md/17.jpg") top center /cover;*/
+    /*}*/
 }
 
 @media (max-width: 960px) {
@@ -300,33 +300,33 @@
         columns: 1;
     }
 
-    .first-img-brickell {
-        height: 314px;
-        background: url("../images/sm/13.jpg") top center /cover;
-    }
+    /*.first-img-brickell {*/
+        /*height: 314px;*/
+        /*background: url("../images/sm/13.jpg") top center /cover;*/
+    /*}*/
 
-    .second-img-brickell {
-        height: 314px;
-        background: url("../images/sm/14.jpg") top center /cover;
-    }
+    /*.second-img-brickell {*/
+        /*height: 314px;*/
+        /*background: url("../images/sm/14.jpg") top center /cover;*/
+    /*}*/
 
-   .thirth-img-brickell {
-        height: 314px;
-        background: url("../images/sm/15.jpg") top center /cover;
-    }
+   /*.thirth-img-brickell {*/
+        /*height: 314px;*/
+        /*background: url("../images/sm/15.jpg") top center /cover;*/
+    /*}*/
 
-    .first-img-downtown {
-        height: 314px;
-        background: url("../images/sm/16.jpg") top center /cover;
-    }
+    /*.first-img-downtown {*/
+        /*height: 314px;*/
+        /*background: url("../images/sm/16.jpg") top center /cover;*/
+    /*}*/
 
-    .second-img-downtown {
-        height: 314px;
-        background: url("../images/sm/17.jpg") top center /cover;
-    }
+    /*.second-img-downtown {*/
+        /*height: 314px;*/
+        /*background: url("../images/sm/17.jpg") top center /cover;*/
+    /*}*/
 
     .thirth-img-downtown {
         height: 314px;
-        background: url("../images/sm/18.jpg") top center /cover;
+        background-image: url("../images/sm/18.jpg");
     }
 }

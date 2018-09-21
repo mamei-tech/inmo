@@ -6,7 +6,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <div class="first-slide"></div>
+            <div class="first-slide img-parallax"></div>
             <div class="container">
                 <div class="carousel-caption">
                     <h1>@lang('app.slide1-h1-1')</h1>
@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <div class="second-slide"></div>
+            <div class="second-slide img-parallax"></div>
             <div class="container">
                 <div class="carousel-caption">
                     <h1>@lang('app.slide2-h1-1')</h1>
@@ -26,7 +26,7 @@
             </div>
         </div>
         <div class="carousel-item">
-            <div class="third-slide"></div>
+            <div class="third-slide img-parallax"></div>
             <div class="container">
                 <div class="carousel-caption">
                     <h1>@lang('app.slide3-h1-1')</h1>
