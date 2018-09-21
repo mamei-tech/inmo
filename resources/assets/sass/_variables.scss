@@ -20,18 +20,27 @@ $teal: #4dc0b5;
 $cyan: #6cb2eb;
 $grid-gutter-width: 20;
 
+
+/*breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;*/
+
 //Grid tiers
 $grid-breakpoints: (
   xs: 0,
   sm: 360px,
   md: 960px,
-  lg: 1250px
+  lg: 960px,
+  xl: 1250px
 );
 
 $container-max-widths: (
   sm: 300px,
   md: 900px,
-  lg: 1190px
+  lg: 900px,
+  xl: 1190px
 );
 
 $grid-gutter-width: 30px !default;
