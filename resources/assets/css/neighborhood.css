@@ -325,3 +325,17 @@
         background-image: url("../images/sm/18.jpg");
     }
 }
+
+.link-sales{
+    transition: all 0.2s 0s ease-in-out;
+}
+
+.link-sales:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.link-sales > a{
+    color: inherit;
+    text-decoration: none;
+}

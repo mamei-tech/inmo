@@ -40,6 +40,7 @@ return [
     'logo' => 'Logo',
     'config' => 'Configuration',
     'manage' => 'Manage',
+    'success_logo_change' => 'logo changed sucessfully',
 
 
     'create_slider' => 'Create Slide',

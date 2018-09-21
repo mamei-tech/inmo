@@ -18,9 +18,9 @@
             <h2>@lang('app.moreThanCommunity')</h2>
 
             <div class="container-sales">
-                <h2 class="color-yellow">@lang('app.sales')</h2>
+                <h2 class="color-yellow link-sales"><a href="#">@lang('app.sales')</a></h2>
                 <h2 class="color-yellow">/</h2>
-                <h2 class="color-yellow">@lang('app.rentals')</h2>
+                <h2 class="color-yellow link-sales"><a href="#">@lang('app.rentals')</a></h2>
             </div>
 
             <div class="arrow-floating light-block">
@@ -69,9 +69,9 @@
             <h2>@lang('app.magicCity')</h2>
 
             <div class="container-sales">
-                <h2 class="color-yellow">@lang('app.sales')</h2>
+                <h2 class="color-yellow link-sales"><a href="#">@lang('app.sales')</a></h2>
                 <h2 class="color-yellow">/</h2>
-                <h2 class="color-yellow">@lang('app.rentals')</h2>
+                <h2 class="color-yellow link-sales"><a href="#">@lang('app.rentals')</a></h2>
             </div>
 
             <div class="arrow-floating dark-block">

@@ -40,6 +40,7 @@ return [
     'logo' => 'Logotipo',
     'config' => 'Configuración',
     'manage' => 'Administrar',
+    'success_logo_change' => 'logotipo cambiado satisfactoriamente',
 
     'create_slider' => 'Crear Slide',
     'edit_slider' => 'Editar Slide',
