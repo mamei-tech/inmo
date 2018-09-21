@@ -62,7 +62,7 @@
     {{--Section 3--}}
     <div class="home-section-3 row" style="margin: 0">
         @foreach ($promotionsSecond as $p)
-            <div class="col-lg-4 col-md-6 col-sm-12">
+            <div class="col-xl-4 col-md-6 col-sm-12">
                 <h1 style="margin-bottom: 15px;">{{ App::getLocale()=="es"? $p->title_es : $p->title_en }}</h1>
                 <p class="color-gray">{{ App::getLocale()=="es"? $p->text_es : $p->text_en }}</p>
                 <a href="{{$p->link}}" class="btn btn-gray">{{__('app.learn_more')}}</a>

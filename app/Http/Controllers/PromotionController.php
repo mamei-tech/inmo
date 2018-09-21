@@ -81,7 +81,7 @@ class PromotionController extends Controller
                 'text_es' => $request->text_es,
                 'text_en' => $request->text_en,
                 'link' => $request->link,
-                'image' => $path ? Storage::url($path) : null,
+                'image' => $path ? $path : null,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             ]
@@ -156,6 +156,9 @@ class PromotionController extends Controller
      */
     public function destroy(string $lang, Promotion $promotion)
     {
-        return ["success" => $promotion->delete()];
+        $success = $promotion->delete();
+        if ($success)
+            Storage::delete($promotion->image);
+        return ["success" => $success];
     }
 }

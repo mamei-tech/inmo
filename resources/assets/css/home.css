@@ -69,48 +69,10 @@
     }
 }
 
-.first-slide {
-    height: 100vh;
-    background: url("../images/lg/1.jpg") top center /cover;
-}
-
-.second-slide {
-    height: 100vh;
-    background: url("../images/lg/2.jpg") top center /cover;
-}
-
+.first-slide,
+.second-slide,
 .third-slide {
     height: 100vh;
-    background: url("../images/lg/3.jpg") top center /cover;
-}
-
-@media (max-width: 1249px) {
-    .first-slide {
-        background: url("../images/md/1.jpg") top center /cover;
-    }
-
-    .second-slide {
-        background: url("../images/md/2.jpg") top center /cover;
-    }
-
-    .third-slide {
-        background: url("../images/md/3.jpg") top center /cover;
-    }
-}
-
-@media (max-width: 960px) {
-
-    .first-slide {
-        background: url("../images/sm/1.jpg") top center /cover;
-    }
-
-    .second-slide {
-        background: url("../images/sm/2.jpg") top center /cover;
-    }
-
-    .third-slide {
-        background: url("../images/sm/3.jpg") top center /cover;
-    }
 }
 
 /*Fin slider*/
@@ -180,6 +142,7 @@
 .promotion {
     position: relative;
     overflow: hidden;
+    height: 384px;
 }
 
 .promotion .promotion-text {
@@ -257,6 +220,10 @@
         padding: 20px 30px 20px 30px;
         align-items: center;
         text-align: center;
+    }
+
+    .promotion {
+        height: 320px;
     }
 
     .promotion-background {

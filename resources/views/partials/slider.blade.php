@@ -1,40 +1,37 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    @php
+        $first = true;
+        $count = 0;
+    @endphp
+
     <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+        @foreach ($sliders as $s)
+            <li data-target="#myCarousel" data-slide-to="{{$count }}" class="{{$first ? "active" : ""}}"></li>
+            @php
+                $first = false;
+                $count++;
+            @endphp
+        @endforeach
     </ol>
+
+    @php $first = true;
+    @endphp
+
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="first-slide img-parallax"></div>
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>@lang('app.slide1-h1-1')</h1>
-                    <h1>@lang('app.slide1-h1-2')</h1>
-                    <h2 style="padding-top: 25px;">@lang('app.slide1-h2')</h2>
+        @foreach ($sliders as $s)
+            <div class="carousel-item {{$first ? "active" : ""}}">
+                <div style="background: url({{$s->ImagePath}}) top center /cover;"
+                     class="first-slide img-parallax"></div>
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>{{ App::getLocale()=="es"? $s->title_es : $s->title_en }}</h1>
+                        <h2 style="padding-top: 25px;">{{ App::getLocale()=="es"? $s->subtitle_es : $s->subtitle_en }}</h2>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item">
-            <div class="second-slide img-parallax"></div>
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>@lang('app.slide2-h1-1')</h1>
-                    <h1>@lang('app.slide2-h1-2')</h1>
-                    <h2 style="padding-top: 25px;">@lang('app.slide2-h2')</h2>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="third-slide img-parallax"></div>
-            <div class="container">
-                <div class="carousel-caption">
-                    <h1>@lang('app.slide3-h1-1')</h1>
-                    <h1>@lang('app.slide3-h1-2')</h1>
-                    <h2 style="padding-top: 25px;">@lang('app.slide3-h2')</h2>
-                </div>
-            </div>
-        </div>
+            @php $first = false;
+            @endphp
+        @endforeach
     </div>
 </div>
 

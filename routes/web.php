@@ -7,6 +7,10 @@ Route::prefix('{lang?}')->group(function () {
         Route::resources([
             "promotion" => "PromotionController"
         ]);
+        Route::any('slider/read', 'SliderController@read')->name('slider.read');
+        Route::resources([
+            "slider" => "SliderController"
+        ]);
         Route::get('config/logo', 'ConfigController@showConfigLogo')->name('config.logo');
         Route::post('config/logo', 'ConfigController@configLogo');
     });

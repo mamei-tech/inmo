@@ -17,5 +17,7 @@ class VerifyCsrfToken extends Middleware
         "en/admin/promotion/read",
         "es/admin/promotion/readMain",
         "en/admin/promotion/readMain",
+        "es/admin/slider/read",
+        "en/admin/slider/read",
     ];
 }

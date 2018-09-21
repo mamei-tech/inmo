@@ -1,23 +1,23 @@
 @extends("layouts.admin")
 
-@section("title", __('app.create_promo'))
+@section("title", __('app.create_slider'))
 
 @section("content")
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">{{ __('app.create_promo') }}</div>
+                    <div class="card-header">{{ __('app.create_slider') }}</div>
 
                     <div class="card-body">
 
                         <div style="margin-bottom: 20px;">
-                            <a href="{{route("promotion.index", [App::getLocale()])}}">{{ __('app.back_to_list') }}</a>
+                            <a href="{{route("slider.index", [App::getLocale()])}}">{{ __('app.back_to_list') }}</a>
                         </div>
 
-                        <form method="POST" enctype="multipart/form-data" action="{{route("promotion.store", [App::getLocale()])}}" aria-label="{{ __('auth.create_promo') }}">
+                        <form method="POST" enctype="multipart/form-data" action="{{route("slider.store", [App::getLocale()])}}">
                             @csrf
-                            <input name="type" type="hidden" value="{{$type}}"/>
+
                             <div class="form-group row">
                                 <label for="title_en" class="col-md-3 col-form-label text-md-right">{{ __('app.title_en') }}</label>
 
@@ -47,48 +47,32 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="text_en" class="col-md-3 col-form-label text-md-right">{{ __('app.text_en') }}</label>
+                                <label for="subtitle_en" class="col-md-3 col-form-label text-md-right">{{ __('app.subtitle_en') }}</label>
 
                                 <div class="col-md-9">
-                                    <textarea id="text_en" type="text" class="form-control{{ $errors->has('text_en') ? ' is-invalid' : '' }}" name="text_en" value="{{ old('text_en') }}" rows="5" required></textarea>
-                                    @if ($errors->has('text_en'))
+                                    <textarea id="subtitle_en" type="text" class="form-control{{ $errors->has('subtitle_en') ? ' is-invalid' : '' }}" name="subtitle_en" value="{{ old('subtitle_en') }}" rows="5" required></textarea>
+                                    @if ($errors->has('subtitle_en'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('text_en') }}</strong>
+                                        <strong>{{ $errors->first('subtitle_en') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
 
                             <div class="form-group row">
-                                <label for="text_es" class="col-md-3 col-form-label text-md-right">{{ __('app.text_es') }}</label>
+                                <label for="subtitle_es" class="col-md-3 col-form-label text-md-right">{{ __('app.subtitle_es') }}</label>
 
                                 <div class="col-md-9">
-                                    <textarea id="text_es" type="text" class="form-control{{ $errors->has('text_es') ? ' is-invalid' : '' }}" name="text_es" value="{{ old('text_es') }}" rows="5" required></textarea>
-                                    @if ($errors->has('text_es'))
+                                    <textarea id="subtitle_es" type="text" class="form-control{{ $errors->has('subtitle_es') ? ' is-invalid' : '' }}" name="subtitle_es" value="{{ old('subtitle_es') }}" rows="5" required></textarea>
+                                    @if ($errors->has('subtitle_es'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('text_es') }}</strong>
+                                        <strong>{{ $errors->first('subtitle_es') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
-
 
                             <div class="form-group row">
-                                <label for="link" class="col-md-3 col-form-label text-md-right">{{ __('app.link') }}</label>
-
-                                <div class="col-md-9">
-                                    <input id="link" type="url" class="form-control{{ $errors->has('link') ? ' is-invalid' : '' }}" name="link" value="{{ old('link') }}" required>
-
-                                    @if ($errors->has('link'))
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('link') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            @if($type=="main")
-                                <div class="form-group row">
                                 <label for="image" class="col-md-3 col-form-label text-md-right">{{ __('app.image') }}</label>
 
                                 <div class="col-md-9">
@@ -101,7 +85,7 @@
                                     @endif
                                 </div>
                             </div>
-                            @endif
+
 
 
                             <div class="form-group row mb-0">

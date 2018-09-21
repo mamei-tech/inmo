@@ -78,6 +78,36 @@ class DatabaseSeeder extends Seeder
             'updated_at' => $faker->dateTime
         ]);
 
+        DB::table('slider')->insert([
+            'title_es' => 'SU NUEVO HOGAR ESTÁ A UNA LLAMADA DE DISTANCIA',
+            'title_en' => 'YOUR NEW HOME IS A PHONE CALL AWAY',
+            'subtitle_es' => '¡llámame hoy!',
+            'subtitle_en' => 'call me today!',
+            'image' => 'public/slider/imZeGxGdGZP4otEOWIWXpjUEnwQOred1KKqttQO8.jpeg',
+            'created_at' => '2013-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
+        DB::table('slider')->insert([
+            'title_es' => 'USTED PUEDE VIVIR EN LO MEJOR DE MIAMI ',
+            'title_en' => 'YOU CAN LIVE IN THE BEST OF MIAMI',
+            'subtitle_es' => 'Pagando los mejores precios',
+            'subtitle_en' => 'paying the best prices',
+            'image' => 'public/slider/TAldvs7Bg09wpx1gtdQf8vcpmjMOCc2VLVl8tp40.jpeg',
+            'created_at' => '2012-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
+        DB::table('slider')->insert([
+            'title_es' => 'DISFRUTA DE LAS MEJORES VISTAS DE UN VERANO',
+            'title_en' => 'ENJOY THE BEST VIEWS OF A SUMMER',
+            'subtitle_es' => 'que dura todo el año',
+            'subtitle_en' => 'that last the entire year',
+            'image' => 'public/slider/vUTpLRNrau2YhlOP7rC1mcSTMg4J4zUxQ8QISuhB.jpeg',
+            'created_at' => '2011-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
         //Ejecutar otro seeder
        /* $this->call([
             UsersTableSeeder::class,
