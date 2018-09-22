@@ -1,0 +1,171 @@
+
+/*about_me-section-0*/
+.about-me-section-0 {
+    height: 100vh;
+    background: url('../images/lg/1.jpg') top center /cover;
+    padding: 50px 120px;
+}
+
+.container-about-me{
+    float: right;
+    width: 595px;
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    height: 100%;
+}
+
+.about-me-section-0 h3{
+    padding: 15px 0 20px;
+}
+
+.about-me-pagination{
+    text-align: left;
+    color: rgb(228,228,228);
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.info-about-me-mobile,
+.pagination-mobile{
+    display: none;
+}
+
+.info-about-me-pc,
+.pagination-pc{
+    display: block;
+}
+
+.bio{
+    margin: 30px 0;
+    flex: auto;
+}
+
+.bio > p{
+    columns: 2;
+    margin-bottom: 0;
+}
+
+.info-about-me-pc > div{
+    margin-bottom: 10px;
+}
+
+.social-media{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+.social-media > div{
+    flex: 1;
+}
+
+.social-media > div:first-child{
+    text-align: left;
+}
+
+.social-media > div:first-child a{
+    margin-right: 30px;
+}
+
+.social-media > div:first-child a:last-child{
+    margin-right: 0;
+}
+
+.social-media > div:last-child{
+    text-align: right;
+}
+
+.social-media div a{
+    color: inherit;
+}
+
+.social-media div a:hover{
+    text-decoration: none;
+}
+
+.social-media div a svg:hover{
+    transition: all 0.2s 0.1s ease-in-out;
+    transform: scale(1.1);
+}
+
+.cls-1{
+    fill: rgb(255, 255, 255);
+}
+
+@media (max-width: 1249px) {
+    .about-me-section-0 {
+        padding: 40px 100px;
+    }
+}
+
+@media (max-width: 960px) {
+    .about-me-section-0 {
+        padding: 30px;
+        text-align: center;
+        background: url('../images/sm/1.jpg') top center /cover;
+    }
+
+    h1{
+        font-size: 22px;
+    }
+
+    .container-about-me{
+        float: none;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        height: 100%;
+    }
+
+    .bio > p{
+        columns: 1;
+        margin-bottom: 0;
+    }
+
+    .info-about-me-pc,
+    .pagination-pc{
+        display: none;
+    }
+
+    .info-about-me-mobile,
+    .pagination-mobile{
+        display: block;
+    }
+
+    .info-about-me-mobile{
+        padding: 30px;
+        text-align: center;
+        background-color: rgb(228,228,228);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-about-me-mobile> div{
+        margin-bottom: 15px;
+    }
+
+    .social-media{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        color: red;
+    }
+
+    .social-media > div:first-child{
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    .social-media > div:last-child{
+        text-align: center;
+    }
+
+    .cls-1{
+        fill: rgb(142, 142, 142);
+    }
+}
+/*fin about_me-section-0*/
+

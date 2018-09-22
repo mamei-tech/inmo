@@ -72,6 +72,6 @@
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/home.js') }} " defer></script>
+    {{--<script src="{{ asset('js/views/home.js') }} " defer></script>--}}
 @endpush
 

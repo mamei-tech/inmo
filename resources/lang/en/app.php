@@ -7,6 +7,8 @@ return [
     'guides' => 'Guides',
     'aboutMe' => 'About Me',
     'contact' => 'Contact',
+    'houses' => 'Houses',
+    'infoHouse' => 'Info House',
 
     'learn_more' => 'Learn More',
 
@@ -58,6 +60,9 @@ return [
     'slide3-h1-1' => 'ENJOY THE BEST VIEWS',
     'slide3-h1-2' => 'OF A SUMMER',
     'slide3-h2' => 'that last the entire year',
+
+    'realtor' => 'REALTOR ASSOCIATE',
+
     'contactMe' => 'Contact Me',
     'moreInformation' => 'Get More Information',
     'yourName' => 'your name',
@@ -68,6 +73,7 @@ return [
     'testimonials' => 'testimonials',
     'expressOpinion' => 'you can express your opinion about my services',
     'yourtestimonials' => 'your testimonials',
+
     'copyright' => 'COPYRIGHTS 2018 ALL RIGHTS RESERVED. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',
     'moreThanCommunity' => '"MORE THAN JUST A COMMUNITY"',

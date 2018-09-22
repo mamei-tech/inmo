@@ -15,4 +15,14 @@ class NeighborhoodController extends Controller
     {
         return view('neighborhood');
     }
+
+    public function houses()
+    {
+        return view('houses');
+    }
+
+    public function infoHouse()
+    {
+        return view('infoHouse');
+    }
 }

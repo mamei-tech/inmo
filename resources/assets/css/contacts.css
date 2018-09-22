@@ -47,6 +47,14 @@
     margin-right: 30px;
 }
 
+.container-social-buttom div a:last-child{
+    margin-right: 0;
+}
+
+.container-social-buttom div a:hover{
+    text-decoration: none;
+}
+
 .container-social-buttom div svg:hover{
     transition: all 0.2s 0.1s ease-in-out;
     transform: scale(1.1);
@@ -60,6 +68,9 @@
     margin: 0;
 }
 
+.cls-1{
+    fill: rgb(255, 255, 255);
+}
 
 @media (max-width: 1249px) {
     .contact-section-0 {
@@ -67,11 +78,15 @@
     }
 
     .contact-section-0 > div:last-child {
-        padding-left: 50px;
+        padding-left: 0;
     }
 
     .contact-section-0 > div:first-child {
         flex: 1;
+    }
+
+    .container-social-buttom div a{
+        margin-right: 28px;
     }
 }
 
@@ -80,6 +95,7 @@
         padding: 30px;
         height: 560px;
         text-align: center;
+        background: url('../images/sm/10.jpg') top center /cover;
     }
 
     .contact-section-0 > div:first-child {

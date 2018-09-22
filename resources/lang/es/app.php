@@ -7,6 +7,8 @@ return [
     'guides' => 'Guias',
     'aboutMe' => 'Acerca de mi',
     'contact' => 'Contacto',
+    'houses' => 'Casas',
+    'infoHouse' => 'Info Casa',
 
     'learn_more' => 'Leer Más',
 
@@ -47,7 +49,6 @@ return [
     'slider' => 'Slider',
     'slider_delete_success' => 'slide eliminado satisfactoriamente',
     'slider_delete_confirm' => '¿Esta seguro que desea eliminar este slide?',
-
     'slide1-h1-1' => 'SU NUEVO HOGAR',
     'slide1-h1-2' => 'ESTÁ A UNA LLAMADA DE DISTANCIA',
     'slide1-h2' => '¡llámame hoy!',
@@ -57,6 +58,9 @@ return [
     'slide3-h1-1' => 'DISFRUTA DE LAS MEJORES VISTAS',
     'slide3-h1-2' => 'DE UN VERANO',
     'slide3-h2' => 'que dura todo el año',
+
+    'realtor' => 'REALTOR ASSOCIATE', //TODO Buscar traduccion
+
     'contactMe' => 'Contáctame',
     'moreInformation' => 'Obtener más información',
     'yourName' => 'tu nombre',
@@ -67,6 +71,7 @@ return [
     'testimonials' => 'testimonios',
     'expressOpinion' => 'puedes expresar tu opinión acerca de mis servicios',
     'yourtestimonials' => 'tu testimonio',
+
     'copyright' => 'PROPIEDAD INTELECTUAL 2018 TODOS LOS DERECHOS RESERVADOS. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',
     'moreThanCommunity' => '"MÁS QUE SÓLO UNA COMUNIDAD"',

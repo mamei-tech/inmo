@@ -72,10 +72,12 @@
     /*-webkit-animation: floating-arrow 1.3s infinite ease-in-out 0s;*/
     /*-o-animation: floating-arrow 1.3s infinite ease-in-out 0s;*/
     /*animation: floating-arrow 1.3s infinite ease-in-out 0s;*/
+    transition: all 0.2s 0s ease-in-out;
 }
 
 .arrow-floating:hover {
     cursor: pointer;
+    transform: scale(1.1);
 }
 
 @-webkit-keyframes floating-arrow {
@@ -132,8 +134,8 @@
     cursor: pointer;
     width: 30px;
     border-bottom: 3px solid #FFF;
-    -webkit-transition: all 100ms ease-in-out;
-    transition: all 100ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
     top: 15px;
 }
 

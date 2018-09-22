@@ -32,7 +32,7 @@ class ConfigController extends Controller
         if ( $request->file('logo_personal'))
             $request->file('logo_personal')->storeAs('public/logo', 'personal.png');
 
-        $request->session()->flash('status', '__("app.success_logo_change")');
+        $request->session()->flash('status', __('app.success_logo_change'));
         return Redirect::route("config.logo", [$locale]);
     }
 }

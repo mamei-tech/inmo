@@ -38,7 +38,16 @@
 @push('scripts')
     <script type="text/javascript">
         @if(!isset($inHome))
-        document.querySelector(".footer .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
+        var link =  document.querySelector(".footer .link-{{Route::currentRouteName()}}");
+
+        if (link === null)
+        {
+            link = document.querySelector(".footer .link-neighborhoods");
+        }
+
+        link.parentNode.classList.add("active");
+
+        {{--document.querySelector(".footer .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
         @endif
     </script>
 @endpush

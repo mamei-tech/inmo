@@ -34,7 +34,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-3 offset-3">
-                                    <img class="img-thumbnail" style="width: 100%"
+                                    <img class="img-thumbnail" style="width: 100%; background-color: #cd3939"
                                          src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/personal.png')  }}?{{time()}}"/>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@
 
                             <div class="form-group row">
                                 <div class="col-md-3 offset-3">
-                                    <img class="img-thumbnail" style="width: 100%"
+                                    <img class="img-thumbnail" style="width: 100%; background-color: #cd3939"
                                          src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}?{{time()}}"/>
                                 </div>
                             </div>

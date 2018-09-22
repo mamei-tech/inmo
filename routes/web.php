@@ -22,12 +22,12 @@ Route::prefix('{lang?}')->group(function () {
     Route::get('password/set', 'Auth\ResetPasswordController@showSetForm')->name('password.set');
     Route::post('password/set', 'Auth\ResetPasswordController@setPassword');
 
-
-
     Route::get('', 'HomeController@index')->name('home');
     Route::get('admin', 'AdminController@Index')->name('admin');
     Route::get('home', 'HomeController@index')->name('home');
     Route::get('neighborhoods', 'NeighborhoodController@index')->name('neighborhoods');
+    Route::get('houses', 'NeighborhoodController@houses')->name('houses');
+    Route::get('infoHouse', 'NeighborhoodController@infoHouse')->name('infoHouses');
     Route::get('guides', 'GuidesController@index')->name('guides');
     Route::get('about', 'AboutMeController@index')->name('about');
     Route::get('contacts', 'ContactsController@index')->name('contacts');

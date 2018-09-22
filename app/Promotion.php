@@ -15,7 +15,11 @@ class Promotion extends Model
 
     public function getImagePathAttribute()
     {
-        return Storage::url("{$this->image}");
+        if ($this->image)
+            return Storage::url("{$this->image}");
+
+        return null;
     }
+
     //protected $guarded = [];
 }

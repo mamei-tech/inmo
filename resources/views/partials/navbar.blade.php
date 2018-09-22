@@ -106,8 +106,21 @@
     <script type="text/javascript">
 
         @if(!isset($inHome))
-        document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
-        document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");
+
+        var link = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
+        var linkMobile = document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}");
+
+        if (link === null)
+        {
+            link = document.querySelector(".nav-bar .pc .link-neighborhoods");
+            linkMobile = document.querySelector(".nav-bar .mobile .link-neighborhoods");
+        }
+
+        link.parentNode.classList.add("active");
+        linkMobile.parentNode.classList.add("active");
+
+        {{--document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
+        {{--document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
         var navbar = document.querySelector(".nav-bar");
         navbar.classList.add("scrolled");
 
