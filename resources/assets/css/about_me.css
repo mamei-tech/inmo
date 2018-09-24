@@ -44,8 +44,9 @@
 }
 
 .bio > p{
-    columns: 2;
+    column-count: 2;
     margin-bottom: 0;
+    column-fill: auto;
 }
 
 .info-about-me-pc > div{
@@ -122,7 +123,7 @@
     }
 
     .bio > p{
-        columns: 1;
+        column-count: 1;
         margin-bottom: 0;
     }
 

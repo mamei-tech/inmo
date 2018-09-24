@@ -31,7 +31,7 @@
 
                 <div class="container-social-buttom">
                     <div>
-                        <a href="https://www.facebook.com">
+                        <a href="{{$profile->link_facebook}}">
                             <svg xmlns="http://www.w3.org/2000/svg" style="height: 30px;width: 15px;margin-top:5px;"
                                  viewBox="0 0 11 26">
                                 <title>Facebook</title>
@@ -43,7 +43,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://instagram.com">
+                        <a href="{{$profile->link_instagram}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="7 0 11 25"
                                  style="height: 30px;width: 30px;margin-top:5px;">
                                 <title>Instagram</title>
@@ -55,10 +55,10 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://twitter.com">
+                        <a href="{{$profile->link_in}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26"
                                  style="height: 30px;width: 30px;margin-top:5px;">
-                                <title>Twitter</title>{{--TODO Ver que link es este--}}
+                                <title>In</title>{{--TODO Ver que link es este--}}
                                 <g id="Capa_2" data-name="Capa 2">
                                     <g id="Capa_1-2" data-name="Capa 1">
                                         <path class="cls-1"
@@ -67,7 +67,7 @@
                                 </g>
                             </svg>
                         </a>
-                        <a href="https://youtube.com">
+                        <a href="{{$profile->link_youtube}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20.16 24.37"
                                  style="height: 30px;width: 30px;margin-top:5px;">
                                 <title>Youtube</title>

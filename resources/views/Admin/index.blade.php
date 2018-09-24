@@ -15,7 +15,15 @@
                         <span style="font-size: 20px;">{{ __('app.logo') }}</span>
                     </div>
                 </a>
+            </div>
 
+            <div class="col-md-3 container-btn" >
+                <a href="{{ route('profile', [App::getLocale()]) }}">
+                    <div class="container-btn-links">
+                        <span class="fa fa-3x fa-user-secret"></span>
+                        <span style="font-size: 20px;">{{ __('app.profile') }}</span>
+                    </div>
+                </a>
             </div>
             <div class="clearfix"></div>
 

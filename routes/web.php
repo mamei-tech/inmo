@@ -13,6 +13,9 @@ Route::prefix('{lang?}')->group(function () {
         ]);
         Route::get('config/logo', 'ConfigController@showConfigLogo')->name('config.logo');
         Route::post('config/logo', 'ConfigController@configLogo');
+
+        Route::get('profile', 'ProfileController@index')->name('profile');
+        Route::put('profile/{profile}', 'ProfileController@update')->name('profile.update');
     });
     //Route::auth();
 
