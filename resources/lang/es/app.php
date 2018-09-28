@@ -4,7 +4,7 @@ return [
     'lang' => 'Idioma',
     'home' => 'Inicio',
     'neighborhoods' => 'Vecindarios',
-    'guides' => 'Guias',
+    'guides' => 'Guías',
     'aboutMe' => 'Acerca de mi',
     'contact' => 'Contacto',
     'houses' => 'Casas',
@@ -56,8 +56,18 @@ return [
     'link_facebook' => 'Facebook',
     'link_instagram' => 'Instagram',
     'link_in' => 'In',
+    'link_in' => 'In',
     'link_youtube' => 'Youtube',
     'success_edit_profile' => 'perfil cambiado satisfactoriamente',
+
+    'guide' => 'Guía',
+    'create_guide' => 'Crear Guía',
+    'edit_guide' => 'Editar Guía',
+    'guide_delete_success' => 'guía eliminado satisfactoriamente',
+    'guide_delete_confirm' => '¿Esta seguro que desea eliminar este guía?',
+    'show_guide' => 'Ver Guía Actual',
+    'guide_subtitle' => 'Download your free handout', //TODO Traducir
+    'guides_selected' => 'you will receive the selected document(s) to your email', //TODO Traducir
 
     'create_slider' => 'Crear Slide',
     'edit_slider' => 'Editar Slide',
@@ -83,6 +93,7 @@ return [
     'yourPhone' => 'tu teléfono',
     'writeMe' => 'escríbeme',
     'send' => 'Enviar',
+    'download' => 'descargar',
     'testimonials' => 'testimonios',
     'expressOpinion' => 'puedes expresar tu opinión acerca de mis servicios',
     'yourtestimonials' => 'tu testimonio',

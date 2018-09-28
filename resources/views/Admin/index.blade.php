@@ -51,6 +51,15 @@
                 </a>
             </div>
 
+            <div class="col-md-3 container-btn">
+                <a href="{{ route('guide.index_admin', [App::getLocale()]) }}">
+                    <div class="container-btn-links">
+                        <span class="fa fa-3x fa-tags"></span>
+                        <span style="font-size: 20px;">{{ __('app.guides') }}</span>
+                    </div>
+                </a>
+            </div>
+
             <div class="clearfix"></div>
         </div>
 

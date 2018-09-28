@@ -11,6 +11,15 @@ Route::prefix('{lang?}')->group(function () {
         Route::resources([
             "slider" => "SliderController"
         ]);
+
+        Route::get('guide/indexAdmin', 'GuideController@indexAdmin')->name('guide.index_admin');
+        Route::any('guide/read', 'GuideController@read')->name('guide.read');
+        Route::get('guide/create', 'GuideController@create')->name('guide.create');
+        Route::post('guide', 'GuideController@store')->name('guide.store');
+        Route::delete('guide/{guide}', 'GuideController@destroy')->name('guide.destroy');
+        Route::get('guide/{guide}/edit', 'GuideController@edit')->name('guide.edit');
+        Route::put('guide/{guide}', 'GuideController@update')->name('guide.update');
+
         Route::get('config/logo', 'ConfigController@showConfigLogo')->name('config.logo');
         Route::post('config/logo', 'ConfigController@configLogo');
 
@@ -31,7 +40,7 @@ Route::prefix('{lang?}')->group(function () {
     Route::get('neighborhoods', 'NeighborhoodController@index')->name('neighborhoods');
     Route::get('houses', 'NeighborhoodController@houses')->name('houses');
     Route::get('infoHouse', 'NeighborhoodController@infoHouse')->name('infoHouses');
-    Route::get('guides', 'GuidesController@index')->name('guides');
+    Route::get('guides', 'GuideController@index')->name('guides');
     Route::get('about', 'AboutMeController@index')->name('about');
     Route::get('contacts', 'ContactsController@index')->name('contacts');
 });

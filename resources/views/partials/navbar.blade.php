@@ -47,7 +47,9 @@
                     <div class="brand-subimg">
                         <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}?{{time()}}"/>
                     </div>
+
                     <li class="lang-{{App::getLocale()}}">
+
                         <a class="lang-en hvr-underline-from-center"
                            style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                            href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
@@ -55,6 +57,7 @@
                            style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                            href="{{route(Route::currentRouteName(),["es"])}}">ESP</a>
                     </li>
+
                 </div>
 
 

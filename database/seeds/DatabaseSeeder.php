@@ -131,6 +131,54 @@ Mr. Hidalgo’s is knowledgeable in the Miami market generally but his area of e
             'updated_at' => $faker->dateTime
         ]);
 
+        DB::table('guides')->insert([
+            'text_es' => 'Comprador',
+            'text_en' => 'Buyer',
+            'guide' => 'public/guides/aOoSb7FB6NjOH0JEcE8BMPCP3v3tmORTOGQgKzp3.docx',
+            'created_at' => '2011-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
+        DB::table('guides')->insert([
+            'text_es' => 'Vendedor',
+            'text_en' => 'Seller',
+            'guide' => 'public/guides/cQseguX6YN13UFitRTUuzbWuLvHHcVSBb9nnA3aw.docx',
+            'created_at' => '2011-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
+        DB::table('guides')->insert([
+            'text_es' => 'Empaca como un pro/ profesional ',
+            'text_en' => 'Pack like a pro',
+            'guide' => 'public/guides/Keh4FVbXG4y7gpF8dDeVSlEaCmCWmG4iRPEz7Y3D.docx',
+            'created_at' => '2011-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
+        DB::table('guides')->insert([
+            'text_es' => 'Para nuevos propietarios',
+            'text_en' => 'For the new owners',
+            'guide' => 'public/guides/nHREQCr2hJnMJjPdM2VxiVSiKNVtKqHGIV7fVEzu.docx',
+            'created_at' => '2011-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
+        DB::table('guides')->insert([
+            'text_es' => 'Mudarse con mascotas',
+            'text_en' => 'Move with pets',
+            'guide' => 'public/guides/Ip4Co4nDAPvsdnh3OMNgTqMkpZBCc4OUygSkamjc.docx',
+            'created_at' => '2011-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
+        DB::table('guides')->insert([
+            'text_es' => 'Prepare para su mudanza',
+            'text_en' => 'Prepare for your move',
+            'guide' => 'public/guides/9yM1emHvl8Dob4VYknVL1BNaQzga7XFWdStFuVXY.docx',
+            'created_at' => '2011-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
         //Ejecutar otro seeder
         /* $this->call([
              UsersTableSeeder::class,

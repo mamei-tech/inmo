@@ -72,6 +72,16 @@ h3 {
     line-height: 20px;
 }
 
+h4 {
+    font-size: 11px;
+    font-family: 'SinkinSans-500Medium', sans-serif;
+    color: rgb(255, 255, 255);
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 20px;
+}
+
 .btn {
     border-radius: 0;
     background-color: transparent;
@@ -231,6 +241,10 @@ section {
     padding: 0 10px;
     display: inline-block;
     position: relative;
+}
+
+.tablet-lang-buttons a{
+    text-decoration: none;
 }
 
 .phone-lang-buttons {
