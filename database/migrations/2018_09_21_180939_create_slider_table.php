@@ -19,7 +19,9 @@ class CreateSliderTable extends Migration
             $table->string('title_en');
             $table->string('subtitle_es');
             $table->string('subtitle_en');
-            $table->string('image');
+            $table->string('image_lg');
+            $table->string('image_md');
+            $table->string('image_sm');
             $table->timestamps();
         });
     }

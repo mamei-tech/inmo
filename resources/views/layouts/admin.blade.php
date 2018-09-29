@@ -33,6 +33,10 @@
 
     <script type="text/javascript">
         window._token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    @if(App::getLocale()=="en")
+        alertify.labels.ok = "OK";
+        alertify.labels.cancel = "Cancel";
+    @endif
     </script>
 
 </head>
@@ -49,7 +53,7 @@
         $message = \Illuminate\Support\Facades\Session::get("status");
     @endphp
     @if($message)
-        alertify.log("{{$message}}");
+    alertify.log("{{$message}}");
     @endif
 
 </script>

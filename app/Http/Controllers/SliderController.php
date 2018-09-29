@@ -53,8 +53,12 @@ class SliderController extends Controller
      */
     public function store(Request $request, $locale)
     {
-        $path = null;
-        $path = $request->file('image')->store('public/slider');
+        $path_lg = null;
+        $path_md = null;
+        $path_sm = null;
+        $path_lg = $request->file('image_lg')->store('public/slider/lg');
+        $path_md = $request->file('image_md')->store('public/slider/md');
+        $path_sm = $request->file('image_sm')->store('public/slider/sm');
 
         DB::table('Slider')->insert(
             [
@@ -62,7 +66,9 @@ class SliderController extends Controller
                 'title_en' => $request->title_en,
                 'subtitle_es' => $request->subtitle_es,
                 'subtitle_en' => $request->subtitle_en,
-                'image' => $path ? $path : null,
+                'image_lg' => $path_lg ? $path_lg : null,
+                'image_md' => $path_md ? $path_md : null,
+                'image_sm' => $path_sm ? $path_sm : null,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             ]
@@ -93,12 +99,27 @@ class SliderController extends Controller
      */
     public function update(Request $request, string $lang, Slider $slider)
     {
-        $path = null;
+        $path_lg = null;
+        $path_md = null;
+        $path_sm = null;
 
-        $uploadedImage = $request->file('image');
-        if($uploadedImage){
-            Storage::delete($slider->image);
-            $path = $uploadedImage->store('public/slider');
+
+        $uploadedImageLg = $request->file('image_lg');
+        if($uploadedImageLg){
+            Storage::delete($slider->image_lg);
+            $path_lg = $uploadedImageLg->store('public/slider/lg');
+        }
+
+        $uploadedImageMd = $request->file('image_md');
+        if($uploadedImageMd){
+            Storage::delete($slider->image_md);
+            $path_md = $uploadedImageMd->store('public/slider/md');
+        }
+
+        $uploadedImageSm = $request->file('image_sm');
+        if($uploadedImageSm){
+            Storage::delete($slider->image_sm);
+            $path_sm = $uploadedImageSm->store('public/slider/sm');
         }
 
 
@@ -107,7 +128,9 @@ class SliderController extends Controller
             'title_en' => $request->title_en,
             'text_es' => $request->subtitle_es,
             'text_en' => $request->subtitle_en,
-            'image' => $path ? $path : $slider->image,
+            'image_lg' => $path_lg ? $path_lg : $slider->image_lg,
+            'image_md' => $path_md ? $path_md : $slider->image_md,
+            'image_sm' => $path_sm ? $path_sm : $slider->image_sm,
             'updated_at' => new DateTime()
         ]);
         $slider->save();
@@ -125,8 +148,12 @@ class SliderController extends Controller
     public function destroy(string $lang, Slider $slider)
     {
         $success = $slider->delete();
-        if ($success)
-            Storage::delete($slider->image);
+        if ($success){
+            Storage::delete($slider->image_lg);
+            Storage::delete($slider->image_md);
+            Storage::delete($slider->image_sm);
+        }
+
         return ["success" => $success];
     }
 }

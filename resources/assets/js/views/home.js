@@ -1,7 +1,42 @@
 $(document).ready(function(){
-    //.parallax(xPosition, speedFactor, outerHeight) options:
-    //xPosition - Horizontal position of the element
-    //inertia - speed to move relative to vertical scroll. Example: 0.1 is one tenth the speed of scrolling, 2 is twice the speed of scrolling
-    //outerHeight (true/false) - Whether or not jQuery should use it's outerHeight option to determine when a section is in the viewport
-    //$('.parallax-section-1').parallax("100%", 1, true);
+    function setPormotionImage(){
+        var widht = window.innerWidth;
+        document.querySelectorAll(".promotion-background").forEach(function (e) {
+            if (widht > 1249){
+                e.style.backgroundImage = "url("+e.dataset.imageLg+")";
+            }
+            else if (widht > 960){
+                e.style.backgroundImage = "url("+e.dataset.imageMd+")";
+            }
+            else {
+                e.style.backgroundImage = "url("+e.dataset.imageSm+")";
+            }
+        })
+    };
+
+    function setSliderImage(){
+        var widht = window.innerWidth;
+
+        document.querySelectorAll(".slide-item").forEach(function (e) {
+            if (widht > 1249){
+                e.style.backgroundImage = "url("+e.dataset.imageLg+")";
+            }
+            else if (widht > 960){
+                e.style.backgroundImage = "url("+e.dataset.imageMd+")";
+            }
+            else {
+                e.style.backgroundImage = "url("+e.dataset.imageSm+")";
+            }
+        })
+    };
+
+
+
+    $(window).resize(function(){
+        setPormotionImage();
+        setSliderImage();
+    });
+
+    setPormotionImage();
+    setSliderImage();
 })

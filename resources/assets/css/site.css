@@ -243,10 +243,6 @@ section {
     position: relative;
 }
 
-.tablet-lang-buttons a{
-    text-decoration: none;
-}
-
 .phone-lang-buttons {
     display: none;
 }
@@ -257,6 +253,10 @@ section {
 
 .phone-lang-buttons img {
     width: 60px;
+}
+
+.tablet-lang-buttons a{
+    text-decoration: none;
 }
 
 .nav-bar .menu-ct.mobile {

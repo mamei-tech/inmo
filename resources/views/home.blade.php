@@ -47,7 +47,7 @@
         @php $even = !$even;
         @endphp
         <div class="promotion">
-            <img class="promotion-background" src="{{$p->ImagePath}}">
+            <div class="promotion-background" style="width: 100%; height: 100%; background-size: cover; background-position: center center;" data-image-lg="{{$p->ImageLgPath}}" data-image-md="{{$p->ImageMdPath}}" data-image-sm="{{$p->ImageSmPath}}"></div>
             <div class="promotion-text {{$even?"light":"dark"}}-gray-block">
                 <h1 class="" style="margin-bottom: 15px;">{{ App::getLocale()=="es"? $p->title_es : $p->title_en }}</h1>
                 <p class="color-white">{{ App::getLocale()=="es"? $p->text_es : $p->text_en }}</p>
@@ -72,6 +72,6 @@
 @endsection
 
 @push('scripts')
-    {{--<script src="{{ asset('js/views/home.js') }} " defer></script>--}}
+    <script src="{{ asset('js/views/home.js') }} " defer></script>
 @endpush
 

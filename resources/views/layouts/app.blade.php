@@ -33,6 +33,17 @@
     @include('partials.footer')
 </div>
 @stack('scripts')
+<script type="text/javascript">
+    function parallax(){
+        document.querySelectorAll(".img-parallax").forEach(function (e) {
+            e.style.backgroundPositionY = ( e.offsetTop - window.scrollY - ( e.offsetTop - window.scrollY )* 0.5) + "px";// Con retardo
+            //e.style.backgroundPositionY = ( e.offsetTop - e.offsetHeight - window.scrollY - ( e.offsetTop - window.scrollY )* - 0.2) + "px";
+        })
+    }
+    document.addEventListener("scroll", function () {
+       parallax();
+    });
+</script>
 </body>
 </html>
 

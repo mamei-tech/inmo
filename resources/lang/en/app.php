@@ -55,7 +55,7 @@ return [
     'address' => 'Address',
     'link_facebook' => 'Facebook',
     'link_instagram' => 'Instagram',
-    'link_in' => 'In',
+    'link_in' => 'Linkedin',
     'link_youtube' => 'Youtube',
     'success_edit_profile' => 'profile updated sucessfully',
 

@@ -147,6 +147,9 @@ return [
         "new_password_confirmation"=>"New password confirmed",
         'logo_company' => 'Company logo',
         'logo_personal' => 'Personal logo',
+        'image_lg' => 'Image Pc',
+        'image_md' => 'Image Tablet',
+        'image_sm' => 'Image Mobile',
 
     ],
 

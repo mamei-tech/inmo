@@ -29,7 +29,9 @@ class DatabaseSeeder extends Seeder
         DB::table('promotion')->insert([
             'title_es' => '¿SABES QUE?',
             'title_en' => 'DO YOU KNOW THAT?',
-            'image' => 'public/promotions/gbxatWeHx2daxP4NdZPbDgdrJ7alqXSfprmFPFqi.jpeg',
+            'image_lg' => 'public/promotions/lg/gbxatWeHx2daxP4NdZPbDgdrJ7alqXSfprmFPFqi.jpeg',
+            'image_md' => 'public/promotions/md/gbxatWeHx2daxP4NdZPbDgdrJ7alqXSfprmFPFqi.jpeg',
+            'image_sm' => 'public/promotions/sm/gbxatWeHx2daxP4NdZPbDgdrJ7alqXSfprmFPFqi.jpeg',
             'text_es' => $faker->paragraph,
             'text_en' => $faker->paragraph,
             'link' => $faker->url,
@@ -40,7 +42,9 @@ class DatabaseSeeder extends Seeder
         DB::table('promotion')->insert([
             'title_es' => 'HOY ES TU DIA!',
             'title_en' => 'TODAY IS YOUR DAY!',
-            'image' => 'public/promotions/pRuKbSK0Fq34k80PYhumiDODf3MzR10PwBGqlDoF.jpeg',
+            'image_lg' => 'public/promotions/lg/pRuKbSK0Fq34k80PYhumiDODf3MzR10PwBGqlDoF.jpeg',
+            'image_md' => 'public/promotions/md/pRuKbSK0Fq34k80PYhumiDODf3MzR10PwBGqlDoF.jpeg',
+            'image_sm' => 'public/promotions/sm/pRuKbSK0Fq34k80PYhumiDODf3MzR10PwBGqlDoF.jpeg',
             'text_es' => $faker->paragraph,
             'text_en' => $faker->paragraph,
             'link' => $faker->url,
@@ -83,7 +87,9 @@ class DatabaseSeeder extends Seeder
             'title_en' => 'YOUR NEW HOME IS A PHONE CALL AWAY',
             'subtitle_es' => '¡llámame hoy!',
             'subtitle_en' => 'call me today!',
-            'image' => 'public/slider/imZeGxGdGZP4otEOWIWXpjUEnwQOred1KKqttQO8.jpeg',
+            'image_lg' => 'public/slider/lg/imZeGxGdGZP4otEOWIWXpjUEnwQOred1KKqttQO8.jpeg',
+            'image_md' => 'public/slider/md/imZeGxGdGZP4otEOWIWXpjUEnwQOred1KKqttQO8.jpeg',
+            'image_sm' => 'public/slider/sm/imZeGxGdGZP4otEOWIWXpjUEnwQOred1KKqttQO8.jpeg',
             'created_at' => '2013-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
@@ -93,7 +99,9 @@ class DatabaseSeeder extends Seeder
             'title_en' => 'YOU CAN LIVE IN THE BEST OF MIAMI',
             'subtitle_es' => 'Pagando los mejores precios',
             'subtitle_en' => 'paying the best prices',
-            'image' => 'public/slider/TAldvs7Bg09wpx1gtdQf8vcpmjMOCc2VLVl8tp40.jpeg',
+            'image_lg' => 'public/slider/lg/TAldvs7Bg09wpx1gtdQf8vcpmjMOCc2VLVl8tp40.jpeg',
+            'image_md' => 'public/slider/md/TAldvs7Bg09wpx1gtdQf8vcpmjMOCc2VLVl8tp40.jpeg',
+            'image_sm' => 'public/slider/sm/TAldvs7Bg09wpx1gtdQf8vcpmjMOCc2VLVl8tp40.jpeg',
             'created_at' => '2012-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
@@ -103,7 +111,9 @@ class DatabaseSeeder extends Seeder
             'title_en' => 'ENJOY THE BEST VIEWS OF A SUMMER',
             'subtitle_es' => 'que dura todo el año',
             'subtitle_en' => 'that last the entire year',
-            'image' => 'public/slider/vUTpLRNrau2YhlOP7rC1mcSTMg4J4zUxQ8QISuhB.jpeg',
+            'image_lg' => 'public/slider/lg/vUTpLRNrau2YhlOP7rC1mcSTMg4J4zUxQ8QISuhB.jpeg',
+            'image_md' => 'public/slider/md/vUTpLRNrau2YhlOP7rC1mcSTMg4J4zUxQ8QISuhB.jpeg',
+            'image_sm' => 'public/slider/sm/vUTpLRNrau2YhlOP7rC1mcSTMg4J4zUxQ8QISuhB.jpeg',
             'created_at' => '2011-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
@@ -125,7 +135,7 @@ Mr. Hidalgo’s is knowledgeable in the Miami market generally but his area of e
             'address' => '55 MERRICK WAY SUITE 202-A, CORAL GABLES, FL 33314',
             'link_facebook' => 'http://www.facebook.com',
             'link_instagram' => 'http://www.instagram.com',
-            'link_in' => 'http://www.in.com',
+            'link_in' => 'http://www.linkedin.com',
             'link_youtube' => 'http://www.youtube.com',
             'created_at' => $faker->dateTime,
             'updated_at' => $faker->dateTime

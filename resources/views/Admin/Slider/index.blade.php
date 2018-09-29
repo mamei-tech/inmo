@@ -93,7 +93,6 @@
             tb.addRefreshBtn();
             tb.resize();
 
-            //TODO Ver idioma del alertify
             window.AppointmentConfirm = function(sliderId) {
                 alertify.confirm("{{ __('app.slider_delete_confirm') }} ",
                 function(r) {

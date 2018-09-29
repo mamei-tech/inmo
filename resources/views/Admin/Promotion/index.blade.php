@@ -168,7 +168,6 @@
             tb2.addRefreshBtn();
             tb2.resize();
 
-            //TODO Ver idioma del alertify
             window.AppointmentConfirm = function(appointmentId) {
                 alertify.confirm("{{ __('app.promotion_delete_confirm') }} ",
                 function(r) {

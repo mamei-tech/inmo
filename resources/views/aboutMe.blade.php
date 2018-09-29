@@ -13,13 +13,15 @@
             <h3>{{ __('app.realtor') }}</h3>
             <div class="about-me-pagination">
 
-                <div class="pagination-pc">paginado</div>
+                <div class="pagination-pc" style="min-height: 37px;"></div>
 
                 <div class="bio">
-                    <p></p>
+                    <p>
+                        {!! str_replace( array("\r\n", "\r", "\n"), '<br />', App::getLocale()=="es"? $profile->bio_es : $profile->bio_en) !!}
+                    </p>
                 </div>
 
-                <div class="pagination-mobile">paginado</div>
+                <div class="pagination-mobile" style="color: white; min-height: 37px;"></div>
 
                 <div class="info-about-me-pc">
                     <div>
@@ -64,7 +66,7 @@
                             <a href="{{$profile->link_in}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26"
                                      style="height: 30px;width: 30px;margin-top:5px;">
-                                    <title>In</title>{{--TODO Ver que link es este--}}
+                                    <title>Linkedin</title>
                                     <g id="Capa_2" data-name="Capa 2">
                                         <g id="Capa_1-2" data-name="Capa 1">
                                             <path class="cls-1"
@@ -170,7 +172,6 @@
                 <button class="btn btn-yellow"><a href="{{ route('contacts') }}">@lang('app.contactMe')</a></button>
             </div>
 
-            <div id="biography" style="display: none">{{App::getLocale()=="es"? $profile->bio_es : $profile->bio_en}}</div>
         </div>
     </div>
 @endsection

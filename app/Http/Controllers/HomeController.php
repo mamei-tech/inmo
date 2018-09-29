@@ -18,8 +18,8 @@ class HomeController extends Controller
     public function index()
     {
         $sliders = Slider::query()->orderByDesc("created_at")->get();
-        $promotions = Promotion::query()->whereNotNull("image")->orderByDesc("created_at")->get();
-        $promotionsSecond = Promotion::query()->whereNull("image")->orderByDesc("created_at")->get();
+        $promotions = Promotion::query()->whereNotNull("image_lg")->orderByDesc("created_at")->get();
+        $promotionsSecond = Promotion::query()->whereNull("image_lg")->orderByDesc("created_at")->get();
         return view('home', compact(["sliders", "promotions", "promotionsSecond"]));
     }
 }

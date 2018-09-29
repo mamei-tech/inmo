@@ -38,9 +38,9 @@ class PromotionController extends Controller
     public function readMain(Request $request)
     {
         return [
-            "Count" => DB::table('Promotion')->whereNotNull("image")->count(),
+            "Count" => DB::table('Promotion')->whereNotNull("image_lg")->count(),
             "Data" => DB::table('Promotion')
-                ->whereNotNull("image")
+                ->whereNotNull("image_lg")
                 ->orderBy("created_at", "desc")
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
@@ -51,9 +51,9 @@ class PromotionController extends Controller
     public function read(Request $request)
     {
         return [
-            "Count" => DB::table('Promotion')->whereNull("image")->count(),
+            "Count" => DB::table('Promotion')->whereNull("image_lg")->count(),
             "Data" => DB::table('Promotion')
-                ->whereNull("image")
+                ->whereNull("image_lg")
                 ->orderBy("created_at", "desc")
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
@@ -70,9 +70,16 @@ class PromotionController extends Controller
      */
     public function store(Request $request, $locale)
     {
-        $path = null;
+        $path_lg = null;
+        $path_md = null;
+        $path_sm = null;
         if ($request->type == "main")
-            $path = $request->file('image')->store('public/promotions');
+        {
+            $path_lg = $request->file('image')->store('public/promotions/lg');
+            $path_md = $request->file('image')->store('public/promotions/md');
+            $path_sm = $request->file('image')->store('public/promotions/sm');
+        }
+           
 
         DB::table('Promotion')->insert(
             [
@@ -81,7 +88,9 @@ class PromotionController extends Controller
                 'text_es' => $request->text_es,
                 'text_en' => $request->text_en,
                 'link' => $request->link,
-                'image' => $path ? $path : null,
+                'image_lg' => $path_lg ? $path_lg : null,
+                'image_md' => $path_md ? $path_md : null,
+                'image_sm' => $path_sm ? $path_sm : null,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             ]
@@ -109,7 +118,7 @@ class PromotionController extends Controller
      */
     public function edit(string $lang, Promotion $promotion)
     {
-        $type = $promotion->image ? "main" : "second" ;
+        $type = $promotion->image_lg ? "main" : "second" ;
         return view('Admin.Promotion.edit', ["type" => $type, "promotion" => $promotion]);
     }
 
@@ -123,13 +132,28 @@ class PromotionController extends Controller
      */
     public function update(Request $request, string $lang, Promotion $promotion)
     {
-        $path = null;
+        $path_lg = null;
+        $path_md = null;
+        $path_sm = null;
+        
         if ($request->type == "main")
         {
-            $uploadedImage = $request->file('image');
-            if($uploadedImage){
-                Storage::delete($promotion->image);
-                $path = $uploadedImage->store('public/promotions');
+            $uploadedImageLg = $request->file('image_lg');
+            if($uploadedImageLg){
+                Storage::delete($promotion->image_lg);
+                $path_lg = $uploadedImageLg->store('public/promotions/lg');
+            }
+
+            $uploadedImageMd = $request->file('image_md');
+            if($uploadedImageMd){
+                Storage::delete($promotion->image_md);
+                $path_md = $uploadedImageMd->store('public/promotions/md');
+            }
+
+            $uploadedImageSm = $request->file('image_sm');
+            if($uploadedImageSm){
+                Storage::delete($promotion->image_sm);
+                $path_sm = $uploadedImageSm->store('public/promotions/sm');
             }
         }
 
@@ -139,7 +163,9 @@ class PromotionController extends Controller
             'text_es' => $request->text_es,
             'text_en' => $request->text_en,
             'link' => $request->link,
-            'image' => $path ? $path : $promotion->image,
+            'image_lg' => $path_lg ? $path_lg : $promotion->image_lg,
+            'image_md' => $path_md ? $path_md : $promotion->image_md,
+            'image_sm' => $path_sm ? $path_sm : $promotion->image_sm,
             'updated_at' => new DateTime()
         ]);
         $promotion->save();
@@ -158,7 +184,12 @@ class PromotionController extends Controller
     {
         $success = $promotion->delete();
         if ($success)
-            Storage::delete($promotion->image);
+        {
+            Storage::delete($promotion->image_lg);
+            Storage::delete($promotion->image_md);
+            Storage::delete($promotion->image_sm);
+        }
+
         return ["success" => $success];
     }
 }

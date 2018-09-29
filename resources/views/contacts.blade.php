@@ -58,7 +58,7 @@
                         <a href="{{$profile->link_in}}">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26"
                                  style="height: 30px;width: 30px;margin-top:5px;">
-                                <title>In</title>{{--TODO Ver que link es este--}}
+                                <title>Linkedin</title>
                                 <g id="Capa_2" data-name="Capa 2">
                                     <g id="Capa_1-2" data-name="Capa 1">
                                         <path class="cls-1"

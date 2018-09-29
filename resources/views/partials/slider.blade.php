@@ -20,8 +20,8 @@
     <div class="carousel-inner">
         @foreach ($sliders as $s)
             <div class="carousel-item {{$first ? "active" : ""}}">
-                <div style="background: url({{$s->ImagePath}}) top center /cover;"
-                     class="first-slide img-parallax"></div>
+                <div style="background-size: cover; background-position: center center;" data-image-lg="{{$s->ImageLgPath}}" data-image-md="{{$s->ImageMdPath}}" data-image-sm="{{$s->ImageSmPath}}"
+                     class="slide-item img-parallax"></div>
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>{{ App::getLocale()=="es"? $s->title_es : $s->title_en }}</h1>

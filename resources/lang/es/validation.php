@@ -147,5 +147,8 @@ return [
         "new_password_confirmation"=>"Confirmar nueva contraseña",
         'logo_company' => 'Logo de la compañía',
         'logo_personal' => 'Logo personal',
+        'image_lg' => 'Imagen Pc',
+        'image_md' => 'Imagen Table',
+        'image_sm' => 'Imagen Móvil',
     ],
 ];

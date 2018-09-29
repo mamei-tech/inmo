@@ -27,7 +27,6 @@ $grid-gutter-width: 20;
     --breakpoint-lg: 992px;
     --breakpoint-xl: 1200px;*/
 
-
 //Grid tiers
 $grid-breakpoints: (
   xs: 0,
@@ -35,7 +34,7 @@ $grid-breakpoints: (
   md: 960px,
   lg: 960px,
   xl: 1250px
-) !default;
+);
 
 $container-max-widths: (
   sm: 300px,

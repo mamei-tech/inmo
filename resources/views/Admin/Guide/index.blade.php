@@ -89,7 +89,6 @@
             tb.addRefreshBtn();
             tb.resize();
 
-            //TODO Ver idioma del alertify
             window.AppointmentConfirm = function(guideId) {
                 alertify.confirm("{{ __('app.guide_delete_confirm') }} ",
                 function(r) {
