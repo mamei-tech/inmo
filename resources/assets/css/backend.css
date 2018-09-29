@@ -3,6 +3,10 @@
     font-weight: bold;
 }
 
+.navbar{
+    box-shadow: 0 -5px 12px;
+}
+
 .container-btn-links{
     height: 150px;
     display: flex;
