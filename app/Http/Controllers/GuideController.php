@@ -23,7 +23,11 @@ class GuideController extends Controller
      */
     public function index()
     {
-        return view('guides');
+        $guides = DB::table('guides')
+            ->orderBy("created_at", "desc")
+            ->get();
+
+        return view('guides', ['guides' => $guides]);
     }
 
     public function indexAdmin()

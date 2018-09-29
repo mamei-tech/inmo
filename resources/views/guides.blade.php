@@ -12,8 +12,21 @@
         <h1>{{ __('app.guides') }}</h1>
         <h3 class="subtitle">{{ __('app.guide_subtitle') }}</h3>
 
-        <div class="container-guides">
+        @php $even = false;
+        @endphp
 
+        <div class="container-guides">
+            {{--@foreach ($guides as $g)--}}
+                {{--@php $even = !$even;--}}
+                {{--@endphp--}}
+
+                {{--@if($even)--}}
+                    {{--<div><div><h3 class="guides-h3">{{$g->text_en}}</h3></div>--}}
+                {{--@else--}}
+                    {{--<div><h3 class="guides-h3">{{$g->text_en}}</h3></div></div>--}}
+                {{--@endif--}}
+
+            {{--@endforeach--}}
         </div>
 
         <h4 class="color-yellow selected">{{ __('app.guides_selected') }}</h4>

@@ -21,7 +21,24 @@
 
 .container-guides{
     flex: auto;
+    display: flex;
+    justify-content: flex-end;
+    padding: 35px 0;
 }
+
+.container-guides > div{
+    padding-right: 0;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    flex: 25%;
+}
+
+.container-guides .guides-h3{
+    margin: 0 0 30px;
+}
+
+
 
 @media (max-width: 1249px) {
     .guide-section-0 {
@@ -36,6 +53,10 @@
     .guide-section-0 button{
         margin: 50px 0 0 0;
     }
+
+    .container-guides .guides-h3{
+        padding: 0 0 30px;
+    }
 }
 
 @media (max-width: 960px) {
@@ -47,5 +68,21 @@
 
     .guide-section-0 button{
         margin: 20px 0;
+    }
+
+    .container-guides{
+       flex-direction: column;
+    }
+
+    .container-guides > div{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+
+    .container-guides .guides-h3{
+        padding: 0;
+        margin: 0;
     }
 }
