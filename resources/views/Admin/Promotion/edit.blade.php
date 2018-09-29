@@ -171,7 +171,6 @@
                                         <img class="img-thumbnail" style="width: 100%" src="{{$promotion->image_smPath  }}"/>
                                     </div>
                                 </div>
-
                             @endif
 
 

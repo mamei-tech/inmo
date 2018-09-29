@@ -95,7 +95,7 @@
         </div>
 
         <div>
-            <div>
+            <div style="position: relative">
                 <div class="container-image">
                     <svg xmlns="http://www.w3.org/2000/svg" class="color-gray" viewBox="0 0 170 170">
                         <defs>
@@ -120,18 +120,22 @@
 
                 </div>
             </div>
-            <form action="@{{ route('sendTestimonials') }}" method="post">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')">
-                </div>
+            <div class="container-form">
+                <form action="@{{ route('sendTestimonials') }}" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')">
+                    </div>
 
-                <div class="form-group">
-                    <textarea rows="5" class="form-control" name="testimonials" required=""
-                              placeholder="@lang('app.yourtestimonials')"></textarea>
-                </div>
+                    <div class="form-group">
+                        <textarea rows="5" class="form-control" name="testimonials" required=""
+                                  placeholder="@lang('app.yourtestimonials')"></textarea>
+                    </div>
 
-                <button type="submit" class="btn btn-yellow">@lang('app.send')</button>
-            </form>
+                    <button type="submit" class="btn btn-yellow">@lang('app.send')</button>
+                </form>
+            </div>
         </div>
+
+
     </div>
 @endsection

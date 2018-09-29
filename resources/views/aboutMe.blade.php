@@ -13,7 +13,7 @@
             <h3>{{ __('app.realtor') }}</h3>
             <div class="about-me-pagination">
 
-                <div class="pagination-pc" style="min-height: 37px;"></div>
+                <div class="pagination-pc"></div>
 
                 <div class="bio">
                     <p>
@@ -21,7 +21,7 @@
                     </p>
                 </div>
 
-                <div class="pagination-mobile" style="color: white; min-height: 37px;"></div>
+                <div class="pagination-mobile"></div>
 
                 <div class="info-about-me-pc">
                     <div>
@@ -177,5 +177,6 @@
 @endsection
 
 @push('scripts')
+    <script src="{{ asset('js/messages.'.App::getLocale().'.js') }}"></script>
     <script src="{{ asset('js/views/about_me.js') }}" defer></script>
 @endpush

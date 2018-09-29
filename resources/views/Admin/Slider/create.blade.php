@@ -73,7 +73,7 @@
                             </div>
 
                             <div class="form-group row">
-                                <label for="image_lg" class="col-md-3 col-form-label text-md-right">{{ __('app.image_lg') }}</label>
+                                <label for="image_lg" class="col-md-3 col-form-label text-md-right">{{ __('validation.attributes.image_lg') }}</label>
 
                                 <div class="col-md-9">
                                     <input id="image_lg" type="file" class="form-control{{ $errors->has('image_lg') ? ' is-invalid' : '' }}" name="image_lg" value="{{ old('image_lg') }}" required autofocus>
@@ -87,7 +87,7 @@
                             </div>
                             
                             <div class="form-group row">
-                                <label for="image_md" class="col-md-3 col-form-label text-md-right">{{ __('app.image_md') }}</label>
+                                <label for="image_md" class="col-md-3 col-form-label text-md-right">{{ __('validation.attributes.image_md') }}</label>
 
                                 <div class="col-md-9">
                                     <input id="image_md" type="file" class="form-control{{ $errors->has('image_md') ? ' is-invalid' : '' }}" name="image_md" value="{{ old('image_md') }}" required autofocus>
@@ -101,7 +101,7 @@
                             </div>
                             
                             <div class="form-group row">
-                                <label for="image_sm" class="col-md-3 col-form-label text-md-right">{{ __('app.image_sm') }}</label>
+                                <label for="image_sm" class="col-md-3 col-form-label text-md-right">{{ __('validation.attributes.image_sm') }}</label>
 
                                 <div class="col-md-9">
                                     <input id="image_sm" type="file" class="form-control{{ $errors->has('image_sm') ? ' is-invalid' : '' }}" name="image_sm" value="{{ old('image_sm') }}" required autofocus>

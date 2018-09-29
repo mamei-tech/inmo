@@ -22,47 +22,43 @@ $(document).ready(function () {
         var totalPages = Math.ceil(scrollWidht / widht);
 
         //Pagination PC
-        $('.pagination-pc').append('<button class="btn" onclick="bioScrollTo(' + Math.max(window.bioCurrentPage - 1, 0) + ', '+ widht +')">Previus</button>');
+        $('.pagination-pc').append('<button class="btn" onclick="bioScrollTo(' + Math.max(window.bioCurrentPage - 1, 0) + ', ' + widht + ')"><< ' + window.messages.previous + '</button>');
         var start = Math.max(window.bioCurrentPage - 1, 0)
 
         if (window.bioCurrentPage > 1 && totalPages > 5) {
-            $('.pagination-pc').append('<button class="btn color-white">...</button>');
+            $('.pagination-pc').append('<button class="btn btn-no-hover">...</button>');
         }
 
         for (let i = Math.min(start, totalPages - Math.min(totalPages, 5)); i <= start + 4 && i < totalPages; i++) {
-            var color = "color-white";
-            if (i == window.bioCurrentPage)
-                var color = "color-yellow";
-
-            $('.pagination-pc').append('<button class="btn ' + color + '" onclick="bioScrollTo(' + i + ', ' + widht + ')">' + (i + 1) + '</button>');
+            $('.pagination-pc').append('<button class="btn ' +(i == window.bioCurrentPage ? "active" : "")+ '" onclick="bioScrollTo(' + i + ', ' + widht + ')">' + (i + 1) + '</button>');
         }
 
         if (window.bioCurrentPage + 4 < totalPages) {
-            $('.pagination-pc').append('<button class="btn color-white">...</button>');
+            if (!(window.bioCurrentPage == 0 && window.bioCurrentPage + 5 == totalPages))
+                $('.pagination-pc').append('<button class="btn btn-no-hover">...</button>');
         }
-        $('.pagination-pc').append('<button class="btn" onclick="bioScrollTo(' + Math.min(window.bioCurrentPage + 1, totalPages - 1) + ', '+ widht +')">-></button>');
+        $('.pagination-pc').append('<button class="btn" onclick="bioScrollTo(' + Math.min(window.bioCurrentPage + 1, totalPages - 1) + ', ' + widht + ')">' + window.messages.next + ' >></button>');
+
 
         //Pagination Movil
-        $('.pagination-mobile').append('<button class="btn" onclick="bioScrollTo(' + Math.max(window.bioCurrentPage - 1, 0) + ', '+ widht +')"><-</button>');
+        $('.pagination-mobile').append('<button class="btn" onclick="bioScrollTo(' + Math.max(window.bioCurrentPage - 1, 0) + ', ' + widht + ')"><< ' + window.messages.previous + '</button>');
         var start = Math.max(window.bioCurrentPage - 1, 0)
 
         if (window.bioCurrentPage > 1 && totalPages > 3) {
-            $('.pagination-mobile').append('<button class="btn color-white">...</button>');
+            $('.pagination-mobile').append('<button class="btn btn-no-hover">...</button>');
         }
 
         for (let i = Math.min(start, totalPages - Math.min(totalPages, 3)); i <= start + 2 && i < totalPages; i++) {
-            var color = "color-white";
-            if (i == window.bioCurrentPage)
-                var color = "color-yellow";
-
-            $('.pagination-mobile').append('<button class="btn ' + color + '" onclick="bioScrollTo(' + i + ', ' + widht + ')">' + (i + 1) + '</button>');
+            $('.pagination-mobile').append('<button class="btn ' +(i == window.bioCurrentPage ? "active" : "")+ '" onclick="bioScrollTo(' + i + ', ' + widht + ')">' + (i + 1) + '</button>');
         }
 
         if (window.bioCurrentPage + 2 < totalPages) {
-            $('.pagination-mobile').append('<button class="btn color-white">...</button>');
+            if (!(window.bioCurrentPage == 0 && window.bioCurrentPage + 3 == totalPages))
+                $('.pagination-mobile').append('<button class="btn btn-no-hover">...</button>');
         }
 
-        $('.pagination-mobile').append('<button class="btn" onclick="bioScrollTo(' + Math.min(window.bioCurrentPage + 1, totalPages - 1) + ', '+ widht +')">-></button>');
+
+        $('.pagination-mobile').append('<button class="btn" onclick="bioScrollTo(' + Math.min(window.bioCurrentPage + 1, totalPages - 1) + ', ' + widht + ')">' + window.messages.next + ' >></button>');
     };
 
 

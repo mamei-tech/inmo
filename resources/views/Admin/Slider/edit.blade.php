@@ -89,7 +89,7 @@
 
                             <div class="form-group row">
                                 <label for="image_lg"
-                                       class="col-md-3 col-form-label text-md-right">{{ __('app.image_lg') }}</label>
+                                       class="col-md-3 col-form-label text-md-right">{{ __('validation.attributes.image_lg') }}</label>
 
                                 <div class="col-md-9">
                                     <input id="image_lg" type="file"
@@ -111,7 +111,7 @@
 
                             <div class="form-group row">
                                 <label for="image_md"
-                                       class="col-md-3 col-form-label text-md-right">{{ __('app.image_md') }}</label>
+                                       class="col-md-3 col-form-label text-md-right">{{ __('validation.attributes.image_md') }}</label>
 
                                 <div class="col-md-9">
                                     <input id="image_md" type="file"
@@ -133,7 +133,7 @@
 
                             <div class="form-group row">
                                 <label for="image_sm"
-                                       class="col-md-3 col-form-label text-md-right">{{ __('app.image_sm') }}</label>
+                                       class="col-md-3 col-form-label text-md-right">{{ __('validation.attributes.image_sm') }}</label>
 
                                 <div class="col-md-9">
                                     <input id="image_sm" type="file"

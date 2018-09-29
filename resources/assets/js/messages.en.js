@@ -1,3 +1,5 @@
 window.messages = {
-    "refresh" : "Refresh"
+    "refresh" : "Refresh",
+    "previous" : "previous",
+    "next" : "next"
 };
