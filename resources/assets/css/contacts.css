@@ -1,4 +1,3 @@
-
 /*contact-section-0*/
 .contact-section-0 {
     height: 540px;
@@ -10,73 +9,69 @@
 }
 
 .contact-section-0 > div:first-child {
-    flex: 1;
-}
-.contact-section-0 > div:last-child {
-    flex: 1;
-    padding-left: 150px;
+    flex: 2;
 }
 
-.contact-section-0 h3{
+.contact-section-0 > div:last-child {
+    flex: 1;
+}
+
+.contact-section-0 h3 {
     padding: 15px 0 40px;
 }
 
-.contact-section-0 .form-group{
+.contact-section-0 .form-group {
     margin-bottom: 20px;
 }
 
-.container-social-buttom{
+.container-social-buttom {
     padding-top: 15px;
     display: flex;
     flex-direction: row;
 }
 
-.container-social-buttom div:first-child{
+.container-social-buttom div:first-child {
     text-align: left;
     flex: 60%;
 }
 
-.container-social-buttom div:last-child{
+.container-social-buttom div:last-child {
     text-align: right;
     flex: 40%;
 }
 
-.container-social-buttom div a{
+.container-social-buttom div a {
     margin-right: 30px;
 }
 
-.container-social-buttom div a:last-child{
+.container-social-buttom div a:last-child {
     margin-right: 0;
 }
 
-.container-social-buttom div a:hover{
+.container-social-buttom div a:hover {
     text-decoration: none;
 }
 
-.container-social-buttom div svg:hover{
+.container-social-buttom div svg:hover {
     transition: all 0.2s 0.1s ease-in-out;
     transform: scale(1.1);
 }
 
-.container-social-buttom div a:last-child{
+.container-social-buttom div a:last-child {
     margin-right: 0;
 }
 
-.container-social-buttom div button{
+.container-social-buttom div button {
     margin: 0;
 }
 
-.cls-1{
+.cls-1 {
     fill: rgb(255, 255, 255);
 }
 
 @media (max-width: 1249px) {
     .contact-section-0 {
         padding: 50px 100px;
-    }
-
-    .contact-section-0 > div:last-child {
-        padding-left: 0;
     }
 
     .contact-section-0 > div:first-child {
@@ -95,6 +90,7 @@
     .contact-section-0 > div:first-child {
         flex: 0;
     }
+
     .contact-section-0 > div:last-child {
         padding-left: 0;
     }
@@ -103,130 +99,215 @@
         flex-direction: column;
     }
 
-    .container-social-buttom div button
-    {
+    .container-social-buttom div button {
         margin-left: -15px;
     }
 
-    .container-social-buttom div:first-child
-    {
+    .container-social-buttom div:first-child {
         margin-bottom: 20px;
     }
 
     .container-social-buttom div:first-child,
-    .container-social-buttom div:last-child
-    {
+    .container-social-buttom div:last-child {
         text-align: center;
     }
 }
+
 /*fin contact-section-0*/
 
-/*contact-section-testimonials*/
-.contact-section-testimonials{
+/*contact-section-add-testimonials*/
+.contact-section-add-testimonials {
     background-color: rgb(228, 228, 228);
     padding: 70px 120px;
 }
 
-.contact-section-testimonials > div:first-child{
+.contact-section-add-testimonials > div:first-child {
     text-align: right;
 }
 
-.contact-section-testimonials > div:first-child > h3{
+.contact-section-add-testimonials > div:first-child > h3 {
     margin: 20px 0 50px;
 }
 
-.contact-section-testimonials > div:last-child{
+.contact-section-add-testimonials > div:last-child {
     display: flex;
     flex-direction: row;
 }
 
-.contact-section-testimonials > div:last-child > div{
+.contact-section-add-testimonials > div:last-child .img-thumbnail {
+    height: 200px;
+    width: 200px;
+}
+
+.contact-section-add-testimonials > div:last-child > div {
     flex: 1;
     text-align: left;
 }
 
-.contact-section-testimonials > div:last-child > .container-form{
+.contact-section-add-testimonials > div:last-child > .container-form {
     flex: 2;
     text-align: right;
-    width: 100%;
 }
 
-.contact-section-testimonials > div:last-child > .container-form > form{
-    width: 100%;
+.contact-section-add-testimonials > div:last-child > .container-form > form {
+    flex: 1;
 }
 
-.contact-section-testimonials > div:last-child .form-group{
+.contact-section-add-testimonials > div:last-child .form-group {
     margin-bottom: 30px;
 }
 
-.contact-section-testimonials > div:last-child .container-image{
+.contact-section-add-testimonials > div:last-child .container-image {
     height: 200px;
     width: 200px;
-    background-color: rgb(255,255,255);
+    background-color: rgb(255, 255, 255);
     position: absolute;
     bottom: 0;
     margin-bottom: 67px;
 }
 
-.contact-section-testimonials > div:last-child .container-image svg{
+.contact-section-add-testimonials > div:last-child .container-image svg {
     height: 200px;
     width: 200px;
 }
 
-.contact-section-testimonials > div:last-child .form-group:first-child{
-    width: 50%;
-    float: right;
+.contact-section-add-testimonials .container-form > form > div.form-add-testimonials-name {
+    margin-left: 50%;
 }
 
-
+.thumbnail{
+    height: 400px;
+    width: 400px;
+    overflow: hidden;
+    padding: 0;
+    margin: auto;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC')
+}
 
 @media (max-width: 1249px) {
-    .contact-section-testimonials{
+    .contact-section-add-testimonials {
         padding: 70px 100px;
+    }
+
+    .contact-section-add-testimonials > div:last-child > .container-form {
+        flex: 1;
+    }
+
+    .contact-section-add-testimonials .container-form > form > div.form-add-testimonials-name {
+        margin-left: 0;
     }
 }
 
 @media (max-width: 960px) {
-    .contact-section-testimonials{
+    .contact-section-add-testimonials {
         padding: 50px 30px;
     }
 
-    .contact-section-testimonials div:first-child{
+    .contact-section-add-testimonials > div:first-child {
         text-align: center;
     }
 
-    .contact-section-testimonials div:last-child{
-        display: flex;
+    .contact-section-add-testimonials > div:last-child {
         flex-direction: column;
         align-items: center;
     }
 
-    .contact-section-testimonials > div:last-child > div{
+    .contact-section-add-testimonials > div:last-child > div {
         flex: 1;
     }
 
-    .contact-section-testimonials div:last-child > .container-form{
+    .contact-section-add-testimonials > div:last-child > .container-form {
         flex: 1;
         width: 100%;
         text-align: center;
     }
 
-    .contact-section-testimonials div:last-child .container-image{
-        height: 120px;
-        width: 120px;
+    .contact-section-add-testimonials > div:last-child .img-thumbnail {
         margin-bottom: 40px;
-        position: relative;
     }
 
-    .contact-section-testimonials div:last-child .container-image svg{
-        height: 120px;
-        width: 120px;
-    }
-
-    .contact-section-testimonials div:last-child .form-group:first-child{
+    .contact-section-add-testimonials > div:last-child .form-group:first-child {
         width: 100%;
         float: none;
     }
 
+    .thumbnail{
+        height: 400px;
+        width: 300px;
+    }
 }
+
+/*fin contact-section-add-testimonials*/
+
+/*contact-section-testimonials*/
+.contact-section-testimonials {
+    background-color: rgb(255, 255, 255);
+    padding: 70px 120px 20px 120px;
+}
+
+.contact-section-testimonials .testmonials-item {
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.contact-section-testimonials .testmonials-item > div:first-child {
+    flex: 1;
+}
+
+.contact-section-testimonials .testmonials-item > div:last-child {
+    flex: 2;
+}
+
+.contact-section-testimonials .testmonials-item .testmonials-item-img > img {
+    height: 200px;
+    width: 200px;
+}
+
+.contact-section-testimonials .testmonials-item > div:last-child > h3 {
+    margin-bottom: 30px;
+}
+
+.contact-section-testimonials .testmonials-item > div:last-child > p {
+    columns: 2;
+    column-fill: auto;
+    height: 150px;
+    column-gap: 35px;
+    margin-bottom: 0;
+    overflow: auto;
+}
+
+@media (max-width: 1249px) {
+    .contact-section-testimonials {
+        padding: 70px 100px 20px 100px;
+    }
+    .contact-section-testimonials .testmonials-item > div:last-child {
+        flex: 1;
+    }
+    .contact-section-testimonials .testmonials-item > div:last-child > p {
+        columns: 1;
+        margin-bottom: 0;
+    }
+
+}
+
+@media (max-width: 960px) {
+    .contact-section-testimonials {
+        padding: 50px 30px 0px 30px;
+    }
+    .contact-section-testimonials .testmonials-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contact-section-testimonials .testmonials-item > div:last-child > p {
+        columns: auto;
+        height: auto;
+        column-gap: 0;
+        margin-bottom: 0;
+        text-align: left;
+    }
+    .contact-section-testimonials .testmonials-item .testmonials-item-body{
+        margin-top: 30px;
+    }
+}
+
 /*fin contact-section-testimonials*/

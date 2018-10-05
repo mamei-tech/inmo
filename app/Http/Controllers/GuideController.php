@@ -13,14 +13,10 @@ class GuideController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except('index');
+        $this->middleware('auth')->except(['index', 'sendEmail']);
     }
 
-    /**
-     * Show the about me page.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $guides = DB::table('guides')
@@ -28,6 +24,11 @@ class GuideController extends Controller
             ->get();
 
         return view('guides', ['guides' => $guides]);
+    }
+
+    public function sendEmail(Request $request)
+    {
+        return ["success" => true, "request" => $request->attributes];
     }
 
     public function indexAdmin()
@@ -46,7 +47,6 @@ class GuideController extends Controller
                 ->get()
         ];
     }
-
 
     public function create()
     {

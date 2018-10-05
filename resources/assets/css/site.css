@@ -38,6 +38,14 @@ body {
     color: rgb(142, 142, 142);
 }
 
+.color-gray-light {
+    color: rgb(228, 228, 228);
+}
+
+.color-red {
+    color: rgb(137, 0, 0);
+}
+
 .color-yellow {
     color: rgb(225, 175, 90);
 }
@@ -721,4 +729,9 @@ section {
 
 textarea {
     resize: none;
+}
+
+.form-control:focus{
+    border-color: rgb(225, 175, 90);
+    box-shadow: 0 0 0 0.2rem rgba(225, 175, 90, .10);
 }

@@ -20,7 +20,7 @@
             @foreach ($guides as $g)
                 <div class="guide-item col-md-4">
                     <div class="box">
-                        <div id="{{$g->id}}" class="check"></div>
+                        <div id="{{$g->id}}"></div>
                     </div>
                         <h3>{{$g->text_en}}</h3>
                 </div>
@@ -29,14 +29,15 @@
 
         <h4 class="color-yellow selected">{{ __('app.guides_selected') }}</h4>
 
-        <form action="@{{ route('sendContact') }}" method="post">
+        <form id="form-send-email" action="" method="post">
+            @csrf
             <div class="form-group">
                 <input type="email" class="form-control offset-lg-6 col-lg-6 col-sm-12" name="email" required=""
                        placeholder="@lang('app.yourEmail')">
             </div>
 
             <div>
-                <button onclick="downloadGuide" class="btn btn-yellow">@lang('app.download')</button>
+                <button type="button" onclick="downloadGuide()" class="btn btn-yellow">@lang('app.download')</button>
             </div>
         </form>
 
@@ -44,5 +45,8 @@
 @endsection
 
 @push('scripts')
+    <script type="text/javascript">
+        var urlSendEmail = '{{route("guide.sendEmail", [App::getLocale()])}}';
+    </script>
     <script src="{{ asset('js/views/guides.js') }}" defer></script>
 @endpush

@@ -25,6 +25,7 @@
     justify-content: flex-end;
     align-content: flex-start;
     padding: 35px 0 35px 25%;
+    overflow: auto;
 }
 
 

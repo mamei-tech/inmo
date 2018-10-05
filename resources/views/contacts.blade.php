@@ -89,7 +89,8 @@
             </form>
         </div>
     </div>
-    <div class="contact-section-testimonials">
+
+    <div class="contact-section-add-testimonials">
         <div>
             <h1>@lang('app.testimonials')</h1>
             <h3 class="color-gray">@lang('app.expressOpinion')</h3>
@@ -97,7 +98,7 @@
 
         <div>
             <div style="position: relative">
-                <div class="img-thumbnail" style="height: 200px; width: 200px;">
+                <div class="img-thumbnail">
                     <div id="preview" class="" style="overflow: hidden; cursor: pointer;">
                         <svg xmlns="http://www.w3.org/2000/svg" class="color-gray" viewBox="0 0 170 170">
                             <defs>
@@ -122,9 +123,12 @@
                     </div>
                 </div>
             </div>
+
             <div class="container-form">
-                <form action="{{ route('sendTestimonials') }}" method="post">
-                    <div class="form-group">
+                <form id="form-send-testimonials" action="{{ route('contact.storeTestimonials', [App::getLocale()]) }}"
+                      enctype="multipart/form-data" method="POST">
+                    @csrf
+                    <div class="form-group form-add-testimonials-name">
                         <input type="text" class="form-control" name="name" required=""
                                placeholder="@lang('app.yourName')">
                     </div>
@@ -134,7 +138,7 @@
                                   placeholder="@lang('app.yourtestimonials')"></textarea>
                     </div>
                     <input type="hidden" class="hidden" name="foto"/>
-                    <button type="submit" class="btn btn-yellow">@lang('app.send')</button>
+                    <button type="button" onclick="sendTestimonials()" class="btn btn-yellow">@lang('app.send')</button>
                 </form>
             </div>
         </div>
@@ -152,7 +156,7 @@
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="thumbnail"
-                             style="height: 400px; width: 400px; overflow: hidden; padding: 0; margin: auto; background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC')">
+                             style="">
                             <img id="image" src=""/>
                         </div>
                     </div>
@@ -164,75 +168,29 @@
         </div>
     </div>
     <input style="display: none;" type="file" id="input">
+
+    @if($testimonials->count())
+    <div class="contact-section-testimonials">
+        @foreach ($testimonials as $t)
+            <div class="testmonials-item">
+                <div class="testmonials-item-img">
+                    <img class="img-thumbnail" src="{{ $t->foto }}">
+                </div>
+
+                <div class="testmonials-item-body">
+                    <h3 class="color-gray">{{ $t->name }}</h3>
+                    <p class="color-gray">{{ $t->testimonials }}</p>
+                </div>
+            </div>
+        @endforeach
+    </div>
+    @endif
+
+
 @endsection
 
 @push('scripts')
     <script type="text/javascript" src="/js/cropper.js"></script>
     <script type="text/javascript" src="/js/jquery-cropper.js"></script>
-    <script type="text/javascript">
-
-        function saveImage() {
-            var image = $("[name=foto]").val().split('base64,')[1];
-            if (image)
-                utils.ajax({
-                    url: "",
-                    data: {image: image},
-                    success: function () {
-                        window.location.reload();
-                    }
-                });
-        }
-
-        $(document).ready(function () {
-
-            var image = document.getElementById("image");
-
-            window.cropper = new Cropper(image,
-                {
-                    autoCrop: true,
-                    aspectRatio: 1,
-                    viewMode: 1,
-                    dragMode: 'move',
-                    movable: false,
-                    scalable: false,
-                    zoomable: false,
-                    minCropBoxWidth: 150,
-                    minCropBoxHeight: 150,
-                    preview: document.getElementById("preview"),
-                    cropend: function () {
-                        var canvas = cropper.getCroppedCanvas({width: 200, height: 200});
-                        $("[name=foto]").val(canvas.toDataURL());
-                    },
-                    ready: function () {
-                        var canvas = cropper.getCroppedCanvas({width: 200, height: 200});
-                        $("[name=foto]").val(canvas.toDataURL());
-                    }
-                });
-
-            function showPreview(e) {
-                var input = e.target;
-                if (input.files && input.files.length) {
-                    var filename = input.files[0].name;
-                    var ext = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
-                    if (ext === "gif" || ext === "png" || ext === "jpeg" || ext === "jpg") { //|| ext === "bmp"
-                        var reader = new FileReader();
-                        reader.onload = function (e) {
-                            var data = e.target.result;
-                            data = data.split('base64,')[1];
-                            cropper.replace(e.target.result);
-                        }
-                        reader.readAsDataURL(input.files[0]);
-                    } else {
-                        console.log("invalid file");
-                        alertify.error("Tipo de archivo no valido: " + filename);
-                    }
-                }
-            }
-
-            $("#input").on("change", showPreview);
-            document.getElementById("preview").onclick = function () {
-                $("#exampleModal").modal('show')
-            };
-        });
-    </script>
+    <script type="text/javascript" src="/js/views/contacts.js"></script>
 @endpush

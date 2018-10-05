@@ -42,4 +42,7 @@ Route::prefix('{lang?}')->group(function () {
     Route::get('guides', 'GuideController@index')->name('guides');
     Route::get('about', 'AboutMeController@index')->name('about');
     Route::get('contacts', 'ContactsController@index')->name('contacts');
+
+    Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
+    Route::post('testimonials', 'ContactsController@storeTestimonials')->name('contact.storeTestimonials');
 });
