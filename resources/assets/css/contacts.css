@@ -127,39 +127,39 @@
     padding: 70px 120px;
 }
 
-.contact-section-testimonials div:first-child{
+.contact-section-testimonials > div:first-child{
     text-align: right;
 }
 
-.contact-section-testimonials div:first-child > h3{
+.contact-section-testimonials > div:first-child > h3{
     margin: 20px 0 50px;
 }
 
-.contact-section-testimonials div:last-child{
+.contact-section-testimonials > div:last-child{
     display: flex;
     flex-direction: row;
 }
 
-.contact-section-testimonials div:last-child > div{
+.contact-section-testimonials > div:last-child > div{
     flex: 1;
     text-align: left;
 }
 
-.contact-section-testimonials div:last-child > .container-form{
+.contact-section-testimonials > div:last-child > .container-form{
     flex: 2;
     text-align: right;
     width: 100%;
 }
 
-.contact-section-testimonials div:last-child > .container-form > form{
+.contact-section-testimonials > div:last-child > .container-form > form{
     width: 100%;
 }
 
-.contact-section-testimonials div:last-child .form-group{
+.contact-section-testimonials > div:last-child .form-group{
     margin-bottom: 30px;
 }
 
-.contact-section-testimonials div:last-child .container-image{
+.contact-section-testimonials > div:last-child .container-image{
     height: 200px;
     width: 200px;
     background-color: rgb(255,255,255);
@@ -168,12 +168,12 @@
     margin-bottom: 67px;
 }
 
-.contact-section-testimonials div:last-child .container-image svg{
+.contact-section-testimonials > div:last-child .container-image svg{
     height: 200px;
     width: 200px;
 }
 
-.contact-section-testimonials div:last-child .form-group:first-child{
+.contact-section-testimonials > div:last-child .form-group:first-child{
     width: 50%;
     float: right;
 }

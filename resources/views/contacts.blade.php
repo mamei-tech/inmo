@@ -3,6 +3,7 @@
 @section('title', __('app.contact'))
 
 @push('styles')
+    <link href="{{ asset('css/cropper.css') }}" rel="stylesheet"></link>
     <link href="{{ asset('css/contacts.css') }}" rel="stylesheet"></link>
 @endpush
 
@@ -26,7 +27,7 @@
                 </div>
                 <div class="form-group">
                 <textarea rows="3" class="form-control" name="writeMe" required=""
-                          placeholder="@lang('app.writeMe')" ></textarea>
+                          placeholder="@lang('app.writeMe')"></textarea>
                 </div>
 
                 <div class="container-social-buttom">
@@ -96,46 +97,142 @@
 
         <div>
             <div style="position: relative">
-                <div class="container-image">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="color-gray" viewBox="0 0 170 170">
-                        <defs>
-                            <style>.cls-1 {
-                                    fill: #fff;
-                                }
+                <div class="img-thumbnail" style="height: 200px; width: 200px;">
+                    <div id="preview" class="" style="overflow: hidden; cursor: pointer;">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="color-gray" viewBox="0 0 170 170">
+                            <defs>
+                                <style>.cls-1 {
+                                        fill: #fff;
+                                    }
 
-                                .cls-2 {
-                                    fill: #aaa;
-                                }</style>
-                        </defs>
-                        <g id="Capa_2" data-name="Capa 2">
-                            <g
-                                    id="Capa_1-2" data-name="Capa 1">
-                                <rect class="cls-1" width="170" height="170"/>
-                                <path
-                                        class="cls-2"
-                                        d="M97.69,85.8H86.47V97h-1.6V85.8H73.64V84.2H84.86V73h1.6V84.2H97.69Z"/>
+                                    .cls-2 {
+                                        fill: #aaa;
+                                    }</style>
+                            </defs>
+                            <g id="Capa_2" data-name="Capa 2">
+                                <g
+                                        id="Capa_1-2" data-name="Capa 1">
+                                    <rect class="cls-1" width="170" height="170"/>
+                                    <path
+                                            class="cls-2"
+                                            d="M97.69,85.8H86.47V97h-1.6V85.8H73.64V84.2H84.86V73h1.6V84.2H97.69Z"/>
+                                </g>
                             </g>
-                        </g>
-                    </svg>
-
+                        </svg>
+                    </div>
                 </div>
             </div>
             <div class="container-form">
-                <form action="@{{ route('sendTestimonials') }}" method="post">
+                <form action="{{ route('sendTestimonials') }}" method="post">
                     <div class="form-group">
-                        <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')">
+                        <input type="text" class="form-control" name="name" required=""
+                               placeholder="@lang('app.yourName')">
                     </div>
 
                     <div class="form-group">
                         <textarea rows="5" class="form-control" name="testimonials" required=""
                                   placeholder="@lang('app.yourtestimonials')"></textarea>
                     </div>
-
+                    <input type="hidden" class="hidden" name="foto"/>
                     <button type="submit" class="btn btn-yellow">@lang('app.send')</button>
                 </form>
             </div>
         </div>
-
-
     </div>
+
+    <div id="exampleModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">@Selecionar imagen</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="thumbnail"
+                             style="height: 400px; width: 400px; overflow: hidden; padding: 0; margin: auto; background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC')">
+                            <img id="image" src=""/>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-yellow" onclick=" $('#input').click()">@seleccionar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input style="display: none;" type="file" id="input">
 @endsection
+
+@push('scripts')
+    <script type="text/javascript" src="/js/cropper.js"></script>
+    <script type="text/javascript" src="/js/jquery-cropper.js"></script>
+    <script type="text/javascript">
+
+        function saveImage() {
+            var image = $("[name=foto]").val().split('base64,')[1];
+            if (image)
+                utils.ajax({
+                    url: "",
+                    data: {image: image},
+                    success: function () {
+                        window.location.reload();
+                    }
+                });
+        }
+
+        $(document).ready(function () {
+
+            var image = document.getElementById("image");
+
+            window.cropper = new Cropper(image,
+                {
+                    autoCrop: true,
+                    aspectRatio: 1,
+                    viewMode: 1,
+                    dragMode: 'move',
+                    movable: false,
+                    scalable: false,
+                    zoomable: false,
+                    minCropBoxWidth: 150,
+                    minCropBoxHeight: 150,
+                    preview: document.getElementById("preview"),
+                    cropend: function () {
+                        var canvas = cropper.getCroppedCanvas({width: 200, height: 200});
+                        $("[name=foto]").val(canvas.toDataURL());
+                    },
+                    ready: function () {
+                        var canvas = cropper.getCroppedCanvas({width: 200, height: 200});
+                        $("[name=foto]").val(canvas.toDataURL());
+                    }
+                });
+
+            function showPreview(e) {
+                var input = e.target;
+                if (input.files && input.files.length) {
+                    var filename = input.files[0].name;
+                    var ext = filename.substring(filename.lastIndexOf(".") + 1).toLowerCase();
+                    if (ext === "gif" || ext === "png" || ext === "jpeg" || ext === "jpg") { //|| ext === "bmp"
+                        var reader = new FileReader();
+                        reader.onload = function (e) {
+                            var data = e.target.result;
+                            data = data.split('base64,')[1];
+                            cropper.replace(e.target.result);
+                        }
+                        reader.readAsDataURL(input.files[0]);
+                    } else {
+                        console.log("invalid file");
+                        alertify.error("Tipo de archivo no valido: " + filename);
+                    }
+                }
+            }
+
+            $("#input").on("change", showPreview);
+            document.getElementById("preview").onclick = function () {
+                $("#exampleModal").modal('show')
+            };
+        });
+    </script>
+@endpush

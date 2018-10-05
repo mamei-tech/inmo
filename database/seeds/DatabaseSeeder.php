@@ -150,25 +150,9 @@ Mr. Hidalgo’s is knowledgeable in the Miami market generally but his area of e
         ]);
 
         DB::table('guides')->insert([
-            'text_es' => 'Vendedor',
-            'text_en' => 'Seller',
-            'guide' => 'public/guides/cQseguX6YN13UFitRTUuzbWuLvHHcVSBb9nnA3aw.docx',
-            'created_at' => '2009-10-29 23:42:29',
-            'updated_at' => $faker->dateTime
-        ]);
-
-        DB::table('guides')->insert([
             'text_es' => 'Empaca como un pro/ profesional ',
             'text_en' => 'Pack like a pro',
             'guide' => 'public/guides/Keh4FVbXG4y7gpF8dDeVSlEaCmCWmG4iRPEz7Y3D.docx',
-            'created_at' =>  '2009-10-29 23:42:29',
-            'updated_at' => $faker->dateTime
-        ]);
-
-        DB::table('guides')->insert([
-            'text_es' => 'Para nuevos propietarios',
-            'text_en' => 'For the new owners',
-            'guide' => 'public/guides/nHREQCr2hJnMJjPdM2VxiVSiKNVtKqHGIV7fVEzu.docx',
             'created_at' =>  '2009-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
@@ -180,6 +164,24 @@ Mr. Hidalgo’s is knowledgeable in the Miami market generally but his area of e
             'created_at' =>  '2009-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
+
+        DB::table('guides')->insert([
+            'text_es' => 'Vendedor',
+            'text_en' => 'Seller',
+            'guide' => 'public/guides/cQseguX6YN13UFitRTUuzbWuLvHHcVSBb9nnA3aw.docx',
+            'created_at' => '2009-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
+
+        DB::table('guides')->insert([
+            'text_es' => 'Para nuevos propietarios',
+            'text_en' => 'For the new owners',
+            'guide' => 'public/guides/nHREQCr2hJnMJjPdM2VxiVSiKNVtKqHGIV7fVEzu.docx',
+            'created_at' =>  '2009-10-29 23:42:29',
+            'updated_at' => $faker->dateTime
+        ]);
+
 
         DB::table('guides')->insert([
             'text_es' => 'Prepare para su mudanza',

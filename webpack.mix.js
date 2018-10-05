@@ -11,8 +11,12 @@ let mix = require('laravel-mix');
  |
  */
 
+mix.setPublicPath("../../public/");
+mix.setResourceRoot("../../");
+
+
 //mix.js('resources/assets/js/app.js', 'public/js');
-mix.sass('resources/assets/sass/app.scss', 'public/css/bootstrap.min.css')
+mix.sass('resources/assets/sass/app.scss', 'public/css/bootstrap.min.css');
 
 mix.copy('resources/assets/js', 'public/js');
 mix.copy('resources/assets/css', 'public/css');

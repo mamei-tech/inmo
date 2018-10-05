@@ -11,22 +11,20 @@
 
         <h1>{{ __('app.guides') }}</h1>
         <h3 class="subtitle">{{ __('app.guide_subtitle') }}</h3>
+        <style>
 
-        @php $even = false;
-        @endphp
+        </style>
 
-        <div class="container-guides">
-            {{--@foreach ($guides as $g)--}}
-                {{--@php $even = !$even;--}}
-                {{--@endphp--}}
 
-                {{--@if($even)--}}
-                    {{--<div><div><h3 class="guides-h3">{{$g->text_en}}</h3></div>--}}
-                {{--@else--}}
-                    {{--<div><h3 class="guides-h3">{{$g->text_en}}</h3></div></div>--}}
-                {{--@endif--}}
-
-            {{--@endforeach--}}
+        <div class="container-guides row">
+            @foreach ($guides as $g)
+                <div class="guide-item col-md-4">
+                    <div class="box">
+                        <div id="{{$g->id}}" class="check"></div>
+                    </div>
+                        <h3>{{$g->text_en}}</h3>
+                </div>
+            @endforeach
         </div>
 
         <h4 class="color-yellow selected">{{ __('app.guides_selected') }}</h4>
@@ -38,7 +36,7 @@
             </div>
 
             <div>
-                <button type="submit" class="btn btn-yellow">@lang('app.download')</button>
+                <button onclick="downloadGuide" class="btn btn-yellow">@lang('app.download')</button>
             </div>
         </form>
 

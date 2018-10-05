@@ -11,6 +11,8 @@ Route::prefix('{lang?}')->group(function () {
         Route::resources([
             "slider" => "SliderController"
         ]);
+        Route::get('config/logo', 'ConfigController@showConfigLogo')->name('config.logo');
+        Route::post('config/logo', 'ConfigController@configLogo');
 
         Route::get('guide/indexAdmin', 'GuideController@indexAdmin')->name('guide.index_admin');
         Route::any('guide/read', 'GuideController@read')->name('guide.read');
@@ -19,9 +21,6 @@ Route::prefix('{lang?}')->group(function () {
         Route::delete('guide/{guide}', 'GuideController@destroy')->name('guide.destroy');
         Route::get('guide/{guide}/edit', 'GuideController@edit')->name('guide.edit');
         Route::put('guide/{guide}', 'GuideController@update')->name('guide.update');
-
-        Route::get('config/logo', 'ConfigController@showConfigLogo')->name('config.logo');
-        Route::post('config/logo', 'ConfigController@configLogo');
 
         Route::get('profile', 'ProfileController@index')->name('profile');
         Route::put('profile/{profile}', 'ProfileController@update')->name('profile.update');
