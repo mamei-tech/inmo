@@ -286,7 +286,7 @@
 
 @media (max-width: 960px) {
     .contact-section-testimonials {
-        padding: 50px 30px 0px 30px;
+        padding: 50px 30px 0 30px;
     }
     .contact-section-testimonials .testmonials-item {
         flex-direction: column;
