@@ -16,7 +16,7 @@
                         </div>
 
                         <form method="post" enctype="multipart/form-data"
-                              action="{{route("testimonials.update", [App::getLocale(), $testimonials->id])}}">
+                              action="{{route("testimonials.update", [App::getLocale(), 1])}}">
                             @method('PUT')
                             @csrf
 

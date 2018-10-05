@@ -167,7 +167,7 @@ section {
 .nav-bar ul {
     padding: 19px 0 0 0;
     margin: 0;
-    transition: all 0.2s 0.1s ease-out;
+    transition: all 0.2s 0.1s ease-in-out;
 }
 
 .nav-bar ul li {
@@ -186,7 +186,7 @@ section {
 
 .nav-bar .brand-ct {
     position: relative;
-    transition: all 0.2s 0.1s ease-out;
+    transition: all 0.2s 0.1s ease-in-out;
 }
 
 .brand-ct div img {
@@ -196,7 +196,7 @@ section {
 .nav-bar .brand-ct .brand-img,
 .nav-bar .brand-ct .brand-subimg {
     position: absolute;
-    transition: all 0.2s 0.1s ease-out;
+    transition: all 0.2s 0.1s ease-in-out;
 }
 
 .nav-bar .brand-ct .brand-img {
@@ -260,7 +260,7 @@ section {
 }
 
 .phone-lang-buttons img {
-    width: 60px;
+    width: 80px;
 }
 
 .tablet-lang-buttons a{
@@ -305,7 +305,7 @@ section {
         top: 130px;
         left: 0;
         text-align: center;
-        transition: all 0.2s 0.1s ease-out;
+        transition: all 0.2s 0.1s ease-in-out;
     }
 
     .nav-bar.scrolled.scroll-down {
@@ -513,7 +513,6 @@ section {
         top: 9px;
     }
 }
-
 /**/
 
 /*Efecto:  Underline From Center para los botones */
@@ -540,28 +539,28 @@ section {
     transition-property: left, right;
     -webkit-transition-duration: 0.1s;
     transition-duration: 0.3s;
-    -webkit-transition-timing-function: ease-out;
-    transition-timing-function: ease-out;
+    -webkit-transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in-out;
 }
 
 .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
-    left: 0;
-    right: 0;
+    left: 8px;
+    right: 8px;
 }
 
-.hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+.nav-bar .hvr-underline-from-center:focus:before, .nav-bar .hvr-underline-from-center:active:before {
     height: 0;
 }
 
-.hvr-underline-from-center:focus, .hvr-underline-from-center:active {
-    outline: rgb(225, 175, 90) solid 3px;
+.nav-bar .hvr-underline-from-center:focus, .nav-bar .hvr-underline-from-center:active {
+    outline: transparent;
 }
 
 .nav-bar .hvr-underline-from-center.active {
     outline: rgb(225, 175, 90) solid 3px;
 }
 
-.nav-bar .hvr-underline-from-center.active:hover:before {
+.hvr-underline-from-center.active:hover:before {
     left: 51%;
     right: 51%;
 }
@@ -613,6 +612,10 @@ section {
     color: rgb(255, 255, 255);
     text-decoration: none;
     text-transform: uppercase;
+}
+
+.footer .menu-ct ul li a:hover {
+    color: rgb(225, 175, 90);
 }
 
 .footer .menu-ct ul li.active a {
@@ -680,7 +683,7 @@ section {
     }
 
     .footer .brand-ct .brand-subimg img {
-        width: 64px;
+        width: 80px;
     }
 
     .footer .menu-ct {

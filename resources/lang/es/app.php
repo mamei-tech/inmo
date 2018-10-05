@@ -90,6 +90,7 @@ return [
     'testimonials' => 'Testimonios',
     'testimonials_delete_success' => 'testimonio eliminado satisfactoriamente',
     'testimonials_delete_confirm' => '¿Está seguro que desea eliminar este testimonio?',
+    'edit_testimonials' => 'Editar Testimonios',
 
     'copyright' => 'PROPIEDAD INTELECTUAL 2018 TODOS LOS DERECHOS RESERVADOS. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',

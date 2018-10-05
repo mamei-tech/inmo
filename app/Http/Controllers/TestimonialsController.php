@@ -58,6 +58,18 @@ class TestimonialsController extends Controller
         return view('admin.testimonials.edit', ["testimonials" => $testimonials]);
     }
 
+    public function update(Request $request, string $lang, Testimonials $testimonials)
+    {
+        $testimonials->fill([
+            'name' => $request->name,
+            'testimonials' => $request->testimonials,
+            'updated_at' => new DateTime()
+        ]);
+        $testimonials->save();
+
+        return Redirect::route("testimonials.index", [$lang]);
+    }
+
     public function destroy(string $lang, Testimonials $testimonials)
     {
         $success = $testimonials->delete();

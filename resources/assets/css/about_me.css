@@ -128,7 +128,7 @@
 
 @media (max-width: 1249px) {
     .about-me-section-0 {
-        padding: 40px 100px;
+        padding: 50px 100px;
     }
 
     .bio > p {
@@ -139,7 +139,7 @@
 
 @media (max-width: 960px) {
     .about-me-section-0 {
-        padding: 30px;
+        padding: 50px 30px;
         text-align: center;
         background: url('../images/sm/1.jpg') top center /cover;
     }
@@ -174,7 +174,7 @@
     }
 
     .info-about-me-mobile {
-        padding: 30px;
+        padding: 50px 30px;
         text-align: center;
         background-color: rgb(228, 228, 228);
         display: flex;

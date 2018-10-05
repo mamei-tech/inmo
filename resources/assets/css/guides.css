@@ -12,7 +12,7 @@
 }
 
 .guide-section-0 h4.selected{
-    padding: 20px 0 40px;
+    padding: 0 0 30px 0;
 }
 
 .guide-section-0 button{
@@ -24,7 +24,7 @@
     display: flex;
     justify-content: flex-end;
     align-content: flex-start;
-    padding: 35px 0 35px 25%;
+    padding: 35px 0 5px 25%;
     overflow: auto;
 }
 
@@ -51,22 +51,8 @@
 
 .guide-item h3{
     margin-right: 32px;
-    margin-top: 2px;
+    margin-top: 1px;
 }
-
-/*.container-guides > div{*/
-    /*padding-right: 0;*/
-    /*text-align: right;*/
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*flex: 25%;*/
-/*}*/
-
-/*.container-guides .guides-h3{*/
-    /*margin: 0 0 30px;*/
-/*}*/
-
-
 
 @media (max-width: 1249px) {
     .guide-section-0 {
@@ -74,43 +60,38 @@
         padding: 50px 100px;
     }
 
-    .guide-section-0 h4.selected{
-        padding: 20px 0 30px;
-    }
-
     .guide-section-0 button{
         margin: 50px 0 0 0;
     }
 
-    /*.container-guides .guides-h3{*/
-        /*padding: 0 0 30px;*/
-    /*}*/
+    .container-guides{
+        padding-left: 0;
+        padding-bottom: 0;
+    }
 }
 
 @media (max-width: 960px) {
     .guide-section-0 {
-        padding: 30px;
+        padding: 50px 30px;
         text-align: center;
         background: url('../images/sm/2.jpg') top center /cover;
     }
 
     .guide-section-0 button{
-        margin: 20px 0;
+        margin: 20px 0 0 0;
     }
 
-    /*.container-guides{*/
-       /*flex-direction: column;*/
-    /*}*/
+    .guide-section-0 h3.subtitle{
+        padding: 15px 0 0 0;
+    }
 
-    /*.container-guides > div{*/
-        /*text-align: center;*/
-        /*display: flex;*/
-        /*flex-direction: column;*/
-        /*flex: 1;*/
-    /*}*/
+    .container-guides .guide-item{
+        margin-bottom: 20px;
+        padding-left: 0;
+        text-align: right;
+    }
 
-    /*.container-guides .guides-h3{*/
-        /*padding: 0;*/
-        /*margin: 0;*/
-    /*}*/
+    .guide-item h3{
+        margin-right: 40px;
+    }
 }

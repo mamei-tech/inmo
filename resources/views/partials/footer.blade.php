@@ -11,20 +11,20 @@
         <div class="menu-ct">
             <ul>
                 @unless(isset($inHome) && $inHome==true)
-                    <li class="hvr-underline-from-center">
+                    <li>
                         <a href="{{Route("home")}}">@lang('app.home')</a>
                     </li>
                 @endunless
-                <li class="hvr-underline-from-center">
+                <li>
                     <a class="link-neighborhoods" href="{{Route("neighborhoods")}}">@lang('app.neighborhoods')</a>
                 </li>
-                <li class="hvr-underline-from-center">
+                <li>
                     <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
                 </li>
-                <li class="hvr-underline-from-center">
+                <li>
                     <a class="link-about" href="{{Route("about")}}">@lang('app.aboutMe')</a>
                 </li>
-                <li class="hvr-underline-from-center">
+                <li>
                     <a class="link-contacts" href="{{Route("contacts")}}">@lang('app.contact')</a>
                 </li>
             </ul>

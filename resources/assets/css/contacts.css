@@ -81,10 +81,14 @@
 
 @media (max-width: 960px) {
     .contact-section-0 {
-        padding: 30px;
+        padding: 40px 30px;
         height: 560px;
         text-align: center;
         background: url('../images/sm/10.jpg') top center /cover;
+    }
+
+    .contact-section-0 h3 {
+        padding: 10px 0 30px;
     }
 
     .contact-section-0 > div:first-child {
@@ -97,6 +101,7 @@
 
     .container-social-buttom {
         flex-direction: column;
+        padding-top: 10px;
     }
 
     .container-social-buttom div button {
@@ -299,6 +304,7 @@
     .contact-section-testimonials .testmonials-item > div:last-child > p {
         columns: auto;
         height: auto;
+        min-height: auto;
         column-gap: 0;
         margin-bottom: 0;
         text-align: left;

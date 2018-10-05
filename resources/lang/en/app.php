@@ -90,6 +90,7 @@ return [
     'yourtestimonials' => 'your testimonials',
     'testimonials_delete_success' => 'testimonials deleted sucessfully',
     'testimonials_delete_confirm' => 'Are you sure you want delete this testimonials?',
+    'edit_testimonials' => 'Edit Testimonials',
 
     'copyright' => 'COPYRIGHTS 2018 ALL RIGHTS RESERVED. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',

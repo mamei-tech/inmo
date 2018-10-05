@@ -14,7 +14,7 @@
 .carousel-item .carousel-caption {
     right: 0;
     left: 0;
-    bottom: -115px;
+    bottom: -150px;
     height: 230px;
     background: rgba(255, 255, 255, 0.1);
     text-align: right;
@@ -115,7 +115,7 @@
         font-size: 13px;
         text-transform: uppercase;
         text-decoration: none;
-        padding: 5px 15px;
+        padding: 5px 10px;
     }
 }
 
@@ -215,7 +215,7 @@
     .light-gray-block {
         height: 320px;
         width: 100%;
-        padding: 20px 30px 20px 30px;
+        padding: 50px 30px;
         align-items: center;
         text-align: center;
     }
@@ -299,7 +299,7 @@
 
 @media (max-width: 960px) {
     .home-section-3 {
-        padding: 40px 30px 0;
+        padding: 50px 30px 0;
     }
 
     .home-section-3 > div {

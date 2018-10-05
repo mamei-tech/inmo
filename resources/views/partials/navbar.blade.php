@@ -13,10 +13,10 @@
         <div class="menu-ct pc">
             <ul>
                 <li class="lang-{{App::getLocale()}}" style="margin-right: 50px;">
-                    <a class="lang-en hvr-underline-from-center"
+                    <a class="lang-en"
                        style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                        href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
-                    <a class="lang-es hvr-underline-from-center"
+                    <a class="lang-es"
                        style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                        href="{{route(Route::currentRouteName(),["es"])}}">ESP</a>
                 </li>
@@ -48,10 +48,10 @@
                         <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}?{{time()}}"/>
                     </div>
                     <li class="lang-{{App::getLocale()}}">
-                        <a class="lang-en hvr-underline-from-center"
+                        <a class="lang-en"
                            style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                            href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
-                        <a class="lang-es hvr-underline-from-center"
+                        <a class="lang-es"
                            style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                            href="{{route(Route::currentRouteName(),["es"])}}">ESP</a>
                     </li>
@@ -89,10 +89,10 @@
         </div>
         <div class="mobile-buttons float-right">
             <div class="tablet-lang-buttons lang-{{App::getLocale()}} float-left" style="margin:2px 40px 0 0;">
-                <a class="lang-en hvr-underline-from-center"
+                <a class="lang-en"
                    style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                    href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
-                <a class="lang-es hvr-underline-from-center"
+                <a class="lang-es"
                    style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                    href="{{route(Route::currentRouteName(),["es"])}}">ESP</a>
             </div>

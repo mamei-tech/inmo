@@ -18,7 +18,7 @@
 
         <div class="container-guides row">
             @foreach ($guides as $g)
-                <div class="guide-item col-md-4">
+                <div class="guide-item col-md-4 col-xs-12">
                     <div class="box">
                         <div id="{{$g->id}}"></div>
                     </div>
