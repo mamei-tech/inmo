@@ -150,7 +150,8 @@ return [
         'image_lg' => 'Image Pc',
         'image_md' => 'Image Tablet',
         'image_sm' => 'Image Mobile',
-
+        'name' => 'Name',
+        'testimonials' => 'Testimonials',
     ],
 
 ];

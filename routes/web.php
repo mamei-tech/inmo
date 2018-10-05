@@ -22,6 +22,11 @@ Route::prefix('{lang?}')->group(function () {
         Route::get('guide/{guide}/edit', 'GuideController@edit')->name('guide.edit');
         Route::put('guide/{guide}', 'GuideController@update')->name('guide.update');
 
+        Route::any('testimonials/read', 'TestimonialsController@read')->name('testimonials.read');
+        Route::resources([
+            "testimonials" => "TestimonialsController"
+        ]);
+
         Route::get('profile', 'ProfileController@index')->name('profile');
         Route::put('profile/{profile}', 'ProfileController@update')->name('profile.update');
     });

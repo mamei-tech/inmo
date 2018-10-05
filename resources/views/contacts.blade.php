@@ -125,7 +125,7 @@
             </div>
 
             <div class="container-form">
-                <form id="form-send-testimonials" action="{{ route('contact.storeTestimonials', [App::getLocale()]) }}"
+                <form id="form-send-testimonials" action="{{ route('testimonials.store', [App::getLocale()]) }}"
                       enctype="multipart/form-data" method="POST">
                     @csrf
                     <div class="form-group form-add-testimonials-name">

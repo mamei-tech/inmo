@@ -37,27 +37,41 @@ class PromotionController extends Controller
 
     public function readMain(Request $request)
     {
-        return [
-            "Count" => DB::table('Promotion')->whereNotNull("image_lg")->count(),
-            "Data" => DB::table('Promotion')
+        $count = DB::table('Promotion')->whereNotNull("image_lg")->count();
+        $data = [];
+
+        if ($count){
+            $data = DB::table('Promotion')
                 ->whereNotNull("image_lg")
                 ->orderBy("created_at", "desc")
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
-                ->get()
+                ->get();
+        }
+
+        return [
+            "Count" => $count,
+            "Data" => $data
         ];
     }
 
     public function read(Request $request)
     {
-        return [
-            "Count" => DB::table('Promotion')->whereNull("image_lg")->count(),
-            "Data" => DB::table('Promotion')
+        $count = DB::table('Promotion')->whereNull("image_lg")->count();
+        $data = [];
+
+        if ($count){
+            $data = DB::table('Promotion')
                 ->whereNull("image_lg")
                 ->orderBy("created_at", "desc")
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
-                ->get()
+                ->get();
+        }
+
+        return [
+            "Count" => $count,
+            "Data" => $data
         ];
     }
 

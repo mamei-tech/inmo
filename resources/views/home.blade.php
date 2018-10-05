@@ -18,13 +18,17 @@
 {{--TODO Incluir las etiquetas SEO q se entregaron en los metas del sitio asi como los clasicos de title, autor u otros--}}
 
 {{--TODO Gestionar el contenido de testimonials editar y eliminar. Se mostraran los 10 ultimos--}}
-{{--TODO Terminar de adicionar visualmente los testimonios--}}
+{{--TODO OK Terminar de adicionar visualmente los testimonios--}}
+
+{{--TODO En la vista de contacts hacer el contact me--}}
 
 {{--TODO Terminar la parte de guides--}}
 
 {{--TODO Poder visualizar todos los correos usados tanto en guides como en testimonials--}}
 
 {{--TODO Revisar todo el proyecto principalmente las imagenes y el paralax en las 3 vistas--}}
+{{--TODO Pasar todos los atributos a la hora de insertar y modificar para validation/attributes--}}
+{{--TODO Revisar todos los TODOs--}}
 
 @extends('layouts.app')
 

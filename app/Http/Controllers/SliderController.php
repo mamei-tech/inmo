@@ -34,13 +34,20 @@ class SliderController extends Controller
 
     public function read(Request $request)
     {
-        return [
-            "Count" => DB::table('slider')->count(),
-            "Data" => DB::table('slider')
+        $count = DB::table('slider')->count();
+        $data = [];
+
+        if ($count){
+            $data = DB::table('slider')
                 ->orderBy("created_at", "desc")
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
-                ->get()
+                ->get();
+        }
+
+        return [
+            "Count" => $count,
+            "Data" => $data
         ];
     }
 

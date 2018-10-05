@@ -150,5 +150,7 @@ return [
         'image_lg' => 'Imagen Pc',
         'image_md' => 'Imagen Table',
         'image_sm' => 'Imagen Móvil',
+        'name' => 'Nombre',
+        'testimonials' => 'Testimonio',
     ],
 ];

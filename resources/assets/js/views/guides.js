@@ -22,7 +22,9 @@ function downloadGuide() {
         $.ajax({
             type: "post",
             url: urlSendEmail,
-            data: guideSelected(),
+            data: {
+                guides : guideSelected(),
+            },
             success: function (r, s, o) {
                 if (r.success){
                     console.log(r)

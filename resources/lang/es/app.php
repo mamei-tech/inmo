@@ -36,9 +36,10 @@ return [
     'text_es' => 'Texto en Español',
     'link' => 'Vínculo',
     'image' => 'Imagen',
+    'name' => 'Nombre',
 
     'promotion_delete_success' => 'promoción eliminada satisfactoriamente',
-    'promotion_delete_confirm' => '¿Esta seguro que desea eliminar esta promoción?',
+    'promotion_delete_confirm' => '¿Está seguro que desea eliminar esta promoción?',
 
     'config_logo' => 'Configurar logotipo',
     'logo' => 'Logotipo',
@@ -63,7 +64,7 @@ return [
     'create_guide' => 'Crear Guía',
     'edit_guide' => 'Editar Guía',
     'guide_delete_success' => 'guía eliminado satisfactoriamente',
-    'guide_delete_confirm' => '¿Esta seguro que desea eliminar este guía?',
+    'guide_delete_confirm' => '¿Está seguro que desea eliminar este guía?',
     'show_guide' => 'Ver Guía Actual',
     'guide_subtitle' => 'Download your free handout', //TODO Traducir
     'guides_selected' => 'you will receive the selected document(s) to your email', //TODO Traducir
@@ -72,16 +73,7 @@ return [
     'edit_slider' => 'Editar Slide',
     'slider' => 'Slider',
     'slider_delete_success' => 'slide eliminado satisfactoriamente',
-    'slider_delete_confirm' => '¿Esta seguro que desea eliminar este slide?',
-    'slide1-h1-1' => 'SU NUEVO HOGAR',
-    'slide1-h1-2' => 'ESTÁ A UNA LLAMADA DE DISTANCIA',
-    'slide1-h2' => '¡llámame hoy!',
-    'slide2-h1-1' => 'USTED PUEDE VIVIR',
-    'slide2-h1-2' => 'EN LO MEJOR DE MIAMI ',
-    'slide2-h2' => 'Pagando los mejores precios',
-    'slide3-h1-1' => 'DISFRUTA DE LAS MEJORES VISTAS',
-    'slide3-h1-2' => 'DE UN VERANO',
-    'slide3-h2' => 'que dura todo el año',
+    'slider_delete_confirm' => '¿Está seguro que desea eliminar este slide?',
 
     'realtor' => 'REALTOR ASSOCIATE', //TODO Buscar traduccion
 
@@ -93,9 +85,11 @@ return [
     'writeMe' => 'escríbeme',
     'send' => 'Enviar',
     'download' => 'descargar',
-    'testimonials' => 'testimonios',
     'expressOpinion' => 'puedes expresar tu opinión acerca de mis servicios',
     'yourtestimonials' => 'tu testimonio',
+    'testimonials' => 'Testimonios',
+    'testimonials_delete_success' => 'testimonio eliminado satisfactoriamente',
+    'testimonials_delete_confirm' => '¿Está seguro que desea eliminar este testimonio?',
 
     'copyright' => 'PROPIEDAD INTELECTUAL 2018 TODOS LOS DERECHOS RESERVADOS. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',

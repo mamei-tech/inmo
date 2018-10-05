@@ -36,6 +36,7 @@ return [
     'text_es' => 'Text in Spanish',
     'link' => 'Link',
     'image' => 'Image',
+    'name' => 'Name',
 
     'promotion_delete_success' => 'promotion deleted sucessfully',
     'promotion_delete_confirm' => 'Are you sure you want delete this promotion?',
@@ -73,15 +74,6 @@ return [
     'slider' => 'Slider',
     'slider_delete_success' => 'slide deleted sucessfully',
     'slider_delete_confirm' => 'Are you sure you want delete this slide?',
-    'slide1-h1-1' => 'YOUR NEW HOME',
-    'slide1-h1-2' => 'IS A PHONE CALL AWAY',
-    'slide1-h2' => 'call me today!',
-    'slide2-h1-1' => 'YOU CAN LIVE',
-    'slide2-h1-2' => 'IN THE BEST OF MIAMI',
-    'slide2-h2' => 'paying the best prices',
-    'slide3-h1-1' => 'ENJOY THE BEST VIEWS',
-    'slide3-h1-2' => 'OF A SUMMER',
-    'slide3-h2' => 'that last the entire year',
 
     'realtor' => 'REALTOR ASSOCIATE',
 
@@ -93,9 +85,11 @@ return [
     'writeMe' => 'write me',
     'send' => 'Send',
     'download' => 'download',
-    'testimonials' => 'testimonials',
+    'testimonials' => 'Testimonials',
     'expressOpinion' => 'you can express your opinion about my services',
     'yourtestimonials' => 'your testimonials',
+    'testimonials_delete_success' => 'testimonials deleted sucessfully',
+    'testimonials_delete_confirm' => 'Are you sure you want delete this testimonials?',
 
     'copyright' => 'COPYRIGHTS 2018 ALL RIGHTS RESERVED. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',
@@ -104,8 +98,6 @@ return [
     'rentals' => 'rentals',
     'downtownMiami' => 'DOWNTOWN MIAMI',
     'magicCity' => '"THE MAGIC CITY"',
-
-
 
 
     'firstTextBrickell' => 'BRICKELL <br> 
@@ -123,8 +115,6 @@ As earlier stated, lots of the residences in Brickell are in luxury high-rise co
 
     'thirthTextBrickell' => 'There are so many lovely condominiums to choose from; all are quite spacious and luxurious. Indeed, all of these buildings are secure, and its vast majority enjoys 24-hour security guard service, to ensure that your residence and your family are safe and secure.  <br><br>
 You can find your dreams apartment in Brickell that will fulfill your family’ needs and expectations. ',
-
-
 
 
     'firstTextBrickellTable' => 'BRICKELL <br> 
@@ -146,10 +136,6 @@ There are so many lovely condominiums to choose from; all are quite spacious and
 You can find your dreams apartment in Brickell that will fulfill your family’ needs and expectations. ',
 
 
-
-
-
-
     'firstTextBrickellMobile' => 'BRICKELL <br> 
 "MORE THAN JUST A COMMUNITY" <br><br>
 When thinking of relocating to Miami, one neighborhood you may want to consider is Brickell, which is South Florida\'s central financial region. <br><br>
@@ -169,10 +155,6 @@ As earlier stated, lots of the residences in Brickell are in luxury high-rise co
 You can find your dreams apartment in Brickell that will fulfill your family’ needs and expectations. ',
 
 
-
-
-
-
     'firstTextDowntown' => 'DOWNTOWN MIAMI <br>
  "THE MAGIC CITY" <br><br>
  Downtown Miami was like a phantom town of empty lots and typically midrise and high-rise office buildings. However, a new era of new and prior inexistent luxury downtown Miami apartments gave birth to what many new residents are referred to as home today. It is the new downtown Miami, full of audacious, incredible, and comfortable residential towers. The Miami skyline was changed with new and modern silhouettes of great architectural design and with some of the tallest residential luxury structures such as, the 50 Biscayne, Ten Museum Park, the 900 Biscayne Bay condos, and the most futurist of them all, the One Thousand Museum. People enjoy the idea of living in this neighborhood like never before. Downtown is now home to several significant attractions including parks, museums, theatres, and game venues.<br><br>
@@ -181,9 +163,6 @@ You can find your dreams apartment in Brickell that will fulfill your family’ 
     'secondTextDowntown' => 'All sort of Art galleries and exhibitions are just around the corner in the Arts District. Superb outdoors shopping and dining such as, Bayside Shopping Mall are also at walking distance from the new residential luxury structures in downtown Miami.<br><br>
 The luxury residences in Downtown Miami have amenities including lavish swimming pools, party rooms, business centers, spas, and excellent gyms inside these high rises that make the experience of living there very distinctive.<br>
 The new businesses and nonstop transformations are giving this crucial area of the "Magic City" new reasons for many more people to move in. More restaurants, lounges, bars, nightclubs, and shopping malls are coming along as the population grows in this exciting area of the city due to its luxurious and convenient lifestyle.',
-
-
-
 
 
     'firstTextDowntownTable' => 'DOWNTOWN MIAMI <br>
@@ -195,7 +174,6 @@ The new businesses and nonstop transformations are giving this crucial area of t
 All sort of Art galleries and exhibitions are just around the corner in the Arts District. Superb outdoors shopping and dining such as, Bayside Shopping Mall are also at walking distance from the new residential luxury structures in downtown Miami.<br><br>
 The luxury residences in Downtown Miami have amenities including lavish swimming pools, party rooms, business centers, spas, and excellent gyms inside these high rises that make the experience of living there very distinctive.<br>
 The new businesses and nonstop transformations are giving this crucial area of the "Magic City" new reasons for many more people to move in. More restaurants, lounges, bars, nightclubs, and shopping malls are coming along as the population grows in this exciting area of the city due to its luxurious and convenient lifestyle.',
-
 
 
     'firstTextDowntownMobile' => 'DOWNTOWN MIAMI <br>

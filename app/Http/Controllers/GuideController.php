@@ -26,25 +26,32 @@ class GuideController extends Controller
         return view('guides', ['guides' => $guides]);
     }
 
-    public function sendEmail(Request $request)
-    {
-        return ["success" => true, "request" => $request->attributes];
-    }
-
     public function indexAdmin()
     {
         return view('admin.guide.index');
     }
 
+    public function sendEmail(Request $request)
+    {
+        return ["success" => true, "request" => $request->attributes];
+    }
+
     public function read(Request $request)
     {
-        return [
-            "Count" => DB::table('guides')->count(),
-            "Data" => DB::table('guides')
+        $count = DB::table('guides')->count();
+        $data = [];
+
+        if ($count){
+            $data = DB::table('guides')
                 ->orderBy("created_at", "desc")
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
-                ->get()
+                ->get();
+        }
+
+        return [
+            "Count" => $count,
+            "Data" => $data
         ];
     }
 

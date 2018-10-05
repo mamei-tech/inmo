@@ -270,10 +270,9 @@
 .contact-section-testimonials .testmonials-item > div:last-child > p {
     columns: 2;
     column-fill: auto;
-    height: 150px;
+    min-height: 150px; /*TODO Revisar esto pq no me crece bien*/
     column-gap: 35px;
     margin-bottom: 0;
-    overflow: auto;
 }
 
 @media (max-width: 1249px) {
@@ -287,7 +286,6 @@
         columns: 1;
         margin-bottom: 0;
     }
-
 }
 
 @media (max-width: 960px) {
