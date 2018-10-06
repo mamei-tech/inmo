@@ -33,10 +33,11 @@
 
     <script type="text/javascript">
         window._token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    @if(App::getLocale()=="en")
-        alertify.labels.ok = "OK";
+
+        @if(App::getLocale()=="en")
+            alertify.labels.ok = "OK";
         alertify.labels.cancel = "Cancel";
-    @endif
+        @endif
     </script>
 
 </head>

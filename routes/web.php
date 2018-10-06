@@ -27,6 +27,15 @@ Route::prefix('{lang?}')->group(function () {
             "testimonials" => "TestimonialsController"
         ]);
 
+        Route::any('contacts/read', 'ContactsController@read')->name('contacts.read');
+        Route::resources([
+            "contacts" => "ContactsController"
+        ]);
+
+        Route::get('emails', 'EmailController@index')->name('emails');
+        Route::any('emails/read', 'EmailController@read')->name('emails.read');
+        Route::delete('emails/{email}', 'EmailController@destroy')->name('emails.destroy');
+
         Route::get('profile', 'ProfileController@index')->name('profile');
         Route::put('profile/{profile}', 'ProfileController@update')->name('profile.update');
     });
@@ -46,7 +55,7 @@ Route::prefix('{lang?}')->group(function () {
     Route::get('infoHouse', 'NeighborhoodController@infoHouse')->name('infoHouses');
     Route::get('guides', 'GuideController@index')->name('guides');
     Route::get('about', 'AboutMeController@index')->name('about');
-    Route::get('contacts', 'ContactsController@index')->name('contacts');
+    Route::get('contacts', 'ContactsController@indexWeb')->name('contacts');
 
     Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
     Route::post('testimonials', 'ContactsController@storeTestimonials')->name('contact.storeTestimonials');

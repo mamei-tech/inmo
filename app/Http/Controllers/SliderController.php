@@ -17,11 +17,6 @@ class SliderController extends Controller
         $this->middleware('auth');
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         return view('admin.slider.index');
@@ -51,13 +46,6 @@ class SliderController extends Controller
         ];
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request, $locale)
     {
         $path_lg = null;
@@ -84,26 +72,11 @@ class SliderController extends Controller
         return Redirect::route("slider.index", [$locale]);
     }
 
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Promotion $promotion
-     * @return \Illuminate\Http\Response
-     */
     public function edit(string $lang, Slider $slider)
     {
         return view('Admin.Slider.edit', ["slider" => $slider]);
     }
 
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Promotion $promotion
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, string $lang, Slider $slider)
     {
         $path_lg = null;
@@ -145,13 +118,6 @@ class SliderController extends Controller
         return Redirect::route("slider.index", [$lang]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Promotion $promotion
-     * @return array
-     * @throws Exception
-     */
     public function destroy(string $lang, Slider $slider)
     {
         $success = $slider->delete();

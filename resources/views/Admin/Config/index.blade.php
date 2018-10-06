@@ -10,6 +10,9 @@
                     <div class="card-header">{{ __('app.config_logo') }}</div>
 
                     <div class="card-body">
+                        <div style="margin-bottom: 20px;">
+                            <a href="{{route("admin", [App::getLocale()])}}">{{ __('app.back') }}</a>
+                        </div>
 
                         <form method="POST" enctype="multipart/form-data"
                               action="{{route("config.logo", [App::getLocale()])}}">

@@ -43,6 +43,8 @@
     document.addEventListener("scroll", function () {
        parallax();
     });
+
+    window._token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 </script>
 </body>
 </html>

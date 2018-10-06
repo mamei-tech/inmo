@@ -23,7 +23,9 @@ function downloadGuide() {
             type: "post",
             url: urlSendEmail,
             data: {
-                guides : guideSelected(),
+                _token: window._token,
+                guides : guideSelected,
+                email: $('#form-send-email [name=email]').val()
             },
             success: function (r, s, o) {
                 if (r.success){

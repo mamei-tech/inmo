@@ -31,9 +31,23 @@ class GuideController extends Controller
         return view('admin.guide.index');
     }
 
-    public function sendEmail(Request $request)
+    public function sendEmail(Request $request, $locale)
     {
-        return ["success" => true, "request" => $request->attributes];
+        $email = DB::table('emails')->where('email', $request->email)->where('type', 'guide')->exists();
+
+        if (!$email) {
+            DB::table('emails')->insert(
+                [
+                    'email' => $request->email,
+                    'type' => 'guide',
+                    'created_at' => new DateTime(),
+                    'updated_at' => new DateTime()
+                ]
+            );
+        }
+
+        //TODO Falta mandar el email
+        //En $request->guides tan los id de las guias que hay que mandar el link
     }
 
     public function read(Request $request)

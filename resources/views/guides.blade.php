@@ -30,7 +30,7 @@
         <h4 class="color-yellow selected">{{ __('app.guides_selected') }}</h4>
 
         <form id="form-send-email" action="" method="post">
-            @csrf
+            {{--TODO Cuando da enter en el input c rompe--}}
             <div class="form-group">
                 <input type="email" class="form-control offset-lg-6 col-lg-6 col-sm-12" name="email" required=""
                        placeholder="@lang('app.yourEmail')">

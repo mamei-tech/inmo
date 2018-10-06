@@ -3,8 +3,8 @@
 @section('title', __('app.contact'))
 
 @push('styles')
-    <link href="{{ asset('css/cropper.css') }}" rel="stylesheet" />
-    <link href="{{ asset('css/contacts.css') }}" rel="stylesheet" />
+    <link href="{{ asset('css/cropper.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/contacts.css') }}" rel="stylesheet"/>
 @endpush
 
 @section('content')
@@ -13,20 +13,21 @@
         <div>
             <h1>@lang('app.contactMe')</h1>
             <h3>@lang('app.moreInformation')</h3>
-            <form action="" method="post"> {{-- Falta esto--}}
+            <form action="{{ route('contacts.store', [App::getLocale()]) }}" method="post">
+                @csrf
                 <div class="form-group">
                     <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="email" required=""
+                    <input type="email" class="form-control" name="email" required=""
                            placeholder="@lang('app.yourEmail')">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="phone" required=""
+                    <input type="tel" class="form-control" name="phone" required=""
                            placeholder="@lang('app.yourPhone')">
                 </div>
                 <div class="form-group">
-                <textarea rows="3" class="form-control" name="writeMe" required=""
+                <textarea rows="3" class="form-control" name="text" required=""
                           placeholder="@lang('app.writeMe')"></textarea>
                 </div>
 
@@ -170,20 +171,20 @@
     <input style="display: none;" type="file" id="input">
 
     @if($testimonials->count())
-    <div class="contact-section-testimonials">
-        @foreach ($testimonials as $t)
-            <div class="testmonials-item">
-                <div class="testmonials-item-img">
-                    <img class="img-thumbnail" src="{{ $t->foto }}">
-                </div>
+        <div class="contact-section-testimonials">
+            @foreach ($testimonials as $t)
+                <div class="testmonials-item">
+                    <div class="testmonials-item-img">
+                        <img class="img-thumbnail" src="{{ $t->foto }}">
+                    </div>
 
-                <div class="testmonials-item-body">
-                    <h3 class="color-gray">{{ $t->name }}</h3>
-                    <p class="color-gray">{{ $t->testimonials }}</p>
+                    <div class="testmonials-item-body">
+                        <h3 class="color-gray">{{ $t->name }}</h3>
+                        <p class="color-gray">{{ $t->testimonials }}</p>
+                    </div>
                 </div>
-            </div>
-        @endforeach
-    </div>
+            @endforeach
+        </div>
     @endif
 
 

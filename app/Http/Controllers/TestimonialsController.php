@@ -50,29 +50,29 @@ class TestimonialsController extends Controller
                 'updated_at' => new DateTime()
             ]
         );
-        return Redirect::action('ContactsController@index');
+        return Redirect::route("contacts");
     }
 
-    public function edit(string $lang, Testimonials $testimonials)
+    public function edit(string $lang, Testimonials $testimonial)
     {
-        return view('admin.testimonials.edit', ["testimonials" => $testimonials]);
+        return view('admin.testimonials.edit', ["testimonials" => $testimonial]);
     }
 
-    public function update(Request $request, string $lang, Testimonials $testimonials)
+    public function update(Request $request, string $lang, Testimonials $testimonial)
     {
-        $testimonials->fill([
+        $testimonial->fill([
             'name' => $request->name,
             'testimonials' => $request->testimonials,
             'updated_at' => new DateTime()
         ]);
-        $testimonials->save();
+        $testimonial->save();
 
         return Redirect::route("testimonials.index", [$lang]);
     }
 
-    public function destroy(string $lang, Testimonials $testimonials)
+    public function destroy(string $lang, Testimonials $testimonial)
     {
-        $success = $testimonials->delete();
+        $success = $testimonial->delete();
         return ["success" => $success];
     }
 }

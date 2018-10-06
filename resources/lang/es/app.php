@@ -37,6 +37,9 @@ return [
     'link' => 'Vínculo',
     'image' => 'Imagen',
     'name' => 'Nombre',
+    'message' => 'Mensaje',
+    'close' => 'Cerrar',
+    'type' => 'Tipo',
 
     'promotion_delete_success' => 'promoción eliminada satisfactoriamente',
     'promotion_delete_confirm' => '¿Está seguro que desea eliminar esta promoción?',
@@ -92,6 +95,14 @@ return [
     'testimonials_delete_confirm' => '¿Está seguro que desea eliminar este testimonio?',
     'edit_testimonials' => 'Editar Testimonios',
 
+    'contacts' => 'Contactos',
+    'contacts_delete_success' => 'contacto eliminado satisfactoriamente',
+    'contacts_delete_confirm' => '¿Está seguro que desea eliminar este contacto?',
+
+    'emails' => 'Correos',
+    'email_delete_success' => 'correo eliminado satisfactoriamente',
+    'email_delete_confirm' => '¿Está seguro que desea eliminar este correo?',
+
     'copyright' => 'PROPIEDAD INTELECTUAL 2018 TODOS LOS DERECHOS RESERVADOS. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',
     'moreThanCommunity' => '"MÁS QUE SÓLO UNA COMUNIDAD"',
@@ -116,8 +127,6 @@ Como se mencionó anteriormente, muchas de las residencias en Brickell se encuen
  En Brickell puede encontrar el apartamento de sus sueños que cumpla con las necesidades y expectativas de su familia.',
 
 
-
-
     'firstTextBrickellTable' => 'BRICKELL <br> 
 "MÁS QUE SÓLO UNA COMUNIDAD" <br><br>
 Al pensar en mudarse a Miami, un vecindario que quizás desee considerar es Brickell, región financiera central del sur de la Florida. <br><br>
@@ -134,9 +143,6 @@ Hay numerosos parques que puede visitar cuando vive en Brickell. También hay ex
 Esta es una comunidad que aloja todo tipo de boutiques y tiendas fantásticas de alta gama; puede comprar hasta el contento de su corazón. Museos, teatros, galerías y recintos deportivos / de conciertos son numerosos alrededor de Brickell, donde siempre podrá disfrutar de exhibiciones, juegos y espectáculos. Brickell es conocido por sus exclusivos restaurantes, donde puede encontrar en todo momento cualquier tipo de comida que se le pueda antojar.<br><br>
 Como se mencionó anteriormente, muchas de las residencias en Brickell se encuentran en lujosos complejos de gran altura. Hay muchos hermosos condominios para elegir; todos son bastante espaciosos y lujosos. De hecho, todos estos edificios son seguros, y la gran mayoría disfruta de un servicio de guardia de seguridad las 24 horas, para asegurar que su residencia y su familia estén a salvo y seguras. <br><br>
 En Brickell puede encontrar el apartamento de sus sueños que cumpla con las necesidades y expectativas de su familia. ',
-
-
-
 
 
     'firstTextBrickellMobile' => 'BRICKELL <br> 
@@ -157,7 +163,6 @@ Como se mencionó anteriormente, muchas de las residencias en Brickell se encuen
 En Brickell puede encontrar el apartamento de sus sueños que cumpla con las necesidades y expectativas de su familia.',
 
 
-
     'firstTextDowntown' => 'DOWNTOWN MIAMI <br>
  "LA CIUDAD MÁGICA"<br><br>
  El centro de Miami era como una ciudad fantasma de lotes vacíos y, por lo general, edificios de oficinas mediana y gran altura. Sin embargo, una nueva era de apartamentos de lujo en el centro de Miami dio origen a lo que muchos nuevos residentes llaman hogar hoy en día. Es el nuevo centro de Miami, lleno de audaces, increíbles y cómodas torres residenciales. El horizonte de Miami se cambió con nuevas y modernas siluetas de gran diseño arquitectónico y con algunas de las más altas y lujosas estructuras residenciales, como son el 50 Biscayne, el Ten Museum Park, el 900 Condominium de Biscayne Bay y la más futurista de todas, el One Thousand Museum. Las personas disfrutan la idea de vivir en este vecindario como nunca antes. El centro alberga ahora varias atracciones importantes, como parques, museos, teatros y salas de juegos.<br><br>
@@ -167,7 +172,6 @@ El centro de Miami ahora está vivo con mucho arte y cultura en torno a los nuev
     'secondTextDowntown' => 'Todo tipo de galerías de arte y exposiciones están a la vuelta de la esquina en el Distrito del Arte. Magníficos centros comerciales al aire libre, así como Bayside Shopping Mall también se encuentran a poca distancia de las nuevas estructuras residenciales de lujo en el centro de Miami.<br><br>
  Las residencias de lujo en el centro de Miami cuentan con comodidades que incluyen lujosas piscinas, salas de fiesta, centros de negocios, spas y excelentes gimnasios dentro de estos edificios que hacen que la experiencia de vivir allí sea muy distintiva.<br><br>
 Las nuevas empresas y continuas transformaciones están dándole a esta crucial área de la "Ciudad Mágica" nuevas razones para que muchas más personas se muden. Más restaurantes, lounges, bares, clubes nocturnos y centros comerciales están apareciendo a medida que la población crece en esta fascinante zona de la ciudad debido a su lujoso y conveniente estilo de vida.',
-
 
 
     'firstTextDowntownTable' => 'DOWNTOWN MIAMI <br>

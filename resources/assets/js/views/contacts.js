@@ -1,17 +1,4 @@
 $(document).ready(function () {
-    // function saveImage() {
-    //     var image = $("[name=foto]").val().split('base64,')[1];
-    //     if (image)
-    //         utils.ajax({
-    //             url: "",
-    //             data: {image: image},
-    //             success: function () {
-    //                 window.location.reload();
-    //             }
-    //         });
-    // }
-
-
     var image = document.getElementById("image");
 
     window.cropper = new Cropper(image,
@@ -63,8 +50,6 @@ $(document).ready(function () {
 });
 
 function sendTestimonials() {
-    console.log($("[name=foto]").val());
-
     if ($("[name=foto]").val() == "")
     {
         // TODO Falta poner la imagen que va cuando no suben ninguna el user

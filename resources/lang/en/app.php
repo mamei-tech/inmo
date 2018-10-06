@@ -37,6 +37,9 @@ return [
     'link' => 'Link',
     'image' => 'Image',
     'name' => 'Name',
+    'message' => 'Message',
+    'close' => 'Close',
+    'type' => 'Type',
 
     'promotion_delete_success' => 'promotion deleted sucessfully',
     'promotion_delete_confirm' => 'Are you sure you want delete this promotion?',
@@ -91,6 +94,14 @@ return [
     'testimonials_delete_success' => 'testimonials deleted sucessfully',
     'testimonials_delete_confirm' => 'Are you sure you want delete this testimonials?',
     'edit_testimonials' => 'Edit Testimonials',
+
+    'contacts' => 'Contacts',
+    'contacts_delete_success' => 'contact deleted sucessfully',
+    'contacts_delete_confirm' => 'Are you sure you want delete this contact?',
+
+    'emails' => 'Emails',
+    'email_delete_success' => 'emails deleted sucessfully',
+    'email_delete_confirm' => 'Are you sure you want delete this email?',
 
     'copyright' => 'COPYRIGHTS 2018 ALL RIGHTS RESERVED. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',
