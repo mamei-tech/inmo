@@ -100,6 +100,8 @@ return [
     'contacts_delete_confirm' => 'Are you sure you want delete this contact?',
 
     'emails' => 'Emails',
+    'emails-guide' => 'Emails Guides',
+    'emails-contact' => 'Emails Contacts',
     'email_delete_success' => 'emails deleted sucessfully',
     'email_delete_confirm' => 'Are you sure you want delete this email?',
 

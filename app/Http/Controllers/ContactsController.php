@@ -87,4 +87,19 @@ class ContactsController extends Controller
         $success = $contact->delete();
         return ["success" => $success];
     }
+
+    public function checkNotifications(Request $request){
+        $count = DB::table('contact')->where('readed', false)->count();
+        return ["success" => true, "count" => $count];
+    }
+
+    public function changeNotificationsToReaded(Request $request){
+
+        $contact = DB::table('contact')->where('id', $request->id)
+            ->update(['readed' => true]);
+
+        return ["success" => $contact];
+
+
+    }
 }

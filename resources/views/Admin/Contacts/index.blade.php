@@ -68,25 +68,23 @@
                         field: "created_at",
                         filterable: false
                     }, {
-                        width: 120,
+                        width: 80,
+                        title: " ",
+                        field: "readed",
+                        filterable: false,
+                        template: "<a onclick='ShowMessage(this)' class='k-grid-edit btn btn-default btn-sm fa fa-#= readed == false ? 'envelope' : 'envelope-o' #' style='height:12px;margin-bottom:4px;' title='{{ __('app.message') }}'></a>"
+                    }, {
+                        width: 80,
                         command: [
-                            {
-                                name: "edit",
-                                template: "<a class='k-grid-edit btn btn-default btn-sm fa fa-envelope-o' style='height:12px;' title='{{ __('app.show') }}'></a>",
-                                click: function (e) {
-                                    e.preventDefault();
-                                    var tr = $(e.target).closest("tr");
-                                    var data = this.dataItem(tr);
 
-                                    ShowMessage(data);
-                                }
-                            },
                             {
                                 name: "rem",
                                 template: " <a class='k-grid-rem btn btn-default btn-sm fa fa-trash' style='height:16px;' title='{{ __('app.delete') }}'></a>",
                                 click: function (e) {
+                                    console.log(this);
                                     e.preventDefault();
                                     var tr = $(e.target).closest("tr");
+
                                     var data = this.dataItem(tr);
                                     AppointmentConfirm(data.id);
                                 }
@@ -128,9 +126,39 @@
                     });
             };
 
-            window.ShowMessage = function (data) {
+            window.ShowMessage = function (target) {
+                var cmp = $('#grid').data("kendoGrid");
+                var row = $(target).closest("tr");
+
+                var data = cmp.dataItem(row);
+
+                if (data.readed == false) {
+                    utils.ajax({
+                        method: 'post',
+                        url: '{{ route('contacts.changeNotifications', [App::getLocale()]) }}',
+                        data: {
+                            _token: window._token,
+                            id: data.id
+                        },
+                        success:function () {
+                            var notifications = $("#notificationCountBadge").text() * 1 - 1 ;
+
+                            if (notifications === 0) {
+                                $("#notificationCountBadge").hide();
+                            } else {
+                                $("#notificationCountBadge").show();
+                            }
+
+                            $("#notificationCountBadge").text(notifications);
+
+                            dataSource.read();
+                        }
+                    });
+                }
+
                 $('#contact-message').text(data.text);
                 $("#exampleModal").modal('show');
+
             };
         });
     </script>

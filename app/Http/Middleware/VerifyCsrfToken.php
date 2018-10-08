@@ -24,7 +24,9 @@ class VerifyCsrfToken extends Middleware
         "en/admin/testimonials/read",
         "es/admin/contacts/read",
         "en/admin/contacts/read",
-        "es/admin/emails/read",
-        "en/admin/emails/read"
+        "es/admin/emails/readGuide",
+        "en/admin/emails/readGuide",
+        "es/admin/emails/readContact",
+        "en/admin/emails/readContact"
     ];
 }

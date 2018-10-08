@@ -28,12 +28,15 @@ Route::prefix('{lang?}')->group(function () {
         ]);
 
         Route::any('contacts/read', 'ContactsController@read')->name('contacts.read');
+        Route::post('contacts/changeNotificationsToReaded', 'ContactsController@changeNotificationsToReaded')->name('contacts.changeNotifications');
+        Route::post('contacts/checkNotifications', 'ContactsController@checkNotifications')->name('contacts.checkNotifications');
         Route::resources([
             "contacts" => "ContactsController"
         ]);
 
         Route::get('emails', 'EmailController@index')->name('emails');
-        Route::any('emails/read', 'EmailController@read')->name('emails.read');
+        Route::any('emails/readGuide', 'EmailController@readGuide')->name('emails.readGuide');
+        Route::any('emails/readContact', 'EmailController@readContact')->name('emails.readContact');
         Route::delete('emails/{email}', 'EmailController@destroy')->name('emails.destroy');
 
         Route::get('profile', 'ProfileController@index')->name('profile');

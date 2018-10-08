@@ -55,7 +55,7 @@
             <div class="col-md-3 container-btn">
                 <a href="{{ route('guide.index_admin', [App::getLocale()]) }}">
                     <div class="container-btn-links">
-                        <span class="fa fa-3x fa-tags"></span>
+                        <span class="fa fa-3x fa-download"></span>
                         <span style="font-size: 20px;">{{ __('app.guides') }}</span>
                     </div>
                 </a>
@@ -64,7 +64,7 @@
             <div class="col-md-3 container-btn" >
                 <a href="{{ route('testimonials.index', [App::getLocale()]) }}">
                     <div class="container-btn-links">
-                        <span class="fa fa-3x fa-user-secret"></span>
+                        <span class="fa fa-3x fa-newspaper-o"></span>
                         <span style="font-size: 20px;">{{ __('app.testimonials') }}</span>
                     </div>
                 </a>
@@ -73,7 +73,7 @@
             <div class="col-md-3 container-btn" >
                 <a href="{{ route('contacts.index', [App::getLocale()]) }}">
                     <div class="container-btn-links">
-                        <span class="fa fa-3x fa-user-secret"></span>
+                        <span class="fa fa-3x fa-bell"></span>
                         <span style="font-size: 20px;">{{ __('app.contacts') }}</span>
                     </div>
                 </a>
@@ -82,7 +82,7 @@
             <div class="col-md-3 container-btn" >
                 <a href="{{ route('emails', [App::getLocale()]) }}">
                     <div class="container-btn-links">
-                        <span class="fa fa-3x fa-user-secret"></span>
+                        <span class="fa fa-3x fa-envelope"></span>
                         <span style="font-size: 20px;">{{ __('app.emails') }}</span>
                     </div>
                 </a>

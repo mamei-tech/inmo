@@ -1,7 +1,7 @@
 /*contact-section-0*/
 .contact-section-0 {
     height: 540px;
-    background: url('../images/lg/8.jpg') top center /cover;
+    background: url('../images/lg/8.jpg');
     padding: 50px 120px;
     display: flex;
     flex-direction: row;
@@ -71,6 +71,7 @@
 
 @media (max-width: 1249px) {
     .contact-section-0 {
+        background: url('../images/md/10.jpg');
         padding: 50px 100px;
     }
 
@@ -84,7 +85,7 @@
         padding: 40px 30px;
         height: 560px;
         text-align: center;
-        background: url('../images/sm/10.jpg') top center /cover;
+        background: url('../images/sm/10.jpg');
     }
 
     .contact-section-0 h3 {

@@ -13,9 +13,10 @@ $(document).ready(function () {
 
         var widht = $('.bio > p').width();
 
-        if (window.innerWidth > 960) {
-            widht = widht + 30;
-        }
+        widht = widht + 30;
+        // if (window.innerWidth > 960) {
+        //      widht = widht + 30;
+        // }
 
         var scrollWidht = $('.bio > p')[0].scrollWidth;
 

@@ -87,9 +87,9 @@ class DatabaseSeeder extends Seeder
             'title_en' => 'YOUR NEW HOME IS A PHONE CALL AWAY',
             'subtitle_es' => '¡llámame hoy!',
             'subtitle_en' => 'call me today!',
-            'image_lg' => 'public/slider/lg/imZeGxGdGZP4otEOWIWXpjUEnwQOred1KKqttQO8.jpeg',
-            'image_md' => 'public/slider/md/imZeGxGdGZP4otEOWIWXpjUEnwQOred1KKqttQO8.jpeg',
-            'image_sm' => 'public/slider/sm/imZeGxGdGZP4otEOWIWXpjUEnwQOred1KKqttQO8.jpeg',
+            'image_lg' => 'public/slider/lg/bDVm5D2My37xkl9ERFHFBZpWyIWhxrtm19wuRAjg.jpeg',
+            'image_md' => 'public/slider/md/cwTxtidkoJYgbGJIhmHiypKET3nudAdjWzlKODqO.jpeg',
+            'image_sm' => 'public/slider/sm/VWHMJnAVwQD2pyuozvLskJUhlcQDGKHugIS9rjdG.jpeg',
             'created_at' => '2013-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
@@ -99,9 +99,9 @@ class DatabaseSeeder extends Seeder
             'title_en' => 'YOU CAN LIVE IN THE BEST OF MIAMI',
             'subtitle_es' => 'Pagando los mejores precios',
             'subtitle_en' => 'paying the best prices',
-            'image_lg' => 'public/slider/lg/TAldvs7Bg09wpx1gtdQf8vcpmjMOCc2VLVl8tp40.jpeg',
-            'image_md' => 'public/slider/md/TAldvs7Bg09wpx1gtdQf8vcpmjMOCc2VLVl8tp40.jpeg',
-            'image_sm' => 'public/slider/sm/TAldvs7Bg09wpx1gtdQf8vcpmjMOCc2VLVl8tp40.jpeg',
+            'image_lg' => 'public/slider/lg/U83bKlKvkHpZlTuvvZXm9RvhwWpJ3wVfr2TJU56X.jpeg',
+            'image_md' => 'public/slider/md/faax0NGMTMke3YCiP5Qs9IRESqcYMgZUTTd7O0yp.jpeg',
+            'image_sm' => 'public/slider/sm/fGerdhMHfcjj3DWoj4DJxiesNPvFZ4xY83Fr8kUS.jpeg',
             'created_at' => '2012-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);
@@ -111,9 +111,9 @@ class DatabaseSeeder extends Seeder
             'title_en' => 'ENJOY THE BEST VIEWS OF A SUMMER',
             'subtitle_es' => 'que dura todo el año',
             'subtitle_en' => 'that last the entire year',
-            'image_lg' => 'public/slider/lg/vUTpLRNrau2YhlOP7rC1mcSTMg4J4zUxQ8QISuhB.jpeg',
-            'image_md' => 'public/slider/md/vUTpLRNrau2YhlOP7rC1mcSTMg4J4zUxQ8QISuhB.jpeg',
-            'image_sm' => 'public/slider/sm/vUTpLRNrau2YhlOP7rC1mcSTMg4J4zUxQ8QISuhB.jpeg',
+            'image_lg' => 'public/slider/lg/PpWDi5B3RffPQfuDUXgioiUtPJ7Hz5iVx8ayudxi.jpeg',
+            'image_md' => 'public/slider/md/CfsiIiPEBqjGZRBko3KkuPeqrjzSPcu3RCdMBgiu.jpeg',
+            'image_sm' => 'public/slider/sm/bHFE6QWZYv1fPcn46uk36v87TZxwsCB2qAf6Exad.jpeg',
             'created_at' => '2011-10-29 23:42:29',
             'updated_at' => $faker->dateTime
         ]);

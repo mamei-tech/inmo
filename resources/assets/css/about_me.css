@@ -1,7 +1,7 @@
 /*about_me-section-0*/
 .about-me-section-0 {
     height: 100vh;
-    background: url('../images/lg/1.jpg') top center /cover;
+    background: url('../images/lg/1.jpg');
     padding: 50px 120px;
 }
 
@@ -129,6 +129,7 @@
 @media (max-width: 1249px) {
     .about-me-section-0 {
         padding: 50px 100px;
+        background: url('../images/md/1.jpg');
     }
 
     .bio > p {
@@ -141,7 +142,7 @@
     .about-me-section-0 {
         padding: 50px 30px;
         text-align: center;
-        background: url('../images/sm/1.jpg') top center /cover;
+        background: url('../images/sm/1.jpg');
     }
 
     h1 {
@@ -160,7 +161,6 @@
     .bio > p {
         column-count: 1;
         margin-bottom: 0;
-        column-gap: 0;
     }
 
     .info-about-me-pc,

@@ -6,7 +6,7 @@
 
 {{--TODO OK 4.	En el efecto “on focus” de bootstrap que pone el borde azul en los inputs, cambiarlo para la tonalidad de amarillo que tiene los botones (por ejemplo).--}}
 
-{{--TODO 5.	Utilizar todas las imágenes correspondientes a los tamaños de los dispositivos. Las últimas que el diseño entregó, enlace enviado por email. Si no pueden acceder avísame y las subo porque el enlace es de ellos.--}}
+{{--TODO OK 5.	Utilizar todas las imágenes correspondientes a los tamaños de los dispositivos. Las últimas que el diseño entregó, enlace enviado por email. Si no pueden acceder avísame y las subo porque el enlace es de ellos.--}}
 {{--TODO OK 6.	Los enlaces (botones) de traducción de cambio de lenguaje no llevan el código de animación, ni la línea de abajo ni el cuadrado.--}}
 {{--TODO OK 7.	Noté que las promociones segundarias no están traducidas. Me pregunto si es que como no tenían traducción no están puestas, pero se puede traducir.--}}
 {{--TODO 8. (Falta bajar la linea del hover) En el navbar, tratar de que la línea del efecto OVER se represente al mismo nivel y/o que abra (se extienda) más menos solo hasta donde llega el texto.--}}
@@ -20,16 +20,17 @@
 {{--TODO OK Gestionar el contenido de testimonials editar y eliminar. Se mostraran los 10 ultimos--}}
 {{--TODO OK Terminar de adicionar visualmente los testimonios--}}
 
-{{--TODO (Falta ver como vamos a gestionar los nuevos mensajes visualmente... yo tengo la idea de la campanita clasica mas menos algo parecido a eso) En la vista de contacts hacer el backend del contact me--}}
+{{--TODO OK En la vista de contacts hacer el backend del contact me--}}
 
 {{--TODO OK Terminar la parte de guides visual--}}
 {{--TODO Terminar la parte de guides lo de mandar el correo--}}
 
 {{--TODO OK Poder visualizar todos los correos usados tanto en guides como en contact me--}}
 
-{{--TODO Buscar los iconos del admin.index para los nuevos y revisar los viejos--}}
+{{--TODO Ok Buscar los iconos del admin.index para los nuevos y revisar los viejos--}}
 
 {{--TODO Revisar todo el proyecto principalmente las imagenes y el paralax en los 3 modos--}}
+{{--TODO Revisar con un movil fisico--}}
 {{--TODO Revisar todos los TODOs--}}
 
 @extends('layouts.app')

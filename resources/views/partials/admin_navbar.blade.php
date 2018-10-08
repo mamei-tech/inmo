@@ -1,9 +1,10 @@
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/admin') }}">
-           {{ config('app.name', 'Laravel') }}
+            {{ config('app.name', 'Laravel') }}
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -28,17 +29,25 @@
                 <li class="nav-item">
                     <a class="nav-link"> /</a>
                 </li>
-                <li class="nav-item lang-{{App::getLocale()}}"  style="margin-right: 25px;">
+                <li class="nav-item lang-{{App::getLocale()}}" style="margin-right: 25px;">
                     <a class="nav-link lang-es" href="{{$ruta_es}}">ESP</a>
                 </li>
                 <!-- Authentication Links -->
                 @guest
                     {{--<li class="nav-item">--}}
-                        {{--<a class="nav-link" href="{{ route('login') }}">{{ __('auth.Login') }}</a>--}}
+                    {{--<a class="nav-link" href="{{ route('login') }}">{{ __('auth.Login') }}</a>--}}
                     {{--</li>--}}
                 @else
+                    {{--onclick="App.ReadNotification();"--}}
+                    <li class="nav-item notification">
+                        <a class="nav-link fa fa-bell-o" href="{{ route('contacts.index') }}">
+                        </a>
+                        <span id="notificationCountBadge"></span>
+                    </li>
+
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
@@ -52,7 +61,8 @@
                                 {{ __('auth.Logout') }}
                             </a>
 
-                            <form id="logout-form" action="{{ route('logout', [App::getLocale()]) }}" method="POST" style="display: none;">
+                            <form id="logout-form" action="{{ route('logout', [App::getLocale()]) }}" method="POST"
+                                  style="display: none;">
                                 @csrf
                             </form>
                         </div>

@@ -54,8 +54,31 @@
         $message = \Illuminate\Support\Facades\Session::get("status");
     @endphp
     @if($message)
-    alertify.log("{{$message}}");
+        alertify.log("{{$message}}");
     @endif
+
+        window._checkNotifications = function () {
+
+            utils.ajax({
+                method: 'post',
+                silent: true,
+                url: '{{ route('contacts.checkNotifications', [App::getLocale()]) }}',
+                data:{_token : window._token},
+                success: function (r, s, o) {
+                    if (r.success){
+                        $("#notificationCountBadge").text(r.count);
+                            if (r.count === 0) {
+                                $("#notificationCountBadge").hide();
+                            } else {
+                                $("#notificationCountBadge").show();
+                            }
+                    }
+                }
+            });
+            setTimeout(window._checkNotifications, 5000);
+        };
+
+    window._checkNotifications();
 
 </script>
 </body>

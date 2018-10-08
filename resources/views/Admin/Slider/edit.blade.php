@@ -104,8 +104,8 @@
                                 </div>
                             </div>
                             <div  class="form-group row">
-                                <div class="col-md-12">
-                                    <img class="img-thumbnail" style="width: 100%" src="{{$slider->ImageLgPath  }}"/>
+                                <div class="col-md-9 offset-md-3">
+                                    <img class="img-thumbnail" style="height: 300px;" src="{{$slider->ImageLgPath  }}"/>
                                 </div>
                             </div>
 
@@ -126,8 +126,8 @@
                                 </div>
                             </div>
                             <div  class="form-group row">
-                                <div class="col-md-12">
-                                    <img class="img-thumbnail" style="width: 100%" src="{{$slider->ImageMdPath  }}"/>
+                                <div class="col-md-9 offset-md-3">
+                                    <img class="img-thumbnail" style="height: 300px;" src="{{$slider->ImageMdPath  }}"/>
                                 </div>
                             </div>
 
@@ -148,8 +148,8 @@
                                 </div>
                             </div>
                             <div  class="form-group row">
-                                <div class="col-md-12">
-                                    <img class="img-thumbnail" style="width: 100%" src="{{$slider->ImageSmPath  }}"/>
+                                <div class="col-md-9 offset-md-3">
+                                    <img class="img-thumbnail" style="height: 300px;" src="{{$slider->ImageSmPath  }}"/>
                                 </div>
                             </div>
 

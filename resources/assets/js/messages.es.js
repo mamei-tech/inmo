@@ -1,5 +1,6 @@
 var messages = {
     "refresh" : "Refrescar",
     "previous" : "anterior",
-    "next" : "siguiente"
+    "next" : "siguiente",
+    "new" : "nuevo"
 };

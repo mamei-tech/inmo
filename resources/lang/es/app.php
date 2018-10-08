@@ -100,6 +100,8 @@ return [
     'contacts_delete_confirm' => '¿Está seguro que desea eliminar este contacto?',
 
     'emails' => 'Correos',
+    'emails-guide' => 'Correos entrados en las guías',
+    'emails-contact' => 'Correos entrados en los contactos',
     'email_delete_success' => 'correo eliminado satisfactoriamente',
     'email_delete_confirm' => '¿Está seguro que desea eliminar este correo?',
 
