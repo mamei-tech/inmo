@@ -6,15 +6,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
+                <div style="margin-bottom: 20px;">
+                    <a class="btn btn-light btn-sm" href="{{route("guide.index_admin", [App::getLocale()])}}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+                </div>
+
                 <div class="card">
                     <div class="card-header">{{ __('app.create_guide') }}</div>
 
                     <div class="card-body">
-
-                        <div style="margin-bottom: 20px;">
-                            <a href="{{route("guide.index_admin", [App::getLocale()])}}">{{ __('app.back_to_list') }}</a>
-                        </div>
-
                         <form method="POST" enctype="multipart/form-data" action="{{route("guide.store", [App::getLocale()])}}">
                             @csrf
 
@@ -72,6 +71,10 @@
                             </div>
                         </form>
                     </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <a class="btn btn-light btn-sm" href="{{route("guide.index_admin", [App::getLocale()])}}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
                 </div>
             </div>
         </div>

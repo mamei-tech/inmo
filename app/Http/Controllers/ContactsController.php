@@ -78,8 +78,8 @@ class ContactsController extends Controller
                 ]
             );
         }
-
-        return Redirect::route("contacts");
+        $request->session()->flash('status', __('app.success_message_send'));
+        return Redirect::route("contacts", [$locale]);
     }
 
     public function destroy(string $lang, Contact $contact)

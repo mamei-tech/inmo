@@ -17,7 +17,7 @@ class ProfileController extends Controller
     public function index()
     {
         $profile = Profile::query()->first();
-        return view('Admin.Profile.index', compact(["profile"]));
+        return view('admin.profile.index', compact(["profile"]));
     }
 
     public function update(Request $request, string $lang, Profile $profile)

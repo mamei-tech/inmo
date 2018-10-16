@@ -9,7 +9,6 @@ return [
     'contact' => 'Contacto',
     'houses' => 'Casas',
     'infoHouse' => 'Info Casa',
-
     'learn_more' => 'Leer Más',
 
     'admin' => 'Administrar',
@@ -40,6 +39,13 @@ return [
     'message' => 'Mensaje',
     'close' => 'Cerrar',
     'type' => 'Tipo',
+    'success_message_send' => 'Mensaje enviado satisfactoriamente',
+    'selected_some_guide' => 'Debes seleccionar alguna guía',
+    'check_email' => 'Revise su correo',
+    'select_image' => 'Seleccionar imagen',
+    'select' => 'Seleccionar',
+    'ready' => 'Listo',
+    'phone_incorrect' => 'Entre un télefono correcto',
 
     'promotion_delete_success' => 'promoción eliminada satisfactoriamente',
     'promotion_delete_confirm' => '¿Está seguro que desea eliminar esta promoción?',
@@ -69,8 +75,9 @@ return [
     'guide_delete_success' => 'guía eliminado satisfactoriamente',
     'guide_delete_confirm' => '¿Está seguro que desea eliminar este guía?',
     'show_guide' => 'Ver Guía Actual',
-    'guide_subtitle' => 'Download your free handout', //TODO Traducir
-    'guides_selected' => 'you will receive the selected document(s) to your email', //TODO Traducir
+    'guide_subtitle' => 'Descargar su documento gratis',
+    'guides_selected' => 'Usted recibirá los documento(s) seleccionados a su correo',
+    'download_guides' => 'Descargar guías',
 
     'create_slider' => 'Crear Slide',
     'edit_slider' => 'Editar Slide',
@@ -78,7 +85,7 @@ return [
     'slider_delete_success' => 'slide eliminado satisfactoriamente',
     'slider_delete_confirm' => '¿Está seguro que desea eliminar este slide?',
 
-    'realtor' => 'REALTOR ASSOCIATE', //TODO Buscar traduccion
+    'realtor' => 'REALTOR ASSOCIATE',
 
     'contactMe' => 'Contáctame',
     'moreInformation' => 'Obtener más información',

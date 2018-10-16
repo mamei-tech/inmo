@@ -4,9 +4,17 @@
 
 @section('content')
     <div class="container">
+        <div style="margin-bottom: 20px;">
+            <a class="btn btn-light btn-sm" href="{{ url('/admin') }}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+        </div>
+
         <h2>{{__('app.slider') }}</h2>
         <div id="tbCt" style="text-align:right;"></div>
         <div id="grid" style="height: 470px;"></div>
+
+        <div style="margin-top: 20px;">
+            <a class="btn btn-light btn-sm" href="{{ url('/admin') }}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+        </div>
     </div>
 @endsection
 

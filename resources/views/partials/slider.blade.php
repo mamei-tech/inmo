@@ -1,4 +1,4 @@
-<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="10000">
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="30000">
     @php
         $first = true;
         $count = 0;

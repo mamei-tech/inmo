@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Guide;
 use DateTime;
+use function foo\func;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
@@ -31,6 +33,7 @@ class GuideController extends Controller
         return view('admin.guide.index');
     }
 
+
     public function sendEmail(Request $request, $locale)
     {
         $email = DB::table('emails')->where('email', $request->email)->where('type', 'guide')->exists();
@@ -46,8 +49,18 @@ class GuideController extends Controller
             );
         }
 
-        //TODO Falta mandar el email
-        //En $request->guides tan los id de las guias que hay que mandar el link
+        $selected = $request->guides;
+        if(!$selected)
+        return ["success"=>false, "message"=>__('app.selected_some_guide')];
+
+        $guides = Guide::query()->whereIn("id", $selected?$selected:[])->get();
+
+        Mail::send("emails.guides", ["guides" => $guides], function ($m) use ($request) {
+            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
+            $m->to($request->email)->subject(__('app.download_guides'));
+        });
+
+        return ["success"=>true, "message"=>__('app.check_email')];
     }
 
     public function read(Request $request)
@@ -55,7 +68,7 @@ class GuideController extends Controller
         $count = DB::table('guides')->count();
         $data = [];
 
-        if ($count){
+        if ($count) {
             $data = DB::table('guides')
                 ->orderBy("created_at", "desc")
                 ->skip(($request->page - 1) * $request->pageSize)
@@ -78,7 +91,7 @@ class GuideController extends Controller
     {
         $path = $request->file('guide')->store('public/guides');
 
-        DB::table('Guides')->insert(
+        DB::table('guides')->insert(
             [
                 'text_es' => $request->text_es,
                 'text_en' => $request->text_en,
@@ -108,7 +121,7 @@ class GuideController extends Controller
     {
         $path = null;
         $uploadedImage = $request->file('guide');
-        if($uploadedImage){
+        if ($uploadedImage) {
             Storage::delete($guide->guide);
             $path = $uploadedImage->store('public/guides');
         }
@@ -117,7 +130,7 @@ class GuideController extends Controller
         $guide->fill([
             'text_es' => $request->text_es,
             'text_en' => $request->text_en,
-            'guide' =>  $path ? $path : $guide->guide,
+            'guide' => $path ? $path : $guide->guide,
             'updated_at' => new DateTime()
         ]);
         $guide->save();

@@ -9,13 +9,12 @@ return [
     'contact' => 'Contact',
     'houses' => 'Houses',
     'infoHouse' => 'Info House',
-
     'learn_more' => 'Learn More',
 
     'admin' => 'Admin',
     'promotion' => 'Promotions',
     'main_promotion' => 'Main Promotions',
-    'second_promotion' => 'Second Promotions', //TODO Traducir esto bien
+    'second_promotion' => 'Second Promotions',
     'title' => 'Title',
     'subtitle' => 'Subtitle',
     'date' => 'Date',
@@ -40,6 +39,13 @@ return [
     'message' => 'Message',
     'close' => 'Close',
     'type' => 'Type',
+    'success_message_send' => 'Message send sucessfully',
+    'selected_some_guide' => 'You must select some guide',
+    'check_email' => 'Check your email',
+    'select_image' => 'Select image',
+    'select' => 'Select',
+    'ready' => 'Ready',
+    'phone_incorrect' => 'Please enter a correct phone number',
 
     'promotion_delete_success' => 'promotion deleted sucessfully',
     'promotion_delete_confirm' => 'Are you sure you want delete this promotion?',
@@ -71,6 +77,7 @@ return [
     'show_guide' => 'Show Current Guide',
     'guide_subtitle' => 'Download your free handout',
     'guides_selected' => 'you will receive the selected document(s) to your email',
+    'download_guides' => 'Download guides',
 
     'create_slider' => 'Create Slide',
     'edit_slider' => 'Edit Slide',

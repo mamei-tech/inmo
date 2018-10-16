@@ -55,7 +55,7 @@ class SliderController extends Controller
         $path_md = $request->file('image_md')->store('public/slider/md');
         $path_sm = $request->file('image_sm')->store('public/slider/sm');
 
-        DB::table('Slider')->insert(
+        DB::table('slider')->insert(
             [
                 'title_es' => $request->title_es,
                 'title_en' => $request->title_en,
@@ -74,7 +74,7 @@ class SliderController extends Controller
 
     public function edit(string $lang, Slider $slider)
     {
-        return view('Admin.Slider.edit', ["slider" => $slider]);
+        return view('admin.slider.edit', ["slider" => $slider]);
     }
 
     public function update(Request $request, string $lang, Slider $slider)

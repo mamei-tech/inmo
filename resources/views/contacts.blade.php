@@ -13,7 +13,7 @@
         <div>
             <h1>@lang('app.contactMe')</h1>
             <h3>@lang('app.moreInformation')</h3>
-            <form action="{{ route('contacts.store', [App::getLocale()]) }}" method="post">
+            <form id="form-send-contact" action="{{ route('contacts.store', [App::getLocale()]) }}" method="post">
                 @csrf
                 <div class="form-group">
                     <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')">
@@ -22,13 +22,19 @@
                     <input type="email" class="form-control" name="email" required=""
                            placeholder="@lang('app.yourEmail')">
                 </div>
+
                 <div class="form-group">
-                    <input type="tel" class="form-control" name="phone" required=""
-                           placeholder="@lang('app.yourPhone')">
+                    <input id="phone-contact" type="tel" class="form-control"
+                           name="phone" placeholder="@lang('app.yourPhone')" required>
+
+                    <span class="invalid-feedback" role="alert" style="text-align: left; color: white; ">
+                        <strong>{{ __('app.phone_incorrect') }}</strong>
+                    </span>
                 </div>
+
                 <div class="form-group">
-                <textarea rows="3" class="form-control" name="text" required=""
-                          placeholder="@lang('app.writeMe')"></textarea>
+                    <textarea rows="3" class="form-control" name="text" required=""
+                              placeholder="@lang('app.writeMe')"></textarea>
                 </div>
 
                 <div class="container-social-buttom">
@@ -85,7 +91,7 @@
                     </div>
 
                     <div>
-                        <button type="submit" class="btn btn-yellow">@lang('app.send')</button>
+                        <button type="button" onclick="sendContact()" class="btn btn-yellow">@lang('app.send')</button>
                     </div>
                 </div>
             </form>
@@ -149,7 +155,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">@Selecionar imagen</h5>
+                    <h5 class="modal-title">{{ __('app.select_image') }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -163,7 +169,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-yellow" onclick=" $('#input').click()">@seleccionar</button>
+                    <button type="button" class="btn btn-yellow" onclick=" $('#input').click()">{{ __('app.select') }}</button>
+                    <button style="margin-left: 10px;" type="button" class="btn btn-yellow" data-dismiss="modal">{{ __('app.ready') }}</button>
                 </div>
             </div>
         </div>

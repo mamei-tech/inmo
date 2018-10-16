@@ -1,11 +1,13 @@
 /*contact-section-0*/
 .contact-section-0 {
-    height: 540px;
+    height: 640px;
     background: url('../images/lg/8.jpg');
     padding: 50px 120px;
     display: flex;
     flex-direction: row;
     text-align: right;
+    margin-top: -100px;
+    padding-top: 150px;
 }
 
 .contact-section-0 > div:first-child {
@@ -71,8 +73,11 @@
 
 @media (max-width: 1249px) {
     .contact-section-0 {
+        height: 620px;
         background: url('../images/md/10.jpg');
         padding: 50px 100px;
+        margin-top: -80px;
+        padding-top: 130px;
     }
 
     .contact-section-0 > div:first-child {
@@ -83,9 +88,11 @@
 @media (max-width: 960px) {
     .contact-section-0 {
         padding: 40px 30px;
-        height: 560px;
+        height: 640px;
         text-align: center;
         background: url('../images/sm/10.jpg');
+        margin-top: -80px;
+        padding-top: 120px;
     }
 
     .contact-section-0 h3 {
@@ -267,7 +274,7 @@
 .contact-section-testimonials .testmonials-item > div:last-child > p {
     columns: 2;
     column-fill: auto;
-    min-height: 150px; /*TODO Revisar esto pq no me crece bien*/
+    min-height: 150px;
     column-gap: 35px;
     margin-bottom: 0;
 }

@@ -27,21 +27,21 @@ class PromotionController extends Controller
      */
     public function index()
     {
-        return view('Admin.Promotion.index');
+        return view('admin.promotion.index');
     }
 
     public function create(Request $request)
     {
-        return view('Admin.Promotion.create', ["type" => $request->type]);
+        return view('admin.promotion.create', ["type" => $request->type]);
     }
 
     public function readMain(Request $request)
     {
-        $count = DB::table('Promotion')->whereNotNull("image_lg")->count();
+        $count = DB::table('promotion')->whereNotNull("image_lg")->count();
         $data = [];
 
         if ($count){
-            $data = DB::table('Promotion')
+            $data = DB::table('promotion')
                 ->whereNotNull("image_lg")
                 ->orderBy("created_at", "desc")
                 ->skip(($request->page - 1) * $request->pageSize)
@@ -57,11 +57,11 @@ class PromotionController extends Controller
 
     public function read(Request $request)
     {
-        $count = DB::table('Promotion')->whereNull("image_lg")->count();
+        $count = DB::table('promotion')->whereNull("image_lg")->count();
         $data = [];
 
         if ($count){
-            $data = DB::table('Promotion')
+            $data = DB::table('promotion')
                 ->whereNull("image_lg")
                 ->orderBy("created_at", "desc")
                 ->skip(($request->page - 1) * $request->pageSize)
@@ -93,9 +93,9 @@ class PromotionController extends Controller
             $path_md = $request->file('image')->store('public/promotions/md');
             $path_sm = $request->file('image')->store('public/promotions/sm');
         }
-           
 
-        DB::table('Promotion')->insert(
+
+        DB::table('promotion')->insert(
             [
                 'title_es' => $request->title_es,
                 'title_en' => $request->title_en,
@@ -133,7 +133,7 @@ class PromotionController extends Controller
     public function edit(string $lang, Promotion $promotion)
     {
         $type = $promotion->image_lg ? "main" : "second" ;
-        return view('Admin.Promotion.edit', ["type" => $type, "promotion" => $promotion]);
+        return view('admin.promotion.edit', ["type" => $type, "promotion" => $promotion]);
     }
 
 
@@ -149,7 +149,7 @@ class PromotionController extends Controller
         $path_lg = null;
         $path_md = null;
         $path_sm = null;
-        
+
         if ($request->type == "main")
         {
             $uploadedImageLg = $request->file('image_lg');

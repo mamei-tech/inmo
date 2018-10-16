@@ -6,13 +6,16 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
+
+                <div style="margin-bottom: 20px;">
+                    <a class="btn btn-light btn-sm" href="{{ url('/admin') }}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+                </div>
+
+
                 <div class="card">
                     <div class="card-header">{{ __('app.config_logo') }}</div>
 
                     <div class="card-body">
-                        <div style="margin-bottom: 20px;">
-                            <a href="{{route("admin", [App::getLocale()])}}">{{ __('app.back') }}</a>
-                        </div>
 
                         <form method="POST" enctype="multipart/form-data"
                               action="{{route("config.logo", [App::getLocale()])}}">
@@ -78,6 +81,11 @@
                         </form>
                     </div>
                 </div>
+
+                <div style="margin-top: 20px;">
+                    <a class="btn btn-light btn-sm" href="{{ url('/admin') }}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+                </div>
+
             </div>
         </div>
     </div>

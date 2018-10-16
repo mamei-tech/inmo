@@ -6,15 +6,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
+                <div style="margin-bottom: 20px;">
+                    <a class="btn btn-light btn-sm" href="{{route("testimonials.index", [App::getLocale()])}}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+                </div>
+
                 <div class="card">
                     <div class="card-header">{{ __('app.edit_testimonials') }}</div>
 
                     <div class="card-body">
-
-                        <div style="margin-bottom: 20px;">
-                            <a href="{{route("testimonials.index", [App::getLocale()])}}">{{ __('app.back_to_list') }}</a>
-                        </div>
-
                         <form method="post" enctype="multipart/form-data"
                               action="{{route("testimonials.update", [App::getLocale(), $testimonials->id])}}">
                             @method('PUT')
@@ -64,6 +63,11 @@
 
                     </div>
                 </div>
+
+                <div style="margin-top: 20px;">
+                    <a class="btn btn-light btn-sm" href="{{route("testimonials.index", [App::getLocale()])}}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+                </div>
+
             </div>
         </div>
     </div>

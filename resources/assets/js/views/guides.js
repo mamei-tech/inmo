@@ -1,6 +1,10 @@
 $(document).ready(function () {
     $('.box').click(function (e) {
         $(e.currentTarget).children().toggleClass('check');
+    });
+
+    $('#form-send-email').submit(function (e) {
+        e.preventDefault();
     })
 
 
@@ -24,20 +28,20 @@ function downloadGuide() {
             url: urlSendEmail,
             data: {
                 _token: window._token,
-                guides : guideSelected,
+                guides : guideSelected(),
                 email: $('#form-send-email [name=email]').val()
             },
             success: function (r, s, o) {
                 if (r.success){
-                    console.log(r)
                     $('#form-send-email')[0].reset();
+                    alertify.log(r.message);
                 }
+                else
+                    alertify.error(r.message);
             },
             error: function () {
 
             }
         });
     }
-
-
 }

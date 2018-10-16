@@ -4,6 +4,10 @@
 
 @section('content')
     <div class="container">
+        <div style="margin-bottom: 20px;">
+            <a class="btn btn-light btn-sm" href="{{ url('/admin') }}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+        </div>
+
         <h2>{{__('app.emails-guide') }}</h2>
         <div id="tbCt" style="text-align:right;"></div>
         <div id="grid" style="height: 300px;"></div>
@@ -14,6 +18,10 @@
         <h2>{{__('app.emails-contact') }}</h2>
         <div id="tbCt1" style="text-align:right;"></div>
         <div id="grid1" style="height: 300px;"></div>
+
+        <div style="margin-top: 20px;">
+            <a class="btn btn-light btn-sm" href="{{ url('/admin') }}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+        </div>
     </div>
 @endsection
 

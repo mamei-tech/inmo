@@ -6,15 +6,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-10">
+                <div style="margin-bottom: 20px;">
+                    <a class="btn btn-light btn-sm" href="{{ url('/admin') }}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
+                </div>
+
                 <div class="card">
                     <div class="card-header">{{ __('app.profile') }}</div>
 
                     <div class="card-body">
-
-                        <div style="margin-bottom: 20px;">
-                            <a href="{{route("admin", [App::getLocale()])}}">{{ __('app.back') }}</a>
-                        </div>
-
                         <form method="post" enctype="multipart/form-data"
                               action="{{route("profile.update", [App::getLocale(), $profile->id])}}">
                             @method('PUT')
@@ -93,7 +92,7 @@
                                 <div class="col-md-9">
                                     <input id="phone" type="text"
                                            class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}"
-                                           name="phone" value="{{ $profile->phone }}" required autofocus>
+                                           name="phone" value="{{ $profile->phone }}" required >
 
                                     @if ($errors->has('phone'))
                                         <span class="invalid-feedback" role="alert">
@@ -110,7 +109,7 @@
                                 <div class="col-md-9">
                                     <input id="address" type="text"
                                            class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}"
-                                           name="address" value="{{ $profile->address }}" required autofocus>
+                                           name="address" value="{{ $profile->address }}" required >
 
                                     @if ($errors->has('address'))
                                         <span class="invalid-feedback" role="alert">
@@ -127,7 +126,7 @@
                                 <div class="col-md-9">
                                     <input id="link_facebook" type="url"
                                            class="form-control{{ $errors->has('link_facebook') ? ' is-invalid' : '' }}"
-                                           name="link_facebook" value="{{ $profile->link_facebook }}" required autofocus>
+                                           name="link_facebook" value="{{ $profile->link_facebook }}" required >
 
                                     @if ($errors->has('link_facebook'))
                                         <span class="invalid-feedback" role="alert">
@@ -144,7 +143,7 @@
                                 <div class="col-md-9">
                                     <input id="link_instagram" type="url"
                                            class="form-control{{ $errors->has('link_instagram') ? ' is-invalid' : '' }}"
-                                           name="link_instagram" value="{{ $profile->link_instagram }}" required autofocus>
+                                           name="link_instagram" value="{{ $profile->link_instagram }}" required >
 
                                     @if ($errors->has('link_instagram'))
                                         <span class="invalid-feedback" role="alert">
@@ -161,7 +160,7 @@
                                 <div class="col-md-9">
                                     <input id="link_in" type="url"
                                            class="form-control{{ $errors->has('link_in') ? ' is-invalid' : '' }}"
-                                           name="link_in" value="{{ $profile->link_in }}" required autofocus>
+                                           name="link_in" value="{{ $profile->link_in }}" required >
 
                                     @if ($errors->has('link_in'))
                                         <span class="invalid-feedback" role="alert">
@@ -178,7 +177,7 @@
                                 <div class="col-md-9">
                                     <input id="link_youtube" type="url"
                                            class="form-control{{ $errors->has('link_youtube') ? ' is-invalid' : '' }}"
-                                           name="link_youtube" value="{{ $profile->link_youtube }}" required autofocus>
+                                           name="link_youtube" value="{{ $profile->link_youtube }}" required >
 
                                     @if ($errors->has('link_youtube'))
                                         <span class="invalid-feedback" role="alert">
@@ -196,8 +195,11 @@
                                 </div>
                             </div>
                         </form>
-
                     </div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <a class="btn btn-light btn-sm" href="{{ url('/admin') }}" role="button"><div class="fa fa-arrow-circle-left" style="margin-right: 10px;"></div>{{ __('app.back') }}</a>
                 </div>
             </div>
         </div>

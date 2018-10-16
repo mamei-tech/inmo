@@ -22,7 +22,7 @@
                     <div class="box">
                         <div id="{{$g->id}}"></div>
                     </div>
-                        <h3>{{$g->text_en}}</h3>
+                        <h3>{{App::getLocale()=="es"? $g->text_es : $g->text_en}}</h3>
                 </div>
             @endforeach
         </div>
@@ -30,7 +30,6 @@
         <h4 class="color-yellow selected">{{ __('app.guides_selected') }}</h4>
 
         <form id="form-send-email" action="" method="post">
-            {{--TODO Cuando da enter en el input c rompe--}}
             <div class="form-group">
                 <input type="email" class="form-control offset-lg-6 col-lg-6 col-sm-12" name="email" required=""
                        placeholder="@lang('app.yourEmail')">

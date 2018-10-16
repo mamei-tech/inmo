@@ -65,7 +65,7 @@
                 url: '{{ route('contacts.checkNotifications', [App::getLocale()]) }}',
                 data:{_token : window._token},
                 success: function (r, s, o) {
-                    if (r.success){
+                    if (r.success) {
                         $("#notificationCountBadge").text(r.count);
                             if (r.count === 0) {
                                 $("#notificationCountBadge").hide();
@@ -75,7 +75,7 @@
                     }
                 }
             });
-            setTimeout(window._checkNotifications, 5000);
+            setTimeout(window._checkNotifications, 45000);
         };
 
     window._checkNotifications();

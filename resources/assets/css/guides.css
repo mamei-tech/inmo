@@ -1,10 +1,13 @@
 .guide-section-0 {
-    height: 100vh;
+    /*height: 100vh; con scroll*/
+    min-height: 100vh; /*sin scroll*/
     background: url('../images/lg/2.jpg');
     padding: 60px 120px;
     text-align: right;
     display: flex;
     flex-direction: column;
+    margin-top: -100px;
+    padding-top: 160px;
 }
 
 .guide-section-0 h3.subtitle{
@@ -58,6 +61,8 @@
     .guide-section-0 {
         background: url('../images/md/2.jpg');
         padding: 50px 100px;
+        margin-top: -80px;
+        padding-top: 130px;
     }
 
     .guide-section-0 button{
@@ -75,6 +80,7 @@
         padding: 50px 30px;
         text-align: center;
         background: url('../images/sm/2.jpg');
+        padding-top: 130px;
     }
 
     .guide-section-0 button{
