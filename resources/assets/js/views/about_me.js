@@ -2,10 +2,14 @@ $(document).ready(function () {
     window.bioCurrentPage = 0;
 
     window.bioScrollTo = function bioScrollTo(page, widht) {
-        $('.bio > p')[0].scrollTo((page) * (widht), 0);
+        //$('.bio > p')[0].scrollTo((page) * (widht), 0);
+        $('.bio > p')[0].scrollLeft = page * widht;
+
         window.bioCurrentPage = page;
         builtPagination();
     };
+
+    console.log(window.bioCurrentPage);
 
     function builtPagination() {
         $('.pagination-pc').empty();

@@ -32,32 +32,32 @@
 
     <div class="container-open-ligh-gray">
         <div class="text-brickell">
-            <p class="color-gray display-pc">@lang('app.firstTextBrickell')</p>
-            <p class="color-gray display-tablet">@lang('app.firstTextBrickellTable')</p>
-            <p class="color-gray display-mobile">@lang('app.firstTextBrickellMobile')</p>
+            <p class="color-gray display-pc"> @php echo html_entity_decode( __('app.firstTextBrickell')) @endphp</p>
+            <p class="color-gray display-tablet">@php echo html_entity_decode( __('app.firstTextBrickellTable')) @endphp</p>
+            <p class="color-gray display-mobile">@php echo html_entity_decode( __('app.firstTextBrickellMobile')) @endphp</p>
         </div>
 
         <div class="first-img-brickell img-parallax">
         </div>
 
         <div class="text-brickell">
-            <p class="color-gray display-pc">@lang('app.secondTextBrickell')</p>
-            <p class="color-gray display-tablet">@lang('app.secondTextBrickellTable')</p>
-            <p class="color-gray display-mobile">@lang('app.secondTextBrickellMobile')</p>
+            <p class="color-gray display-pc">@php echo html_entity_decode( __('app.secondTextBrickell')) @endphp</p>
+            <p class="color-gray display-tablet">@php echo html_entity_decode( __('app.secondTextBrickellTable')) @endphp</p>
+            <p class="color-gray display-mobile">@php echo html_entity_decode( __('app.secondTextBrickellMobile')) @endphp</p>
         </div>
 
         <div class="second-img-brickell img-parallax"></div>
 
         <div class="text-brickell">
-            <p class="color-gray column-especial display-pc">@lang('app.thirthTextBrickell')</p>
-            <p class="color-gray display-tablet">@lang('app.thirthTextBrickellTable')</p>
-            <p class="color-gray display-mobile">@lang('app.thirthTextBrickellMobile')</p>
+            <p class="color-gray column-especial display-pc">@php echo html_entity_decode( __('app.thirthTextBrickell')) @endphp</p>
+            <p class="color-gray display-tablet">@php echo html_entity_decode( __('app.thirthTextBrickellTable')) @endphp</p>
+            <p class="color-gray display-mobile">@php echo html_entity_decode( __('app.thirthTextBrickellMobile')) @endphp</p>
         </div>
 
         <div class="thirth-img-brickell img-parallax"></div>
 
         <div class="text-brickell display-mobile">
-            <p class="color-gray">@lang('app.fourthTextBrickellMobile')</p>
+            <p class="color-gray">@php echo html_entity_decode( __('app.fourthTextBrickellMobile')) @endphp</p>
         </div>
     </div>
 
@@ -82,31 +82,31 @@
 
     <div class="container-open-dark-gray">
         <div class="text-brickell">
-            <p class="color-gray display-pc">@lang('app.firstTextDowntown')</p>
-            <p class="color-gray display-tablet">@lang('app.firstTextDowntownTable')</p>
-            <p class="color-gray display-mobile">@lang('app.firstTextDowntownMobile')</p>
+            <p class="color-gray display-pc">@php echo html_entity_decode( __('app.firstTextDowntown')) @endphp</p>
+            <p class="color-gray display-tablet">@php echo html_entity_decode( __('app.firstTextDowntownTable')) @endphp</p>
+            <p class="color-gray display-mobile">@php echo html_entity_decode( __('app.firstTextDowntownMobile')) @endphp</p>
         </div>
 
         <div class="first-img-downtown img-parallax"></div>
 
         <div class="text-brickell">
-            <p class="color-gray display-pc column-especial">@lang('app.secondTextDowntown')</p>
-            <p class="color-gray display-tablet">@lang('app.secondTextDowntownTable')</p>
-            <p class="color-gray display-mobile">@lang('app.secondTextDowntownMobile')</p>
+            <p class="color-gray display-pc column-especial">@php echo html_entity_decode( __('app.secondTextDowntown')) @endphp</p>
+            <p class="color-gray display-tablet">@php echo html_entity_decode( __('app.secondTextDowntownTable')) @endphp</p>
+            <p class="color-gray display-mobile">@php echo html_entity_decode( __('app.secondTextDowntownMobile')) @endphp</p>
         </div>
 
         <div class="second-img-downtown img-parallax"></div>
 
         <div class="text-brickell display-mobile">
-            <p class="color-gray display-pc column-especial">@lang('app.thirthTextDowntown')</p>
-            <p class="color-gray display-tablet">@lang('app.thirthTextDowntownTable')</p>
-            <p class="color-gray display-mobile">@lang('app.thirthTextDowntownMobile')</p>
+            <p class="color-gray display-pc column-especial">@php echo html_entity_decode( __('app.thirthTextDowntown')) @endphp</p>
+            <p class="color-gray display-tablet">@php echo html_entity_decode( __('app.thirthTextDowntownTable')) @endphp</p>
+            <p class="color-gray display-mobile">@php echo html_entity_decode( __('app.thirthTextDowntownMobile')) @endphp</p>
         </div>
 
         <div class="thirth-img-downtown img-parallax display-mobile"></div>
 
         <div class="text-brickell display-mobile">
-            <p class="color-gray">@lang('app.fourthTextDowntownMobile')</p>
+            <p class="color-gray">@php echo html_entity_decode( __('app.fourthTextDowntownMobile')) @endphp</p>
         </div>
 
     </div>

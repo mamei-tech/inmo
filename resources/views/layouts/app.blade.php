@@ -43,7 +43,7 @@
     </main>
 
     <div id="back-to-top" class="display-tablet display-mobile" onclick="window.scroll( 0, 0)">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.cls-01{fill:#e0af59;opacity:0.7;}.cls-02{fill:#fff;}</style></defs><title>Recurso 12</title><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><rect class="cls-01" width="50" height="50"/><path class="cls-02" d="M37.54,30.71l-1.13,1.13L25,20.42,13.58,31.84l-1.13-1.13L25,18.16Z"/></g></g></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50"><defs><style>.cls-01{fill:#e0af59;opacity:0.7;}.cls-02{fill:#fff;}</style></defs><title>Recurso 12</title><g id="Capa_2" data-name="Capa 2"><g id="Capa_1-2" data-name="Capa 1"><rect class="cls-01" width="50" height="50"></rect><path class="cls-02" d="M37.54,30.71l-1.13,1.13L25,20.42,13.58,31.84l-1.13-1.13L25,18.16Z"></path></g></g></svg>
     </div>
 
     @include('partials.footer')
