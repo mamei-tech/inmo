@@ -10,7 +10,7 @@ class Promotion extends Model
     protected $table = "promotion";
 
     protected $fillable = [
-        'title_es', 'title_en', 'text_es', 'text_en', 'link', 'image_lg', 'image_ms','image_sm','updated_at'
+        'title_es', 'title_en', 'text_es', 'text_en', 'link', 'image_lg', 'image_md','image_sm','updated_at'
     ];
 
     public function getImageLgPathAttribute()

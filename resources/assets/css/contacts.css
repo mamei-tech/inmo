@@ -34,12 +34,12 @@
 
 .container-social-buttom div:first-child {
     text-align: left;
-    flex: 60%;
+    flex: 70%;
 }
 
 .container-social-buttom div:last-child {
     text-align: right;
-    flex: 40%;
+    flex: 30%;
 }
 
 .container-social-buttom div a {
@@ -90,7 +90,7 @@
         padding: 40px 30px;
         height: 640px;
         text-align: center;
-        background: url('../images/sm/10.jpg');
+        background: url('../images/md/10.jpg');
         margin-top: -80px;
         padding-top: 120px;
     }
@@ -110,6 +110,7 @@
     .container-social-buttom {
         flex-direction: column;
         padding-top: 10px;
+        display: initial;
     }
 
     .container-social-buttom div button {
@@ -180,7 +181,7 @@
     overflow: hidden;
     padding: 0;
     margin: auto;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC')
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAAA3NCSVQICAjb4U/gAAAABlBMVEXMzMz////TjRV2AAAACXBIWXMAAArrAAAK6wGCiw1aAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJld29ya3MgQ1M26LyyjAAAABFJREFUCJlj+M/AgBVhF/0PAH6/D/HkDxOGAAAAAElFTkSuQmCC');
 }
 
 @media (max-width: 1249px) {

@@ -38,6 +38,9 @@ return [
     'name' => 'Nombre',
     'message' => 'Mensaje',
     'close' => 'Cerrar',
+    'cancel' => 'Cancelar',
+    'designed_by' => 'Diseñado por:',
+    'developed_by' => 'Programado por:',
     'type' => 'Tipo',
     'success_message_send' => 'Mensaje enviado satisfactoriamente',
     'selected_some_guide' => 'Debes seleccionar alguna guía',
@@ -46,6 +49,8 @@ return [
     'select' => 'Seleccionar',
     'ready' => 'Listo',
     'phone_incorrect' => 'Entre un télefono correcto',
+
+    'download_guides' => "Descargar guías",
 
     'promotion_delete_success' => 'promoción eliminada satisfactoriamente',
     'promotion_delete_confirm' => '¿Está seguro que desea eliminar esta promoción?',

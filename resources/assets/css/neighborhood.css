@@ -30,7 +30,7 @@
 
 .light-gray-block {
     align-items: flex-end;
-    background-color: rgba(50, 50, 50, 0.3);
+    background-color: rgba(50, 50, 50, 0.6);
     padding: 50px 120px 50px 80px;
     text-align: right;
     padding-top: 150px;
@@ -222,6 +222,11 @@
     background: url("../images/lg/15.jpg") top center /cover;
 }
 
+.light-gray-block > div:last-child    {
+   left: auto;
+   right: 120px;
+}
+
 @media (max-width: 1249px) {
     .container-ligh-gray{
         margin-top: -80px;
@@ -237,6 +242,13 @@
         align-items: center;
         padding: 50px 0;
         text-align: center;
+    }
+
+    .light-gray-block > div:last-child,
+    .dark-gray-block > div:last-child {
+       left: 50%;
+       right: 50%;
+       margin-left: -25px;
     }
 
     .light-gray-block {

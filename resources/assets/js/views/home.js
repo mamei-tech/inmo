@@ -1,7 +1,7 @@
 $(document).ready(function(){
     function setPormotionImage(){
         var widht = window.innerWidth;
-        document.querySelectorAll(".promotion-background").forEach(function (e) {
+        $(".promotion-background").each(function (i, e) {
             if (widht > 1249){
                 e.style.backgroundImage = "url("+e.dataset.imageLg+")";
             }
@@ -16,8 +16,7 @@ $(document).ready(function(){
 
     function setSliderImage(){
         var widht = window.innerWidth;
-
-        document.querySelectorAll(".slide-item").forEach(function (e) {
+        $(".slide-item").each(function (i, e){
             if (widht > 1249){
                 e.style.backgroundImage = "url("+e.dataset.imageLg+")";
             }

@@ -89,9 +89,9 @@ class PromotionController extends Controller
         $path_sm = null;
         if ($request->type == "main")
         {
-            $path_lg = $request->file('image')->store('public/promotions/lg');
-            $path_md = $request->file('image')->store('public/promotions/md');
-            $path_sm = $request->file('image')->store('public/promotions/sm');
+            $path_lg = $request->file('image_lg')->store('public/promotions/lg');
+            $path_md = $request->file('image_md')->store('public/promotions/md');
+            $path_sm = $request->file('image_sm')->store('public/promotions/sm');
         }
 
 
@@ -160,7 +160,7 @@ class PromotionController extends Controller
 
             $uploadedImageMd = $request->file('image_md');
             if($uploadedImageMd){
-                Storage::delete($promotion->image_md);
+                //Storage::delete($promotion->image_md);
                 $path_md = $uploadedImageMd->store('public/promotions/md');
             }
 

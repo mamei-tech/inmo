@@ -1,27 +1,40 @@
 $(document).ready(function () {
-    var image = document.getElementById("image");
+    function build() {
+        var image = document.getElementById("image");
 
-    window.cropper = new Cropper(image,
-        {
-            autoCrop: true,
-            aspectRatio: 1,
-            viewMode: 1,
-            dragMode: 'move',
-            movable: false,
-            scalable: false,
-            zoomable: false,
-            minCropBoxWidth: 150,
-            minCropBoxHeight: 150,
-            preview: document.getElementById("preview"),
-            cropend: function () {
-                var canvas = cropper.getCroppedCanvas({width: 200, height: 200});
-                $("[name=foto]").val(canvas.toDataURL());
-            },
-            ready: function () {
-                var canvas = cropper.getCroppedCanvas({width: 200, height: 200});
-                $("[name=foto]").val(canvas.toDataURL());
-            }
-        });
+        window.cropper = new Cropper(image,
+            {
+                autoCrop: true,
+                aspectRatio: 1,
+                viewMode: 1,
+                dragMode: 'move',
+                movable: false,
+                scalable: false,
+                zoomable: false,
+                minCropBoxWidth: 150,
+                minCropBoxHeight: 150,
+                preview: document.getElementById("preview"),
+                cropend: function () {
+                    var canvas = cropper.getCroppedCanvas({width: 200, height: 200});
+                    $("[name=foto]").val(canvas.toDataURL());
+                },
+                ready: function () {
+                    var canvas = cropper.getCroppedCanvas({width: 200, height: 200});
+                    $("[name=foto]").val(canvas.toDataURL());
+                }
+            });
+    }
+    build();
+
+    function Cancel(e) {
+        window.cropper.resetPreview();
+        $("#input").val("");
+        $("#image").parent().html("<img id=\"image\" src=\"\"/>");
+        build();
+    };
+
+    $("#btnClose").click(Cancel);
+    $("#btnCancel").click(Cancel);
 
     function showPreview(e) {
         var input = e.target;

@@ -26,7 +26,7 @@
     padding-left: 15px;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    flex: 1;
     overflow: hidden;
 }
 
@@ -66,17 +66,17 @@
 
 .bio {
     margin: 30px 0;
-    flex: auto;
+    flex: 1;
     height: 100%;
     overflow: hidden;
+    display: flex;
 }
 
 .bio > p {
     column-count: 2;
     margin-bottom: 0;
     column-fill: auto;
-    column-gap: 30px;
-    height: 100%;
+    column-gap: 30px;   
     overflow: hidden;
 }
 
@@ -107,8 +107,7 @@
 }
 
 .social-media > div:last-child {
-    text-align: right;
-    margin-right: 10px;
+    text-align: right;    
 }
 
 .social-media div a {
@@ -140,13 +139,17 @@
         overflow: auto;
     }
 
+    .pagination-pc {
+        display: none;
+    }
+
 }
 
 @media (max-width: 960px) {
     .about-me-section-0 {
         padding: 50px 30px;
         text-align: center;
-        background: url('../images/sm/1.jpg');
+        background: url('../images/md/1.jpg');
         padding-top: 130px;
     }
 
@@ -166,6 +169,7 @@
     .bio > p {
         column-count: 1;
         margin-bottom: 0;
+        column-width: 960px;
     }
 
     .info-about-me-pc,
@@ -175,7 +179,7 @@
 
     .info-about-me-mobile,
     .pagination-mobile {
-        display: block;
+        /* display: block; */
     }
 
     .info-about-me-mobile {
@@ -211,13 +215,5 @@
         fill: rgb(142, 142, 142);
     }
 }
-
-@media (max-width: 465px) {
-    .pagination-mobile .btn {
-        padding: 0 7px 0 0;
-        font-size: 10px;
-    }
-}
-
 /*fin about_me-section-0*/
 

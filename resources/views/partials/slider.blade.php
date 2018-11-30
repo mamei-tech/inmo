@@ -21,7 +21,7 @@
         @foreach ($sliders as $s)
             <div class="carousel-item {{$first ? "active" : ""}}">
                 <div style="background-size: cover; background-position: center center;" data-image-lg="{{$s->ImageLgPath}}" data-image-md="{{$s->ImageMdPath}}" data-image-sm="{{$s->ImageSmPath}}"
-                     class="slide-item img-parallax"></div>
+                     class="slide-item img-parallax" data-stellar-background-ratio="0.5"></div>
                 <div class="container">
                     <div class="carousel-caption">
                         <h1>{{ App::getLocale()=="es"? $s->title_es : $s->title_en }}</h1>

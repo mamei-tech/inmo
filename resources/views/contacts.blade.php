@@ -104,6 +104,28 @@
             <h3 class="color-gray">@lang('app.expressOpinion')</h3>
         </div>
 
+        <div id="previewSvg" style="display: none;">
+            <svg xmlns="http://www.w3.org/2000/svg" class="color-gray" viewBox="0 0 170 170">
+                <defs>
+                    <style>.cls-1 {
+                            fill: #fff;
+                        }
+
+                        .cls-2 {
+                            fill: #aaa;
+                        }</style>
+                </defs>
+                <g id="Capa_2">
+                    <g id="Capa_1-2">
+                        <rect class="cls-1" width="170" height="170"></rect>
+                        <path
+                                class="cls-2"
+                                d="M97.69,85.8H86.47V97h-1.6V85.8H73.64V84.2H84.86V73h1.6V84.2H97.69Z"></path>
+                    </g>
+                </g>
+            </svg>
+        </div>
+
         <div>
             <div style="position: relative">
                 <div class="img-thumbnail">
@@ -152,25 +174,26 @@
     </div>
 
     <div id="exampleModal" class="modal fade" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog" role="document" style="width: 340px">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">{{ __('app.select_image') }}</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <h2 class="modal-title color-gray">{{ __('app.select_image') }}</h2>
+                    <button id="btnClose" type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
                         <div class="thumbnail"
-                             style="">
+                              style="height: 250px; width: 250px">
                             <img id="image" src=""/>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-yellow" onclick=" $('#input').click()">{{ __('app.select') }}</button>
-                    <button style="margin-left: 10px;" type="button" class="btn btn-yellow" data-dismiss="modal">{{ __('app.ready') }}</button>
+                <div class="modal-footer" style="justify-content: center;">
+                    <button type="button" class="btn btn-yellow" onclick="$('#input').click()">{{ __('app.select') }}</button>
+                    <button type="button" class="btn btn-yellow" data-dismiss="modal">{{ __('app.ready') }}</button>
+                    <button id="btnCancel" type="button" class="btn btn-yellow" data-dismiss="modal">{{ __('app.cancel') }}</button>
                 </div>
             </div>
         </div>
@@ -193,8 +216,6 @@
             @endforeach
         </div>
     @endif
-
-
 @endsection
 
 @push('scripts')

@@ -38,6 +38,9 @@ return [
     'name' => 'Name',
     'message' => 'Message',
     'close' => 'Close',
+    'cancel' => 'Cancel',
+    'designed_by' => 'Designed by:',
+    'developed_by' => 'Developed by:',
     'type' => 'Type',
     'success_message_send' => 'Message send sucessfully',
     'selected_some_guide' => 'You must select some guide',
@@ -46,6 +49,8 @@ return [
     'select' => 'Select',
     'ready' => 'Ready',
     'phone_incorrect' => 'Please enter a correct phone number',
+
+    'download_guides' => "Download guides",
 
     'promotion_delete_success' => 'promotion deleted sucessfully',
     'promotion_delete_confirm' => 'Are you sure you want delete this promotion?',
