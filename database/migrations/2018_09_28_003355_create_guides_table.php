@@ -17,7 +17,8 @@ class CreateGuidesTable extends Migration
             $table->increments('id');
             $table->string('text_es');
             $table->string('text_en');
-            $table->string('guide');
+            $table->string('guide_es');
+            $table->string('guide_en');
             $table->timestamps();
         });
     }

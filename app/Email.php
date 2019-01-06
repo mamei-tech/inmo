@@ -9,6 +9,6 @@ class Email extends Model
     protected $table = 'emails';
 
     protected $fillable = [
-        'email', 'type', 'updated_at'
+        'email', 'type', 'element_downloaded','updated_at'
     ];
 }

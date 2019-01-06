@@ -37,10 +37,22 @@ class ContactsController extends Controller
     {
         $count = DB::table('contact')->count();
         $data = [];
-
         if ($count) {
+            $column = "created_at";
+            $direction = "desc";
+
+            if ($request->sort)
+            {
+                $sort = explode('~', $request->sort);
+                $last = collect($sort)->last();
+
+                $last = collect(explode('-', $last));
+                $column = $last->first();
+                $direction = $last->last();
+            }
+
             $data = DB::table('contact')
-                ->orderBy("created_at", "desc")
+                ->orderBy($column, $direction)
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
                 ->get();

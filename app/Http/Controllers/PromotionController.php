@@ -40,10 +40,23 @@ class PromotionController extends Controller
         $count = DB::table('promotion')->whereNotNull("image_lg")->count();
         $data = [];
 
-        if ($count){
+        if ($count) {
+            $column = "created_at";
+            $direction = "desc";
+
+            if ($request->sort)
+            {
+                $sort = explode('~', $request->sort);
+                $last = collect($sort)->last();
+
+                $last = collect(explode('-', $last));
+                $column = $last->first();
+                $direction = $last->last();
+            }
+
             $data = DB::table('promotion')
                 ->whereNotNull("image_lg")
-                ->orderBy("created_at", "desc")
+                ->orderBy($column, $direction)
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
                 ->get();
@@ -60,10 +73,23 @@ class PromotionController extends Controller
         $count = DB::table('promotion')->whereNull("image_lg")->count();
         $data = [];
 
-        if ($count){
+        if ($count) {
+            $column = "created_at";
+            $direction = "desc";
+
+            if ($request->sort)
+            {
+                $sort = explode('~', $request->sort);
+                $last = collect($sort)->last();
+
+                $last = collect(explode('-', $last));
+                $column = $last->first();
+                $direction = $last->last();
+            }
+
             $data = DB::table('promotion')
                 ->whereNull("image_lg")
-                ->orderBy("created_at", "desc")
+                ->orderBy($column, $direction)
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
                 ->get();
@@ -75,13 +101,6 @@ class PromotionController extends Controller
         ];
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request, $locale)
     {
         $path_lg = null;
@@ -113,37 +132,17 @@ class PromotionController extends Controller
         return Redirect::route("promotion.index", [$locale]);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Promotion $promotion
-     * @return \Illuminate\Http\Response
-     */
     public function show(Promotion $promotion)
     {
-        //
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Promotion $promotion
-     * @return \Illuminate\Http\Response
-     */
     public function edit(string $lang, Promotion $promotion)
     {
         $type = $promotion->image_lg ? "main" : "second" ;
         return view('admin.promotion.edit', ["type" => $type, "promotion" => $promotion]);
     }
 
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request $request
-     * @param  \App\Promotion $promotion
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, string $lang, Promotion $promotion)
     {
         $path_lg = null;
@@ -160,7 +159,7 @@ class PromotionController extends Controller
 
             $uploadedImageMd = $request->file('image_md');
             if($uploadedImageMd){
-                //Storage::delete($promotion->image_md);
+                Storage::delete($promotion->image_md);
                 $path_md = $uploadedImageMd->store('public/promotions/md');
             }
 
@@ -187,13 +186,6 @@ class PromotionController extends Controller
         return Redirect::route("promotion.index", [$lang]);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Promotion $promotion
-     * @return array
-     * @throws Exception
-     */
     public function destroy(string $lang, Promotion $promotion)
     {
         $success = $promotion->delete();

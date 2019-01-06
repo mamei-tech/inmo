@@ -21,7 +21,7 @@ class ResetPasswordController extends Controller
 
     public function showSetForm()
     {
-        return view("Auth.passwords.set");
+        return view("auth.passwords.set");
     }
 
     public function setPassword(Request $request, string $lang)

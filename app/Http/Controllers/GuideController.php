@@ -6,6 +6,7 @@ use App\Guide;
 use DateTime;
 use function foo\func;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
@@ -17,7 +18,6 @@ class GuideController extends Controller
     {
         $this->middleware('auth')->except(['index', 'sendEmail']);
     }
-
 
     public function index()
     {
@@ -33,33 +33,30 @@ class GuideController extends Controller
         return view('admin.guide.index');
     }
 
-
     public function sendEmail(Request $request, $locale)
     {
-        $email = DB::table('emails')->where('email', $request->email)->where('type', 'guide')->exists();
-
-        if (!$email) {
-            DB::table('emails')->insert(
-                [
-                    'email' => $request->email,
-                    'type' => 'guide',
-                    'created_at' => new DateTime(),
-                    'updated_at' => new DateTime()
-                ]
-            );
-        }
-
         $selected = $request->guides;
         if(!$selected)
-        return ["success"=>false, "message"=>__('app.selected_some_guide')];
+            return ["success"=>false, "message"=>__('app.selected_some_guide')];
 
         $guides = Guide::query()->whereIn("id", $selected?$selected:[])->get();
 
-        Mail::send("emails.guides", ["guides" => $guides], function ($m) use ($request) {
-            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
-            $m->to($request->email)->subject(__('app.download_guides'));
-        });
+        DB::table('emails')->insert(
+            [
+                'email' => $request->email,
+                'type' => 'guide',
+                'element_downloaded' => $guides->implode(App::getLocale()=="es"? 'text_es' : 'text_en', ', '),
+                'created_at' => new DateTime(),
+                'updated_at' => new DateTime()
+            ]
+        );
 
+//        Mail::send("emails.guides", ["guides" => $guides], function ($m) use ($request) {
+//            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
+//            $m->to($request->email)->subject(__('app.download_guides'));
+//        });
+
+        //return view("emails.guides", ["guides" => $guides]);
         return ["success"=>true, "message"=>__('app.check_email')];
     }
 
@@ -67,10 +64,22 @@ class GuideController extends Controller
     {
         $count = DB::table('guides')->count();
         $data = [];
-
         if ($count) {
+            $column = "created_at";
+            $direction = "desc";
+
+            if ($request->sort)
+            {
+                $sort = explode('~', $request->sort);
+                $last = collect($sort)->last();
+
+                $last = collect(explode('-', $last));
+                $column = $last->first();
+                $direction = $last->last();
+            }
+
             $data = DB::table('guides')
-                ->orderBy("created_at", "desc")
+                ->orderBy($column, $direction)
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
                 ->get();
@@ -89,13 +98,15 @@ class GuideController extends Controller
 
     public function store(Request $request, $locale)
     {
-        $path = $request->file('guide')->store('public/guides');
+        $path_es = $request->file('guideEs')->store('public/guides');
+        $path_en = $request->file('guideEn')->store('public/guides');
 
         DB::table('guides')->insert(
             [
                 'text_es' => $request->text_es,
                 'text_en' => $request->text_en,
-                'guide' => $path,
+                'guide_es' => $path_es,
+                'guide_en' => $path_en,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             ]
@@ -108,7 +119,11 @@ class GuideController extends Controller
     {
         $success = $guide->delete();
         if ($success)
-            Storage::delete($guide->guide);
+        {
+            Storage::delete($guide->guide_es);
+            Storage::delete($guide->guide_en);
+        }
+
         return ["success" => $success];
     }
 
@@ -119,18 +134,26 @@ class GuideController extends Controller
 
     public function update(Request $request, string $lang, Guide $guide)
     {
-        $path = null;
-        $uploadedImage = $request->file('guide');
+        $path_es = null;
+        $path_en = null;
+
+        $uploadedImage = $request->file('guide_es');
         if ($uploadedImage) {
-            Storage::delete($guide->guide);
-            $path = $uploadedImage->store('public/guides');
+            Storage::delete($guide->guide_es);
+            $path_es = $uploadedImage->store('public/guides');
         }
 
+        $uploadedImage = $request->file('guide_en');
+        if ($uploadedImage) {
+            Storage::delete($guide->guide_en);
+            $path_en = $uploadedImage->store('public/guides');
+        }
 
         $guide->fill([
             'text_es' => $request->text_es,
             'text_en' => $request->text_en,
-            'guide' => $path ? $path : $guide->guide,
+            'guide_es' => $path_es ? $path_es : $guide->guide_es,
+            'guide_en' => $path_en ? $path_en : $guide->guide_en,
             'updated_at' => new DateTime()
         ]);
         $guide->save();

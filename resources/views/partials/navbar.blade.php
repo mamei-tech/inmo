@@ -4,15 +4,15 @@
     <div class="container" style="position: relative;">
         <div class="brand-ct">
             <div class="brand-img">
-                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/personal.png')  }}?{{time()}}"/>
+                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/personal.png')  }}"/>
             </div>
             <div class="brand-subimg">
-                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}?{{time()}}"/>
+                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}"/>
             </div>
         </div>
         <div class="menu-ct pc">
             <ul>
-                <li class="lang-{{App::getLocale()}}" style="margin-right: 50px;">
+                <li class="lang-{{App::getLocale()}}" style="margin-right: calc((100vw - 1250px) / 2);">
                     <a class="lang-en"
                        style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                        href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
@@ -45,7 +45,7 @@
             <ul>
                 <div class="phone-lang-buttons">
                     <div class="brand-subimg">
-                        <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}?{{time()}}"/>
+                        <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}"/>
                     </div>
                     <li class="lang-{{App::getLocale()}}">
                         <a class="lang-en"

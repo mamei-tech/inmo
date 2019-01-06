@@ -34,6 +34,9 @@ function downloadGuide() {
             success: function (r, s, o) {
                 if (r.success){
                     $('#form-send-email')[0].reset();
+                    $('.guide-item .check').each(function (i, e) {
+                        $(e).removeClass('check');
+                    });
                     alertify.log(r.message);
                 }
                 else

@@ -2,10 +2,10 @@
     <div class="container" style="position: relative;">
         <div class="brand-ct">
             <div class="brand-img">
-                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/personal.png')  }}?{{time()}}"/>
+                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/personal.png')  }}"/>
             </div>
             <div class="brand-subimg">
-                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}?{{time()}}"/>
+                <img src="{{ \Illuminate\Support\Facades\Storage::url('public/logo/company.png')  }}"/>
             </div>
         </div>
         <div class="menu-ct">

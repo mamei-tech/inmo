@@ -23,10 +23,23 @@ class EmailController extends Controller
         $count = DB::table('emails')->where('type', 'guide')->count();
         $data = [];
 
-        if ($count){
+        if ($count) {
+            $column = "created_at";
+            $direction = "desc";
+
+            if ($request->sort)
+            {
+                $sort = explode('~', $request->sort);
+                $last = collect($sort)->last();
+
+                $last = collect(explode('-', $last));
+                $column = $last->first();
+                $direction = $last->last();
+            }
+
             $data = DB::table('emails')
                 ->where('type', 'guide')
-                ->orderBy("created_at", "desc")
+                ->orderBy($column, $direction)
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
                 ->get();
@@ -43,10 +56,23 @@ class EmailController extends Controller
         $count = DB::table('emails')->where('type', 'contact')->count();
         $data = [];
 
-        if ($count){
+        if ($count) {
+            $column = "created_at";
+            $direction = "desc";
+
+            if ($request->sort)
+            {
+                $sort = explode('~', $request->sort);
+                $last = collect($sort)->last();
+
+                $last = collect(explode('-', $last));
+                $column = $last->first();
+                $direction = $last->last();
+            }
+
             $data = DB::table('emails')
                 ->where('type', 'contact')
-                ->orderBy("created_at", "desc")
+                ->orderBy($column, $direction)
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
                 ->get();

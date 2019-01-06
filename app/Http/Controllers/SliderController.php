@@ -32,9 +32,22 @@ class SliderController extends Controller
         $count = DB::table('slider')->count();
         $data = [];
 
-        if ($count){
+        if ($count) {
+            $column = "created_at";
+            $direction = "desc";
+
+            if ($request->sort)
+            {
+                $sort = explode('~', $request->sort);
+                $last = collect($sort)->last();
+
+                $last = collect(explode('-', $last));
+                $column = $last->first();
+                $direction = $last->last();
+            }
+
             $data = DB::table('slider')
-                ->orderBy("created_at", "desc")
+                ->orderBy($column, $direction)
                 ->skip(($request->page - 1) * $request->pageSize)
                 ->take($request->pageSize)
                 ->get();
@@ -104,13 +117,13 @@ class SliderController extends Controller
 
 
         $slider->fill([
-            'title_es' => $request->title_es,
-            'title_en' => $request->title_en,
-            'text_es' => $request->subtitle_es,
-            'text_en' => $request->subtitle_en,
-            'image_lg' => $path_lg ? $path_lg : $slider->image_lg,
-            'image_md' => $path_md ? $path_md : $slider->image_md,
-            'image_sm' => $path_sm ? $path_sm : $slider->image_sm,
+            'title_es'      => $request->title_es,
+            'title_en'      => $request->title_en,
+            'subtitle_es'   => $request->subtitle_es,
+            'subtitle_en'   => $request->subtitle_en,
+            'image_lg'      => $path_lg ? $path_lg : $slider->image_lg,
+            'image_md'      => $path_md ? $path_md : $slider->image_md,
+            'image_sm'      => $path_sm ? $path_sm : $slider->image_sm,
             'updated_at' => new DateTime()
         ]);
         $slider->save();

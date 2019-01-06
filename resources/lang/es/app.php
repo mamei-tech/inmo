@@ -1,6 +1,10 @@
 <?php
 
+
+
 return [
+    'appname' => 'Bienvenido a JEHidalgoRealEstate.com',
+
     'lang' => 'Idioma',
     'home' => 'Inicio',
     'neighborhoods' => 'Vecindarios',
@@ -26,6 +30,8 @@ return [
     'edit_promo' => 'Editar Promoción',
     'back_to_list' => 'Volver a la lista',
     'back' => 'Volver atrás',
+
+
     'error' => 'Error',
     'title_en' => 'Título en Inglés',
     'title_es' => 'Título en Español',
@@ -45,6 +51,7 @@ return [
     'success_message_send' => 'Mensaje enviado satisfactoriamente',
     'selected_some_guide' => 'Debes seleccionar alguna guía',
     'check_email' => 'Revise su correo',
+    'element_downloaded' => 'Descargado(s)',
     'select_image' => 'Seleccionar imagen',
     'select' => 'Seleccionar',
     'ready' => 'Listo',
@@ -74,6 +81,7 @@ return [
     'link_youtube' => 'Youtube',
     'success_edit_profile' => 'perfil cambiado satisfactoriamente',
 
+
     'guide' => 'Guía',
     'create_guide' => 'Crear Guía',
     'edit_guide' => 'Editar Guía',
@@ -89,6 +97,8 @@ return [
     'slider' => 'Slider',
     'slider_delete_success' => 'slide eliminado satisfactoriamente',
     'slider_delete_confirm' => '¿Está seguro que desea eliminar este slide?',
+
+
 
     'realtor' => 'REALTOR ASSOCIATE',
 
@@ -107,6 +117,8 @@ return [
     'testimonials_delete_confirm' => '¿Está seguro que desea eliminar este testimonio?',
     'edit_testimonials' => 'Editar Testimonios',
 
+
+
     'contacts' => 'Contactos',
     'contacts_delete_success' => 'contacto eliminado satisfactoriamente',
     'contacts_delete_confirm' => '¿Está seguro que desea eliminar este contacto?',
@@ -117,13 +129,17 @@ return [
     'email_delete_success' => 'correo eliminado satisfactoriamente',
     'email_delete_confirm' => '¿Está seguro que desea eliminar este correo?',
 
-    'copyright' => 'PROPIEDAD INTELECTUAL 2018 TODOS LOS DERECHOS RESERVADOS. JORGE E. HIDALGO BORROTO, LLC',
+   'copyright' => 'PROPIEDAD INTELECTUAL 2018 TODOS LOS DERECHOS RESERVADOS. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',
     'moreThanCommunity' => '"MÁS QUE SÓLO UNA COMUNIDAD"',
     'sales' => 'ventas',
     'rentals' => 'rentas',
     'downtownMiami' => 'DOWNTOWN MIAMI',
     'magicCity' => '"LA CIUDAD MÁGICA"',
+    
+
+
+
     'firstTextBrickell' => 'BRICKELL <br> 
 "MÁS QUE SÓLO UNA COMUNIDAD" <br><br>
 Al pensar en mudarse a Miami, un vecindario que quizás desee considerar es Brickell, región financiera central del sur de la Florida. <br><br>
