@@ -54,17 +54,17 @@
 
                            
                             <div class="form-group row">
-                                <label for="guide"
-                                       class="col-md-3 col-form-label text-md-right">{{ __('app.guide') }}</label>
+                                <label for="guide_es"
+                                       class="col-md-3 col-form-label text-md-right">{{ __('app.guide_es') }}</label>
 
                                 <div class="col-md-9">
-                                    <input id="guide" type="file"
-                                           class="form-control{{ $errors->has('guide') ? ' is-invalid' : '' }}"
-                                           name="guide" value="{{ old('guide') }}">
+                                    <input id="guide_es" type="file"
+                                           class="form-control{{ $errors->has('guide_es') ? ' is-invalid' : '' }}"
+                                           name="guide_es" value="{{ old('guide_es') }}">
 
-                                    @if ($errors->has('guide'))
+                                    @if ($errors->has('guide_es'))
                                         <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('guide') }}</strong>
+                                    <strong>{{ $errors->first('guide_es') }}</strong>
                                 </span>
                                     @endif
                                 </div>
@@ -72,7 +72,30 @@
 
                             <div  class="form-group row">
                                 <div class="offset-3 col-md-9">
-                                    <a href="{{ $guide->GuidePath  }}" style="width: 100%">{{ __('app.show_guide') }}</a>
+                                    <a href="{{ $guide->GuideEsPath  }}" style="width: 100%">{{ __('app.show_guide_es') }}</a>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="guide_en"
+                                       class="col-md-3 col-form-label text-md-right">{{ __('app.guide_en') }}</label>
+
+                                <div class="col-md-9">
+                                    <input id="guide_en" type="file"
+                                           class="form-control{{ $errors->has('guide_en') ? ' is-invalid' : '' }}"
+                                           name="guide_en" value="{{ old('guide_en') }}">
+
+                                    @if ($errors->has('guide_en'))
+                                        <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('guide_en') }}</strong>
+                                </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div  class="form-group row">
+                                <div class="offset-3 col-md-9">
+                                    <a href="{{ $guide->GuideEnPath  }}" style="width: 100%">{{ __('app.show_guide_en') }}</a>
                                 </div>
                             </div>
 

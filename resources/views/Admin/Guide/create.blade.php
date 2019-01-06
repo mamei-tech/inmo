@@ -47,20 +47,32 @@
 
 
                             <div class="form-group row">
-                                <label for="guide" class="col-md-3 col-form-label text-md-right">{{ __('app.guide') }}</label>
+                                <label for="guideEs" class="col-md-3 col-form-label text-md-right">{{ __('app.guide_es') }}</label>
 
                                 <div class="col-md-9">
-                                    <input id="guide" type="file" class="form-control{{ $errors->has('guide') ? ' is-invalid' : '' }}" name="guide" value="{{ old('guide') }}" required autofocus>
+                                    <input id="guideEs" type="file" class="form-control{{ $errors->has('guideEs') ? ' is-invalid' : '' }}" name="guideEs" value="{{ old('guideEs') }}" required autofocus>
 
-                                    @if ($errors->has('guide'))
+                                    @if ($errors->has('guideEs'))
                                         <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('guide') }}</strong>
+                                        <strong>{{ $errors->first('guideEs') }}</strong>
                                     </span>
                                     @endif
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="guideEn" class="col-md-3 col-form-label text-md-right">{{ __('app.guide_en') }}</label>
 
+                                <div class="col-md-9">
+                                    <input id="guideEn" type="file" class="form-control{{ $errors->has('guideEn') ? ' is-invalid' : '' }}" name="guideEn" value="{{ old('guideEn') }}" required autofocus>
+
+                                    @if ($errors->has('guideEn'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('guideEn') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-9 offset-md-3">
