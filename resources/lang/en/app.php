@@ -23,8 +23,6 @@ return [
 
     'learn_more' => 'Learn More',
 
-
-
     'admin' => 'Admin',
 
     'promotion' => 'Promotions',
