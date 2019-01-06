@@ -51,7 +51,11 @@
                         field: "email",
                         filterable: false
                     }, {
-                        width: 400,
+                        title: "{{ __('app.element_downloaded') }}",
+                        field: "element_downloaded",
+                        filterable: false
+                    }, {
+                        width: 300,
                         title: "{{ __('app.date') }}",
                         field: "created_at",
                         filterable: false
