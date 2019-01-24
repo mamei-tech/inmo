@@ -973,7 +973,7 @@
 
             window.makePaginationPrevious = function makePaginationPrevious() {
                 //TODO Probar esto
-                $('#IDX-pagination-header-prev').click();
+                $('#IDX-pagination-header-prev')[0].click();
             };
 
             window.makePagination = function makePagination(page) {
@@ -982,7 +982,7 @@
 
             window.makePaginationNext = function makePaginationNext() {
                 //TODO Probar esto
-                $('#IDX-pagination-header-next').click();
+                $('#IDX-pagination-header-next')[0].click();
             };
 
 
