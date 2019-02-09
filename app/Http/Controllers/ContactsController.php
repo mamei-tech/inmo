@@ -7,6 +7,7 @@ use App\Profile;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 
 class ContactsController extends Controller
@@ -66,6 +67,7 @@ class ContactsController extends Controller
 
     public function store(Request $request, $locale)
     {
+
         DB::table('contact')->insert(
             [
                 'name' => $request->name,
@@ -90,6 +92,14 @@ class ContactsController extends Controller
                 ]
             );
         }
+
+//        return view("emails.contacts", ["name" => $request->name, "email" => $request->email, "phone" => $request->phone, "text" => $request->text]);
+        Mail::send("emails.contacts", ["name" => $request->name, "email" => $request->email, "phone" => $request->phone, "text" => $request->text],
+            function ($m) use ($request) {
+            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
+            $m->to("jehidalgorealestate@gmail.com")->subject(__('app.new_contact'));
+        });
+
         $request->session()->flash('status', __('app.success_message_send'));
         return Redirect::route("contacts", [$locale]);
     }

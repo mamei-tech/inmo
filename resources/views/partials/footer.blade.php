@@ -18,15 +18,25 @@
                 <li>
                     <a class="link-neighborhoods" href="{{Route("neighborhoods")}}">@lang('app.neighborhoods')</a>
                 </li>
-                <li>
-                    <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
-                </li>
+
                 <li>
                     <a class="link-about" href="{{Route("about")}}">@lang('app.aboutMe')</a>
                 </li>
                 <li>
                     <a class="link-contacts" href="{{Route("contacts")}}">@lang('app.contact')</a>
                 </li>
+
+                <li>
+                    <a class="link-tools" href="{{Route("tools")}}">@lang('app.tools')</a>
+                    <div id="container-footer-arrow"><span class="footer-arrow-toggle-line"></span></div>
+                </li>
+
+                <div  class="li-especial li-especial-{{App::getLocale()}}">
+                    <li>
+                        <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
+                    </li>
+                </div>
+
             </ul>
         </div>
         <div class="footer-copyright">
@@ -49,5 +59,21 @@
 
         {{--document.querySelector(".footer .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
         @endif
+
+        $(document).ready(function () {
+            $('#container-footer-arrow').click(function () {
+                $('.footer-arrow-toggle-line').toggleClass('open');
+                $('.footer .li-especial').toggleClass('open');
+                $('.footer .footer-copyright').toggleClass('open');
+                $('.footer').toggleClass('open');
+            });
+
+            @if(isset($inGuide))
+                $('.footer-arrow-toggle-line').addClass('open');
+                $('.footer .li-especial').addClass('open');
+                $('.footer .footer-copyright').addClass('open');
+                $('.footer').addClass('open');
+            @endif
+        });
     </script>
 @endpush

@@ -3,6 +3,15 @@
 
 
 return [
+
+    'tools' => 'Útiles',
+    'new_contact' => 'Nuevo Contacto',
+    'new_download' => 'Nueva Descarga',
+    'new_download_body' => 'ha descargado las siguientes guías.',
+
+
+
+
     'appname' => 'Bienvenido a JEHidalgoRealEstate.com',
 
     'lang' => 'Idioma',

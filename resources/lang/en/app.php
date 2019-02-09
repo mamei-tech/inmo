@@ -3,6 +3,14 @@
 
 
 return [
+
+    'tools' => 'Tools',
+    'new_contact' => 'New Contact',
+    'new_download' => 'New Download',
+    'new_download_body' => 'ha descargado las siguientes guías.', //TODO Traducir esto
+
+
+
     'appname' => 'Welcome to JEHidalgoRealEstate.com',
 
     'lang' => 'Language',

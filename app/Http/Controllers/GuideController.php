@@ -51,10 +51,15 @@ class GuideController extends Controller
             ]
         );
 
-//        Mail::send("emails.guides", ["guides" => $guides], function ($m) use ($request) {
-//            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
-//            $m->to($request->email)->subject(__('app.download_guides'));
-//        });
+        Mail::send("emails.guides_admin", ["guides" => $guides, "email" => $request->email], function ($m) use ($request) {
+            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
+            $m->to("jehidalgorealestate@gmail.com")->subject(__('app.new_download'));
+        });
+
+        Mail::send("emails.guides", ["guides" => $guides], function ($m) use ($request) {
+            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
+            $m->to($request->email)->subject(__('app.download_guides'));
+        });
 
         //return view("emails.guides", ["guides" => $guides]);
         return ["success"=>true, "message"=>__('app.check_email')];

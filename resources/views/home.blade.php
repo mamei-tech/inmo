@@ -60,11 +60,6 @@
 
         </div>
 
-        <div>
-
-            <a class="hvr-underline-from-center" href="{{Route("guides")}}">@lang('app.guides')</a>
-
-        </div>
 
         <div>
 
@@ -75,6 +70,17 @@
         <div>
 
             <a class="hvr-underline-from-center" href="{{Route("contacts")}}">@lang('app.contact')</a>
+
+        </div>
+        <div>
+
+            <a class="hvr-underline-from-center" href="{{Route("tools")}}">@lang('app.tools')</a>
+
+        </div>
+
+        <div>
+
+            <a class="hvr-underline-from-center" href="{{Route("guides")}}">@lang('app.guides')</a>
 
         </div>
 

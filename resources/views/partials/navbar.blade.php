@@ -12,7 +12,7 @@
         </div>
         <div class="menu-ct pc">
             <ul>
-                <li class="lang-{{App::getLocale()}}" style="margin-right: calc((100vw - 1250px) / 2);">
+                <li class="lang-{{App::getLocale()}}" style="margin-right: calc((100vw - 1280px) / 2);">
                     <a class="lang-en"
                        style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                        href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
@@ -31,14 +31,24 @@
                     <a class="link-neighborhoods" href="{{Route("neighborhoods")}}">@lang('app.neighborhoods')</a>
                 </li>
                 <li class="hvr-underline-from-center">
-                    <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
-                </li>
-                <li class="hvr-underline-from-center">
                     <a class="link-about" href="{{Route("about")}}">@lang('app.aboutMe')</a>
                 </li>
                 <li class="hvr-underline-from-center">
                     <a class="link-contacts" href="{{Route("contacts")}}">@lang('app.contact')</a>
                 </li>
+
+                {{--/*Nuevo navbar*/--}}
+                <li class="hvr-underline-from-center underline-link-tools">
+                    <a class="link-tools" href="{{Route("tools")}}">@lang('app.tools')</a>
+                    <div id="container-navbar-arrow"><span class="navbar-arrow-toggle-line"></span></div>
+                </li>
+
+                <div  class="li-especial li-especial-{{App::getLocale()}}">
+                    <li class="hvr-underline-from-center">
+                        <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
+                    </li>
+                </div>
+
             </ul>
         </div>
         <div class="menu-ct mobile">
@@ -72,17 +82,22 @@
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
-                        <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
-                    </li>
-                </div>
-                <div>
-                    <li class="hvr-underline-from-center">
                         <a class="link-about" href="{{Route("about")}}">@lang('app.aboutMe')</a>
                     </li>
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
                         <a class="link-contacts" href="{{Route("contacts")}}">@lang('app.contact')</a>
+                    </li>
+                </div>
+                <div>
+                    <li class="hvr-underline-from-center">
+                        <a class="link-tools" href="{{Route("tools")}}">@lang('app.tools')</a>
+                    </li>
+                </div>
+                <div>
+                    <li class="hvr-underline-from-center">
+                        <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
                     </li>
                 </div>
             </ul>
@@ -104,38 +119,36 @@
 </div>
 @push('scripts')
     <script type="text/javascript">
-
         @if(!isset($inHome))
+            var link = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
+            var linkMobile = document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}");
 
-        var link = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
-        var linkMobile = document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}");
-
-        if (link === null)
-        {
-            link = document.querySelector(".nav-bar .pc .link-neighborhoods");
-            linkMobile = document.querySelector(".nav-bar .mobile .link-neighborhoods");
-        }
-
-        link.parentNode.classList.add("active");
-        linkMobile.parentNode.classList.add("active");
-
-        {{--document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
-        {{--document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
-        var navbar = document.querySelector(".nav-bar");
-        navbar.classList.add("scrolled");
-
-        document.addEventListener("scroll", function () {
-
-            if (window.prevScrollY < window.scrollY && window.scrollY > 80) {//bajando
-                navbar.classList.add("scroll-down");
-                navbar.classList.remove("open");
+            if (link === null)
+            {
+                link = document.querySelector(".nav-bar .pc .link-neighborhoods");
+                linkMobile = document.querySelector(".nav-bar .mobile .link-neighborhoods");
             }
-            else //subiendo
-                navbar.classList.remove("scroll-down");
 
-            window.prevScrollY = window.scrollY;
+            link.parentNode.classList.add("active");
+            linkMobile.parentNode.classList.add("active");
 
-        });
+            {{--document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
+            {{--document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
+            var navbar = document.querySelector(".nav-bar");
+            navbar.classList.add("scrolled");
+
+            document.addEventListener("scroll", function () {
+
+                if (window.prevScrollY < window.scrollY && window.scrollY > 80) {//bajando
+                    navbar.classList.add("scroll-down");
+                    navbar.classList.remove("open");
+                }
+                else //subiendo
+                    navbar.classList.remove("scroll-down");
+
+                window.prevScrollY = window.scrollY;
+
+            });
         @endif
 
         document.querySelector('.mobile-buttons .button-toggle').addEventListener("click", function () {
@@ -147,6 +160,21 @@
             else {
                 navbar.classList.add("open");
             }
+        });
+
+        /*Nuevo navbar*/
+        $(document).ready(function () {
+            $('#container-navbar-arrow').click(function () {
+                $('.navbar-arrow-toggle-line').toggleClass('open');
+                $('.nav-bar .li-especial').toggleClass('open');
+                $('.nav-bar.scrolled').toggleClass('open-li');
+            });
+
+            @if(isset($inGuide))
+                $('.navbar-arrow-toggle-line').addClass('open');
+                $('.nav-bar .li-especial').addClass('open');
+                $('.nav-bar.scrolled').addClass('open-li');
+            @endif
         });
     </script>
 @endpush
