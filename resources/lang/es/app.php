@@ -97,7 +97,7 @@ return [
     'guide_delete_success' => 'guía eliminado satisfactoriamente',
     'guide_delete_confirm' => '¿Está seguro que desea eliminar este guía?',
     'show_guide' => 'Ver Guía Actual',
-    'guide_subtitle' => 'Descargar su documento gratis',
+    'guide_subtitle' => 'Descargar su guía gratis',
     'guides_selected' => 'Usted recibirá los documento(s) seleccionados a su correo',
     'download_guides' => 'Descargar guías',
 

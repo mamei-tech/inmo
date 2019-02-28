@@ -171,7 +171,7 @@ return [
 
     'show_guide' => 'Show Current Guide',
 
-    'guide_subtitle' => 'Download your free handout',
+    'guide_subtitle' => 'Download your free guide',
 
     'guides_selected' => 'you will receive the selected document(s) to your email',
 

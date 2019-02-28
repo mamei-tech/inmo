@@ -776,6 +776,14 @@ textarea {
 
 
 /*Nuevo navbar*/
+.menu-ct.pc li.lang-es{
+    margin-right: calc((100vw - 1290px) / 2) !important;
+}
+
+.nav-bar ul li {
+    padding: 6px 8px 4px;
+}
+
 @media (min-width: 1249px) {
     .link-tools {
         padding-right: 10px;
@@ -798,7 +806,7 @@ textarea {
         border-bottom: 2px solid rgb(225, 175, 90);
         -webkit-transition: all 200ms ease-in-out;
         transition: all 200ms ease-in-out;
-        top: 14px;
+        top: 12px;
     }
 
     .navbar-arrow-toggle-line:after {
@@ -830,13 +838,13 @@ textarea {
 
     .nav-bar ul div.li-especial {
         position: absolute;
-        right: -250px;
-        top: 60px;
-        transition: all 0.3s 0.1s ease-in-out;
+        right: 26px;
+        top: 10000px;
+        transition: all 0.2s 0.1s ease-in-out;
     }
 
     .nav-bar ul div.li-especial.open {
-        right: 26px;
+        top: 60px;
     }
 
     .nav-bar ul div.li-especial-es.open {

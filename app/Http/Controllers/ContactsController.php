@@ -93,7 +93,7 @@ class ContactsController extends Controller
             );
         }
 
-//        return view("emails.contacts", ["name" => $request->name, "email" => $request->email, "phone" => $request->phone, "text" => $request->text]);
+        //return view("emails.contacts", ["name" => $request->name, "email" => $request->email, "phone" => $request->phone, "text" => $request->text]);
         Mail::send("emails.contacts", ["name" => $request->name, "email" => $request->email, "phone" => $request->phone, "text" => $request->text],
             function ($m) use ($request) {
             $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
