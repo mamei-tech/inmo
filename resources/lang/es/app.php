@@ -1,6 +1,6 @@
 <?php
 
-
+$date = new DateTime('now');
 
 return [
     'property_search'=>'BUSCAR PROPIEDAD',
@@ -142,7 +142,7 @@ return [
     'email_delete_success' => 'correo eliminado satisfactoriamente',
     'email_delete_confirm' => '¿Está seguro que desea eliminar este correo?',
 
-   'copyright' => 'PROPIEDAD INTELECTUAL 2018 TODOS LOS DERECHOS RESERVADOS. JORGE E. HIDALGO BORROTO, LLC',
+   'copyright' => 'PROPIEDAD INTELECTUAL '.$date->format('Y').' TODOS LOS DERECHOS RESERVADOS. JORGE E. HIDALGO BORROTO, LLC',
     'brickell' => 'BRICKELL',
     'moreThanCommunity' => '"MÁS QUE SÓLO UNA COMUNIDAD"',
     'sales' => 'ventas',

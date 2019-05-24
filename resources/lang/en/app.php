@@ -1,6 +1,6 @@
 <?php
 
-
+$date = new DateTime('now');
 
 return [
     'property_search'=>'PROPERTY SEARCH',
@@ -247,7 +247,7 @@ return [
 
 
 
-    'copyright' => 'COPYRIGHTS 2018 ALL RIGHTS RESERVED. JORGE E. HIDALGO BORROTO, LLC',
+    'copyright' => 'COPYRIGHTS '.$date->format('Y').' ALL RIGHTS RESERVED. JORGE E. HIDALGO BORROTO, LLC',
 
     'brickell' => 'BRICKELL',
 

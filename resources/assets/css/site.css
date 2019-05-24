@@ -200,17 +200,17 @@ section {
 }
 
 .nav-bar .brand-ct .brand-img {
-    top: 0;
+    top: 4px;
     left: 0;
-    width: 245px;
+    width: 200px;
     height: 60px;
 }
 
 .nav-bar .brand-ct .brand-subimg {
     top: 85px;
-    left: 50px;
-    width: 150px;
-    height: 40px;
+    left: 5px;
+    width: 192px;
+    height: 60px;
 }
 
 .nav-bar.scrolled {
@@ -231,13 +231,13 @@ section {
 }
 
 .nav-bar.scrolled .brand-ct .brand-img {
-    width: 172px;
+    width: 136px;
 }
 
 .nav-bar.scrolled .brand-ct .brand-subimg {
-    width: 100px;
-    top: 13px;
-    left: 192px;
+    width: 136px;
+    top: 10px;
+    left: 161px;
 }
 
 .nav-bar.scroll-down {
@@ -344,9 +344,9 @@ section {
     }
 
     .nav-bar.scrolled .brand-ct .brand-subimg {
-        width: 90px;
-        top: 7px;
-        left: 150px;
+        width: 130px;
+        top: 10px;
+        left: 160px;
     }
 }
 
@@ -397,7 +397,7 @@ section {
     }
 
     .nav-bar.open .menu-ct.mobile {
-        top: 50px;
+        top: 55px;
     }
 
     .nav-bar .menu-ct.mobile ul div {
@@ -425,7 +425,7 @@ section {
     }
 
     .phone-lang-buttons img {
-        width: 110px !important;
+        width: 150px !important;
     }
 
     .nav-bar.open .brand-ct .brand-img,
@@ -603,9 +603,9 @@ section {
 }
 
 .footer .brand-ct .brand-subimg {
-    top: 10px;
-    left: 150px;
-    width: 64px;
+    top: 5px;
+    left: 160px;
+    width: 130px;
     height: 20px;
 }
 
@@ -660,8 +660,8 @@ section {
 
     .footer .brand-ct .brand-subimg {
         top: 35px;
-        left: 33px;
-        width: 64px;
+        left: 4px;
+        width: 122px;
         height: 20px;
     }
 }
@@ -696,7 +696,7 @@ section {
     }
 
     .footer .brand-ct .brand-subimg img {
-        width: 80px;
+        width: 122px;
     }
 
     .footer .menu-ct {
