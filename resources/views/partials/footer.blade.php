@@ -36,7 +36,6 @@
                         <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
                     </li>
                 </div>
-
             </ul>
         </div>
         <div class="footer-copyright">
