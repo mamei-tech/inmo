@@ -3,15 +3,7 @@
 
 
 return [
-
-    'tools' => 'Útiles',
-    'new_contact' => 'Nuevo Contacto',
-    'new_download' => 'Nueva Descarga',
-    'new_download_body' => 'ha descargado las siguientes guías.',
-
-
-
-
+    'property_search'=>'BUSCAR PROPIEDAD',
     'appname' => 'Bienvenido a JEHidalgoRealEstate.com',
 
     'lang' => 'Idioma',
@@ -20,6 +12,12 @@ return [
     'guides' => 'Guías',
     'aboutMe' => 'Acerca de mi',
     'contact' => 'Contacto',
+
+    'tools' => 'Útiles',
+    'new_contact' => 'Nuevo Contacto',
+    'new_download' => 'Nueva Descarga',
+    'new_download_body' => 'ha descargado las siguientes guías.',
+
     'houses' => 'Casas',
     'infoHouse' => 'Info Casa',
     'learn_more' => 'Leer Más',
@@ -77,6 +75,12 @@ return [
     'manage' => 'Administrar',
     'success_logo_change' => 'logotipo cambiado satisfactoriamente',
 
+
+    'guide_es'=> 'Guía [ES]',
+    'guide_en'=> 'Guía [EN]',
+    'show_guide_es'=> 'Mostrar Guía [ES]',
+    'show_guide_en'=> 'Mostrar Guía [EN]',
+
     'profile' => 'Perfil',
     'bio_es' => 'Biografía en Español',
     'bio_en' => 'Biografía en Inglés',
@@ -97,7 +101,7 @@ return [
     'guide_delete_success' => 'guía eliminado satisfactoriamente',
     'guide_delete_confirm' => '¿Está seguro que desea eliminar este guía?',
     'show_guide' => 'Ver Guía Actual',
-    'guide_subtitle' => 'Descargar su guía gratis',
+    'guide_subtitle' => 'Descargar su guia gratis',
     'guides_selected' => 'Usted recibirá los documento(s) seleccionados a su correo',
     'download_guides' => 'Descargar guías',
 
@@ -113,14 +117,14 @@ return [
 
     'contactMe' => 'Contáctame',
     'moreInformation' => 'Obtener más información',
-    'yourName' => 'tu nombre',
-    'yourEmail' => 'tu correo',
-    'yourPhone' => 'tu teléfono',
+    'yourName' => 'su nombre',
+    'yourEmail' => 'su correo',
+    'yourPhone' => 'su teléfono',
     'writeMe' => 'escríbeme',
     'send' => 'Enviar',
     'download' => 'descargar',
-    'expressOpinion' => 'puedes expresar tu opinión acerca de mis servicios',
-    'yourtestimonials' => 'tu testimonio',
+    'expressOpinion' => 'puedes expresar su opinión acerca de mis servicios',
+    'yourtestimonials' => 'su testimonio',
     'testimonials' => 'Testimonios',
     'testimonials_delete_success' => 'testimonio eliminado satisfactoriamente',
     'testimonials_delete_confirm' => '¿Está seguro que desea eliminar este testimonio?',

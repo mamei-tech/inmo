@@ -54,6 +54,7 @@
 
 
 
+
         <div>
 
             <a class="hvr-underline-from-center" href="{{Route("neighborhoods")}}">@lang('app.neighborhoods')</a>
@@ -74,7 +75,7 @@
         </div>
         <div>
 
-            <a class="hvr-underline-from-center" href="{{Route("tools")}}">@lang('app.tools')</a>
+            <a class="hvr-underline-from-center" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
 
         </div>
 
@@ -88,12 +89,16 @@
 
     </div>
 
+    {{--Widget IDX--}}
+    <div class="container-widget-idx">
+        <h1 class="" style="margin-bottom: 15px;">{{__('app.property_search')}}</h1>
+
+        <script charset="UTF-8" type="text/javascript" id="idxwidgetsrc-15691" src="https://jehidalgorealestate.idxbroker.com/idx/quicksearchjs.php?widgetid=15691"></script>
+    </div>
+
+    {{--Promotion--}}
     @php $even = false;
-
     @endphp
-
-
-
     @foreach ($promotions as $p)
 
         @php $even = !$even;
@@ -152,7 +157,7 @@
 
 @push('scripts')
 
-    <script src="{{ asset('js/views/home.js') }} " defer></script>
+    <script src="{{ asset('js/views/home.js') }} "></script>
 
 @endpush
 

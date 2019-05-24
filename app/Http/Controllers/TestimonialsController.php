@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Testimonials;
+use Illuminate\Support\Facades\Validator;
+use App\Profile;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -54,6 +56,21 @@ class TestimonialsController extends Controller
 
     public function store(Request $request, $locale)
     {
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+        if ($validator->fails()) {
+            $request->session()->flash('error', $validator->errors()->getMessages()['g-recaptcha-response'][0]);
+            $testimonials = DB::table('testimonials')
+                ->orderBy("created_at", "desc")
+                ->take(10)
+                ->get();
+
+            $profile = Profile::query()->first();
+
+            $data = ["name"=>"","t_name"=>$request->name,"email"=>"","phone"=>"","text"=>"", "testimonials"=>$request->testimonials];
+            return view('contacts', compact(["profile", "testimonials","data"]));
+        }
         DB::table('testimonials')->insert(
             [
                 'name' => $request->name,

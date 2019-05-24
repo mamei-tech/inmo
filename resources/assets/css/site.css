@@ -776,6 +776,8 @@ textarea {
 
 
 /*Nuevo navbar*/
+
+
 .menu-ct.pc li.lang-es{
     margin-right: calc((100vw - 1290px) / 2) !important;
 }
@@ -839,8 +841,8 @@ textarea {
     .nav-bar ul div.li-especial {
         position: absolute;
         right: 26px;
-        top: 10000px;
-        transition: all 0.2s 0.1s ease-in-out;
+        top: 200px;
+        transition: all 0.3s 0.1s ease-in-out;
     }
 
     .nav-bar ul div.li-especial.open {

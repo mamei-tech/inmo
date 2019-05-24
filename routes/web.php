@@ -56,9 +56,6 @@ Route::prefix('{lang?}')->group(function () {
     Route::get('neighborhoods', 'NeighborhoodController@index')->name('neighborhoods');
     Route::get('houses', 'NeighborhoodController@houses')->name('houses');
     Route::get('infoHouse', 'NeighborhoodController@infoHouse')->name('infoHouses');
-    Route::get('tools', function(){
-        return view('tools');
-    })->name('tools');
     Route::get('guides', 'GuideController@index')->name('guides');
     Route::get('about', 'AboutMeController@index')->name('about');
     Route::get('contacts', 'ContactsController@indexWeb')->name('contacts');

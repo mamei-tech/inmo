@@ -12,7 +12,7 @@
         </div>
         <div class="menu-ct pc">
             <ul>
-                <li class="lang-{{App::getLocale()}}" style="margin-right: calc((100vw - 1280px) / 2);">
+                <li class="lang-{{App::getLocale()}}" style="margin-right: calc((100vw - 1250px) / 2);">
                     <a class="lang-en"
                        style="font-size: 9px; font-family: 'SinkinSans-500Medium';"
                        href="{{route(Route::currentRouteName(),["en"])}}">ENG</a> /
@@ -36,10 +36,8 @@
                 <li class="hvr-underline-from-center">
                     <a class="link-contacts" href="{{Route("contacts")}}">@lang('app.contact')</a>
                 </li>
-
-                {{--/*Nuevo navbar*/--}}
                 <li class="hvr-underline-from-center underline-link-tools">
-                    <a class="link-tools" href="{{Route("tools")}}">@lang('app.tools')</a>
+                    <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
                     <div id="container-navbar-arrow"><span class="navbar-arrow-toggle-line"></span></div>
                 </li>
 
@@ -48,7 +46,6 @@
                         <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
                     </li>
                 </div>
-
             </ul>
         </div>
         <div class="menu-ct mobile">
@@ -92,7 +89,7 @@
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
-                        <a class="link-tools" href="{{Route("tools")}}">@lang('app.tools')</a>
+                        <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
                     </li>
                 </div>
                 <div>
@@ -119,6 +116,7 @@
 </div>
 @push('scripts')
     <script type="text/javascript">
+
         @if(!isset($inHome))
             var link = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
             var linkMobile = document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}");
@@ -162,7 +160,6 @@
             }
         });
 
-        /*Nuevo navbar*/
         $(document).ready(function () {
             $('#container-navbar-arrow').click(function () {
                 $('.navbar-arrow-toggle-line').toggleClass('open');
@@ -171,9 +168,9 @@
             });
 
             @if(isset($inGuide))
-                $('.navbar-arrow-toggle-line').addClass('open');
-                $('.nav-bar .li-especial').addClass('open');
-                $('.nav-bar.scrolled').addClass('open-li');
+            $('.navbar-arrow-toggle-line').addClass('open');
+            $('.nav-bar .li-especial').addClass('open');
+            $('.nav-bar.scrolled').addClass('open-li');
             @endif
         });
     </script>

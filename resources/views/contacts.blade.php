@@ -1,7 +1,9 @@
 @extends('layouts.app')
 
 @section('title', __('app.contact'))
-
+@push('head')
+    {!! htmlScriptTagJsApi(/* $formId - INVISIBLE version only */) !!}
+@endpush
 @push('styles')
     <link href="{{ asset('css/cropper.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/contacts.css') }}" rel="stylesheet"/>
@@ -16,16 +18,16 @@
             <form id="form-send-contact" action="{{ route('contacts.store', [App::getLocale()]) }}" method="post">
                 @csrf
                 <div class="form-group">
-                    <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')">
+                    <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourName')" value="{{$data['name']}}">
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" required=""
-                           placeholder="@lang('app.yourEmail')">
+                           placeholder="@lang('app.yourEmail')" value="{{$data['email']}}">
                 </div>
 
                 <div class="form-group">
                     <input id="phone-contact" type="tel" class="form-control"
-                           name="phone" placeholder="@lang('app.yourPhone')" required>
+                           name="phone" placeholder="@lang('app.yourPhone')" value="{{$data['phone']}}" required>
 
                     <span class="invalid-feedback" role="alert" style="text-align: left; color: white; ">
                         <strong>{{ __('app.phone_incorrect') }}</strong>
@@ -34,9 +36,11 @@
 
                 <div class="form-group">
                     <textarea rows="3" class="form-control" name="text" required=""
-                              placeholder="@lang('app.writeMe')"></textarea>
+                              placeholder="@lang('app.writeMe')">{{$data['text']}}</textarea>
                 </div>
 
+                {!! htmlFormSnippet() !!}
+                <div class="clearfix"></div>
                 <div class="container-social-buttom">
                     <div>
                         <a href="{{$profile->link_facebook}}">
@@ -89,7 +93,6 @@
                             </svg>
                         </a>
                     </div>
-
                     <div>
                         <button type="button" onclick="sendContact()" class="btn btn-yellow">@lang('app.send')</button>
                     </div>
@@ -159,15 +162,19 @@
                     @csrf
                     <div class="form-group form-add-testimonials-name">
                         <input type="text" class="form-control" name="name" required=""
-                               placeholder="@lang('app.yourName')">
+                               placeholder="@lang('app.yourName')"  value="{{$data['t_name']}}">
                     </div>
 
                     <div class="form-group">
                         <textarea rows="5" class="form-control" name="testimonials" required=""
-                                  placeholder="@lang('app.yourtestimonials')"></textarea>
+                                  placeholder="@lang('app.yourtestimonials')">{{$data['testimonials']}}</textarea>
                     </div>
                     <input type="hidden" class="hidden" name="foto"/>
-                    <button type="button" onclick="sendTestimonials()" class="btn btn-yellow">@lang('app.send')</button>
+<div>
+    {!! htmlFormSnippet() !!}
+</div>
+<div class="clearfix"> </div>
+                    <button type="button" onclick="sendTestimonials()" class="btn btn-yellow"  style="margin-top: 15px;">@lang('app.send')</button>
                 </form>
             </div>
         </div>

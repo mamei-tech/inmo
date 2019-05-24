@@ -5,13 +5,10 @@
 @push('styles')
     <link href="{{ asset('css/guides.css') }}" rel="stylesheet"></link>
 @endpush
-
+@php
+    $inGuide = true;
+@endphp
 @section('content')
-
-    @php
-        $inGuide = true;
-    @endphp
-
     <div class="guide-section-0 img-parallax">
 
         <h1>{{ __('app.guides') }}</h1>

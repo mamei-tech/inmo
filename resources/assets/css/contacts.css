@@ -1,6 +1,5 @@
-/*contact-section-0*/
 .contact-section-0 {
-    height: 640px;
+    height: 720px;
     background: url('../images/lg/8.jpg');
     padding: 50px 120px;
     display: flex;
@@ -8,6 +7,12 @@
     text-align: right;
     margin-top: -100px;
     padding-top: 150px;
+}
+
+.g-recaptcha {
+    float: right;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 .contact-section-0 > div:first-child {
@@ -73,7 +78,7 @@
 
 @media (max-width: 1249px) {
     .contact-section-0 {
-        height: 620px;
+        height: 700px;
         background: url('../images/md/10.jpg');
         padding: 50px 100px;
         margin-top: -80px;
@@ -88,13 +93,15 @@
 @media (max-width: 960px) {
     .contact-section-0 {
         padding: 40px 30px;
-        height: 640px;
+        height: 720px;
         text-align: center;
         background: url('../images/md/10.jpg');
         margin-top: -80px;
         padding-top: 120px;
     }
-
+    .g-recaptcha {
+        float: none;
+    }
     .contact-section-0 h3 {
         padding: 10px 0 30px;
     }

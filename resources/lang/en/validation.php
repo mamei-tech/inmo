@@ -2,6 +2,7 @@
 
 return [
 
+    'recaptcha' => 'Hey!!! captcha is wrong!',
     /*
     |--------------------------------------------------------------------------
     | Validation Language Lines

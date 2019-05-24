@@ -3,13 +3,7 @@
 
 
 return [
-
-    'tools' => 'Tools',
-    'new_contact' => 'New Contact',
-    'new_download' => 'New Download',
-    'new_download_body' => 'ha descargado las siguientes guías.', //TODO Traducir esto
-
-
+    'property_search'=>'PROPERTY SEARCH',
 
     'appname' => 'Welcome to JEHidalgoRealEstate.com',
 
@@ -24,6 +18,11 @@ return [
     'aboutMe' => 'About Me',
 
     'contact' => 'Contact',
+
+    'tools' => 'Tools',
+    'new_contact' => 'New Contact',
+    'new_download' => 'New Download',
+    'new_download_body' => 'has downloaded these guides.',
 
     'houses' => 'Houses',
 
@@ -131,7 +130,10 @@ return [
 
     'success_logo_change' => 'logo changed sucessfully',
 
-
+    'guide_es'=> 'Guide [ES]',
+    'guide_en'=> 'Guide [EN]',
+    'show_guide_es'=> 'Show Guide [ES]',
+    'show_guide_en'=> 'Show Guide [EN]',
 
     'profile' => 'Profile',
 

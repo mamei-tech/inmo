@@ -27,7 +27,7 @@
                 </li>
 
                 <li>
-                    <a class="link-tools" href="{{Route("tools")}}">@lang('app.tools')</a>
+                    <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
                     <div id="container-footer-arrow"><span class="footer-arrow-toggle-line"></span></div>
                 </li>
 
@@ -47,7 +47,7 @@
 
 @push('scripts')
     <script type="text/javascript">
-        @if(!isset($inHome))
+                @if(!isset($inHome))
         var link =  document.querySelector(".footer .link-{{Route::currentRouteName()}}");
 
         if (link === null)
@@ -69,10 +69,10 @@
             });
 
             @if(isset($inGuide))
-                $('.footer-arrow-toggle-line').addClass('open');
-                $('.footer .li-especial').addClass('open');
-                $('.footer .footer-copyright').addClass('open');
-                $('.footer').addClass('open');
+            $('.footer-arrow-toggle-line').addClass('open');
+            $('.footer .li-especial').addClass('open');
+            $('.footer .footer-copyright').addClass('open');
+            $('.footer').addClass('open');
             @endif
         });
     </script>

@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Contact;
 use App\Profile;
 use DateTime;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Mail;
 
 class ContactsController extends Controller
 {
@@ -25,8 +27,8 @@ class ContactsController extends Controller
             ->get();
 
         $profile = Profile::query()->first();
-
-        return view('contacts', compact(["profile", "testimonials"]));
+        $data = ["name"=>"","email"=>"","phone"=>"","text"=>"","t_name"=>"","testimonials"=>""];
+        return view('contacts', compact(["profile", "testimonials","data"]));
     }
 
     public function index()
@@ -67,7 +69,20 @@ class ContactsController extends Controller
 
     public function store(Request $request, $locale)
     {
+        $validator = Validator::make($request->all(), [
+            'g-recaptcha-response' => 'recaptcha',
+        ]);
+        if ($validator->fails()) {
+            $request->session()->flash('error', $validator->errors()->getMessages()['g-recaptcha-response'][0]);
+            $testimonials = DB::table('testimonials')
+                ->orderBy("created_at", "desc")
+                ->take(10)
+                ->get();
 
+            $profile = Profile::query()->first();
+            $data = ["name"=>$request->name,"t_name"=>"","email"=>$request->email,"phone"=>$request->phone,"text"=>$request->text, "testimonials"=>""];
+            return view('contacts', compact(["profile", "testimonials","data"]));
+        }
         DB::table('contact')->insert(
             [
                 'name' => $request->name,
