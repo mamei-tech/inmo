@@ -1,6 +1,7 @@
 <?php
 
 Route::prefix('{lang?}')->group(function () {
+
     Route::prefix('admin')->group(function () {
         Route::any('promotion/read', 'PromotionController@read')->name('promotion.read');
         Route::any('promotion/readMain', 'PromotionController@readMain')->name('promotion.readMain');
@@ -62,4 +63,7 @@ Route::prefix('{lang?}')->group(function () {
 
     Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
     Route::post('testimonials', 'ContactsController@storeTestimonials')->name('contact.storeTestimonials');
+
+    Route::get('login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')->name('auth.redirectToProvider');
+    Route::get('login/callback/{provider}', 'Auth\LoginController@@handleProviderCallback')->name('auth.handleProviderCallback');
 });
