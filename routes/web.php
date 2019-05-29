@@ -42,6 +42,10 @@ Route::prefix('{lang?}')->group(function () {
 
         Route::get('profile', 'ProfileController@index')->name('profile');
         Route::put('profile/{profile}', 'ProfileController@update')->name('profile.update');
+
+        Route::get('users', 'UserController@index')->name('users');
+        Route::any('users/read', 'UserController@read')->name('users.read');
+        Route::post('users/lock', 'UserController@lock')->name('users.lock');
     });
     //Route::auth();
 
@@ -50,6 +54,12 @@ Route::prefix('{lang?}')->group(function () {
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
     Route::get('password/set', 'Auth\ResetPasswordController@showSetForm')->name('password.set');
     Route::post('password/set', 'Auth\ResetPasswordController@setPassword');
+
+    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+    Route::post('register', 'Auth\RegisterController@register')->name('auth.register');
+    Route::get('verify', 'Auth\RegisterController@verify')->name('auth.verify');
+    Route::get('resend_token', 'Auth\RegisterController@resend')->name('auth.resend');
+    Route::get('register_email_verification', 'Auth\RegisterController@registerEmailVerification')->name('auth.register_email_verification');
 
     Route::get('', 'HomeController@index')->name('home');
     Route::get('admin', 'AdminController@Index')->name('admin');

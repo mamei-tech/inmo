@@ -25,5 +25,5 @@ return [
     'ForgotYourPassword' => 'Forgot Your Password?',
     'RememberMe' => 'Remember Me',
     'ChangePassword' => 'Change Password',
-
+    'authAdmin' => 'This user not have permissions to acces the site admin.',
 ];

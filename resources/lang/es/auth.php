@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'failed' => 'These credentials do not match our records.',
+    'failed' => 'Usuario o contraseña incorrectos.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'Login' => 'Iniciar sesión',
     'Logout' => 'Salir',
@@ -25,5 +25,6 @@ return [
     'ForgotYourPassword' => 'Olvido su contraseña',
     'RememberMe' => 'Recordarme',
     'ChangePassword' => 'Cambiar Contraseña',
+    'authAdmin' => 'Este usuario no tiene permiso para acceder a la administración',
 
 ];

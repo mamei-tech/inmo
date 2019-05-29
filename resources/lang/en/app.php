@@ -245,6 +245,11 @@ return [
 
     'email_delete_confirm' => 'Are you sure you want delete this email?',
 
+    'users' => 'Users',
+    'provider' => 'Provider',
+    'user_lock_confirm' => 'Are you sure you want lock this user?',
+    'user_lock_success' => 'user lock sucessfully',
+
 
 
     'copyright' => 'COPYRIGHTS '.$date->format('Y').' ALL RIGHTS RESERVED. JORGE E. HIDALGO BORROTO, LLC',

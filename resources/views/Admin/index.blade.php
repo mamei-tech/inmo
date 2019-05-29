@@ -88,6 +88,15 @@
                 </a>
             </div>
 
+            <div class="col-md-3 container-btn" >
+                <a href="{{ route('users', [App::getLocale()]) }}">
+                    <div class="container-btn-links">
+                        <span class="fa fa-3x fa-user"></span>
+                        <span style="font-size: 20px;">{{ __('app.users') }}</span>
+                    </div>
+                </a>
+            </div>
+
             <div class="clearfix"></div>
         </div>
     </div>
