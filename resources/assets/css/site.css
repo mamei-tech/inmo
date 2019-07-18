@@ -139,7 +139,7 @@ section {
     right: 0;
     padding: 50px 120px 0 120px;
     transition: all 0.6s 0.1s ease-in-out;
-    height: 175px;
+    height: 200px;
     z-index: 10;
     overflow: hidden;
     font-family: 'SinkinSans-600SemiBold', sans-serif;
@@ -182,6 +182,18 @@ section {
     font-size: 13px;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.nav-bar ul li > span {
+    color: #FFF;
+    font-size: 13px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.nav-bar ul li a.active-especial{
+    color: rgb(225, 175, 90);
 }
 
 .nav-bar .brand-ct {
@@ -293,7 +305,7 @@ section {
     }
 
     .nav-bar.open {
-        height: 440px;
+        height: 480px;
         background: url("../images/md/8.jpg") top center /cover;
     }
 
@@ -581,7 +593,7 @@ section {
 .footer {
     height: 150px;
     padding: 60px 120px 0;
-    background: url("../images/lg/6.jpg") top center /cover;
+    background: url("../images/lg/6.jpg") bottom center /cover;
     overflow: hidden;
 }
 
@@ -627,11 +639,22 @@ section {
     text-transform: uppercase;
 }
 
+.footer .menu-ct ul li > span {
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
 .footer .menu-ct ul li a:hover {
     color: rgb(225, 175, 90);
 }
 
 .footer .menu-ct ul li.active a {
+    color: rgb(225, 175, 90);
+}
+.footer .menu-ct ul li.active span {
     color: rgb(225, 175, 90);
 }
 
@@ -787,7 +810,7 @@ textarea {
 }
 
 @media (min-width: 1249px) {
-    .link-tools {
+    .link-more {
         padding-right: 10px;
     }
 
@@ -841,23 +864,41 @@ textarea {
     .nav-bar ul div.li-especial {
         position: absolute;
         right: 26px;
-        top: 200px;
+        top: 250px;
         transition: all 0.3s 0.1s ease-in-out;
     }
 
-    .nav-bar ul div.li-especial.open {
-        top: 60px;
+    .nav-bar ul div.li-especial-guides-en.open{
+        top: 50px;
+        right: 21px;
+    }
+    .nav-bar ul div.li-especial-tools-en.open {
+        top: 85px;
+        right: 29px;
+    }
+    .nav-bar ul div.li-especial-blog-en.open{
+        top: 120px;
+        right: 38px;
     }
 
-    .nav-bar ul div.li-especial-es.open {
-        right: 39px;
+    .nav-bar ul div.li-especial-guides-es.open{
+        top: 50px;
+        right: 20px;
+    }
+    .nav-bar ul div.li-especial-tools-es.open {
+        top: 85px;
+        right: 14px;
+    }
+    .nav-bar ul div.li-especial-blog-es.open{
+        top: 120px;
+        right: 27px;
     }
 
     .nav-bar.scrolled.open-li {
-        height: 130px;
+        height: 190px;
     }
 
-    .hvr-underline-from-center.underline-link-tools a:before {
+    .hvr-underline-from-center.underline-link-more a:before {
         margin-right: 30px;
     }
 }
@@ -917,24 +958,45 @@ textarea {
 .footer ul div.li-especial {
     position: absolute;
     right: 26px;
-    top: 150px;
+    top: 200px;
     transition: all 0.2s 0.1s ease-in-out;
 }
-
-.footer ul div.li-especial.open {
+.footer ul div.li-especial.guides.open {
     top: 30px;
+    right: 19px;
+}
+.footer ul div.li-especial.tools.open {
+    top: 60px;
+    right: 26px;
+}
+.footer ul div.li-especial.blog.open {
+    top: 90px;
+    right: 35px;
 }
 
-.footer ul div.li-especial-es {
+.footer ul div.li-especial-es.guides.open {
+    top: 30px;
+    right: 20px;
+}
+.footer ul div.li-especial-es.tools.open {
+    top: 60px;
+    right: 14px;
+}
+.footer ul div.li-especial-es.blog.open {
+    top: 90px;
+    right: 26px;
+}
+
+.footer ul div.li-especial-es.guides {
     right: 39px;
 }
 
 .footer .footer-copyright.open {
-    top: 83px;
+    top: 133px;
 }
 
 .footer.open {
-    height: 180px;
+    height: 230px;
 }
 
 .footer {

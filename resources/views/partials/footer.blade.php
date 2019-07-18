@@ -27,13 +27,23 @@
                 </li>
 
                 <li>
-                    <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
+                    <span class="link-more">@lang('app.more')</span>
                     <div id="container-footer-arrow"><span class="footer-arrow-toggle-line"></span></div>
                 </li>
 
-                <div  class="li-especial li-especial-{{App::getLocale()}}">
+                <div  class="li-especial li-especial-{{App::getLocale()}} guides">
                     <li>
                         <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
+                    </li>
+                </div>
+                <div  class="li-especial li-especial-{{App::getLocale()}} tools">
+                    <li>
+                        <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
+                    </li>
+                </div>
+                <div  class="li-especial li-especial-{{App::getLocale()}} blog">
+                    <li>
+                        <a class="link-blog" href="{{Route("blog")}}">@lang('app.blog')</a>
                     </li>
                 </div>
             </ul>
@@ -46,15 +56,22 @@
 
 @push('scripts')
     <script type="text/javascript">
-                @if(!isset($inHome))
-        var link =  document.querySelector(".footer .link-{{Route::currentRouteName()}}");
+        @if(!isset($inHome))
+            var link =  document.querySelector(".footer .link-{{Route::currentRouteName()}}");
 
-        if (link === null)
-        {
-            link = document.querySelector(".footer .link-neighborhoods");
-        }
+            if (link === null)
+            {
+                link = document.querySelector(".footer .link-neighborhoods");
+            }
 
-        link.parentNode.classList.add("active");
+            @if(isset($inGuide) || isset($inBlog))
+                link = document.querySelector(".footer .link-more");
+                linkReal = document.querySelector(".footer .link-{{Route::currentRouteName()}}");
+
+                linkReal.parentNode.classList.add("active");
+            @endif
+
+            link.parentNode.classList.add("active");
 
         {{--document.querySelector(".footer .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
         @endif
@@ -67,12 +84,12 @@
                 $('.footer').toggleClass('open');
             });
 
-            @if(isset($inGuide))
-            $('.footer-arrow-toggle-line').addClass('open');
-            $('.footer .li-especial').addClass('open');
-            $('.footer .footer-copyright').addClass('open');
-            $('.footer').addClass('open');
-            @endif
+            $('.footer .link-more').click(function () {
+                $('.footer-arrow-toggle-line').toggleClass('open');
+                $('.footer .li-especial').toggleClass('open');
+                $('.footer .footer-copyright').toggleClass('open');
+                $('.footer').toggleClass('open');
+            });
         });
     </script>
 @endpush

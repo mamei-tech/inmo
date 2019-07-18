@@ -4,270 +4,133 @@ $date = new DateTime('now');
 
 return [
     'property_search'=>'PROPERTY SEARCH',
-
     'appname' => 'Welcome to JEHidalgoRealEstate.com',
-
     'lang' => 'Language',
-
     'home' => 'Home',
-
     'neighborhoods' => 'Neighborhoods',
-
     'guides' => 'Guides',
-
     'aboutMe' => 'About Me',
-
     'contact' => 'Contact',
-
+    'more' => 'More',
+    'blog' => 'Blog',
     'tools' => 'Tools',
     'new_contact' => 'New Contact',
     'new_download' => 'New Download',
     'new_download_body' => 'has downloaded these guides.',
-
     'houses' => 'Houses',
-
     'infoHouse' => 'Info House',
-
     'learn_more' => 'Learn More',
-
     'admin' => 'Admin',
-
     'promotion' => 'Promotions',
-
     'main_promotion' => 'Main Promotions',
-
     'second_promotion' => 'Second Promotions',
-
     'title' => 'Title',
-
     'subtitle' => 'Subtitle',
-
     'date' => 'Date',
-
     'details' => 'Details',
-
     'delete' => 'Delete',
-
     'add' => 'Add',
-
     'edit' => 'Edit',
-
     'create_promo' => 'Create Promo',
-
     'edit_promo' => 'Edit Promo',
-
     'back_to_list' => 'Back to list',
-
     'back' => 'Back',
-
     'error' => 'Error',
-
     'title_en' => 'Title in English',
-
     'title_es' => 'Title in Spanish',
-
     'subtitle_en' => 'Subtitle in English',
-
     'subtitle_es' => 'Subtitle in Spanish',
-
     'text_en' => 'Text in English',
-
     'text_es' => 'Text in Spanish',
-
     'link' => 'Link',
-
     'image' => 'Image',
-
     'name' => 'Name',
-
     'message' => 'Message',
-
     'close' => 'Close',
-
     'cancel' => 'Cancel',
-
     'designed_by' => 'Designed by:',
-
     'developed_by' => 'Developed by:',
-
     'type' => 'Type',
-
     'success_message_send' => 'Message send sucessfully',
-
     'selected_some_guide' => 'You must select some guide',
-
     'check_email' => 'Check your email',
-
     'element_downloaded' => 'Downloaded',
-
     'select_image' => 'Select image',
-
     'select' => 'Select',
-
     'ready' => 'Ready',
-
     'phone_incorrect' => 'Please enter a correct phone number',
-
-
-
     'download_guides' => "Download guides",
-
-
-
     'promotion_delete_success' => 'promotion deleted sucessfully',
-
     'promotion_delete_confirm' => 'Are you sure you want delete this promotion?',
-
-
-
     'config_logo' => 'Config logo',
-
     'logo' => 'Logo',
-
     'config' => 'Configure',
-
     'manage' => 'Manage',
-
     'success_logo_change' => 'logo changed sucessfully',
-
     'guide_es'=> 'Guide [ES]',
     'guide_en'=> 'Guide [EN]',
     'show_guide_es'=> 'Show Guide [ES]',
     'show_guide_en'=> 'Show Guide [EN]',
-
     'profile' => 'Profile',
-
     'bio_es' => 'Biography in Spanish',
-
     'bio_en' => 'Biography in English',
-
     'email' => 'Email',
-
     'site_web' => 'Web Site',
-
     'phone' => 'Phone number',
-
     'address' => 'Address',
-
     'link_facebook' => 'Facebook',
-
     'link_instagram' => 'Instagram',
-
     'link_in' => 'Linkedin',
-
     'link_youtube' => 'Youtube',
-
     'success_edit_profile' => 'profile updated sucessfully',
-
-
-
     'guide' => 'Guide',
-
     'create_guide' => 'Create Guide',
-
     'edit_guide' => 'Edit Guide',
-
     'guide_delete_success' => 'guide deleted sucessfully',
-
     'guide_delete_confirm' => 'Are you sure you want delete this guide?',
-
     'show_guide' => 'Show Current Guide',
-
     'guide_subtitle' => 'Download your free guide',
-
     'guides_selected' => 'you will receive the selected document(s) to your email',
-
     'download_guides' => 'Download guides',
-
-
-
     'create_slider' => 'Create Slide',
-
     'edit_slider' => 'Edit Slide',
-
     'slider' => 'Slider',
-
     'slider_delete_success' => 'slide deleted sucessfully',
-
     'slider_delete_confirm' => 'Are you sure you want delete this slide?',
-
-
-
     'realtor' => 'REALTOR ASSOCIATE',
-
-
-
     'contactMe' => 'Contact Me',
-
     'moreInformation' => 'Get More Information',
-
     'yourName' => 'your name',
-
     'yourEmail' => 'your email',
-
     'yourPhone' => 'your phone',
-
     'writeMe' => 'write me',
-
     'send' => 'Send',
-
     'download' => 'download',
-
     'testimonials' => 'Testimonials',
-
     'expressOpinion' => 'you can express your opinion about my services',
-
     'yourtestimonials' => 'your testimonials',
-
     'testimonials_delete_success' => 'testimonials deleted sucessfully',
-
     'testimonials_delete_confirm' => 'Are you sure you want delete this testimonials?',
-
     'edit_testimonials' => 'Edit Testimonials',
-
-
-
     'contacts' => 'Contacts',
-
     'contacts_delete_success' => 'contact deleted sucessfully',
-
     'contacts_delete_confirm' => 'Are you sure you want delete this contact?',
-
-
-
     'emails' => 'Emails',
-
     'emails-guide' => 'Emails Guides',
-
     'emails-contact' => 'Emails Contacts',
-
     'email_delete_success' => 'emails deleted sucessfully',
-
     'email_delete_confirm' => 'Are you sure you want delete this email?',
-
     'users' => 'Users',
     'provider' => 'Provider',
     'user_lock_confirm' => 'Are you sure you want lock this user?',
     'user_lock_success' => 'user lock sucessfully',
-
-
-
     'copyright' => 'COPYRIGHTS '.$date->format('Y').' ALL RIGHTS RESERVED. JORGE E. HIDALGO BORROTO, LLC',
-
     'brickell' => 'BRICKELL',
-
     'moreThanCommunity' => '"MORE THAN JUST A COMMUNITY"',
-
     'sales' => 'sales',
-
     'rentals' => 'rentals',
-
     'downtownMiami' => 'DOWNTOWN MIAMI',
-
     'magicCity' => '"THE MAGIC CITY"',
-
-
-
 
 
     'firstTextBrickell' => 'BRICKELL <br> 

@@ -12,8 +12,9 @@ return [
     'guides' => 'Guías',
     'aboutMe' => 'Acerca de mi',
     'contact' => 'Contacto',
-
+    'more' => 'Más',
     'tools' => 'Útiles',
+    'blog' => 'Blog',
     'new_contact' => 'Nuevo Contacto',
     'new_download' => 'Nueva Descarga',
     'new_download_body' => 'ha descargado las siguientes guías.',

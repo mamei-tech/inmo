@@ -75,13 +75,20 @@
         </div>
         <div>
 
-            <a class="hvr-underline-from-center" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
+            <a class="hvr-underline-from-center" href="{{Route("guides")}}">@lang('app.guides')</a>
 
         </div>
 
         <div>
 
-            <a class="hvr-underline-from-center" href="{{Route("guides")}}">@lang('app.guides')</a>
+            <a class="hvr-underline-from-center" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
+
+        </div>
+
+
+        <div>
+
+            <a class="hvr-underline-from-center" href="{{Route("blog")}}">@lang('app.blog')</a>
 
         </div>
 

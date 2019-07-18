@@ -36,14 +36,27 @@
                 <li class="hvr-underline-from-center">
                     <a class="link-contacts" href="{{Route("contacts")}}">@lang('app.contact')</a>
                 </li>
-                <li class="hvr-underline-from-center underline-link-tools">
-                    <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
+
+                <li class="hvr-underline-from-center underline-link-more">
+                    <span class="link-more" href="">@lang('app.more')</span>
                     <div id="container-navbar-arrow"><span class="navbar-arrow-toggle-line"></span></div>
                 </li>
 
-                <div  class="li-especial li-especial-{{App::getLocale()}}">
+                <div  class="li-especial li-especial-guides-{{App::getLocale()}}">
                     <li class="hvr-underline-from-center">
                         <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
+                    </li>
+                </div>
+
+                <div  class="li-especial li-especial-tools-{{App::getLocale()}}">
+                    <li class="hvr-underline-from-center">
+                        <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
+                    </li>
+                </div>
+
+                <div  class="li-especial li-especial-blog-{{App::getLocale()}}">
+                    <li class="hvr-underline-from-center">
+                        <a class="link-blog" href="{{Route("blog")}}">@lang('app.blog')</a>
                     </li>
                 </div>
             </ul>
@@ -71,7 +84,6 @@
                     </li>
                 </div>
 
-
                 <div>
                     <li class="hvr-underline-from-center">
                         <a class="link-neighborhoods" href="{{Route("neighborhoods")}}">@lang('app.neighborhoods')</a>
@@ -89,14 +101,20 @@
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
+                        <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
+                    </li>
+                </div>
+                <div>
+                    <li class="hvr-underline-from-center">
                         <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
                     </li>
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
-                        <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
+                        <a class="link-blog" href="{{Route("blog")}}">@lang('app.blog')</a>
                     </li>
                 </div>
+
             </ul>
         </div>
         <div class="mobile-buttons float-right">
@@ -127,11 +145,16 @@
                 linkMobile = document.querySelector(".nav-bar .mobile .link-neighborhoods");
             }
 
+            @if(isset($inGuide) || isset($inBlog))
+                link = document.querySelector(".nav-bar .pc .link-more");
+                linkReal = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
+
+                linkReal.classList.add("active-especial");
+            @endif
+
             link.parentNode.classList.add("active");
             linkMobile.parentNode.classList.add("active");
 
-            {{--document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
-            {{--document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
             var navbar = document.querySelector(".nav-bar");
             navbar.classList.add("scrolled");
 
@@ -167,11 +190,11 @@
                 $('.nav-bar.scrolled').toggleClass('open-li');
             });
 
-            @if(isset($inGuide))
-            $('.navbar-arrow-toggle-line').addClass('open');
-            $('.nav-bar .li-especial').addClass('open');
-            $('.nav-bar.scrolled').addClass('open-li');
-            @endif
+            $('.nav-bar .pc .link-more').click(function () {
+                $('.navbar-arrow-toggle-line').toggleClass('open');
+                $('.nav-bar .li-especial').toggleClass('open');
+                $('.nav-bar.scrolled').toggleClass('open-li');
+            });
         });
     </script>
 @endpush

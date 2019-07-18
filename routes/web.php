@@ -70,6 +70,7 @@ Route::prefix('{lang?}')->group(function () {
     Route::get('guides', 'GuideController@index')->name('guides');
     Route::get('about', 'AboutMeController@index')->name('about');
     Route::get('contacts', 'ContactsController@indexWeb')->name('contacts');
+    Route::get('Blogs', 'BlogController@indexWeb')->name('blog');
 
     Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
     Route::post('testimonials', 'ContactsController@storeTestimonials')->name('contact.storeTestimonials');
