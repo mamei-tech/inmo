@@ -253,7 +253,7 @@ section {
 }
 
 .nav-bar.scroll-down {
-    top: -130px;
+    top: -200px;
 }
 
 .mobile-buttons {
@@ -987,10 +987,6 @@ textarea {
     right: 26px;
 }
 
-.footer ul div.li-especial-es.guides {
-    right: 39px;
-}
-
 .footer .footer-copyright.open {
     top: 133px;
 }
@@ -1005,15 +1001,27 @@ textarea {
 }
 
 @media (max-width: 1249px) {
-    .footer ul div.li-especial {
+    .footer ul div.li-especial.guides.open {
+        right: 9px;
+    }
+    .footer ul div.li-especial.tools.open {
+        right: 16px;
+    }
+    .footer ul div.li-especial.blog.open {
+        right: 25px;
+    }
+
+    .footer ul div.li-especial-es.guides.open {
+        right: 9px;
+    }
+    .footer ul div.li-especial-es.tools.open {
+        right: 3px;
+    }
+    .footer ul div.li-especial-es.blog.open {
         right: 16px;
     }
 
-    .footer ul div.li-especial-es {
-        right: 29px;
-    }
-
     .footer.open {
-        height: 210px;
+        height: 250px;
     }
 }
