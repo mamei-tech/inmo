@@ -155,7 +155,19 @@ return [
     'rentals' => 'rentas',
     'downtownMiami' => 'DOWNTOWN MIAMI',
     'magicCity' => '"LA CIUDAD MÁGICA"',
-    
+
+    'advance_search' => 'BÚSQUEDA AVANZADA',
+    'search' => 'buscar',
+    'signin_signout' => 'AQUÍ PUEDES REGISTRARTE O ACCEDER',
+    'facebook' => 'facebook',
+    'google' => 'google',
+    'yourUsername' => 'su usuario',
+    'yourPassword' => 'su contraseña',
+    'privacy' => 'POLÍTICA DE PRIVACIDAD',
+    'haveAccount' => 'YA TIENES UNA CUENTA?',
+    'singin' => 'ACCEDER',
+    'singup' => 'REGISTRARSE',
+
 
 
 

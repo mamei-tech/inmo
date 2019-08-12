@@ -131,6 +131,18 @@ return [
     'rentals' => 'rentals',
     'downtownMiami' => 'DOWNTOWN MIAMI',
     'magicCity' => '"THE MAGIC CITY"',
+    'advance_search' => 'ADVANCE SEARCH',
+    'search' => 'search',
+    'signin_signout' => 'YOU CAN SIGN IN OR SIGN UP HERE',
+    'facebook' => 'facebook',
+    'google' => 'google',
+    'yourUsername' => 'your user name',
+    'yourPassword' => 'your password',
+    'privacy' => 'PRIVACY POLICY',
+    'haveAccount' => 'ALREDY HAVE AN ACCOUNT?',
+    'singin' => 'SIGN IN',
+    'singup' => 'SIGN UP',
+
 
 
     'firstTextBrickell' => 'BRICKELL <br> 

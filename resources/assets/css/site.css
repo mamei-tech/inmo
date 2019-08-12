@@ -156,6 +156,7 @@ section {
 .nav-bar > .container {
     margin: 0;
     max-width: initial;
+    padding: 0;
 }
 
 .nav-bar .menu-ct {

@@ -63,7 +63,7 @@ class LoginController extends Controller
         return $this->loggedOut($request) ?: redirect("/".app()->getLocale()."/admin");
     }
 
-    public function redirectToProvider($provider)
+    public function redirectToProvider($locale, $provider)
     {
         return Socialite::driver($provider)->redirect();
     }
