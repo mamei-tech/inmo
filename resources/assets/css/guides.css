@@ -1,7 +1,5 @@
 .guide-section-0 {
-    /*height: 100vh; con scroll*/
-    min-height: 100vh; /*sin scroll*/
-    background: url('../images/lg/2.jpg');
+    background-color: rgb(228, 228, 228);
     padding: 60px 120px;
     text-align: right;
     display: flex;
@@ -19,7 +17,7 @@
 }
 
 .guide-section-0 button{
-    margin: 60px 0 20px 0;
+    margin: 20px 0 0 0;
 }
 
 .container-guides{
@@ -57,29 +55,37 @@
     margin-top: 1px;
 }
 
-@media (max-width: 1249px) {
-    .guide-section-0 {
-        background: url('../images/md/2.jpg');
-        padding: 50px 100px;
-        margin-top: -80px;
-        padding-top: 130px;
-    }
-
-    .guide-section-0 button{
-        margin: 50px 0 0 0;
-    }
-
-    .container-guides{
-        padding-left: 0;
-        padding-bottom: 0;
-    }
+.guide-section-0 .container-guides-info{
+    text-align: left;
 }
 
-@media (max-width: 960px) {
+.guide-section-0 .container-img-guide{
+    height: 140px;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.guide-section-1 {
+    background-color: rgb(142, 142, 142);
+    padding: 60px 120px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+}
+
+.guide-section-1 #container-suscribe{
+    display: flex;
+}
+
+
+
+@media (max-width: 1249px) {
     .guide-section-0 {
-        padding: 50px 30px;
-        text-align: center;
-        background: url('../images/md/2.jpg');
+        padding: 50px 100px;
+        margin-top: -80px;
         padding-top: 130px;
     }
 
@@ -87,8 +93,25 @@
         margin: 20px 0 0 0;
     }
 
-    .guide-section-0 h3.subtitle{
-        padding: 15px 0 0 0;
+    .container-guides{
+        padding-left: 0;
+        padding-bottom: 0;
+    }
+
+    .guide-section-1 {
+        padding: 50px 100px;
+    }
+}
+
+@media (max-width: 960px) {
+    .guide-section-0 {
+        padding: 50px 30px;
+        text-align: center;
+        padding-top: 130px;
+    }
+
+    .guide-section-0 button{
+        margin: 20px 0 30px 0;
     }
 
     .container-guides .guide-item{
@@ -99,5 +122,23 @@
 
     .guide-item h3{
         margin-right: 40px;
+    }
+
+    .guide-section-1 {
+        text-align: center;
+        padding: 50px 30px;
+    }
+
+    .guide-section-1 #container-suscribe{
+        flex-direction: column;
+    }
+
+    .guide-section-1 #container-suscribe input{
+        margin-bottom: 15px;
+        margin-right: 0;
+    }
+
+    .guide-section-0 .container-guides-info{
+        text-align: center;
     }
 }

@@ -21,10 +21,7 @@ class GuideController extends Controller
 
     public function index()
     {
-        $guides = DB::table('guides')
-            ->orderBy("created_at", "desc")
-            ->get();
-
+        $guides = Guide::query()->orderBy("created_at")->get();
         return view('guides', ['guides' => $guides]);
     }
 
@@ -105,6 +102,7 @@ class GuideController extends Controller
     {
         $path_es = $request->file('guideEs')->store('public/guides');
         $path_en = $request->file('guideEn')->store('public/guides');
+        $path_image = $request->file('image')->store('public/guides');
 
         DB::table('guides')->insert(
             [
@@ -112,6 +110,9 @@ class GuideController extends Controller
                 'text_en' => $request->text_en,
                 'guide_es' => $path_es,
                 'guide_en' => $path_en,
+                'image' => $path_image,
+                'description_en' => $request->description_en,
+                'description_es' => $request->description_es,
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime()
             ]
@@ -127,6 +128,7 @@ class GuideController extends Controller
         {
             Storage::delete($guide->guide_es);
             Storage::delete($guide->guide_en);
+            Storage::delete($guide->image);
         }
 
         return ["success" => $success];
@@ -141,6 +143,7 @@ class GuideController extends Controller
     {
         $path_es = null;
         $path_en = null;
+        $path_image = null;
 
         $uploadedImage = $request->file('guide_es');
         if ($uploadedImage) {
@@ -154,11 +157,20 @@ class GuideController extends Controller
             $path_en = $uploadedImage->store('public/guides');
         }
 
+        $uploadedImage = $request->file('image');
+        if ($uploadedImage) {
+            Storage::delete($guide->image);
+            $path_image = $uploadedImage->store('public/guides');
+        }
+
         $guide->fill([
             'text_es' => $request->text_es,
             'text_en' => $request->text_en,
+            'description_en' => $request->description_en,
+            'description_es' => $request->description_es,
             'guide_es' => $path_es ? $path_es : $guide->guide_es,
             'guide_en' => $path_en ? $path_en : $guide->guide_en,
+            'image' => $path_image ? $path_image : $guide->image,
             'updated_at' => new DateTime()
         ]);
         $guide->save();

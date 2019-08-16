@@ -102,9 +102,15 @@ return [
     'guide_delete_success' => 'guía eliminado satisfactoriamente',
     'guide_delete_confirm' => '¿Está seguro que desea eliminar este guía?',
     'show_guide' => 'Ver Guía Actual',
-    'guide_subtitle' => 'Descargar su guia gratis',
-    'guides_selected' => 'Usted recibirá los documento(s) seleccionados a su correo',
+    'guide_subtitle' => 'Usted recibirá los documento(s) seleccionados vía correo',
+    'guides_selected' => 'Usted recibirá los documento(s) seleccionados vía correo',
     'download_guides' => 'Descargar guías',
+    'join' => 'unirse',
+    'description' => 'descripción',
+    'description_es' => 'Descripción en Español',
+    'description_en' => 'Descripción en Inglés',
+    'suscribe_guides' => 'subcribe to our newsletter', //TODO Translate
+    'suscribe_subtitle_guides' => 'to receive up to date information about the Miami Real Estate market',//TODO Translate
 
     'create_slider' => 'Crear Slide',
     'edit_slider' => 'Editar Slide',
@@ -119,7 +125,7 @@ return [
     'contactMe' => 'Contáctame',
     'moreInformation' => 'Obtener más información',
     'yourName' => 'su nombre',
-    'yourEmail' => 'su correo',
+    'yourEmail' => 'entre su correo aquí',
     'yourPhone' => 'su teléfono',
     'writeMe' => 'escríbeme',
     'send' => 'Enviar',
