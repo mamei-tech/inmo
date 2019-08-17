@@ -1,3 +1,4 @@
+var pageActive = 0;
 $(document).ready(function () {
     $('.box').click(function (e) {
         $(e.currentTarget).children().toggleClass('check');
@@ -7,19 +8,58 @@ $(document).ready(function () {
         e.preventDefault();
     })
 
-
+    $('.text-previous').html(window.messages.previous);
+    $('.text-next').html(window.messages.next);
+    nextPage();
 });
 
-function guideSelected() {
-    var result = [];
-    $('.guide-item .check').each(function (i, e) {
-        result.push(e.id);
-    });
+function nextPage(){
+    var total = $('.total-guides').html() * 1;
+    if (pageActive + 1 > total){
+        return;
+    }
 
-    return result;
+    var guides = $('#container-guides').children();
+    var limit = (pageActive + 1) * 4;
+    var start = pageActive * 4;
+
+    $.each(guides, function(i,o){
+        if (i >= start && i < limit){
+            $(o).css('display', 'flex');
+        }
+        else{
+            $(o).css('display', 'none');
+        }
+    })
+
+    pageActive++;
+    $('.page-active').html(pageActive);
+}
+function previousPage(){
+
+    if (pageActive == 1){
+        return;
+    }
+
+    pageActive--;
+    var guides = $('#container-guides').children();
+    var start = (pageActive - 1) * 4;
+    var limit = (pageActive) * 4;
+
+    $.each(guides, function(i,o){
+        if (i >= start && i < limit){
+            $(o).css('display', 'flex');
+        }
+        else{
+            $(o).css('display', 'none');
+        }
+    })
+
+    $('.page-active').html(pageActive);
 }
 
-function downloadGuide() {
+function downloadGuide(obj) {
+    var guide = obj.id.split('-')[1];
     var validate = $('#form-send-email')[0].reportValidity();
     if (validate)
     {
@@ -28,7 +68,7 @@ function downloadGuide() {
             url: urlSendEmail,
             data: {
                 _token: window._token,
-                guides : guideSelected(),
+                guide : guide,
                 email: $('#form-send-email [name=email]').val()
             },
             success: function (r, s, o) {

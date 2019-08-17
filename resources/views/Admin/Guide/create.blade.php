@@ -45,6 +45,34 @@
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <label for="description_en" class="col-md-3 col-form-label text-md-right">{{ __('app.description_en') }}</label>
+
+                                <div class="col-md-9">
+                                    <textarea id="description_en" type="text" class="form-control{{ $errors->has('description_en') ? ' is-invalid' : '' }}" name="description_en" value="{{ old('description_en') }}" required autofocus></textarea>
+
+                                    @if ($errors->has('description_en'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('description_en') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="description_es" class="col-md-3 col-form-label text-md-right">{{ __('app.description_es') }}</label>
+
+                                <div class="col-md-9">
+                                    <textarea id="description_es" type="text" class="form-control{{ $errors->has('description_es') ? ' is-invalid' : '' }}" name="description_es" value="{{ old('description_es') }}" required autofocus></textarea>
+
+                                    @if ($errors->has('description_es'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('description_es') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
 
                             <div class="form-group row">
                                 <label for="guideEs" class="col-md-3 col-form-label text-md-right">{{ __('app.guide_es') }}</label>
@@ -69,6 +97,20 @@
                                     @if ($errors->has('guideEn'))
                                         <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('guideEn') }}</strong>
+                                    </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="image" class="col-md-3 col-form-label text-md-right">{{ __('app.image') }}</label>
+
+                                <div class="col-md-9">
+                                    <input id="image" type="file" class="form-control{{ $errors->has('image') ? ' is-invalid' : '' }}" name="image" value="{{ old('image') }}" required autofocus>
+
+                                    @if ($errors->has('image'))
+                                        <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('image') }}</strong>
                                     </span>
                                     @endif
                                 </div>

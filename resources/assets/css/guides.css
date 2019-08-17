@@ -80,7 +80,21 @@
     display: flex;
 }
 
+.pagination-guide{
+    display: flex;
+    text-align: left;
+    margin-bottom: 15px;
+}
 
+.pagination-guide > .btn{
+    border: none;
+    color: rgb(142, 142, 142);
+}
+
+.btn-hover:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
 
 @media (max-width: 1249px) {
     .guide-section-0 {
@@ -113,6 +127,11 @@
     .guide-section-0 button{
         margin: 20px 0 30px 0;
     }
+
+    .guide-section-0 .pagination-guide button{
+        margin: 20px 0 0 0;
+    }
+
 
     .container-guides .guide-item{
         margin-bottom: 20px;

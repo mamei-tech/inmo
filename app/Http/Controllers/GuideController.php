@@ -32,11 +32,11 @@ class GuideController extends Controller
 
     public function sendEmail(Request $request, $locale)
     {
-        $selected = $request->guides;
+        $selected = $request->guide;
         if(!$selected)
             return ["success"=>false, "message"=>__('app.selected_some_guide')];
 
-        $guides = Guide::query()->whereIn("id", $selected?$selected:[])->get();
+        $guides = Guide::query()->where("id", $selected)->get();
 
         DB::table('emails')->insert(
             [
@@ -58,7 +58,6 @@ class GuideController extends Controller
             $m->to($request->email)->subject(__('app.download_guides'));
         });
 
-        //return view("emails.guides", ["guides" => $guides]);
         return ["success"=>true, "message"=>__('app.check_email')];
     }
 
