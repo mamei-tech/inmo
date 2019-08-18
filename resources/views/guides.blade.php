@@ -39,8 +39,9 @@
 
                     <div class="col-xl-3 col-sm-12" style="display: none; flex-direction: column">
 
-                        <div class="container-img-guide" style="background-image: url('{{ $g->imagePath }}')">
-                            <h3 class="color-yellow">{{App::getLocale()=="es"? $g->text_es : $g->text_en}}</h3>
+                        <div class="container-img-guide" style="position:relative; background-image: url('{{ $g->imagePath }}')">
+                            <div class="overlay-guides"></div>
+                            <h3 class="color-yellow" style="z-index: 2">{{App::getLocale()=="es"? $g->text_es : $g->text_en}}</h3>
                         </div>
 
 
