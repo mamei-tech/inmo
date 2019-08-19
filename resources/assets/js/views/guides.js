@@ -6,7 +6,11 @@ $(document).ready(function () {
 
     $('#form-send-email').submit(function (e) {
         e.preventDefault();
-    })
+    });
+
+    $('#form-add-subcriptor').submit(function (e) {
+        e.preventDefault();
+    });
 
     $('.text-previous').html(window.messages.previous);
     $('.text-next').html(window.messages.next);
@@ -74,9 +78,31 @@ function downloadGuide(obj) {
             success: function (r, s, o) {
                 if (r.success){
                     $('#form-send-email')[0].reset();
-                    $('.guide-item .check').each(function (i, e) {
-                        $(e).removeClass('check');
-                    });
+                    alertify.log(r.message);
+                }
+                else
+                    alertify.error(r.message);
+            },
+            error: function () {
+
+            }
+        });
+    }
+}
+function addSubcriptor() {
+    var validate = $('#form-add-subcriptor')[0].reportValidity();
+    if (validate)
+    {
+        $.ajax({
+            type: "post",
+            url: urlAddSubcriptor,
+            data: {
+                _token: window._token,
+                email: $('#form-add-subcriptor [name=email-suscribe]').val()
+            },
+            success: function (r, s, o) {
+                if (r.success){
+                    $('#form-add-subcriptor')[0].reset();
                     alertify.log(r.message);
                 }
                 else

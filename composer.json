@@ -11,6 +11,7 @@
         "laravel/framework": "5.6.*",
         "laravel/socialite": "v3.2.0",
         "laravel/tinker": "^1.0",
+        "spatie/laravel-newsletter": "v4.2.0",
         "spatie/laravel-permission": "v2.11"
     },
     "require-dev": {

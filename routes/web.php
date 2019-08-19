@@ -73,6 +73,7 @@ Route::prefix('{lang?}')->group(function () {
     Route::get('Blogs', 'BlogController@indexWeb')->name('blog');
 
     Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
+    Route::post('guideAddSubcriptor', 'GuideController@addSubcriptor')->name('guide.addSubcriptor');
     Route::post('testimonials', 'ContactsController@storeTestimonials')->name('contact.storeTestimonials');
 
     Route::get('login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')->name('auth.redirectToProvider');

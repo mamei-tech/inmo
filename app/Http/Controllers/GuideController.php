@@ -11,12 +11,13 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
+use Newsletter;
 
 class GuideController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'sendEmail']);
+        $this->middleware('auth')->except(['index', 'sendEmail', 'addSubcriptor']);
     }
 
     public function index()
@@ -175,5 +176,12 @@ class GuideController extends Controller
         $guide->save();
 
         return Redirect::route("guide.index_admin", [$lang]);
+    }
+
+    public function addSubcriptor(Request $request, $locale){
+        if (!Newsletter::hasMember($request->email)){
+            Newsletter::subscribePending($request->email);
+        }
+        return ["success"=>true, "message"=>__('app.check_email')]; //TODO Poner msg bin
     }
 }
