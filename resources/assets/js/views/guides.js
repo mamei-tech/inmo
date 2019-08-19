@@ -37,6 +37,7 @@ function nextPage(){
     })
 
     pageActive++;
+    console.log(pageActive)
     $('.page-active').html(pageActive);
 }
 function previousPage(){
