@@ -171,6 +171,8 @@ return [
     'yourPassword' => 'su contraseña',
     'privacy' => 'POLÍTICA DE PRIVACIDAD',
     'haveAccount' => 'YA TIENES UNA CUENTA?',
+    'nohaveAccount' => '¿NO TIENES CUENTA? CRÉATE UNA',
+    'forgotpass' => 'OLVIDASTE TU CONTRASEÑA',
     'singin' => 'ACCEDER',
     'singup' => 'REGISTRARSE',
 

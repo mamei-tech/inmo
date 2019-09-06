@@ -74,26 +74,33 @@ class LoginController extends Controller
         return Socialite::driver($provider)->redirect();
     }
 
-    public function handleProviderCallback($provider)
+    public function handleProviderCallback($locale, $provider)
     {
-        $getInfo  = Socialite::driver($provider)->user();
-        dd($getInfo);
-
-        $user = $this->createUser($getInfo,$provider);
-        auth()->login($user);
-        return redirect()->to('/home');
-    }
-
-    function createUser($getInfo, $provider){
-        $user = User::where('provider_id', $getInfo->id)->first();
-        if (!$user) {
-            $user = User::create([
-                'name'     => $getInfo->name,
-                'email'    => $getInfo->email,
-                'provider' => $provider,
-                'provider_id' => $getInfo->id
-            ]);
+        try {
+            $user = Socialite::driver($provider)->user();
+        } catch (\Exception $e) {
+            return redirect()->route('login');
         }
-        return $user;
+
+        $existingUser = User::where('email', $user->getEmail())->first();
+
+        if ($existingUser) {
+            auth()->login($existingUser, true);
+        } else {
+            $newUser                    = new User;
+
+            $newUser->provider_name     = $provider;
+            $newUser->provider_id       = $user->getId();
+            $newUser->name              = $user->getName();
+            $newUser->email             = $user->getEmail();
+            $newUser->email_verified_at = now();
+            $newUser->avatar            = $user->getAvatar();
+            $newUser->save();
+
+            auth()->login($newUser, true);
+        }
+
+        // return redirect($this->redirectPath());
+        return redirect()->route('blog');
     }
 }

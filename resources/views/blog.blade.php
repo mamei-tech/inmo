@@ -37,7 +37,7 @@
             </div>
         </div>
 
-        <div class="container-signin-signout" style="display: none">
+        <div id="su" class="container-signin-signout row"  style="display: none">
 
             <div class="container-signin-signout-aux">
             </div>
@@ -45,37 +45,107 @@
             <div class="container-signin-signout-content">
 
                 <div class="container-signin-signout-button">
-                    <button type="button" class="btn btn-yellow" style="margin-right: 15px">@lang('app.facebook')</button>
+
+                    <button type="button" class="btn btn-yellow" style="margin-right: 15px">
+                        <a href="{{Route("auth.redirectToProvider", [App::getLocale(), "facebook"])}}">
+                            @lang('app.facebook')
+                        </a>
+                    </button>
+
                     <button type="button" class="btn btn-yellow" style="margin-left: 15px">
-                        <a href="{{Route("auth.redirectToProvider", [App::getLocale(), "google"])}}">@lang('app.google')</a></button>
+                        <a href="{{Route("auth.redirectToProvider", [App::getLocale(), "google"])}}">
+                            @lang('app.google')
+                        </a></button>
                 </div>
 
-                <div class="container-signin-signout-input" style="margin-top: 30px;">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourEmail')">
+                <form id="frm-singup" action="">
+
+                    <div class="container-signin-signout-input" style="margin-top: 30px;">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="email" required="" placeholder="@lang('app.yourEmail')">
+                        </div>
                     </div>
-                </div>
 
-                <div class="container-signin-signout-input" style="margin-top: 10px;">
-                    <div class="form-group" style="margin-right: 15px;">
-                        <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourUsername')">
+                    <div class="container-signin-signout-input" style="margin-top: 10px;">
+                        <div class="form-group" style="margin-right: 15px;">
+                            <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourUsername')">
+                        </div>
+
+                        <div class="form-group" style="margin-left: 15px;">
+                            <input type="text" class="form-control" name="password" required="" placeholder="@lang('app.yourPassword')">
+                        </div>
                     </div>
 
-                    <div class="form-group" style="margin-left: 15px;">
-                        <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourPassword')">
+                    <div style="margin-top: 10px;" class="container-signin-signout-last">
+                        <h3 class="color-yellow">@lang('app.privacy')</h3>
+
+                        <span class="h3-middle">
+                            <h3 class="color-white" style="margin-right: 5px;">@lang('app.haveAccount')</h3>
+                            <h3 class="color-yellow changecontext">@lang('app.singin')</h3>
+                        </span>
+
+
+                        <button type="button" class="btn btn-yellow">@lang('app.singup')</button>
                     </div>
+
+                </form>
+
+            </div>
+        </div >
+
+        <div id="si" class="container-signin-signout row"  style="display: none">
+
+            <div class="container-signin-signout-aux">
+            </div>
+
+            <div class="container-signin-signout-content">
+
+                <div class="container-signin-signout-button">
+
+                    <button type="button" class="btn btn-yellow" style="margin-right: 15px">
+                        <a href="{{Route("auth.redirectToProvider", [App::getLocale(), "facebook"])}}">
+                            @lang('app.facebook')
+                        </a>
+                    </button>
+
+                    <button type="button" class="btn btn-yellow" style="margin-left: 15px">
+                        <a href="{{Route("auth.redirectToProvider", [App::getLocale(), "google"])}}">
+                            @lang('app.google')
+                        </a></button>
                 </div>
 
-                <div style="margin-top: 10px;" class="container-signin-signout-last">
-                    <h3 class="color-yellow">@lang('app.privacy')</h3>
+                <form id="frm-singin" action="">
 
-                    <span class="h3-middle"><h3 class="color-white" style="margin-right: 5px;">@lang('app.haveAccount')</h3><h3 class="color-yellow">@lang('app.singin')</h3></span>
+                    <div class="container-signin-signout-input" style="margin-top: 20px;">
+
+                    </div>
+
+                    <div class="container-signin-signout-input" style="margin-top: 10px;">
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourEmail')">
+                        </div>
+
+                        <div class="form-group" style="margin-left: 15px;">
+                            <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourPassword')">
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 10px;" class="container-signin-signout-last">
+                        <h3 class="color-yellow">@lang('app.forgotpass')</h3>
+
+                        <span class="h3-middle">
+                            <h3 class="color-white" style="margin-right: 5px;">@lang('app.nohaveAccount')</h3>
+                            <h3 class="color-yellow changecontext">@lang('app.singup')</h3>
+                        </span>
 
 
-                    <button type="button" class="btn btn-yellow">@lang('app.singup')</button>
-                </div>
+                        <button type="button" class="btn btn-yellow changecontext">@lang('app.singin')</button>
+                    </div>
+
+                </form>
             </div>
         </div>
+
     </div>
 
 @endsection

@@ -146,6 +146,8 @@ return [
     'yourPassword' => 'your password',
     'privacy' => 'PRIVACY POLICY',
     'haveAccount' => 'ALREDY HAVE AN ACCOUNT?',
+    'nohaveAccount' => 'DON\'T HAVE AN ACCOUNT? CREATE ONE',
+    'forgotpass' => 'FORGOT YOU PASSWORD?',
     'singin' => 'SIGN IN',
     'singup' => 'SIGN UP',
 

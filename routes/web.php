@@ -47,8 +47,8 @@ Route::prefix('{lang?}')->group(function () {
         Route::any('users/read', 'UserController@read')->name('users.read');
         Route::post('users/lock', 'UserController@lock')->name('users.lock');
     });
-    //Route::auth();
 
+    //Route::auth();
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
     Route::post('logout', 'Auth\LoginController@logout')->name('logout');
@@ -70,12 +70,14 @@ Route::prefix('{lang?}')->group(function () {
     Route::get('guides', 'GuideController@index')->name('guides');
     Route::get('about', 'AboutMeController@index')->name('about');
     Route::get('contacts', 'ContactsController@indexWeb')->name('contacts');
-    Route::get('Blogs', 'BlogController@indexWeb')->name('blog');
+    Route::get('blogs', 'BlogController@indexWeb')->name('blog');
 
     Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
     Route::post('guideAddSubcriptor', 'GuideController@addSubcriptor')->name('guide.addSubcriptor');
     Route::post('testimonials', 'ContactsController@storeTestimonials')->name('contact.storeTestimonials');
 
-    Route::get('login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')->name('auth.redirectToProvider');
-    Route::get('login/callback/{provider}', 'Auth\LoginController@@handleProviderCallback')->name('auth.handleProviderCallback');
+    Route::get('login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')
+        ->name('auth.redirectToProvider')
+        ->where('driver', implode('|', config('auth.socialite.drivers')));
+    Route::get('login/callback/{provider}', 'Auth\LoginController@handleProviderCallback')->name('auth.handleProviderCallback');
 });
