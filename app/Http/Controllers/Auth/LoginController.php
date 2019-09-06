@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -63,6 +64,11 @@ class LoginController extends Controller
         return $this->loggedOut($request) ?: redirect("/".app()->getLocale()."/admin");
     }
 
+    /**
+     * Redirect the user to the provider authentication page.
+     *
+     * @return Response
+     */
     public function redirectToProvider($locale, $provider)
     {
         return Socialite::driver($provider)->redirect();

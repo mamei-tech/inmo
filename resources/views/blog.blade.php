@@ -5,11 +5,15 @@
 @push('styles')
     <link href="{{ asset('css/blog.css') }}" rel="stylesheet"></link>
 @endpush
+
 @php
     $inBlog = true;
 @endphp
+
 @section('content')
+
     <div class="section-search">
+
         {{--TODO Falta el icono de buscar--}}
         <h1>@lang('app.blog')</h1>
 
@@ -42,7 +46,8 @@
 
                 <div class="container-signin-signout-button">
                     <button type="button" class="btn btn-yellow" style="margin-right: 15px">@lang('app.facebook')</button>
-                    <button type="button" class="btn btn-yellow" style="margin-left: 15px"><a href="{{Route("auth.redirectToProvider", [App::getLocale(), "google"])}}">@lang('app.google')</a>></button>
+                    <button type="button" class="btn btn-yellow" style="margin-left: 15px">
+                        <a href="{{Route("auth.redirectToProvider", [App::getLocale(), "google"])}}">@lang('app.google')</a></button>
                 </div>
 
                 <div class="container-signin-signout-input" style="margin-top: 30px;">
