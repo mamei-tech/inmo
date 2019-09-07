@@ -25,8 +25,10 @@ class LoginController extends Controller
     {
         $this->validateLogin($request);
 
-        $user = User::all()->firstWhere('email', $request->email);
-        if ($user && $user->hasRole('admon'))
+        $user = User::where('email', $request->email)->first();
+
+        // user, admin and login from admin loging form
+        if ($user && $user->hasRole('admon') && $request->has('pit'))
         {
             // If the class is using the ThrottlesLogins trait, we can automatically throttle
             // the login attempts for this application. We'll key this by the username and
@@ -38,12 +40,33 @@ class LoginController extends Controller
             }
 
             if ($this->attemptLogin($request)) {
-                return $this->sendLoginResponse($request);
+                return $this->sendLoginResponse($request);                              // Login ok
             }
 
             // If the login attempt was unsuccessful we will increment the number of attempts
             // to login and redirect the user back to the login form. Of course, when this
             // user surpasses their maximum number of attempts they will get locked out.
+            $this->incrementLoginAttempts($request);
+
+            return $this->sendFailedLoginResponse($request);
+        }
+        elseif ($user && !$request->has('pit'))
+        {
+            if ($this->hasTooManyLoginAttempts($request)) {
+                $this->fireLockoutEvent($request);
+
+                return $this->sendLockoutResponse($request);
+            }
+
+            if ($this->attemptLogin($request)) {                                        // Login ok
+
+                $request->session()->regenerate();
+                $this->clearLoginAttempts($request);
+
+                return $this->authenticated($request, $this->guard()->user())
+                    ?: redirect()->route('blog');
+            }
+
             $this->incrementLoginAttempts($request);
 
             return $this->sendFailedLoginResponse($request);

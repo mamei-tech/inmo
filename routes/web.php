@@ -55,6 +55,12 @@ Route::prefix('{lang?}')->group(function () {
     Route::get('password/set', 'Auth\ResetPasswordController@showSetForm')->name('password.set');
     Route::post('password/set', 'Auth\ResetPasswordController@setPassword');
 
+    // Password reset routes (make this only for email auth not for facebook/google)
+    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
     Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
     Route::post('register', 'Auth\RegisterController@register')->name('auth.register');
     Route::get('verify', 'Auth\RegisterController@verify')->name('auth.verify');

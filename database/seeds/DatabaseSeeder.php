@@ -19,14 +19,10 @@ class DatabaseSeeder extends Seeder
             'name' => 'Antonio',
             'email' => 'antonio@gmail.com',
             'password' => bcrypt('User*123'),
-            'provider'  => 'unknown',
+            'provider'  => 'Local',
             'created_at' => new DateTime(),
             'updated_at' => new DateTime()
         ]);
-
-//        factory(App\User::class, 20)->create()->each(function ($u) {
-//            //$u->posts()->save(factory(App\Post::class)->make());
-//        });
 
         DB::table('promotion')->insert([
             'title_es' => '¿SABES QUE?',

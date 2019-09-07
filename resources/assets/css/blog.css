@@ -101,11 +101,14 @@
     top: 7px;
 }
 
-button.btn.btn-yellow a{
+button.btn.btn-yellow a,
+h3.color-yellow a
+{
     color: rgb(225, 175, 90);
 }
 
-button.btn.btn-yellow a:hover {
+button.btn.btn-yellow a:hover,
+h3.color-yellow a:hover {
     text-decoration: none;
 }
 

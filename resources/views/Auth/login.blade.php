@@ -13,6 +13,8 @@
                     <form method="POST" action="{{ route('login', [App::getLocale()]) }}" aria-label="{{ __('auth.Login') }}">
                         @csrf
 
+                        <input name="pit" value="1" hidden>
+
                         <div class="form-group row">
                             <label for="email" class="col-sm-4 col-form-label text-md-right">{{ __('auth.E-Mail Address') }}</label>
 

@@ -61,18 +61,24 @@
                 <form id="frm-singup" action="">
 
                     <div class="container-signin-signout-input" style="margin-top: 30px;">
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="email" required="" placeholder="@lang('app.yourEmail')">
-                        </div>
-                    </div>
 
-                    <div class="container-signin-signout-input" style="margin-top: 10px;">
                         <div class="form-group" style="margin-right: 15px;">
                             <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourUsername')">
                         </div>
 
                         <div class="form-group" style="margin-left: 15px;">
+                            <input type="text" class="form-control" name="email" required="" placeholder="@lang('app.yourEmail')">
+                        </div>
+
+                    </div>
+
+                    <div class="container-signin-signout-input" style="margin-top: 10px;">
+                        <div class="form-group" style="margin-right: 15px;">
                             <input type="text" class="form-control" name="password" required="" placeholder="@lang('app.yourPassword')">
+                        </div>
+
+                        <div class="form-group" style="margin-left: 15px;">
+                            <input type="text" class="form-control" name="password_confirmation" required="" placeholder="@lang('app.comfirm_pass')">
                         </div>
                     </div>
 
@@ -114,7 +120,7 @@
                         </a></button>
                 </div>
 
-                <form id="frm-singin" action="">
+                <form id="frm-singin" method="POST" action="{{ route('login', [App::getLocale()]) }}" aria-label="{{ __('auth.Login') }}">
 
                     <div class="container-signin-signout-input" style="margin-top: 20px;">
 
@@ -126,12 +132,12 @@
                         </div>
 
                         <div class="form-group" style="margin-left: 15px;">
-                            <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourPassword')">
+                            <input type="text" class="form-control" name="password" required="" placeholder="@lang('app.yourPassword')">
                         </div>
                     </div>
 
                     <div style="margin-top: 10px;" class="container-signin-signout-last">
-                        <h3 class="color-yellow">@lang('app.forgotpass')</h3>
+                        <h3 class="color-yellow"><a href="{{ route('password.request') }}">@lang('app.forgotpass')</a></h3>
 
                         <span class="h3-middle">
                             <h3 class="color-white" style="margin-right: 5px;">@lang('app.nohaveAccount')</h3>

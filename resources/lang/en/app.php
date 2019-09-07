@@ -144,6 +144,7 @@ return [
     'google' => 'google',
     'yourUsername' => 'your user name',
     'yourPassword' => 'your password',
+    'comfirm_pass'  => 'confirm password',
     'privacy' => 'PRIVACY POLICY',
     'haveAccount' => 'ALREDY HAVE AN ACCOUNT?',
     'nohaveAccount' => 'DON\'T HAVE AN ACCOUNT? CREATE ONE',

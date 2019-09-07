@@ -6,8 +6,8 @@ $(document).ready(function () {
 
         if(!tagaux)
         {
-            $('div#su').slideToggle();
-            $('div#su').toggleClass('open');
+            $('div#si').slideToggle();
+            $('div#si').toggleClass('open');
 
             tagaux = 1;
         }

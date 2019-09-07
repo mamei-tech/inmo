@@ -25,6 +25,6 @@ return [
     'ForgotYourPassword' => 'Olvido su contraseña',
     'RememberMe' => 'Recordarme',
     'ChangePassword' => 'Cambiar Contraseña',
-    'authAdmin' => 'Este usuario no tiene permiso para acceder a la administración',
+    'authAdmin' => 'Este usuario no tiene permitido acceder a esta sección.',
 
 ];

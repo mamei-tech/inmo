@@ -169,10 +169,11 @@ return [
     'google' => 'google',
     'yourUsername' => 'su usuario',
     'yourPassword' => 'su contraseña',
+    'comfirm_pass'  => 'confirme contraseña',
     'privacy' => 'POLÍTICA DE PRIVACIDAD',
     'haveAccount' => 'YA TIENES UNA CUENTA?',
     'nohaveAccount' => '¿NO TIENES CUENTA? CRÉATE UNA',
-    'forgotpass' => 'OLVIDASTE TU CONTRASEÑA',
+    'forgotpass' => '¿NO RECUERDAS?',
     'singin' => 'ACCEDER',
     'singup' => 'REGISTRARSE',
 
