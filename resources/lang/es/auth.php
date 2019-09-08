@@ -26,5 +26,9 @@ return [
     'RememberMe' => 'Recordarme',
     'ChangePassword' => 'Cambiar Contraseña',
     'authAdmin' => 'Este usuario no tiene permitido acceder a esta sección.',
+    'register_info' => 'Un link de verificación ha sido enviado a su dirección de correo.',
+    'email_check_info'  => 'Antes de proceder, por favor revise un bandeja de entrada para confirmar su registro.',
+    'email_resend1' => 'Si Ud. no recibe el email',
+    'email_resend2' => 'haga click para otra solicitud',
 
 ];

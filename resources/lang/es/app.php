@@ -176,8 +176,7 @@ return [
     'forgotpass' => '¿NO RECUERDAS?',
     'singin' => 'ACCEDER',
     'singup' => 'REGISTRARSE',
-
-
+    'back'  => 'ATRÁS',
 
 
     'firstTextBrickell' => 'BRICKELL <br> 

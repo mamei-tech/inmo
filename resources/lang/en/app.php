@@ -151,8 +151,7 @@ return [
     'forgotpass' => 'FORGOT YOU PASSWORD?',
     'singin' => 'SIGN IN',
     'singup' => 'SIGN UP',
-
-
+    'back'  => 'BACK',
 
     'firstTextBrickell' => 'BRICKELL <br> 
 

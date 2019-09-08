@@ -26,4 +26,8 @@ return [
     'RememberMe' => 'Remember Me',
     'ChangePassword' => 'Change Password',
     'authAdmin' => 'This user not have permissions to access this section.',
+    'register_info' => 'A fresh verification link has been sent to your email address.',
+    'email_check_info'  => 'Before proceeding, please check your email for a verification link.',
+    'email_resend1' => 'If you did not receive the email',
+    'email_resend2' => 'click here to request another',
 ];

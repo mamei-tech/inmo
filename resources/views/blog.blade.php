@@ -3,7 +3,7 @@
 @section('title', __('app.blog'))
 
 @push('styles')
-    <link href="{{ asset('css/blog.css') }}" rel="stylesheet"></link>
+    <link href="{{ asset('css/blog.css') }}" rel="stylesheet">
 @endpush
 
 @php
@@ -26,6 +26,10 @@
         </div>
 
     </div>
+
+    @php isset($dr) ? $dr = 1 : $dr = 0 @endphp
+
+    <input id="dr" type="text" hidden value="{{$dr}}">
 
     <div class="section-sigin-sigout">
 
@@ -58,7 +62,8 @@
                         </a></button>
                 </div>
 
-                <form id="frm-singup" action="">
+                <form id="frm-singup" method="POST" action="{{ route('auth.register', [App::getLocale()]) }}" aria-label="{{ __('auth.Register') }}">
+                    @csrf
 
                     <div class="container-signin-signout-input" style="margin-top: 30px;">
 
@@ -67,18 +72,18 @@
                         </div>
 
                         <div class="form-group" style="margin-left: 15px;">
-                            <input type="text" class="form-control" name="email" required="" placeholder="@lang('app.yourEmail')">
+                            <input type="email" class="form-control" name="email" required="" placeholder="@lang('app.yourEmail')">
                         </div>
 
                     </div>
 
                     <div class="container-signin-signout-input" style="margin-top: 10px;">
                         <div class="form-group" style="margin-right: 15px;">
-                            <input type="text" class="form-control" name="password" required="" placeholder="@lang('app.yourPassword')">
+                            <input type="password" class="form-control" name="password" required="" placeholder="@lang('app.yourPassword')">
                         </div>
 
                         <div class="form-group" style="margin-left: 15px;">
-                            <input type="text" class="form-control" name="password_confirmation" required="" placeholder="@lang('app.comfirm_pass')">
+                            <input type="password" class="form-control" name="password_confirmation" required="" placeholder="@lang('app.comfirm_pass')">
                         </div>
                     </div>
 
@@ -90,8 +95,7 @@
                             <h3 class="color-yellow changecontext">@lang('app.singin')</h3>
                         </span>
 
-
-                        <button type="button" class="btn btn-yellow">@lang('app.singup')</button>
+                        <button type="submit" class="btn btn-yellow">@lang('app.singup')</button>
                     </div>
 
                 </form>
@@ -121,6 +125,7 @@
                 </div>
 
                 <form id="frm-singin" method="POST" action="{{ route('login', [App::getLocale()]) }}" aria-label="{{ __('auth.Login') }}">
+                    @csrf
 
                     <div class="container-signin-signout-input" style="margin-top: 20px;">
 
@@ -128,7 +133,7 @@
 
                     <div class="container-signin-signout-input" style="margin-top: 10px;">
                         <div class="form-group">
-                            <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.yourEmail')">
+                            <input type="email" class="form-control" name="name" required="" placeholder="@lang('app.yourEmail')">
                         </div>
 
                         <div class="form-group" style="margin-left: 15px;">
@@ -145,7 +150,7 @@
                         </span>
 
 
-                        <button type="button" class="btn btn-yellow changecontext">@lang('app.singin')</button>
+                        <button type="submit" class="btn btn-yellow changecontext">@lang('app.singin')</button>
                     </div>
 
                 </form>
