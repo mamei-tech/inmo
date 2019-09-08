@@ -134,10 +134,20 @@
                     <div class="container-signin-signout-input" style="margin-top: 10px;">
                         <div class="form-group">
                             <input type="email" class="form-control" name="name" required="" placeholder="@lang('app.yourEmail')">
+                            @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                            @endif
                         </div>
 
                         <div class="form-group" style="margin-left: 15px;">
                             <input type="text" class="form-control" name="password" required="" placeholder="@lang('app.yourPassword')">
+                            @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                     </div>
 

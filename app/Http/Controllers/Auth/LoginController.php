@@ -28,7 +28,7 @@ class LoginController extends Controller
         $user = User::where('email', $request->email)->first();
 
         // user, admin and login from admin loging form
-        if ($user && $user->hasRole('admon') && $request->has('pit'))
+        if ($user && $user->hasRole('admon') && $request->has('pit'))               // Login from original login form
         {
             // If the class is using the ThrottlesLogins trait, we can automatically throttle
             // the login attempts for this application. We'll key this by the username and
@@ -50,7 +50,7 @@ class LoginController extends Controller
 
             return $this->sendFailedLoginResponse($request);
         }
-        elseif ($user && !$request->has('pit'))
+        elseif ($user && !$request->has('pit'))                                    // Login from blog form
         {
             if ($this->hasTooManyLoginAttempts($request)) {
                 $this->fireLockoutEvent($request);
