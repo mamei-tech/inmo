@@ -12,6 +12,16 @@ $(document).ready(function () {
         $('div#si').removeClass('open');
     }
 
+    // Open form section when error
+    if($('span.invalid-feedback').length !== 0)
+    {
+        $('div#si').show();
+        $('div#si').addClass('open');
+
+        $('div#su').hide();
+        $('div#su').removeClass('open');
+    }
+
     // Events Handles
     $('.arrow-floating').click(function (node) {
         if(!tagaux)
@@ -28,9 +38,13 @@ $(document).ready(function () {
 
             tagaux = 0;
         }
+
         // Cleaning forms inputs
         $('div#su input:visible').val('');
         $('div#si input:visible').val('');
+
+        // Hiding invalid feedback
+        $('span.invalid-feedback').hide();
     });
 
     $('form#frm-singup h3.changecontext').click(function (e) {

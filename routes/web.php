@@ -51,7 +51,7 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
     Route::group(['middleware' => 'web'], function () {
 
         Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-        Route::post('login', 'Auth\LoginController@login');
+        Route::post('login', 'Auth\LoginController@login')->name('dologin');
         Route::post('logout', 'Auth\LoginController@logout')->name('logout');
         Route::get('password/set', 'Auth\ResetPasswordController@showSetForm')->name('password.set');
         Route::post('password/set', 'Auth\ResetPasswordController@setPassword');

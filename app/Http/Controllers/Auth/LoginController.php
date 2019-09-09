@@ -10,6 +10,8 @@ use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
 use Laravel\Socialite\Facades\Socialite;
 
+use Barryvdh\Debugbar\Facade as Debugbar;
+
 class LoginController extends Controller
 {
     use AuthenticatesUsers;

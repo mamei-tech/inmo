@@ -10,7 +10,7 @@
                 <div class="card-header">{{ __('auth.Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login', [App::getLocale()]) }}" aria-label="{{ __('auth.Login') }}">
+                    <form method="POST" action="{{ route('dologin', [App::getLocale()]) }}" aria-label="{{ __('auth.Login') }}">
                         @csrf
 
                         <input name="pit" value="1" hidden>

@@ -31,6 +31,8 @@
 
     <input id="dr" type="text" hidden value="{{$dr}}">
 
+    {{-- SingIN SingUP Forms --}}
+    @guest
     <div class="section-sigin-sigout">
 
         <div class="section-sigin-sigout-text">
@@ -124,7 +126,7 @@
                         </a></button>
                 </div>
 
-                <form id="frm-singin" method="POST" action="{{ route('login', [App::getLocale()]) }}" aria-label="{{ __('auth.Login') }}">
+                <form id="frm-singin" method="POST" action="{{ route('dologin', [App::getLocale()]) }}" aria-label="{{ __('auth.Login') }}">
                     @csrf
 
                     <div class="container-signin-signout-input" style="margin-top: 20px;">
@@ -133,18 +135,18 @@
 
                     <div class="container-signin-signout-input" style="margin-top: 10px;">
                         <div class="form-group">
-                            <input type="email" class="form-control" name="name" required="" placeholder="@lang('app.yourEmail')">
+                            <input type="email" class="form-control" name="email" required="" placeholder="@lang('app.yourEmail')" autofocus="" value="{{ old('email') }}">
                             @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert" style="display: inline">
                                         <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                             @endif
                         </div>
 
                         <div class="form-group" style="margin-left: 15px;">
-                            <input type="text" class="form-control" name="password" required="" placeholder="@lang('app.yourPassword')">
+                            <input type="password" class="form-control" name="password" required="" placeholder="@lang('app.yourPassword')">
                             @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
+                                <span class="invalid-feedback" role="alert" style="display: inline">
                                         <strong>{{ $errors->first('password') }}</strong>
                                     </span>
                             @endif
@@ -160,7 +162,7 @@
                         </span>
 
 
-                        <button type="submit" class="btn btn-yellow changecontext">@lang('app.singin')</button>
+                        <button type="submit" class="btn btn-yellow">@lang('app.singin')</button>
                     </div>
 
                 </form>
@@ -168,6 +170,11 @@
         </div>
 
     </div>
+    @endguest
+
+{{--    @auth--}}
+{{--        <p>IN</p>--}}
+{{--    @endauth--}}
 
 @endsection
 
