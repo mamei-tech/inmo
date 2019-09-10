@@ -176,6 +176,9 @@ h3.color-yellow a:hover {
     align-self: center;
 }
 
+.changecontext:hover{
+    cursor: pointer;
+}
 
 @media (max-width: 1249px) {
     .section-search{

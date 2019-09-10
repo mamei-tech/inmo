@@ -120,7 +120,7 @@ class RegisterController extends Controller
 //            $m->to($user->email)->subject(__('app.email_confirmation'));
 //        });
 
-            return redirect(route('auth.verify', [App::getLocale(), 'user_id' => $user->id]));
+            return view("singupok", [App::getLocale(), 'user_id' => $user->id]);
 
 //        Esto es temporal pq no tengo configurado el correo pa simular el flujo
             //return view("auth.register_email_verification", ["token" => $token]);
