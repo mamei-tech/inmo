@@ -42,6 +42,8 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
 
         Route::get('profile', 'ProfileController@index')->name('profile');
         Route::put('profile/{profile}', 'ProfileController@update')->name('profile.update');
+        Route::get('privacy', 'ProfileController@privacy')->name('privacy');
+        Route::put('privacy/{profile}', 'ProfileController@privacyUpdate')->name('privacy.update');
 
         Route::get('users', 'UserController@index')->name('users');
         Route::any('users/read', 'UserController@read')->name('users.read');

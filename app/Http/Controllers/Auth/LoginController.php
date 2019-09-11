@@ -50,7 +50,7 @@ class LoginController extends Controller
 
             return $this->sendFailedLoginResponse($request);
         }
-        elseif ($user && !$request->has('pit'))
+        else if ($user && !$request->has('pit'))
         {
             if ($this->hasTooManyLoginAttempts($request)) {
                 $this->fireLockoutEvent($request);

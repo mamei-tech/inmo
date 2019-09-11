@@ -85,7 +85,7 @@
                         </div>
                     </div>
 
-                    <div style="margin-top: 10px;" class="container-signin-signout-last">
+                    <div style="margin-top: 10px;text-transform: uppercase" class="container-signin-signout-last">
                         <h3 class="color-yellow">@lang('app.privacy')</h3>
 
                         <span class="h3-middle">
