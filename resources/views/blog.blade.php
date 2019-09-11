@@ -8,6 +8,7 @@
 
 @php
     $inBlog = true;
+    isset($dr) ? $dr = 1 : $dr = 0;
 @endphp
 
 @section('content')
@@ -25,10 +26,7 @@
                 <input type="text" class="form-control" name="name" required="" placeholder="@lang('app.search')">
             </div>
         </div>
-
     </div>
-
-    @php isset($dr) ? $dr = 1 : $dr = 0 @endphp
 
     <input id="dr" type="text" hidden value="{{$dr}}">
 
@@ -90,7 +88,7 @@
                         </div>
                     </div>
 
-                    <div style="margin-top: 10px;" class="container-signin-signout-last">
+                    <div style="margin-top: 10px;text-transform: uppercase" class="container-signin-signout-last">
                         <h3 class="color-yellow">@lang('app.privacy')</h3>
 
                         <span class="h3-middle">
@@ -131,7 +129,6 @@
                     @csrf
 
                     <div class="container-signin-signout-input" style="margin-top: 20px;">
-
                     </div>
 
                     <div class="container-signin-signout-input" style="margin-top: 10px;">

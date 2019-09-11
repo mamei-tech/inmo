@@ -57,23 +57,28 @@
 @push('scripts')
     <script type="text/javascript">
         @if(!isset($inHome))
-            var link =  document.querySelector(".footer .link-{{Route::currentRouteName()}}");
+            @if(!isset($noLink))
+                var link =  document.querySelector(".footer .link-{{Route::currentRouteName()}}");
 
-            if (link === null)
-            {
-                link = document.querySelector(".footer .link-neighborhoods");
-            }
+                if (link === null)
+                {
+                    link = document.querySelector(".footer .link-neighborhoods");
+                }
 
-            @if(isset($inGuide) || isset($inBlog))
-                link = document.querySelector(".footer .link-more");
-                linkReal = document.querySelector(".footer .link-{{Route::currentRouteName()}}");
+                @if(isset($inGuide) || isset($inBlog))
+                    link = document.querySelector(".footer .link-more");
 
-                linkReal.parentNode.classList.add("active");
+                    @if (isset($dr))
+                        linkReal = document.querySelector(".footer .link-blog");
+                    @else
+                        linkReal = document.querySelector(".footer .link-{{Route::currentRouteName()}}");
+                    @endif
+
+                    linkReal.parentNode.classList.add("active");
+                @endif
+
+                link.parentNode.classList.add("active");
             @endif
-
-            link.parentNode.classList.add("active");
-
-        {{--document.querySelector(".footer .link-{{Route::currentRouteName()}}").parentNode.classList.add("active");--}}
         @endif
 
         $(document).ready(function () {

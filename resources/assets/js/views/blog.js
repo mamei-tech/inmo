@@ -10,6 +10,9 @@ $(document).ready(function () {
 
         $('div#si').hide();
         $('div#si').removeClass('open');
+
+        tagaux = 1;
+        $('.section-sigin-sigout .arrow-floating .arrow-toggle-line').addClass('open');
     }
 
     // Open form section when error
@@ -26,16 +29,21 @@ $(document).ready(function () {
     $('.arrow-floating').click(function (node) {
         if(!tagaux)
         {
-            $('div#si').slideToggle();
-            $('div#si').toggleClass('open');
-
+            if ($('input#dr').val()*1 === 1){
+                $('div#su').slideToggle();
+                $('div#su').toggleClass('open');
+            }
+            else {
+                $('div#si').slideToggle();
+                $('div#si').toggleClass('open');
+            }
+            $('.section-sigin-sigout .arrow-floating .arrow-toggle-line').addClass('open');
             tagaux = 1;
         }
         else
         {
             $('.container-signin-signout').slideUp();
             $('.section-sigin-sigout .arrow-floating .arrow-toggle-line').removeClass('open');
-
             tagaux = 0;
         }
 
@@ -54,6 +62,8 @@ $(document).ready(function () {
 
         $('div#si').show();
         $('div#si').addClass('open');
+
+        $('input#dr').val(0)
     });
 
     $('form#frm-singin h3.changecontext').click(function (e) {
@@ -63,6 +73,8 @@ $(document).ready(function () {
 
         $('div#si').hide();
         $('div#si').removeClass('open');
+
+        $('input#dr').val(1)
     });
 
 });
