@@ -137,7 +137,7 @@ return [
     'rentals' => 'rentals',
     'downtownMiami' => 'DOWNTOWN MIAMI',
     'magicCity' => '"THE MAGIC CITY"',
-    'advance_search' => 'ADVANCE SEARCH',
+    'advance_search' => 'ADVANCED SEARCH',
     'search' => 'search',
     'signin_signout' => 'YOU CAN SIGN IN OR SIGN UP HERE',
     'facebook' => 'facebook',

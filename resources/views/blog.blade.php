@@ -16,6 +16,7 @@
 
         {{--TODO Falta el icono de buscar--}}
         <h1>@lang('app.blog')</h1>
+        @auth<span class="color-gray">&emsp;&emsp;&commat;{{$user}}</span>@endauth
 
         <div class="search-advance">
             <h3 class="color-gray">@lang('app.advance_search')</h3>
