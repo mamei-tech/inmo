@@ -101,6 +101,17 @@
     top: 7px;
 }
 
+button.btn.btn-yellow a,
+h3.color-yellow a
+{
+    color: rgb(225, 175, 90);
+}
+
+button.btn.btn-yellow a:hover,
+h3.color-yellow a:hover {
+    text-decoration: none;
+}
+
 .section-sigin-sigout .arrow-toggle-line.open:after {
     -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);

@@ -1,3 +1,28 @@
+.singup-description {
+    padding: 50px 120px 40px;
+    background-color: rgb(228, 228, 228);
+    height: 64vh;
+}
+
+a.singup-description-link:hover,
+a#btnback {
+    color: rgb(225, 175, 90);
+    text-decoration: none;
+}
+
+div.regiter-geenral-info{
+    margin-top: -76px;
+    height: 60px;
+}
+
+@media (max-width: 512px)
+{
+    div.regiter-geenral-info
+    {
+        margin-top: -46px;
+    }
+}
+
 .container-ligh-gray,
 .container-dark-gray{
     position: relative;

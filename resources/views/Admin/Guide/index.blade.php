@@ -40,11 +40,16 @@
             var dataView = utils.createKendoGrid("#grid",
                 {
                     columns: [{
+                        width: 200,
                         title: "{{ __('app.guides') }}",
                         field: "text_{{App::getLocale()}}",
                         filterable: false
                     }, {
-                        width: 300,
+                        title: "{{ __('app.description') }}",
+                        field: "description_{{App::getLocale()}}",
+                        filterable: false
+                    }, {
+                        width: 200,
                         title: "{{ __('app.date') }}",
                         field: "created_at",
                         filterable: false

@@ -1,6 +1,6 @@
 <?php
 
-Route::prefix('{lang?}')->group(function () {
+Route::prefix('{lang?}')->middleware(['web'])->group(function () {
 
     Route::prefix('admin')->group(function () {
         Route::any('promotion/read', 'PromotionController@read')->name('promotion.read');
@@ -47,34 +47,45 @@ Route::prefix('{lang?}')->group(function () {
         Route::any('users/read', 'UserController@read')->name('users.read');
         Route::post('users/lock', 'UserController@lock')->name('users.lock');
     });
-    //Route::auth();
 
-    Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
-    Route::post('login', 'Auth\LoginController@login');
-    Route::post('logout', 'Auth\LoginController@logout')->name('logout');
-    Route::get('password/set', 'Auth\ResetPasswordController@showSetForm')->name('password.set');
-    Route::post('password/set', 'Auth\ResetPasswordController@setPassword');
+    Route::group(['middleware' => 'web'], function () {
 
-    Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-    Route::post('register', 'Auth\RegisterController@register')->name('auth.register');
-    Route::get('verify', 'Auth\RegisterController@verify')->name('auth.verify');
-    Route::get('resend_token', 'Auth\RegisterController@resend')->name('auth.resend');
-    Route::get('register_email_verification', 'Auth\RegisterController@registerEmailVerification')->name('auth.register_email_verification');
+        Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+        Route::post('login', 'Auth\LoginController@login')->name('dologin');
+        Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+        Route::get('password/set', 'Auth\ResetPasswordController@showSetForm')->name('password.set');
+        Route::post('password/set', 'Auth\ResetPasswordController@setPassword');
 
-    Route::get('', 'HomeController@index')->name('home');
-    Route::get('admin', 'AdminController@Index')->name('admin');
-    Route::get('home', 'HomeController@index')->name('home');
-    Route::get('neighborhoods', 'NeighborhoodController@index')->name('neighborhoods');
-    Route::get('houses', 'NeighborhoodController@houses')->name('houses');
-    Route::get('infoHouse', 'NeighborhoodController@infoHouse')->name('infoHouses');
-    Route::get('guides', 'GuideController@index')->name('guides');
-    Route::get('about', 'AboutMeController@index')->name('about');
-    Route::get('contacts', 'ContactsController@indexWeb')->name('contacts');
-    Route::get('Blogs', 'BlogController@indexWeb')->name('blog');
+        // Password reset routes (make this only for email auth not for facebook/google)
+        Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+        Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+        Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+        Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
-    Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
-    Route::post('testimonials', 'ContactsController@storeTestimonials')->name('contact.storeTestimonials');
+        Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+        Route::post('register', 'Auth\RegisterController@register')->middleware(['web'])->name('auth.register');
+        Route::get('verify', 'Auth\RegisterController@verify')->name('auth.verify');
+        Route::get('resend_token', 'Auth\RegisterController@resend')->name('auth.resend');
+        Route::get('register_email_verification', 'Auth\RegisterController@registerEmailVerification')->name('auth.register_email_verification');
 
-    Route::get('login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')->name('auth.redirectToProvider');
-    Route::get('login/callback/{provider}', 'Auth\LoginController@@handleProviderCallback')->name('auth.handleProviderCallback');
+        Route::get('', 'HomeController@index')->name('home');
+        Route::get('admin', 'AdminController@Index')->name('admin');
+        Route::get('home', 'HomeController@index')->name('home');
+        Route::get('neighborhoods', 'NeighborhoodController@index')->name('neighborhoods');
+        Route::get('houses', 'NeighborhoodController@houses')->name('houses');
+        Route::get('infoHouse', 'NeighborhoodController@infoHouse')->name('infoHouses');
+        Route::get('guides', 'GuideController@index')->name('guides');
+        Route::get('about', 'AboutMeController@index')->name('about');
+        Route::get('contacts', 'ContactsController@indexWeb')->name('contacts');
+        Route::get('blogs', 'BlogController@indexWeb')->middleware(['web'])->name('blog');
+
+        Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
+        Route::post('guideAddSubcriptor', 'GuideController@addSubcriptor')->name('guide.addSubcriptor');
+        Route::post('testimonials', 'ContactsController@storeTestimonials')->name('contact.storeTestimonials');
+    });
+
+    Route::get('login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')
+        ->name('auth.redirectToProvider')
+        ->where('driver', implode('|', config('auth.socialite.drivers')));
+    Route::get('login/callback/{provider}', 'Auth\LoginController@handleProviderCallback')->name('auth.handleProviderCallback');
 });

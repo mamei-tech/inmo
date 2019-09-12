@@ -89,9 +89,15 @@ return [
     'guide_delete_success' => 'guide deleted sucessfully',
     'guide_delete_confirm' => 'Are you sure you want delete this guide?',
     'show_guide' => 'Show Current Guide',
-    'guide_subtitle' => 'Download your free guide',
+    'guide_subtitle' => 'you will receive the selected document(s) via email',
     'guides_selected' => 'you will receive the selected document(s) to your email',
     'download_guides' => 'Download guides',
+    'join' => 'join',
+    'description' => 'description',
+    'description_es' => 'Description in Spanish',
+    'description_en' => 'Description in English',
+    'suscribe_guides' => 'subcribe to our newsletter',
+    'suscribe_subtitle_guides' => 'to receive up to date information about the Miami Real Estate market',
     'create_slider' => 'Create Slide',
     'edit_slider' => 'Edit Slide',
     'slider' => 'Slider',
@@ -101,7 +107,7 @@ return [
     'contactMe' => 'Contact Me',
     'moreInformation' => 'Get More Information',
     'yourName' => 'your name',
-    'yourEmail' => 'your email',
+    'yourEmail' => 'type your email here',
     'yourPhone' => 'your phone',
     'writeMe' => 'write me',
     'send' => 'Send',
@@ -138,12 +144,14 @@ return [
     'google' => 'google',
     'yourUsername' => 'your user name',
     'yourPassword' => 'your password',
+    'comfirm_pass'  => 'confirm password',
     'privacy' => 'PRIVACY POLICY',
     'haveAccount' => 'ALREDY HAVE AN ACCOUNT?',
+    'nohaveAccount' => 'DON\'T HAVE AN ACCOUNT? CREATE ONE',
+    'forgotpass' => 'FORGOT YOU PASSWORD?',
     'singin' => 'SIGN IN',
     'singup' => 'SIGN UP',
-
-
+    'back'  => 'BACK',
 
     'firstTextBrickell' => 'BRICKELL <br> 
 

@@ -34,6 +34,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function showRegistrationForm()
+    {
+        return view('blog', ['dr' => 1]);
+    }
+
     protected function validator(array $data)
     {
         return Validator::make($data, [
@@ -46,17 +51,24 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $date = new DateTime();
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'token_verified_email' => Hash::make($data['email'].$date->format('Y-m-d H:i:s')),
-            'provider' => 'Local',
-        ]);
+
+        $newUser                        = new User;
+
+        $newUser->provider              = 'Local';
+        $newUser->name                  = $data['name'];
+        $newUser->email                 = $data['email'];
+        $newUser->password              = Hash::make($data['password']);
+        $newUser->token_verified_email  = Hash::make($data['email'].$date->format('Y-m-d H:i:s'));
+
+        $newUser->save();
+
+        return $newUser;
     }
 
     public function register(Request $request)
     {
+        // TODO Poner esto a funcionar con conrreo electrónico
+
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
 
@@ -67,8 +79,9 @@ class RegisterController extends Controller
 
         //return redirect(route('auth.verify', [App::getLocale(), 'user_id' => $user->id]));
 
-//        Esto es temporal pq no tengo configurado el correo pa simular el flujo
-        return view("auth.register_email_verification", ["token" => $user->token_verified_email]);
+        return view("singupok", ['user_id' => $user->id]);
+        // return view("auth.register_email_verification", ["token" => $user->token_verified_email]);
+
     }
 
     public function registerEmailVerification(Request $request)

@@ -42,8 +42,8 @@ return [
     ],
 
     'facebook' => [
-        'client_id' => env('FACEBOOK_CLIENT_ID'),         // Your Facebook Client ID
-        'client_secret' => env('FACEBOOK_CLIENT_SECRET'), // Your Facebook Client Secret
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
         'redirect' => env('FACEBOOK_REDIRECT'),
     ],
 
