@@ -24,7 +24,7 @@
             <input type="text" class="form-control" id="blog_slug" aria-describedby="blog_slug_help" name='slug'
                    value="{{old("slug",$post->slug)}}">
             <small id="blog_slug_help" class="form-text text-muted">The slug (leave blank to auto generate) -
-                i.e. {{route("blogetc.single","")}}/<u><em>this_part</em></u></small>
+                i.e. {{route("blogetc.single", [App::getLocale(), ""])}}/<u><em>this_part</em></u></small>
         </div>
 
     </div>
@@ -199,7 +199,7 @@
 
         <div class='col-md-12 my-3 text-center'>
 
-            <em><a target='_blank' href='{{route("blogetc.admin.categories.create_category")}}'><i class="fa fa-external-link" aria-hidden="true"></i>
+            <em><a target='_blank' href='{{route("blogetc.admin.categories.create_category", [App::getLocale()])}}'><i class="fa fa-external-link" aria-hidden="true"></i>
                       Add new categories
                     here</a></em>
         </div>

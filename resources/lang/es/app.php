@@ -65,8 +65,6 @@ return [
     'ready' => 'Listo',
     'phone_incorrect' => 'Entre un télefono correcto',
 
-    'download_guides' => "Descargar guías",
-
     'promotion_delete_success' => 'promoción eliminada satisfactoriamente',
     'promotion_delete_confirm' => '¿Está seguro que desea eliminar esta promoción?',
 
@@ -176,7 +174,6 @@ return [
     'forgotpass' => '¿NO RECUERDAS?',
     'singin' => 'ACCEDER',
     'singup' => 'REGISTRARSE',
-    'back'  => 'ATRÁS',
 
 
     'firstTextBrickell' => 'BRICKELL <br> 

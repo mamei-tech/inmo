@@ -91,7 +91,6 @@ return [
     'show_guide' => 'Show Current Guide',
     'guide_subtitle' => 'you will receive the selected document(s) via email',
     'guides_selected' => 'you will receive the selected document(s) to your email',
-    'download_guides' => 'Download guides',
     'join' => 'join',
     'description' => 'description',
     'description_es' => 'Description in Spanish',
@@ -151,7 +150,6 @@ return [
     'forgotpass' => 'FORGOT YOU PASSWORD?',
     'singin' => 'SIGN IN',
     'singup' => 'SIGN UP',
-    'back'  => 'BACK',
 
     'firstTextBrickell' => 'BRICKELL <br> 
 

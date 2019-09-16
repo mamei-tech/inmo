@@ -11,9 +11,9 @@
     <title>Blog Admin - {{ config('app.name', 'Laravel') }}</title>
 
 
-    <!-- jQuery is only used for hide(), show() and slideDown(). All other features use vanilla JS -->
+    <!-- jQuery 3.3.1 is only used for hide(), show() and slideDown(). All other features use vanilla JS -->
     <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            src="{{ asset('js/jquery.min.js') }}"
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
 
@@ -42,7 +42,7 @@
     <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('app.name', 'Laravel') }} WebDevEtc Blog Admin
+                {{ config('app.name', 'Laravel') }} Blog Admin
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -61,7 +61,7 @@
                     <!-- Authentication Links -->
 
 
-                    <li class='nav-item px-2'><a class='nav-link' href='{{route("blogetc.index")}}'>Blog home</a></li>
+                    <li class='nav-item px-2'><a class='nav-link' href='{{route("blogetc.index")}}'>{{ __('blog.blog_home')  }}</a></li>
 
 
                     <li class="nav-item ">

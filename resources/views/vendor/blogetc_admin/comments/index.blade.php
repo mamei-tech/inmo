@@ -63,7 +63,7 @@
 
 
     @empty
-        <div class='alert alert-danger'>None found</div>
+        <div class='alert alert-danger'>{{ __('blog.0_comment') }}</div>
     @endforelse
 
 

@@ -4,7 +4,7 @@
 
     <h5>Admin - Edit Category</h5>
 
-    <form method='post' action='{{route("blogetc.admin.categories.edit_category",$category->id)}}'  enctype="multipart/form-data" >
+    <form method='post' action='{{route("blogetc.admin.categories.edit_category", [App::getLocale(), $category->id])}}'  enctype="multipart/form-data" >
 
         @csrf
         @method("patch")

@@ -1,5 +1,5 @@
-<h2><a href='https://webdevetc.com/'>WebDevEtc.com BlogEtc Admin Panel</a></h2>
-<p>Welcome to the admin panel for your blog posts.</p>
+<h2><a href='https://webdevetc.com/'>Admin Panel</a></h2>
+<p>{{ __('blog.welcome_admin_panel')  }}</p>
 
 
 <ul class="list-group mb-3">
@@ -21,11 +21,11 @@
                    class='list-group-item list-group-item-action @if(\Request::route()->getName() === 'blogetc.admin.index') active @endif  '><i
                             class="fa fa-th fa-fw"
                             aria-hidden="true"></i>
-                    All Posts</a>
-                <a href='{{ route('blogetc.admin.create_post') }}'
+                    {{ __('blog.all_posts') }}</a>
+                <a href='{{ route('blogetc.admin.create_post', [App::getLocale()]) }}'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.create_post') active @endif  '><i
                             class="fa fa-plus fa-fw" aria-hidden="true"></i>
-                    Add Post</a>
+                    {{ __('blog.add_post') }}</a>
             </div>
         </div>
 
@@ -34,27 +34,27 @@
 
     <li class="list-group-item justify-content-between lh-condensed">
         <div>
-            <h6 class="my-0"><a href="{{ route('blogetc.admin.comments.index') }}">Comments</a>
+            <h6 class="my-0"><a href="{{ route('blogetc.admin.comments.index') }}">{{ __('blog.comments') }}</a>
 
                             <span class="text-muted">(<?php
                                 $commentCount = \WebDevEtc\BlogEtc\Models\BlogEtcComment::withoutGlobalScopes()->count();
 
-                                echo $commentCount . " " . str_plural("Comment", $commentCount);
+                                echo $commentCount . " " . str_plural(__('blog.comment'), $commentCount);
 
                                 ?>)</span>
             </h6>
-            <small class="text-muted">Manage your comments</small>
+            <small class="text-muted">{{ __('blog.manage_comments') }}</small>
 
             <div class="list-group ">
                 <a href='{{ route('blogetc.admin.comments.index') }}'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.comments.index' && !\Request::get("waiting_for_approval")) active @endif   '><i
                             class="fa  fa-fw fa-comments" aria-hidden="true"></i>
-                    All Comments</a>
+                    {{ __('blog.all_comments') }}</a>
 
 
                 <?php $comment_approval_count = \WebDevEtc\BlogEtc\Models\BlogEtcComment::withoutGlobalScopes()->where("approved", false)->count(); ?>
 
-                <a href='{{ route('blogetc.admin.comments.index') }}?waiting_for_approval=true'
+                <a href='{{ route('blogetc.admin.comments.index', [App::getLocale()]) }}?waiting_for_approval=true'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.comments.index' && \Request::get("waiting_for_approval")) active @elseif($comment_approval_count>0) list-group-item-warning @endif  '><i
                             class="fa  fa-fw fa-comments" aria-hidden="true"></i>
                     {{ $comment_approval_count }}
@@ -67,25 +67,25 @@
 
     <li class="list-group-item  justify-content-between lh-condensed">
         <div>
-            <h6 class="my-0"><a href="{{ route('blogetc.admin.categories.index') }}">Categories</a>
+            <h6 class="my-0"><a href="{{ route('blogetc.admin.categories.index') }}">{{ __('blog.categories') }}</a>
                     <span class="text-muted">(<?php
                         $postCount = \WebDevEtc\BlogEtc\Models\BlogEtcCategory::count();
-                        echo $postCount . " " . str_plural("Category", $postCount);
+                        echo $postCount . " " . str_plural(__("blog.category"), $postCount);
                         ?>)</span>
             </h6>
 
 
-            <small class="text-muted">Blog post categories</small>
+            {{--<small class="text-muted">Blog post categories</small>--}}
 
             <div class="list-group ">
-                <a href='{{ route('blogetc.admin.categories.index') }}'
+                <a href='{{ route('blogetc.admin.categories.index', [App::getLocale()]) }}'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.categories.index') active @endif  '><i
                             class="fa fa-object-group fa-fw" aria-hidden="true"></i>
-                    All Categories</a>
-                <a href='{{ route('blogetc.admin.categories.create_category') }}'
+                    {{ __('blog.all_categories') }}</a>
+                <a href='{{ route('blogetc.admin.categories.create_category', [App::getLocale()]) }}'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.categories.create_category') active @endif  '><i
                             class="fa fa-plus fa-fw" aria-hidden="true"></i>
-                    Add Category</a>
+                    {{ __('blog.add_category') }}</a>
             </div>
         </div>
 
