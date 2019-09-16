@@ -4,8 +4,8 @@
 
 /** return only number
  * */
-if (! function_exists('route')) {
-    function route($name, $parameters = [], $absolute = true, $route = null)
+if (! function_exists('route__')) {
+    function route__($name, $parameters = [], $absolute = true, $route = null)
     {
         $lparameters = array();
 
