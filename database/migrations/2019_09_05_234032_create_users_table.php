@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration {
             $table->string('provider_id')->nullable();
 			$table->string('name');
 			$table->string('email', 190)->unique();
-            $table->string('password')->nullable()->change();
+            $table->string('password')->nullable();//->change();
             $table->string('avatar')->nullable();
 			$table->boolean('lock')->default(0);
 			$table->string('token_verified_email')->nullable();
