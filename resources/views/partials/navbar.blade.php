@@ -56,7 +56,7 @@
 
                 <div  class="li-especial li-especial-blog-{{App::getLocale()}}">
                     <li class="hvr-underline-from-center">
-                        <a class="link-blog" href="{{Route("blog")}}">@lang('app.blog')</a>
+                        <a class="link-blog" href="{{Route("blogetc.index")}}">@lang('app.blog')</a>
                     </li>
                 </div>
             </ul>
@@ -111,7 +111,7 @@
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
-                        <a class="link-blog" href="{{Route("blog")}}">@lang('app.blog')</a>
+                        <a class="link-blog" href="{{Route("blogetc.index")}}">@lang('app.blog')</a>
                     </li>
                 </div>
 

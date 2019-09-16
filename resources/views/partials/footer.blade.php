@@ -43,7 +43,7 @@
                 </div>
                 <div  class="li-especial li-especial-{{App::getLocale()}} blog">
                     <li>
-                        <a class="link-blog" href="{{Route("blog")}}">@lang('app.blog')</a>
+                        <a class="link-blog" href="{{Route("blogetc.index")}}">@lang('app.blog')</a>
                     </li>
                 </div>
             </ul>
