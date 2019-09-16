@@ -97,6 +97,14 @@
                 </a>
             </div>
 
+            <div class="col-md-3 container-btn" >
+                <a href="{{ route('blog', [App::getLocale()]) }}">
+                    <div class="container-btn-links">
+                        <span class="fa fa-3x fa-book"></span>
+                        <span style="font-size: 20px;">{{ __('app.blog') }}</span>
+                    </div>
+                </a>
+            </div>
             <div class="clearfix"></div>
         </div>
     </div>
