@@ -21,6 +21,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
+// esto carga los helpers antes del autoload, para cargar la nueva definicion del helper route
+require __DIR__.'/../app/Helpers/helpers.php';
 require __DIR__.'/../vendor/autoload.php';
 
 /*
