@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +14,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // todo: eliminar luego
+        Schema::defaultStringLength(191);                        /*Remove this if you are use MySQL v5.7.7 and higher*/
     }
 
     /**
