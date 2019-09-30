@@ -88,7 +88,7 @@
 
         <div>
 
-            <a class="hvr-underline-from-center" href="{{Route("blogetc.index")}}">@lang('app.blog')</a>
+            <a class="hvr-underline-from-center" href="{{Route("blog")}}">@lang('app.blog')</a>
 
         </div>
 

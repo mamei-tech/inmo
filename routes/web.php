@@ -80,6 +80,7 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             Route::get('about', 'AboutMeController@index')->name('about');
             Route::get('contacts', 'ContactsController@indexWeb')->name('contacts');
 //            Route::get('blogs', 'BlogController@indexWeb')->middleware(['web'])->name('blog');
+            Route::get('blogss', 'BlogController@indexWeb')->middleware(['web'])->name('blogs');
 
             Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
             Route::post('guideAddSubcriptor', 'GuideController@addSubcriptor')->name('guide.addSubcriptor');
@@ -100,7 +101,7 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
         Route::group(['prefix' => config('blogetc.blog_prefix', 'blog')], function () {
 
             Route::get('/', 'BlogEtcReaderController@index')
-                ->name('blogetc.index');
+                ->name('blog');
 
             Route::get('/search', 'BlogEtcReaderController@search')
                 ->name('blogetc.search');

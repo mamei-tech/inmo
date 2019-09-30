@@ -23,18 +23,19 @@ $(document).ready(function () {
     }
 
     // Events Handles
-    $('.arrow-floating').click(function (node) {
+    $('.section-sigin-sigout-text').click(function (node) {
         if(!tagaux)
         {
             $('div#si').slideToggle();
             $('div#si').toggleClass('open');
+            $('.section-sigin-sigout .section-sigin-sigout-text .arrow-toggle-line').toggleClass('open');
 
             tagaux = 1;
         }
         else
         {
             $('.container-signin-signout').slideUp();
-            $('.section-sigin-sigout .arrow-floating .arrow-toggle-line').removeClass('open');
+            $('.section-sigin-sigout .section-sigin-sigout-text .arrow-toggle-line').removeClass('open');
 
             tagaux = 0;
         }

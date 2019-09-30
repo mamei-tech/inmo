@@ -55,6 +55,7 @@
     <link href="{{ asset('css/alertify.core.css') }}" rel="stylesheet">
     <link href="{{ asset('css/alertify.default.css') }}" rel="stylesheet">
     <link href="{{ asset('css/site.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
     @stack('styles')
     <script type="text/javascript">
         window._token = document.querySelector('meta[name="csrf-token"]').getAttribute('content');

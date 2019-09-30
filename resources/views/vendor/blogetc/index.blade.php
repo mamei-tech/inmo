@@ -1,7 +1,31 @@
-@extends("layouts.app",['title'=>$title])
+@extends("layouts.app")
+
+@section('title', __('app.blog'))
+
+@push('styles')
+    <link href="{{ asset('css/blog.css') }}" rel="stylesheet">
+@endpush
+
+@php
+    $inBlog = true;
+@endphp
+
 @section("content")
 
     {{--https://webdevetc.com/laravel/packages/blogetc-blog-system-for-your-laravel-app/help-documentation/laravel-blog-package-blogetc#guide_to_views--}}
+
+    <div class="section-search">
+
+        {{--TODO Falta el icono de buscar--}}
+        <h1>@lang('app.blog')</h1>
+
+        <div class="search-advance">
+            <h3 class="color-gray">@lang('app.advance_search')</h3>
+
+            @include("blogetc::sitewide.search_form")
+        </div>
+
+    </div>
 
     <div class='row'>
         <div class='col-sm-12 blogetc_container'>
@@ -44,10 +68,10 @@
             </div>
 
 
-
-
-                @include("blogetc::sitewide.search_form")
-
         </div>
     </div>
 @endsection
+
+@push('scripts')
+    <script src="{{ asset('js/views/blog.js') }}" defer></script>
+@endpush

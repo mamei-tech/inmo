@@ -61,7 +61,7 @@
                     <!-- Authentication Links -->
 
 
-                    <li class='nav-item px-2'><a class='nav-link' href='{{route("blogetc.index")}}'>{{ __('blog.blog_home')  }}</a></li>
+                    <li class='nav-item px-2'><a class='nav-link' href='{{route("blog")}}'>{{ __('blog.blog_home')  }}</a></li>
 
 
                     <li class="nav-item ">
