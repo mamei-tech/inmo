@@ -109,11 +109,11 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             Route::get('/feed', 'BlogEtcRssFeedController@feed')
                 ->name('blogetc.feed'); //RSS feed
 
-            Route::get('/category/{categorySlug}',
+            Route::get('/category/{categorySlug?}',
                 'BlogEtcReaderController@view_category')
                 ->name('blogetc.view_category');
 
-            Route::get('/{blogPostSlug}',
+            Route::get('/{blogPostSlug?}',
                 'BlogEtcReaderController@viewSinglePost')
                 ->name('blogetc.single');
 

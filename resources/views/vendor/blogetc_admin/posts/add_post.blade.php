@@ -4,7 +4,7 @@
 
     <h5>Admin - Add post</h5>
 
-    <form method='post' action='{{route("blogetc.admin.store_post")}}'  enctype="multipart/form-data" >
+    <form method='post' action='{{route("blogetc.admin.store_post", [App::getLocale()])}}'  enctype="multipart/form-data" >
 
         @csrf
         @include("blogetc_admin::posts.form", ['post' => new \WebDevEtc\BlogEtc\Models\BlogEtcPost()])

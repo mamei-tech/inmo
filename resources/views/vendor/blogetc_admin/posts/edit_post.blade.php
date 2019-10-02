@@ -6,7 +6,7 @@
     <a target='_blank' href='{{$post->url()}}' class='float-right btn btn-primary'>View post</a>
     </h5>
 
-    <form method='post' action='{{route("blogetc.admin.update_post",$post->id)}}'  enctype="multipart/form-data" >
+    <form method='post' action='{{route("blogetc.admin.update_post", [App::getLocale(),$post->id])}}'  enctype="multipart/form-data" >
 
         @csrf
         @method("patch")
