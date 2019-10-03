@@ -34,7 +34,7 @@
 
     <li class="list-group-item justify-content-between lh-condensed">
         <div>
-            <h6 class="my-0"><a href="{{ route('blogetc.admin.comments.index') }}">{{ __('blog.comments') }}</a>
+            <h6 class="my-0"><a href="{{ route('blogetc.admin.comments.index', [App::getLocale()]) }}">{{ __('blog.comments') }}</a>
 
                             <span class="text-muted">(<?php
                                 $commentCount = \WebDevEtc\BlogEtc\Models\BlogEtcComment::withoutGlobalScopes()->count();
@@ -43,7 +43,7 @@
 
                                 ?>)</span>
             </h6>
-            <small class="text-muted">{{ __('blog.manage_comments') }}</small>
+            <small class="text-muted">{{ __('blog.manage_comments', [App::getLocale()]) }}</small>
 
             <div class="list-group ">
                 <a href='{{ route('blogetc.admin.comments.index') }}'

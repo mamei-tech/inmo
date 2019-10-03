@@ -103,6 +103,9 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             Route::get('/', 'BlogEtcReaderController@index')
                 ->name('blog');
 
+            Route::get('/mostpopular', 'BlogEtcReaderController@mostpopular')
+                ->name('blogetc.mostpopular');
+
             Route::get('/search', 'BlogEtcReaderController@search')
                 ->name('blogetc.search');
 
@@ -121,7 +124,7 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             // throttle to a max of 10 attempts in 3 minutes:
             Route::group(['middleware' => 'throttle:10,3'], function () {
 
-                Route::post('save_comment/{blogPostSlug}',
+                Route::post('save_comment/{blogPostSlug?}',
                     'BlogEtcCommentWriterController@addNewComment')
                     ->name('blogetc.comments.add_new_comment');
 
@@ -176,10 +179,10 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
                     'BlogEtcCommentsAdminController@index')
                     ->name('blogetc.admin.comments.index');
 
-                Route::patch('/{commentId}',
+                Route::patch('/{commentId?}',
                     'BlogEtcCommentsAdminController@approve')
                     ->name('blogetc.admin.comments.approve');
-                Route::delete('/{commentId}',
+                Route::delete('/{commentId?}',
                     'BlogEtcCommentsAdminController@destroy')
                     ->name('blogetc.admin.comments.delete');
             });

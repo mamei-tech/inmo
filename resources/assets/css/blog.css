@@ -8,6 +8,19 @@
     padding-top: 150px;
 }
 
+
+.blogetc_container {
+    padding: 50px 120px 70px;
+    background-color: rgb(228, 228, 228);
+}
+
+.blogetc_container h1 {
+    color: #8e8e8e;
+}
+
+.hvr-underline-from-center.active h1 {
+    color: rgb(225, 175, 90);
+}
 .section-search > .search-advance{
     flex: auto;
     display: flex;

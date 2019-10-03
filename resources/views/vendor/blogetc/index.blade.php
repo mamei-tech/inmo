@@ -172,14 +172,15 @@
 
         <nav aria-label="breadcrumb" style="background: transparent;">
             <ol class="breadcrumb" style="background: transparent;margin-bottom: 0rem;padding: .75rem 0rem;">
-                <li class="hvr-underline-from-center"><a href="#"><h1>most popular</h1></a></li>
+                <li class="hvr-underline-from-center"><a href="{{Route("blogetc.mostpopular", [App::getLocale()])}}"><h1>most popular</h1></a></li>
                 <li><h1 style="margin: 0 6px 0 6px;">/</h1></li>
-                <li class="hvr-underline-from-center"><a href="#"><h1>last publications</h1></a></li>
+                <li class="hvr-underline-from-center"><a href="{{Route("blog", [App::getLocale()])}}"><h1>last publications</h1></a></li>
                 <li><h1 style="margin: 0 6px 0 6px;">/</h1></li>
-                <li class="hvr-underline-from-center active" aria-current="page"><a href="#"><h1>all publications</h1></a></li>
+                <li class="hvr-underline-from-center active" aria-current="page"><a href="{{Route("blog", [App::getLocale()])}}"><h1>all publications</h1></a></li>
             </ol>
         </nav>
     </div>
+
 
 
     {{-- POST BLOCK --}}
