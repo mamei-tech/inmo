@@ -95,10 +95,4 @@
     @endforelse
 
 
-
-    <div class='text-center'>
-        {{$posts->appends( [] )->links()}}
-    </div>
-
-
 @endsection

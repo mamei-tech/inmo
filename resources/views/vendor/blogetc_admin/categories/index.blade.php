@@ -29,7 +29,7 @@
 
 
     <div class='text-center'>
-        {{$categories->appends( [] )->links()}}
+        {{ $categories->links('vendor.pagination.simple-default') }}
     </div>
 
     @endsection

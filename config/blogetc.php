@@ -16,7 +16,7 @@ return [
 
 
     'image_upload_enabled' => true, // true or false, if image uploading is allowed.
-    'blog_upload_dir' => "blog_images", // this should be in public_path() (i.e. /public/blog_images), and should be writable
+    'blog_upload_dir' => "images/blog_images", // this should be in public_path() (i.e. /public/blog_images), and should be writable
 
 
     'memory_limit' => '4048M', // This is used when uploading images :

@@ -66,9 +66,9 @@
         <div class='alert alert-danger'>{{ __('blog.0_comment') }}</div>
     @endforelse
 
-
     <div class='text-center'>
-        {{$comments->appends( [] )->links()}}
+        {{-- todo: probar visualmente luego --}}
+        {{ $comments->links('vendor.pagination.simple-default') }}
     </div>
 
 @endsection

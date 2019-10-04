@@ -176,32 +176,3 @@
 @else
     <div class='alert alert-warning'>Image uploads were disabled in blogetc.php config</div>
 @endif
-
-
-<div class='bg-white pt-4 px-4 pb-0 my-2 mb-4 rounded border'>
-    <h4>Categories:</h4>
-    <div class='row'>
-
-        @forelse(\WebDevEtc\BlogEtc\Models\BlogEtcCategory::orderBy("category_name","asc")->limit(1000)->get() as $category)
-            <div class="form-check col-sm-6">
-                <input class="" type="checkbox" value="1"
-                       @if(old("category.".$category->id, $post->categories->contains($category->id))) checked='checked'
-                       @endif name='category[{{$category->id}}]' id="category_check{{$category->id}}">
-                <label class="form-check-label" for="category_check{{$category->id}}">
-                    {{$category->category_name}}
-                </label>
-            </div>
-        @empty
-            <div class='col-md-12'>
-                No categories
-            </div>
-        @endforelse
-
-        <div class='col-md-12 my-3 text-center'>
-
-            <em><a target='_blank' href='{{route("blogetc.admin.categories.create_category", [App::getLocale()])}}'><i class="fa fa-external-link" aria-hidden="true"></i>
-                      Add new categories
-                    here</a></em>
-        </div>
-    </div>
-</div>

@@ -46,7 +46,7 @@
             <small class="text-muted">{{ __('blog.manage_comments', [App::getLocale()]) }}</small>
 
             <div class="list-group ">
-                <a href='{{ route('blogetc.admin.comments.index') }}'
+                <a href='{{ route('blogetc.admin.comments.index', [App::getLocale()]) }}'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.comments.index' && !\Request::get("waiting_for_approval")) active @endif   '><i
                             class="fa  fa-fw fa-comments" aria-hidden="true"></i>
                     {{ __('blog.all_comments') }}</a>
@@ -65,9 +65,9 @@
     </li>
 
 
-    <li class="list-group-item  justify-content-between lh-condensed">
+    <li class="list-group-item  justify-content-between lh-condensed" style="display: none">
         <div>
-            <h6 class="my-0"><a href="{{ route('blogetc.admin.categories.index') }}">{{ __('blog.categories') }}</a>
+            <h6 class="my-0"><a href="{{ route('blogetc.admin.categories.index', [App::getLocale()]) }}">{{ __('blog.categories') }}</a>
                     <span class="text-muted">(<?php
                         $postCount = \WebDevEtc\BlogEtc\Models\BlogEtcCategory::count();
                         echo $postCount . " " . str_plural(__("blog.category"), $postCount);
@@ -94,19 +94,19 @@
     @if(config("blogetc.image_upload_enabled"))
     <li class="list-group-item  justify-content-between lh-condensed">
         <div>
-            <h6 class="my-0"><a href="{{ route('blogetc.admin.images.upload') }}">Upload images</a></h6>
+            <h6 class="my-0"><a href="{{ route('blogetc.admin.images.upload', [App::getLocale()]) }}">Upload images</a></h6>
 
 
             <div class="list-group ">
 
-                <a href='{{ route('blogetc.admin.images.all') }}'
+                <a href='{{ route('blogetc.admin.images.all', [App::getLocale()]) }}'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.images.all') active @endif  '><i
                             class="fa fa-picture-o fa-fw" aria-hidden="true"></i>
                     View All</a>
 
 
 
-                <a href='{{ route('blogetc.admin.images.upload') }}'
+                <a href='{{ route('blogetc.admin.images.upload', [App::getLocale()]) }}'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.images.upload') active @endif  '><i
                             class="fa fa-upload fa-fw" aria-hidden="true"></i>
                     Upload</a>

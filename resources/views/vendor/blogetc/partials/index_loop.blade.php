@@ -8,7 +8,7 @@
 
 <div class="col-xl-3 col-md-6 col-sm-12 pr-0">
     <div class="card color-gray" style="background-color: rgb(228, 228, 228);border: none;">
-        <img class="card-img-top" src="..." alt="Card image cap">
+        <?=$post->image_tag("medium", false, "card-img-top", true, null, "width: 269px;height: 179px;");?>
         <div class="card-title" style="margin-top: .75rem;">
             <div style="float: left;width: 50%;">({{ $comments_count }}) {!!($comments_count ? "comments" : "comments")!!}</div>
             <div style="float: inline-end;">{{ humanize_date($post->posted_at, "d/m/Y") }}</div></div>

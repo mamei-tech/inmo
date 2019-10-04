@@ -10,6 +10,8 @@
     $inBlog = true;
 @endphp
 
+@section('mainclass', 'blogindex')
+
 @section("content")
 
     {{--https://webdevetc.com/laravel/packages/blogetc-blog-system-for-your-laravel-app/help-documentation/laravel-blog-package-blogetc#guide_to_views--}}
@@ -169,7 +171,6 @@
 
 
     <div class="blogetc_container" style="padding: 50px 120px 0 !important;text-align: center;">
-
         <nav aria-label="breadcrumb" style="background: transparent;">
             <ol class="breadcrumb" style="background: transparent;margin-bottom: 0rem;padding: .75rem 0rem;">
                 <li class="hvr-underline-from-center"><a href="{{Route("blogetc.mostpopular", [App::getLocale()])}}"><h1>most popular</h1></a></li>
@@ -181,16 +182,23 @@
         </nav>
     </div>
 
-
-
+    <div class="row" style="padding: 20px 120px 0;">
+        <div class="col col-lg-6" style="color: #8e8e8e;">
+            {{ $posts->links('vendor.pagination.simple-default') }}
+        </div>
+        <div class="col col-lg-6" style="text-align: end;color: #8e8e8e;">
+            {{$posts->total()}} @lang('pagination.found')
+        </div>
+    </div>
     {{-- POST BLOCK --}}
-    <div class='row blogetc_container'>
+    <div class='row' style="padding: 1px 120px 70px;">
         @forelse($posts as $post)
             @include("blogetc::partials.index_loop")
         @empty
             <div class='alert alert-danger'>No posts</div>
         @endforelse
     </div>
+
 @endsection
 
 @push('scripts')

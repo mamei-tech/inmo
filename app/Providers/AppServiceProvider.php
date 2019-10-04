@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
     {
         // todo: eliminar luego
         Schema::defaultStringLength(191);                        /*Remove this if you are use MySQL v5.7.7 and higher*/
+
+        Paginator::defaultView('pagination::view');
+
+        Paginator::defaultSimpleView('pagination::view');
     }
 
     /**

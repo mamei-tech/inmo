@@ -83,7 +83,7 @@
     @unless(isset($inHome) && $inHome==true)
         <div class="navbar-space-fill"></div>
     @endunless
-    <main class="">
+    <main class="@yield('mainclass')">
         @yield('content')
     </main>
 
