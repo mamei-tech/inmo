@@ -25,6 +25,11 @@
     color: #8e8e8e;
 }
 
+
+.singlepost a:hover {
+    text-decoration: none;
+}
+
 .hvr-underline-from-center.active h1 {
     color: rgb(225, 175, 90);
 }

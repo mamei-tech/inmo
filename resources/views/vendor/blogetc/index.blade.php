@@ -17,8 +17,9 @@
     {{--https://webdevetc.com/laravel/packages/blogetc-blog-system-for-your-laravel-app/help-documentation/laravel-blog-package-blogetc#guide_to_views--}}
 
     <div class="section-search">
-        <h1>@lang('app.blog')</h1>
-
+        <a href="{{Route("blog", [App::getLocale()])}}" style="text-decoration: none;"><h1>
+            @lang('app.blog')</h1>
+        </a>
         <div class="search-advance">
             <h3 class="color-gray">@lang('app.advance_search')</h3>
             @include("blogetc::sitewide.search_form")

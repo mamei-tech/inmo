@@ -1,5 +1,5 @@
 <div class='add_comment_area'>
-    <h5 class='text-center'>Add a comment</h5>
+    <h5 class='text-center d-none'>Add a comment</h5>
     <form method='post' action='{{route("blogetc.comments.add_new_comment", [App::getLocale(),$post->slug])}}'>
         @csrf
 

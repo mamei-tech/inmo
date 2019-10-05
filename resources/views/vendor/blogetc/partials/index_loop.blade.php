@@ -8,16 +8,16 @@
 
 <div class="col-xl-3 col-md-6 col-sm-12 pr-0">
     <div class="card color-gray" style="background-color: rgb(228, 228, 228);border: none;">
-        <?=$post->image_tag("medium", false, "card-img-top", true, null, "width: 269px;height: 179px;");?>
+        <?=$post->image_tag("medium", false, "card-img-top", true, null, "width: 354px;height: 180px;");?>
         <div class="card-title" style="margin-top: .75rem;">
             <div style="float: left;width: 50%;">({{ $comments_count }}) {!!($comments_count ? "comments" : "comments")!!}</div>
-            <div style="float: inline-end;">{{ humanize_date($post->posted_at, "d/m/Y") }}</div></div>
+            <div style="float: right;">{{ humanize_date($post->posted_at, "d/m/Y") }}</div></div>
         <div class="card-body" style="padding: 0px;">
             <h5 class="card-title text-uppercase">{{$post->title}}</h5>
             <p class="card-text" style="height: 180px;">{!! $post->generate_introduction(200) !!}</p>
         </div>
         <div class="card-footer" style="background-color: transparent;border-top: none;text-align: center;">
-            <a href="#" class="btn text-uppercase" style="border: rgb(225, 175, 90) solid 3px;color: rgb(225, 175, 90) !important;">READ MORE</a>
+            <a href="{{$post->url()}}" class="btn text-uppercase" style="border: rgb(225, 175, 90) solid 3px;color: rgb(225, 175, 90) !important;">READ MORE</a>
         </div>
     </div>
 </div>
