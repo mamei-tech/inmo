@@ -25,9 +25,9 @@
     color: #8e8e8e;
 }
 
-
-.singlepost a:hover {
+.blogindex a:hover {
     text-decoration: none;
+    text-transform: uppercase;
 }
 
 .hvr-underline-from-center.active h1 {
@@ -289,4 +289,8 @@ h3.color-yellow a:hover {
         margin-bottom: 10px !important;
     }
 
+}
+
+.cls-2, .cls-1 {
+    fill: rgb(136, 136, 136);
 }

@@ -17,7 +17,7 @@
             <p class="card-text" style="height: 180px;">{!! $post->generate_introduction(200) !!}</p>
         </div>
         <div class="card-footer" style="background-color: transparent;border-top: none;text-align: center;">
-            <a href="{{$post->url()}}" class="btn text-uppercase" style="border: rgb(225, 175, 90) solid 3px;color: rgb(225, 175, 90) !important;">READ MORE</a>
+            <a href="{{$post->url()}}" class="btn text-uppercase" style="border: rgb(225, 175, 90) solid 3px;color: rgb(225, 175, 90) !important;">@lang('blog.read_more')</a>
         </div>
     </div>
 </div>

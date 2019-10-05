@@ -12,8 +12,8 @@
 
 @section('mainclass', 'blogindex')
 
-@section("content")
 
+@section("content")
     {{--https://webdevetc.com/laravel/packages/blogetc-blog-system-for-your-laravel-app/help-documentation/laravel-blog-package-blogetc#guide_to_views--}}
 
     <div class="section-search">
@@ -33,7 +33,7 @@
     @guest
         <div class="section-sigin-sigout">
 
-            <div class="section-sigin-sigout-text" style="cursor: pointer;">
+            <div class="section-sigin-sigout-text" style="cursor: pointer;" id="section-sigin-sigout-text">
                 <h3 class="color-white">@lang('app.signin_signout')</h3>
 
                 <div class="arrow-floating">

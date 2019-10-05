@@ -20,4 +20,9 @@ return [
     'blog_home'                  => 'Blog inicio',
     'welcome_admin_panel'        => 'Bienvenido al panel de administración de su blog.',
     'manage_comments'            => 'Administre sus comentarios',
+    'contact_me'                 => 'Contáctame',
+    'read_more'                  => 'Lea más',
+    'written_by'                 => 'escrito por',
+    'can_writte_your_coment_here'=> 'puedes escribir tu comentario aquí',
 ];
+

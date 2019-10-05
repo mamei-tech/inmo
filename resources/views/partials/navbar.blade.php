@@ -149,7 +149,7 @@
                 link = document.querySelector(".nav-bar .pc .link-more");
                 linkReal = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
 
-                linkReal.classList.add("active-especial");
+                if (linkReal) linkReal.classList.add("active-especial");
             @endif
 
             link.parentNode.classList.add("active");

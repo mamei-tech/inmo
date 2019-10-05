@@ -20,5 +20,10 @@ return [
     'blog_home'                  => 'Blog home',
     'welcome_admin_panel'        => 'Welcome to the admin panel for your blog posts.',
     'manage_comments'            => 'Manage your comments',
+    'contact_me'                 => 'Contact me',
+    'read_more'                  => 'Read more',
+    'written_by'                 => 'Written by',
+    'can_writte_your_coment_here'=> 'you can writte your coment here',
+
 
 ];

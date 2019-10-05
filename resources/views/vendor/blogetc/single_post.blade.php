@@ -33,7 +33,7 @@
     @guest
         <div class="section-sigin-sigout">
 
-            <div class="section-sigin-sigout-text" style="cursor: pointer;">
+            <div class="section-sigin-sigout-text" style="cursor: pointer;" id="section-sigin-sigout-text">
                 <h3 class="color-white">@lang('app.signin_signout')</h3>
 
                 <div class="arrow-floating">
@@ -171,24 +171,24 @@
     @endguest
 
 
-        <div class='row'>
-            <div class="col-sm-1 col-md-1 col-lg-1"></div>
-            <div class='col-sm-10 col-md-10 col-lg-10'>
+    <div class='row'>
+        <div class="col-sm-1 col-md-1 col-lg-1"></div>
+        <div class='col-sm-10 col-md-10 col-lg-10'>
 
-                @include("blogetc::partials.show_errors")
-                @include("blogetc::partials.full_post_details")
-
-                @if(config("blogetc.comments.type_of_comments_to_show","built_in") !== 'disabled')
-                    <div class="" id='maincommentscontainer'>
-                        <h2 class='text-center' id='blogetccomments'>Comments</h2>
-                        @include("blogetc::partials.show_comments")
-                    </div>
-                @else
-                    {{--Comments are disabled--}}
-                @endif
-            </div>
-            <div class="col-sm-1 col-md-1 col-lg-1"></div>
+            @include("blogetc::partials.show_errors")
+            @include("blogetc::partials.full_post_details")
         </div>
+        <div class="col-sm-1 col-md-1 col-lg-1"></div>
+    </div>
+    <div class="row">
+        @if(config("blogetc.comments.type_of_comments_to_show","built_in") !== 'disabled')
+            <div class="col" id='maincommentscontainer' style="margin-top: 6rem !important;">
+                @include("blogetc::partials.show_comments")
+            </div>
+        @else
+            {{--Comments are disabled--}}
+        @endif
+    </div>
 
 
 @endsection
