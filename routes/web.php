@@ -1,5 +1,6 @@
 <?php
 
+// some comment
 Route::prefix('{lang?}')->middleware(['web'])->group(function () {
 
     Route::prefix('admin')->group(function () {
