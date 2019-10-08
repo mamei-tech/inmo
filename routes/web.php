@@ -79,8 +79,6 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             Route::get('guides', 'GuideController@index')->name('guides');
             Route::get('about', 'AboutMeController@index')->name('about');
             Route::get('contacts', 'ContactsController@indexWeb')->name('contacts');
-//            Route::get('blogs', 'BlogController@indexWeb')->middleware(['web'])->name('blog');
-            Route::get('blogss', 'BlogController@indexWeb')->middleware(['web'])->name('blogs');
 
             Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
             Route::post('guideAddSubcriptor', 'GuideController@addSubcriptor')->name('guide.addSubcriptor');
