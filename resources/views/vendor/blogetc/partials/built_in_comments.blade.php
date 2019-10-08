@@ -22,7 +22,7 @@
 
 
 @empty
-    <div class='alert alert-info'>No comments yet! Why don't you be the first?</div>
+    <div class='alert alert-info'>Estoy trabajando aqui.....No comments yet! Why don't you be the first?</div>
 @endforelse
 
 @if(count($comments)> config("blogetc.comments.max_num_of_comments_to_show",500) - 1)
