@@ -1,5 +1,5 @@
 @if(\Auth::check() && \Auth::user()->canManageBlogEtcPosts())
-    <a href="{{$post->edit_url()}}" class="btn btn-outline-secondary btn-sm pull-right float-right">Edit
+    <a href="{{$post->edit_url()}}" class="btn btn-outline-secondary btn-sm pull-right float-right d-none">Edit
         Post</a>
 @endif
 
