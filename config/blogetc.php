@@ -4,21 +4,22 @@
 
 return [
 
-    'include_default_routes' => true, // set to false to not include routes.php for BlogEtcReaderController and admin related routes. Default: true. If you disable this, you will have to manually copy over the data from routes.php and add it to your web.php.
+    'include_default_routes' => false, // set to false to not include routes.php for BlogEtcReaderController and admin related routes. Default: true. If you disable this, you will have to manually copy over the data from routes.php and add it to your web.php.
 
     'blog_prefix' => "blog", // used in routes.php. If you want to your http://yoursite.com/latest-news (or anything else), then enter that here. Default: blog
+//    'admin_prefix' => "{lang?}/blog_admin", // similar to above, but used for the admin panel for the blog. Default: blog_admin
     'admin_prefix' => "blog_admin", // similar to above, but used for the admin panel for the blog. Default: blog_admin
-
     'use_custom_view_files' => false, // set to false to disable the use of being able to make blog posts include a view from resources/views/custom_blog_posts/*.blade.php. Default: false. Set to true to use this feature. Default: false
 
     'per_page' => 10, // how many posts to show per page on the blog index page. Default: 10
+    'most_popular' => 4,  // cantidad de publicaciones a mostrar en el filtro de los mas populares
 
 
     'image_upload_enabled' => true, // true or false, if image uploading is allowed.
-    'blog_upload_dir' => "blog_images", // this should be in public_path() (i.e. /public/blog_images), and should be writable
+    'blog_upload_dir' => "images/blog_images", // this should be in public_path() (i.e. /public/blog_images), and should be writable
 
 
-    'memory_limit' => '2048M', // This is used when uploading images :
+    'memory_limit' => '4048M', // This is used when uploading images :
     //                              @ini_set('memory_limit', config("blogetc.memory_limit"));
     //                            See PHP.net for detailso
     //                            Set to false to not set any value.
@@ -107,7 +108,7 @@ return [
 
 
     'captcha' => [
-        'captcha_enabled' => true, // true = we should use a captcha, false = turn it off. If comments are disabled this makes no difference.
+        'captcha_enabled' => false, // true = we should use a captcha, false = turn it off. If comments are disabled this makes no difference.
         'captcha_type' => \WebDevEtc\BlogEtc\Captcha\Basic::class, // this should be a class that implements the \WebDevEtc\BlogEtc\Interfaces\CaptchaInterface interface
         'basic_question' => "What is the opposite of white?", // a simple captcha question to always ask (if captcha_type is set to 'basic'
         'basic_answers' => "black,dark", // comma separated list of possible answers. Don't worry about case.
@@ -170,7 +171,7 @@ return [
 
 
     'search' => [
-        'search_enabled' => false, // is search enabled? By default this is disabled, but you can easily turn it on.
+        'search_enabled' => true, // is search enabled? By default this is disabled, but you can easily turn it on.
     ],
 
 

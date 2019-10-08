@@ -34,7 +34,7 @@
     @guest
     <div class="section-sigin-sigout">
 
-        <div class="section-sigin-sigout-text">
+        <div class="section-sigin-sigout-text" style="cursor: pointer;">
             <h3 class="color-white">@lang('app.signin_signout')</h3>
 
             <div class="arrow-floating">
@@ -156,7 +156,7 @@
 
                         <span class="h3-middle">
                             <h3 class="color-white" style="margin-right: 5px;">@lang('app.nohaveAccount')</h3>
-                            <h3 class="color-yellow changecontext">@lang('app.singup')</h3>
+                            <h3 class="color-yellow changecontext" style="cursor: pointer;">@lang('app.singup')</h3>
                         </span>
 
 

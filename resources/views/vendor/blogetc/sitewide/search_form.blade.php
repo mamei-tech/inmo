@@ -1,7 +1,12 @@
-<div style='max-width:500px;margin:50px auto;' class='search-form-outer'>
-    <form method='get' action='{{route("blogetc.search")}}' class='text-center'>
-        <h4>Search for something in our blog:</h4>
-        <input type='text' name='s' placeholder='Search...' class='form-control' value='{{\Request::get("s")}}'>
-        <input type='submit' value='Search' class='btn btn-primary m-2'>
+<div class='form-group'>
+    <form method='get' action='{{route("blogetc.search", [App::getLocale()])}}' class='text-center'>
+        <div class="input-group" style="">
+            <input type="text" class="form-control" name='s' placeholder='@lang('app.search')' value='{{\Request::get("s")}}' style="color: #8e8e8e;border-radius: .0rem;border-right: none !important;">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit" style="border-radius: .0rem !important;border-left: none !important;background: white;border: 1px solid #ced4da;width: 3rem;">
+                    <span class="fa fa-search fa-2x" style="color: #939393;"></span>
+                </button>
+            </div>
+        </div>
     </form>
 </div>

@@ -42,20 +42,19 @@
                     <div id="container-navbar-arrow"><span class="navbar-arrow-toggle-line"></span></div>
                 </li>
 
-                <div class="li-especial li-especial-guides-{{App::getLocale()}}">
+                <div  class="li-especial li-especial-guides-{{App::getLocale()}}">
                     <li class="hvr-underline-from-center">
                         <a class="link-guides" href="{{Route("guides")}}">@lang('app.guides')</a>
                     </li>
                 </div>
 
-                <div class="li-especial li-especial-tools-{{App::getLocale()}}">
+                <div  class="li-especial li-especial-tools-{{App::getLocale()}}">
                     <li class="hvr-underline-from-center">
-                        <a class="link-tools"
-                           href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
+                        <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
                     </li>
                 </div>
 
-                <div class="li-especial li-especial-blog-{{App::getLocale()}}">
+                <div  class="li-especial li-especial-blog-{{App::getLocale()}}">
                     <li class="hvr-underline-from-center">
                         <a class="link-blog" href="{{Route("blog")}}">@lang('app.blog')</a>
                     </li>
@@ -107,8 +106,7 @@
                 </div>
                 <div>
                     <li class="hvr-underline-from-center">
-                        <a class="link-tools"
-                           href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
+                        <a class="link-tools" href="http://jehidalgorealestate.idxbroker.com/idx/homevaluation">@lang('app.tools')</a>
                     </li>
                 </div>
                 <div>
@@ -138,31 +136,24 @@
     <script type="text/javascript">
 
         @if(!isset($inHome))
+            var link = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
+            var linkMobile = document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}");
 
-            @if(!isset($noLink))
-                var link = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
-                var linkMobile = document.querySelector(".nav-bar .mobile .link-{{Route::currentRouteName()}}");
+            if (link === null)
+            {
+                link = document.querySelector(".nav-bar .pc .link-neighborhoods");
+                linkMobile = document.querySelector(".nav-bar .mobile .link-neighborhoods");
+            }
 
-                if (link === null) {
-                    link = document.querySelector(".nav-bar .pc .link-neighborhoods");
-                    linkMobile = document.querySelector(".nav-bar .mobile .link-neighborhoods");
-                }
+            @if(isset($inGuide) || isset($inBlog))
+                link = document.querySelector(".nav-bar .pc .link-more");
+                linkReal = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
 
-                @if(isset($inGuide) || isset($inBlog))
-                    link = document.querySelector(".nav-bar .pc .link-more");
-
-                @if (isset($dr))
-                    linkReal = document.querySelector(".nav-bar .pc .link-blog");
-                @else
-                    linkReal = document.querySelector(".nav-bar .pc .link-{{Route::currentRouteName()}}");
-                @endif
-
-                linkReal.classList.add("active-especial");
-                @endif
-
-                link.parentNode.classList.add("active");
-                linkMobile.parentNode.classList.add("active");
+                if (linkReal) linkReal.classList.add("active-especial");
             @endif
+
+            link.parentNode.classList.add("active");
+            linkMobile.parentNode.classList.add("active");
 
             var navbar = document.querySelector(".nav-bar");
             navbar.classList.add("scrolled");

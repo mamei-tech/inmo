@@ -8,6 +8,31 @@
     padding-top: 150px;
 }
 
+
+.blogetc_container {
+    padding: 50px 120px 70px;
+}
+
+.blogindex {
+    background-color: rgb(228, 228, 228);
+}
+
+.blogindex .pagination li a {
+    color: #8e8e8e;
+}
+
+.blogetc_container h1 {
+    color: #8e8e8e;
+}
+
+.blogindex a:hover {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.hvr-underline-from-center.active h1 {
+    color: rgb(225, 175, 90);
+}
 .section-search > .search-advance{
     flex: auto;
     display: flex;
@@ -267,4 +292,8 @@ h3.color-yellow a:hover {
         margin-bottom: 10px !important;
     }
 
+}
+
+.cls-2, .cls-1 {
+    fill: rgb(136, 136, 136);
 }
