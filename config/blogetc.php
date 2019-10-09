@@ -153,9 +153,9 @@ return [
 
         'user_field_for_author_name' => "name", // what field on your User model should we use when echoing out the author name? By default this should be 'name', but maybe you have it set up to use 'username' etc.
 
-        'ask_for_author_email' => true, // show 'author email' on the form ?
+        'ask_for_author_email' => false, // show 'author email' on the form ?
         'require_author_email' => false, // require an email (make sure ask_for_author_email is true if you want to use this)
-        'ask_for_author_website' => true, // show 'author website' on the form, show the link when viewing the comment
+        'ask_for_author_website' => false, // show 'author website' on the form, show the link when viewing the comment
 
         'disqus' => [
 

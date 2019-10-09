@@ -63,16 +63,33 @@
 
                     <li class='nav-item px-2'><a class='nav-link' href='{{route("blog")}}'>{{ __('blog.blog_home')  }}</a></li>
 
-
-                    <li class="nav-item ">
-                        <a id="" class="nav-link " href="#" role="button"
-                           aria-haspopup="true" aria-expanded="false" >
-                            Logged in as {{ Auth::user()->name }}
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            Logged in as {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('password.set', [App::getLocale()]) }}">
+                                {{ __('auth.ChangePassword') }}
+                            </a>
+                            <a class="dropdown-item" href=""
+                               onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                {{ __('auth.Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout', [App::getLocale()]) }}" method="POST"
+                                  style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
                     </li>
                 </ul>
             </div>
+
+
+
         </div>
     </nav>
 
@@ -119,7 +136,7 @@
     <small><a href='https://webdevetc.com/'>Laravel Blog Package provided by Webdevetc</a></small>
 </div>
 
-
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 @if( config("blogetc.use_wysiwyg") && config("blogetc.echo_html") && (in_array( \Request::route()->getName() ,[ 'blogetc.admin.create_post' , 'blogetc.admin.edit_post'  ])))
     <script src="https://cdn.ckeditor.com/4.10.0/standard/ckeditor.js"
             integrity="sha384-BpuqJd0Xizmp9PSp/NTwb/RSBCHK+rVdGWTrwcepj1ADQjNYPWT2GDfnfAr6/5dn"

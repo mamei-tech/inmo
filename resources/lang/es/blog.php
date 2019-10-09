@@ -24,5 +24,6 @@ return [
     'read_more'                  => 'Lea más',
     'written_by'                 => 'escrito por',
     'can_writte_your_coment_here'=> 'puedes escribir tu comentario aquí',
+    'write_your_comment'         => 'escriba su comentario',
 ];
 

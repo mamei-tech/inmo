@@ -24,6 +24,7 @@ return [
     'read_more'                  => 'Read more',
     'written_by'                 => 'Written by',
     'can_writte_your_coment_here'=> 'you can writte your coment here',
+    'write_your_comment'         => 'write your comment',
 
 
 ];

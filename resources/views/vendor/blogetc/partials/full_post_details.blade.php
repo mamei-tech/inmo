@@ -80,5 +80,3 @@
         </div>
     </div>
 </article>
-
-@includeWhen($post->categories,"blogetc::partials.categories",['post'=>$post])
