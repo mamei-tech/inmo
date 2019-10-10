@@ -10,18 +10,11 @@
     $inBlog = true;
 @endphp
 
+@section('mainclass', 'blogindex')
+
 @section("content")
 
-    {{--https://webdevetc.com/laravel/packages/blogetc-blog-system-for-your-laravel-app/help-documentation/laravel-blog-package-blogetc#guide_to_views--}}
-
-    <div class="section-search">
-        <h1>@lang('app.blog')</h1>
-
-        <div class="search-advance">
-            <h3 class="color-gray">@lang('app.advance_search')</h3>
-            @include("blogetc::sitewide.search_form")
-        </div>
-    </div>
+    @include("blogetc::partials.search_section")
 
     @php isset($dr) ? $dr = 1 : $dr = 0 @endphp
     <input id="dr" type="text" hidden value="{{$dr}}">
@@ -30,7 +23,7 @@
     @guest
         <div class="section-sigin-sigout">
 
-            <div class="section-sigin-sigout-text" style="cursor: pointer;">
+            <div class="section-sigin-sigout-text" style="cursor: pointer;" id="section-sigin-sigout-text">
                 <h3 class="color-white">@lang('app.signin_signout')</h3>
 
                 <div class="arrow-floating">
@@ -167,47 +160,46 @@
         </div>
     @endguest
 
+    <div class="row" style="padding: 20px 120px 0;">
+        <div class="col col-lg-6" style="color: #8e8e8e;">
+            @if ($search_results->hasPages())
+                <ul class="pagination" role="navigation">
+                    {{-- Previous Page Link --}}
+                    @if ($search_results->onFirstPage())
+                        <li class="disabled" aria-disabled="true"><span>@lang('pagination.previous')</span></li>
+                    @else
+                        <li><a href="{{ $search_results->appends(['s'=>$query])->previousPageUrl() }}" rel="prev">@lang('pagination.previous') </a></li>
+                    @endif
 
-    {{-- POST BLOCK --}}
-    <div class='row'>
-        <div class='col-sm-12 blogetc_container'>
-            @if(\Auth::check() && \Auth::user()->canManageBlogEtcPosts())
-                <div class="text-center">
-                    <p class='mb-1'>You are logged in as a blog admin user.
-                        <br>
-
-                        <a href='{{route("blogetc.admin.index")}}' class='btn border  btn-outline-primary btn-sm '>
-                            <i class="fa fa-cogs" aria-hidden="true"></i>
-                            Go To Blog Admin Panel</a>
-                    </p>
-                </div>
+                    <li> &nbsp{{ $search_results->currentPage() }}/{{ $search_results->lastPage() }}&nbsp </li>
+                    {{-- Next Page Link --}}
+                    @if ($search_results->hasMorePages())
+                        <li><a href="{{ $search_results->appends(['s'=>$query])->nextPageUrl() }}" rel="next">@lang('pagination.next')</a></li>
+                    @else
+                        <li class="disabled" aria-disabled="true"><span>@lang('pagination.next')</span></li>
+                    @endif
+                </ul>
             @endif
-
-
-            {{--TODO: see later--}}
-            @if(isset($blogetc_category) && $blogetc_category)
-                <h2 class='text-center'>Viewing Category: {{$blogetc_category->category_name}}</h2>
-
-                @if($blogetc_category->category_description)
-                    <p class='text-center'>{{$blogetc_category->category_description}}</p>
-                @endif
-
-            @endif
-
-
-            @forelse($posts as $post)
-                @include("blogetc::partials.index_loop")
-            @empty
-                <div class='alert alert-danger'>No posts</div>
-            @endforelse
-
-            <div class='text-center  col-sm-4 mx-auto'>
-                {{$posts->appends( [] )->links()}}
-            </div>
-
-
+        </div>
+        <div class="col col-lg-6" style="text-align: end;color: #8e8e8e;">
+            {{$search_results->total()}} @lang('pagination.found')
         </div>
     </div>
+    <div class='row' style="padding: 1px 120px 70px;">
+            @forelse($search_results as $result)
+
+                <?php $post = $result->indexable; ?>
+                @if($post && is_a($post,\WebDevEtc\BlogEtc\Models\BlogEtcPost::class))
+                    @include("blogetc::partials.index_loop")
+                @else
+                    <div class='alert alert-danger'>Unable to show this search result - unknown type</div>
+                @endif
+            @empty
+                <div class='alert alert-danger'>@lang('blog.sorry_but_there_were_no_results')</div>
+            @endforelse
+
+    </div>
+
 @endsection
 
 @push('scripts')

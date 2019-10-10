@@ -12,19 +12,9 @@
 
 @section('mainclass', 'blogindex')
 
-
 @section("content")
 
-    <div class="section-search">
-        <a href="{{Route("blog", [App::getLocale()])}}" style="text-decoration: none;">
-            <h1>@lang('app.blog')</h1>
-        </a>
-
-        <div class="search-advance">
-            <h3 class="color-gray">@lang('app.advance_search')</h3>
-            @include("blogetc::sitewide.search_form")
-        </div>
-    </div>
+    @include("blogetc::partials.search_section")
 
     @php isset($dr) ? $dr = 1 : $dr = 0 @endphp
     <input id="dr" type="text" hidden value="{{$dr}}">
