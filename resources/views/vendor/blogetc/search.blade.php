@@ -171,8 +171,32 @@
         </div>
     @endguest
 
-    <div class='row' style="padding: 1px 120px 70px;">
+    <div class="row" style="padding: 20px 120px 0;">
+        <div class="col col-lg-6" style="color: #8e8e8e;">
+            @if ($search_results->hasPages())
+                <ul class="pagination" role="navigation">
+                    {{-- Previous Page Link --}}
+                    @if ($search_results->onFirstPage())
+                        <li class="disabled" aria-disabled="true"><span>@lang('pagination.previous')</span></li>
+                    @else
+                        <li><a href="{{ $search_results->appends(['s'=>$query])->previousPageUrl() }}" rel="prev">@lang('pagination.previous') </a></li>
+                    @endif
 
+                    <li> &nbsp{{ $search_results->currentPage() }}/{{ $search_results->lastPage() }}&nbsp </li>
+                    {{-- Next Page Link --}}
+                    @if ($search_results->hasMorePages())
+                        <li><a href="{{ $search_results->appends(['s'=>$query])->nextPageUrl() }}" rel="next">@lang('pagination.next')</a></li>
+                    @else
+                        <li class="disabled" aria-disabled="true"><span>@lang('pagination.next')</span></li>
+                    @endif
+                </ul>
+            @endif
+        </div>
+        <div class="col col-lg-6" style="text-align: end;color: #8e8e8e;">
+            {{$search_results->total()}} @lang('pagination.found')
+        </div>
+    </div>
+    <div class='row' style="padding: 1px 120px 70px;">
             @forelse($search_results as $result)
 
                 <?php $post = $result->indexable; ?>
@@ -182,7 +206,7 @@
                     <div class='alert alert-danger'>Unable to show this search result - unknown type</div>
                 @endif
             @empty
-                <div class='alert alert-danger'>Sorry, but there were no results!</div>
+                <div class='alert alert-danger'>@lang('blog.sorry_but_there_were_no_results')</div>
             @endforelse
 
     </div>
