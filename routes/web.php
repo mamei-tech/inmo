@@ -50,7 +50,7 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             Route::post('users/lock', 'UserController@lock')->name('users.lock');
         });
 
-        Route::group(['middleware' => 'web'], function () {
+//        Route::group(['middleware' => 'web'], function () {
 
             Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
             Route::post('login', 'Auth\LoginController@login')->name('dologin');
@@ -83,7 +83,7 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
             Route::post('guideAddSubcriptor', 'GuideController@addSubcriptor')->name('guide.addSubcriptor');
             Route::post('testimonials', 'ContactsController@storeTestimonials')->name('contact.storeTestimonials');
-        });
+//        });
 
         Route::get('login/redirect/{provider}', 'Auth\LoginController@redirectToProvider')
             ->name('auth.redirectToProvider')
@@ -106,6 +106,9 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
 
             Route::get('/search', 'BlogEtcReaderController@search')
                 ->name('blogetc.search');
+
+            Route::get('/advancesearch', 'BlogEtcReaderController@advancesearch')
+                ->name('blogetc.advancesearch');
 
             Route::get('/feed', 'BlogEtcRssFeedController@feed')
                 ->name('blogetc.feed'); //RSS feed

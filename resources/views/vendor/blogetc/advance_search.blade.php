@@ -159,49 +159,112 @@
 
         </div>
     @endguest
-
-    <div class="row" style="padding: 20px 120px 0;">
-        <div class="col col-lg-6" style="color: #8e8e8e;">
-            @if ($search_results->hasPages())
-                <ul class="pagination" role="navigation">
-                    {{-- Previous Page Link --}}
-                    @if ($search_results->onFirstPage())
-                        <li class="disabled" aria-disabled="true"><span>@lang('pagination.previous')</span></li>
-                    @else
-                        <li><a href="{{ $search_results->appends(['s'=>$query])->previousPageUrl() }}" rel="prev">@lang('pagination.previous') </a></li>
-                    @endif
-
-                    <li> &nbsp{{ $search_results->currentPage() }}/{{ $search_results->lastPage() }}&nbsp </li>
-                    {{-- Next Page Link --}}
-                    @if ($search_results->hasMorePages())
-                        <li><a href="{{ $search_results->appends(['s'=>$query])->nextPageUrl() }}" rel="next">@lang('pagination.next')</a></li>
-                    @else
-                        <li class="disabled" aria-disabled="true"><span>@lang('pagination.next')</span></li>
-                    @endif
-                </ul>
-            @endif
-        </div>
-        <div class="col col-lg-6" style="text-align: end;color: #8e8e8e;">
-            {{$search_results->total()}} @lang('pagination.found')
-        </div>
+    <div class="row" style="padding: 50px 120px;justify-content: end;">
+        <h1 style="">
+            @lang('app.advance_search')
+        </h1>
     </div>
     <div class='row' style="padding: 1px 120px 70px;">
-            @forelse($search_results as $result)
+        <div id="accordion" style="min-width: 100%;">
+            <div class="card" v-for="(item, index) in postComputed" v-bind:key="item.year">
+                <div class="card-header" v-bind:id="'headingAccordionParent'+index" style="background: #8c8c8c;border-radius: 0 !important;padding: .95rem 1.25rem;">
+                    <h1 class="" data-toggle="collapse" v-bind:data-target="'#collapseAccordionParent'+index" style="float: right;color: white;border: none;cursor: pointer;">
+                        @{{ item.year }}
+                    </h1>
+                </div>
 
-                <?php $post = $result->indexable; ?>
-                @if($post && is_a($post,\WebDevEtc\BlogEtc\Models\BlogEtcPost::class))
-                    @include("blogetc::partials.index_loop")
-                @else
-                    <div class='alert alert-danger'>Unable to show this search result - unknown type</div>
-                @endif
-            @empty
-                <div class='alert alert-danger'>@lang('blog.sorry_but_there_were_no_results')</div>
-            @endforelse
-
+                <div v-bind:id="'collapseAccordionParent'+index" class="collapse" v-bind:class="{ 'show': yearselected === item.year }" data-parent="#accordion">
+                    <div class="card-body" style="background: #e4e4e4;padding: 1.25rem 0 1.25rem 0;">
+                        <div id="sub-accordion">
+                            <div class="card" v-for="(post, subindex) in item.value" v-bind:key="post.id" style="border-radius: 0;color: darkgray;font-weight: bold;">
+                                <div class="card-header row no-gutters" v-bind:id="'headingSubAccordion'+subindex" style="border-radius: 0 !important;padding: 6px 0 0 10px;border: 0;" v-bind:style="subindex % 2 ? 'background: #e4e4e4;' : 'background: #fbfbfb;'">
+                                    <div class="col-8">
+                                        <h3 class="font-weight-bold" style="color: grey;">titulo a mostrar aunque sea bien largo como este</h3>
+                                    </div>
+                                    <div class="col-2">
+                                        (@{{ post.count_comments }}) comments
+                                    </div>
+                                    <div class="col">
+                                        @{{ post.posted_at }}
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-no-hover collapsed" data-toggle="collapse" v-bind:data-target="'#collapseSubAccordion'+subindex" style="float: right;color: white;border: none;">
+                                            Post #1
+                                        </button>
+                                    </div>
+                                </div>
+                                <div v-bind:id="'collapseSubAccordion'+subindex" class="collapse" data-parent="#sub-accordion">
+                                    <div class="card-body" style="background: #e4e4e4;padding: 1.25rem 0 1.25rem 0;">
+                                        @{{ post.post_body }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection
 
 @push('scripts')
-    <script src="{{ asset('js/views/blog.js') }}" defer></script>
+    <script src="{{ asset('js/vue.js') }}"></script>
+    <script src="{{ asset('js/lodash.min.js') }}"></script>
+    <script src="{{ asset('js/axios.min.js') }}"></script>
+    <script src="{{ asset('js/views/blog.js') }}"></script>
+
+    <script type="text/javascript">
+        let debug = true;
+        let BASE_URL =  "{{ env('APP_URL')  }}";
+
+        // $(document).ready(function() {
+        //    console.log('ssss')
+        // });
+
+        // blogindex
+        let app = new Vue({
+            el: '#accordion',
+            data: {
+                publicPath: BASE_URL,
+                posts: {},
+                yearselected: null,
+            },
+
+            methods: {
+                showPostsByYearRequest: function (year = null) {
+                    const url = this.publicPath + '/api/v1/advance_search/allpostbyyear';
+                    const vm = this;
+                    axios
+                        .post(url, year)
+                        .then(response => {
+                            vm.posts        = response.data.data.posts;
+                            vm.yearselected = response.data.data.year_selected;
+                    })
+                .catch(error => {})
+                },
+
+                showSubAccordion: function () {
+                  return this.yearselected
+                },
+            },
+
+            computed: {
+                postComputed: function () {
+                    return _.orderBy(this.posts, ['year'], ['desc']);
+                },
+            },
+
+            created: function () {
+                if (debug) console.debug('-- hook created triggered in advancesearch--');
+            },
+
+            mounted: function () {
+                if (debug) console.debug('-- hook mounted triggered in advancesearch--');
+                this.showPostsByYearRequest()
+            }
+        });
+
+        window.app = app;
+    </script>
 @endpush

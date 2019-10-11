@@ -16,3 +16,12 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::prefix('v1')->namespace('App\Http\Controllers\Api')->group(function () {
+
+    Route::resource('/advance_search', 'AdvanceSearchController')
+        ->only(['index'])
+        ->name('index', 'v1.config.index');
+    Route::post('/advance_search/allpostbyyear', 'AdvanceSearchController@postbyyear')->name('v1.advancesearch.allbyyear');
+});

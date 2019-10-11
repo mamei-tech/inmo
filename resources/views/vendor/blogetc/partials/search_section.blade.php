@@ -4,7 +4,7 @@
     </a>
     <div class="search-advance">
         <h3 class="color-gray">
-            <a href="{{Route("blog", [App::getLocale()])}}" style="color: inherit;font-weight: bold;">@lang('app.advance_search')</a>
+            <a href="{{Route("blogetc.advancesearch", [App::getLocale()])}}" style="color: inherit;font-weight: bold;">@lang('app.advance_search')</a>
         </h3>
         @include("blogetc::sitewide.search_form")
     </div>
