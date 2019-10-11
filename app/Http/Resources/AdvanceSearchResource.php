@@ -14,13 +14,19 @@ class AdvanceSearchResource extends JsonResource
      */
     public function toArray($request)
     {
+
+        $imgpath = asset('/images/blog_images/'.$this->image_medium);
+        if (!isset($this->image_medium))
+            $imgpath = asset('/images/blog_images/default_medium.png');
+
         return [
             'id'                => $this->id,
             'title'             => $this->title,
-            'post_body'         => $this->post_body,
+            'post_body'         => $this->generate_introduction(460),
             'posted_at'         => humanize_date($this->posted_at, "d/m/Y"),
-            'image_medium'      => $this->image_medium,
+            'image_medium'      => $imgpath,
             'count_comments'    => $this->comments->count(),
+            'url'               => $this->url(),
         ];
     }
 }

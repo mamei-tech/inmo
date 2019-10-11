@@ -28,17 +28,22 @@ class AdvanceSearchController extends ApiController
      */
     public function postbyyear(Request $request)
     {
-        $year  = $request->input('year', Carbon::now()->year);
+        $yearcurrent = Carbon::now()->year;
+        $year  = $request->input('year', $yearcurrent);
 
         $posts = BlogEtcPost::whereYear('created_at', $year)
             ->get();
 
         $data = AdvanceSearchResource::collection($posts);
 
-        $respost = array( array('year' => $year, 'value' => $data), array('year' => $year-1, 'value' => null), array('year' => $year-2, 'value' => null) );
-        $res = array( 'posts' => $respost, 'year_selected' => $year );
+        $respost = array( array('year' => $yearcurrent, 'value' => []), array('year' => $yearcurrent-1, 'value' => []), array('year' => $yearcurrent-2, 'value' => []) );
 
-//        $res = array('year' => $year, 'value' => $data, 'year' => $year-1 => array(), $year-2 => array());
+        foreach ($respost as &$item) {
+            if ($item['year'] == $year)
+                data_set($item, 'value', $data);
+        }
+
+        $res = array( 'posts' => $respost, 'year_selected' => $year );
 
         return $this->respondCreated('', $res);
     }
