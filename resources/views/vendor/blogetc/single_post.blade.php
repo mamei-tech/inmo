@@ -195,4 +195,7 @@
 
 @push('scripts')
     <script src="{{ asset('js/views/blog.js') }}" defer></script>
+    <script src="{{ asset('js/views/share.js') }}" defer></script>
+
 @endpush
+{{--<script async defer src="//assets.pinterest.com/js/pinit.js"></script>--}}

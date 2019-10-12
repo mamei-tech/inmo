@@ -32,14 +32,14 @@
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-NGWP839');</script>
     {{-- End Google Tag Manager --}}
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="autor" content="JORGE E. HIDALGO BORROTO, LLC">
-    <meta name="keywords"
-          content="3 bedroom apartments,apartments,apartment,apartment rentals,apartments for rent near me,apartments homes for rent,apartments for rent,cheap apartments,apartments near me,apartments for sale,rental apartments,studio apartments,apt for rent,brickell, brickell apartments, brickell city centre, brickell condos, brickell key, brickell miami, brickell zip code, condo rentals, condominium, condos, condos for rent, condos for rent near me, condos for sale, condos for sale near me, condos near me, downtown miami, for rent near me, for sale, home for sale, homes for rent, homes for rent near me, homes for sale, homes for sale near me, house for rent, house for sale, house for sale near me, houses for rent, houses for rent near me, houses for sale, houses for sale near me, luxury apartments, places for rent near me, places to rent near me, real estate for sale, real estate rentals, realator, realtor, realtor miami, realtor near me, realtor reviews, realtor websites, realtors, rent apartment, rental homes, rental properties, rentals, rentals near me, townhomes for rent, townhomes for sale, what is my house worth, what's my house worth"/>
+    <meta name="keywords" content="3 bedroom apartments,apartments,apartment,apartment rentals,apartments for rent near me,apartments homes for rent,apartments for rent,cheap apartments,apartments near me,apartments for sale,rental apartments,studio apartments,apt for rent,brickell, brickell apartments, brickell city centre, brickell condos, brickell key, brickell miami, brickell zip code, condo rentals, condominium, condos, condos for rent, condos for rent near me, condos for sale, condos for sale near me, condos near me, downtown miami, for rent near me, for sale, home for sale, homes for rent, homes for rent near me, homes for sale, homes for sale near me, house for rent, house for sale, house for sale near me, houses for rent, houses for rent near me, houses for sale, houses for sale near me, luxury apartments, places for rent near me, places to rent near me, real estate for sale, real estate rentals, realator, realtor, realtor miami, realtor near me, realtor reviews, realtor websites, realtors, rent apartment, rental homes, rental properties, rentals, rentals near me, townhomes for rent, townhomes for sale, what is my house worth, what's my house worth"/>
+
+    @stack('blogmeta')
 
     {{-- CSRF --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">

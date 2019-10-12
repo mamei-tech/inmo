@@ -1,4 +1,6 @@
 <?php
+use Illuminate\Support\Facades\Route;
+
 
 Route::prefix('{lang?}')->middleware(['web'])->group(function () {
 
@@ -7,13 +9,9 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
         Route::prefix('admin')->group(function () {
             Route::any('promotion/read', 'PromotionController@read')->name('promotion.read');
             Route::any('promotion/readMain', 'PromotionController@readMain')->name('promotion.readMain');
-            Route::resources([
-                "promotion" => "PromotionController"
-            ]);
+            Route::resources(["promotion" => "PromotionController"]);
             Route::any('slider/read', 'SliderController@read')->name('slider.read');
-            Route::resources([
-                "slider" => "SliderController"
-            ]);
+            Route::resources(["slider" => "SliderController"]);
             Route::get('config/logo', 'ConfigController@showConfigLogo')->name('config.logo');
             Route::post('config/logo', 'ConfigController@configLogo');
 
@@ -26,16 +24,12 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             Route::put('guide/{guide}', 'GuideController@update')->name('guide.update');
 
             Route::any('testimonials/read', 'TestimonialsController@read')->name('testimonials.read');
-            Route::resources([
-                "testimonials" => "TestimonialsController"
-            ]);
+            Route::resources(["testimonials" => "TestimonialsController"]);
 
             Route::any('contacts/read', 'ContactsController@read')->name('contacts.read');
             Route::post('contacts/changeNotificationsToReaded', 'ContactsController@changeNotificationsToReaded')->name('contacts.changeNotifications');
             Route::post('contacts/checkNotifications', 'ContactsController@checkNotifications')->name('contacts.checkNotifications');
-            Route::resources([
-                "contacts" => "ContactsController"
-            ]);
+            Route::resources(["contacts" => "ContactsController"]);
 
             Route::get('emails', 'EmailController@index')->name('emails');
             Route::any('emails/readGuide', 'EmailController@readGuide')->name('emails.readGuide');
@@ -44,8 +38,8 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
 
             Route::get('profile', 'ProfileController@index')->name('profile');
             Route::put('profile/{profile}', 'ProfileController@update')->name('profile.update');
-        Route::get('privacy', 'ProfileController@privacy')->name('privacy');
-        Route::put('privacy/{profile}', 'ProfileController@privacyUpdate')->name('privacy.update');
+            Route::get('privacy', 'ProfileController@privacy')->name('privacy');
+            Route::put('privacy/{profile}', 'ProfileController@privacyUpdate')->name('privacy.update');
 
             Route::get('users', 'UserController@index')->name('users');
             Route::any('users/read', 'UserController@read')->name('users.read');
@@ -81,8 +75,6 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             Route::get('guides', 'GuideController@index')->name('guides');
             Route::get('about', 'AboutMeController@index')->name('about');
             Route::get('contacts', 'ContactsController@indexWeb')->name('contacts');
-//            Route::get('blogs', 'BlogController@indexWeb')->middleware(['web'])->name('blog');
-            Route::get('blogss', 'BlogController@indexWeb')->middleware(['web'])->name('blogs');
 
             Route::post('guideSendEmail', 'GuideController@sendEmail')->name('guide.sendEmail');
             Route::post('guideAddSubcriptor', 'GuideController@addSubcriptor')->name('guide.addSubcriptor');
@@ -129,8 +121,6 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
                 Route::post('save_comment/{blogPostSlug?}',
                     'BlogEtcCommentWriterController@addNewComment')
                     ->name('blogetc.comments.add_new_comment');
-
-
             });
 
         });
@@ -167,7 +157,6 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
 
                 Route::get("/upload", "BlogEtcImageUploadController@create")->name("blogetc.admin.images.upload");
                 Route::post("/upload", "BlogEtcImageUploadController@store")->name("blogetc.admin.images.store");
-
             });
 
 
@@ -215,7 +204,6 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
                     ->name('blogetc.admin.categories.destroy_category');
 
             });
-
         });
     });
 });

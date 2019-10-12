@@ -178,4 +178,5 @@
 
 @push('scripts')
     <script src="{{ asset('js/views/blog.js') }}" defer></script>
+    <script src="{{ asset('js/share.js') }}"></script>
 @endpush

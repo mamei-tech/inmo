@@ -3,6 +3,9 @@
 $date = new DateTime('now');
 
 return [
+    'send_email' => 'Enviar correo',
+    'to_email'  => 'para ...',
+    'subject'  => 'Asunto',
     'property_search'=>'BUSCAR PROPIEDAD',
     'appname' => 'Bienvenido a JEHidalgoRealEstate.com',
 
