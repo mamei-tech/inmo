@@ -2,7 +2,7 @@
 @section("content")
 
 
-    <h5>Admin - Manage Blog Posts</h5>
+    <h5>@lang('blog.manage_blog_posts')</h5>
 
     @forelse($posts as $post)
         <div class="card m-4" style="">
@@ -14,78 +14,33 @@
                 <?=$post->image_tag("thumbnail", false, "float-right");?>
 
                 <dl class="">
-                    <dt class="">Author</dt>
+                    <dt class="">@lang('blog.author')</dt>
                     <dd class="">{{$post->author_string()}}</dd>
-                    <dt class="">Posted at</dt>
+                    <dt class="">@lang('blog.posted_at')</dt>
                     <dd class="">{{$post->posted_at}}</dd>
 
 
-                    <dt class="">Is published?</dt>
+                    <dt class="">@lang('blog.is_published')</dt>
                     <dd class="">
 
                         {!!($post->is_published ? "Yes" : '<span class="border border-danger rounded p-1">No</span>')!!}
 
                     </dd>
-
-                    <dt class="">Categories</dt>
-                    <dd class="">
-                        @if(count($post->categories))
-                            @foreach($post->categories as $category)
-                                <a class='btn btn-outline-secondary btn-sm m-1' href='{{$category->edit_url()}}'>
-                                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-
-                                    {{$category->category_name}}
-                                </a>
-                            @endforeach
-                        @else No Categories
-                        @endif
-
-                    </dd>
                 </dl>
-
-
-                @if($post->use_view_file)
-                    <h5>Uses Custom Viewfile:</h5>
-                    <div class="m-2 p-1">
-                        <strong>View file:</strong><br>
-                        <code>{{$post->use_view_file}}</code>
-
-                        <?php
-
-                        $viewfile = resource_path("views/custom_blog_posts/" . $post->use_view_file . ".blade.php");
-
-
-                        ?>
-                        <br>
-                        <strong>Full filename:</strong>
-                        <br>
-                        <small>
-                            <code>{{$viewfile}}</code>
-                        </small>
-
-                        @if(!file_exists($viewfile))
-                            <div class='alert alert-danger'>Warning! The custom view file does not exist. Create the
-                                file for this post to display correctly.
-                            </div>
-                        @endif
-
-                    </div>
-                @endif
-
 
                 <a href="{{$post->url()}}" class="card-link btn btn-outline-secondary"><i class="fa fa-file-text-o"
                                                                                           aria-hidden="true"></i>
-                    View Post</a>
+                    @lang('blog.read_more')</a>
                 <a href="{{$post->edit_url()}}" class="card-link btn btn-primary">
                     <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                    Edit Post</a>
+                    @lang('blog.edit_post')</a>
                 <form onsubmit="return confirm('Are you sure you want to delete this blog post?\n You cannot undo this action!');"
                       method='post' action='{{route("blogetc.admin.destroy_post", [App::getLocale(), $post->id])}}' class='float-right'>
                     @csrf
                     <input name="_method" type="hidden" value="DELETE"/>
                     <button type='submit' class='btn btn-danger btn-sm'>
                         <i class="fa fa-trash-o" aria-hidden="true"></i>
-                        Delete
+                        @lang('blog.delete')
                     </button>
                 </form>
             </div>

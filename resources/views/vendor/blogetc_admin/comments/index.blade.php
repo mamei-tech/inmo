@@ -9,7 +9,7 @@
                 <h5 class='card-title'>
 
 
-                    {{$comment->author()}} commented on:
+                    {{$comment->author()}} @lang('blog.commented_on'):
 
                     @if($comment->post)
                     <a href='{{$comment->post->url()}}'>{{$comment->post->title}}</a>
@@ -18,7 +18,7 @@
 
                         @endif
 
-                    on {{$comment->created_at}} </h5>
+                    @lang('blog.on') {{$comment->created_at}} </h5>
 
 
                 <p class='m-3 p-2'>{{$comment->comment}}</p>
@@ -31,10 +31,10 @@
                     {{--VIEW + EDIT POST LINKS--}}
                     <a href="{{$comment->post->url()}}" class="card-link btn btn-outline-secondary"><i class="fa fa-file-text-o"
                                                                                               aria-hidden="true"></i>
-                        View Post</a>
+                        @lang('blog.read_more')</a>
                     <a href="{{$comment->post->edit_url()}}" class="card-link btn btn-primary">
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                        Edit Post</a>
+                        @lang('blog.edit_post')</a>
 
 
                 @endif
@@ -52,11 +52,11 @@
 
                 {{--DELETE BUTTON--}}
                 <form
-                        onsubmit="return confirm('Are you sure you want to delete this blog post comment?\n You cannot undo this action!');"
+                        onsubmit="return confirm('@lang('blog.delete_comment_alert')');"
                         method='post' action='{{route("blogetc.admin.comments.delete", [App::getLocale(),  $comment->id])}}' class='float-right'>
                     @csrf
                     @method("DELETE")
-                    <input type='submit' class='btn btn-danger btn-sm' value='Delete'/>
+                    <input type='submit' class='btn btn-danger btn-sm' value='@lang('blog.delete')' />
                 </form>
             </div>
         </div>

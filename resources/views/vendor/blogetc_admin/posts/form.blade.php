@@ -1,15 +1,15 @@
 <div class="form-group">
-    <label for="blog_title">Blog Post Title</label>
+    <label for="blog_title">@lang('app.title')</label>
     <input type="text" class="form-control" required id="blog_title" aria-describedby="blog_title_help" name='title'
            value="{{old("title",$post->title)}}">
-    <small id="blog_title_help" class="form-text text-muted">The title of the blog post</small>
+    <small id="blog_title_help" class="form-text text-muted">@lang('blog.the_title_blog_post_description')</small>
 </div>
 
 <div class="form-group">
-    <label for="blog_subtitle">Subtitle</label>
+    <label for="blog_subtitle">@lang('app.subtitle')</label>
     <input type="text" class="form-control" id="blog_subtitle" aria-describedby="blog_subtitle_help" name='subtitle'
            value='{{old("subtitle",$post->subtitle)}}'>
-    <small id="blog_subtitle_help" class="form-text text-muted">The subtitle of the blog post (optional)</small>
+    <small id="blog_subtitle_help" class="form-text text-muted">@lang('blog.the_subtitle_blog_post_description')</small>
 </div>
 
 
@@ -20,11 +20,10 @@
 
 
         <div class="form-group">
-            <label for="blog_slug">Blog Post Slug</label>
+            <label for="blog_slug">@lang('blog.post_slug')</label>
             <input type="text" class="form-control" id="blog_slug" aria-describedby="blog_slug_help" name='slug'
                    value="{{old("slug",$post->slug)}}">
-            <small id="blog_slug_help" class="form-text text-muted">The slug (leave blank to auto generate) -
-                i.e. {{route("blogetc.single", [App::getLocale(), ""])}}/<u><em>this_part</em></u></small>
+            <small id="blog_slug_help" class="form-text text-muted">@lang('blog.the_slug_description') {{route("blogetc.single", [App::getLocale(), ""])}}/<u><em>this_part</em></u></small>
         </div>
 
     </div>
@@ -32,22 +31,20 @@
 
 
         <div class="form-group">
-            <label for="blog_is_published">Published?</label>
+            <label for="blog_is_published">@lang('blog.is_published')</label>
 
             <select name='is_published' class='form-control' id='blog_is_published'
                     aria-describedby='blog_is_published_help'>
 
                 <option @if(old("is_published",$post->is_published) == '1') selected='selected' @endif value='1'>
-                    Published
+                    @lang('blog.published')
                 </option>
-                <option @if(old("is_published",$post->is_published) == '0') selected='selected' @endif value='0'>Not
-                    Published
+                <option @if(old("is_published",$post->is_published) == '0') selected='selected' @endif value='0'>
+                    @lang('blog.not_published')
                 </option>
 
             </select>
-            <small id="blog_is_published_help" class="form-text text-muted">Should this be published? If not, then it
-                won't be
-                publicly viewable.
+            <small id="blog_is_published_help" class="form-text text-muted">@lang('blog.is_published_description')
             </small>
         </div>
 
@@ -55,7 +52,7 @@
     <div class='col-sm-6 col-md-4'>
 
         <div class="form-group">
-            <label for="blog_posted_at">Posted at</label>
+            <label for="blog_posted_at">@lang('blog.posted_at')</label>
             <input type="text" class="form-control" id="blog_posted_at" aria-describedby="blog_posted_at_help"
                    name='posted_at'
                    value="{{old("posted_at",$post->posted_at ?? \Carbon\Carbon::now())}}">
@@ -72,7 +69,7 @@
 
 
 <div class="form-group">
-    <label for="blog_post_body">Post Body
+    <label for="blog_post_body">@lang('blog.post_body')
         @if(config("blogetc.echo_html"))
             (HTML)
         @else
@@ -85,8 +82,7 @@
 
 
     <div class='alert alert-danger'>
-        Please note that any HTML (including any JS code) that is entered here will be
-        echoed (without escaping)
+        @lang('blog.body_description')
     </div>
 </div>
 

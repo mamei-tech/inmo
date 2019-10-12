@@ -1,19 +1,19 @@
-<h2><a href='https://webdevetc.com/'>Admin Panel</a></h2>
+<h2 class="d-none"><a href='https://webdevetc.com/'>@lang('blog.admin_panel')</a></h2>
 <p>{{ __('blog.welcome_admin_panel')  }}</p>
 
 
 <ul class="list-group mb-3">
     <li class="list-group-item justify-content-between lh-condensed">
         <div>
-            <h6 class="my-0"><a href="{{ route('blogetc.admin.index') }}">BlogEtc Admin Home</a>
+            <h6 class="my-0"><a href="{{ route('blogetc.admin.index') }}">@lang('blog.admin_home')</a>
              <span class="text-muted">(<?php
                  $categoryCount = \WebDevEtc\BlogEtc\Models\BlogEtcPost::count();
 
-                 echo $categoryCount . " " . str_plural("Post", $categoryCount);
+                 echo $categoryCount . " " . trans_choice('blog.post', $categoryCount);
 
                  ?>)</span>
             </h6>
-            <small class="text-muted">Overview of your posts</small>
+            <small class="text-muted">@lang('blog.overview_posts')</small>
 
             <div class="list-group ">
 
@@ -58,7 +58,7 @@
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.comments.index' && \Request::get("waiting_for_approval")) active @elseif($comment_approval_count>0) list-group-item-warning @endif  '><i
                             class="fa  fa-fw fa-comments" aria-hidden="true"></i>
                     {{ $comment_approval_count }}
-                    Waiting for approval </a>
+                    @lang('blog.waiting_for_approval') </a>
 
             </div>
         </div>
@@ -70,7 +70,7 @@
             <h6 class="my-0"><a href="{{ route('blogetc.admin.categories.index', [App::getLocale()]) }}">{{ __('blog.categories') }}</a>
                     <span class="text-muted">(<?php
                         $postCount = \WebDevEtc\BlogEtc\Models\BlogEtcCategory::count();
-                        echo $postCount . " " . str_plural(__("blog.category"), $postCount);
+                        echo $postCount . " " . trans_choice('blog.categories', $postCount);
                         ?>)</span>
             </h6>
 
@@ -94,7 +94,7 @@
     @if(config("blogetc.image_upload_enabled"))
     <li class="list-group-item  justify-content-between lh-condensed">
         <div>
-            <h6 class="my-0"><a href="{{ route('blogetc.admin.images.upload', [App::getLocale()]) }}">Upload images</a></h6>
+            <h6 class="my-0"><a href="{{ route('blogetc.admin.images.upload', [App::getLocale()]) }}">@lang('blog.upload_images')</a></h6>
 
 
             <div class="list-group ">
@@ -102,14 +102,14 @@
                 <a href='{{ route('blogetc.admin.images.all', [App::getLocale()]) }}'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.images.all') active @endif  '><i
                             class="fa fa-picture-o fa-fw" aria-hidden="true"></i>
-                    View All</a>
+                    @lang('blog.view_all')</a>
 
 
 
                 <a href='{{ route('blogetc.admin.images.upload', [App::getLocale()]) }}'
                    class='list-group-item list-group-item-action  @if(\Request::route()->getName() === 'blogetc.admin.images.upload') active @endif  '><i
                             class="fa fa-upload fa-fw" aria-hidden="true"></i>
-                    Upload</a>
+                    @lang('blog.upload')</a>
 
 
             </div>
