@@ -24,7 +24,9 @@ class CreateProfileTable extends Migration {
 			$table->string('link_facebook');
 			$table->string('link_instagram');
 			$table->string('link_in');
-			$table->string('link_youtube');
+            $table->string('link_youtube');
+            $table->string('privacy_es', 1000);
+            $table->string('privacy_en', 1000);
 			$table->timestamps();
 		});
 	}

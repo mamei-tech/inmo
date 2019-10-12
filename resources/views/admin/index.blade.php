@@ -26,6 +26,15 @@
                 </a>
             </div>
 
+            <div class="col-md-3 container-btn" >
+                <a href="{{ route('privacy', [App::getLocale()]) }}">
+                    <div class="container-btn-links">
+                        <span class="fa fa-3x fa-sign-language"></span>
+                        <span style="font-size: 20px;">{{ __('app.privacy') }}</span>
+                    </div>
+                </a>
+            </div>
+
             <div class="clearfix"></div>
 
         </div>

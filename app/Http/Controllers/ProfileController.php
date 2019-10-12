@@ -20,6 +20,11 @@ class ProfileController extends Controller
         return view('admin.profile.index', compact(["profile"]));
     }
 
+    public function privacy(){
+        $profile = Profile::query()->first();
+        return view('admin.profile.privacy', compact(["profile"]));
+    }
+
     public function update(Request $request, string $lang, Profile $profile)
     {
         $profile->fill([
@@ -43,5 +48,22 @@ class ProfileController extends Controller
 
         $request->session()->flash('status', __('app.error'));
         return Redirect::route("profile", compact(["lang", "profile"]));
+    }
+
+    public function privacyUpdate(Request $request, string $lang, Profile $profile)
+    {
+        $profile->fill([
+            'privacy_es' => $request->privacy_es,
+            'privacy_en' => $request->privacy_en,
+            'updated_at' => new DateTime()
+        ]);
+
+        if ($profile->save()) {
+            $request->session()->flash('status', __('app.success_edit'));
+            return Redirect::route("admin", [$lang]);
+        }
+
+        $request->session()->flash('status', __('app.error'));
+        return Redirect::route("privacy", compact(["lang", "profile"]));
     }
 }

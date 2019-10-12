@@ -3,6 +3,9 @@
 $date = new DateTime('now');
 
 return [
+    'send_email' => 'Send mail',
+    'to_email'  => 'to ...',
+    'subject'  => 'Subject',
     'property_search'=>'PROPERTY SEARCH',
     'appname' => 'Welcome to JEHidalgoRealEstate.com',
     'lang' => 'Language',
@@ -52,6 +55,7 @@ return [
     'developed_by' => 'Developed by:',
     'type' => 'Type',
     'success_message_send' => 'Message send sucessfully',
+    'success_edit' => 'Edit sucessfully',
     'selected_some_guide' => 'You must select some guide',
     'check_email' => 'Check your email',
     'element_downloaded' => 'Downloaded',
@@ -136,7 +140,7 @@ return [
     'rentals' => 'rentals',
     'downtownMiami' => 'DOWNTOWN MIAMI',
     'magicCity' => '"THE MAGIC CITY"',
-    'advance_search' => 'ADVANCE SEARCH',
+    'advance_search' => 'ADVANCED SEARCH',
     'search' => 'search',
     'signin_signout' => 'YOU CAN SIGN IN OR SIGN UP HERE',
     'facebook' => 'facebook',
@@ -144,7 +148,9 @@ return [
     'yourUsername' => 'your user name',
     'yourPassword' => 'your password',
     'comfirm_pass'  => 'confirm password',
-    'privacy' => 'PRIVACY POLICY',
+    'privacy' => 'Privacy Policy',
+    'privacy_es' => 'Privacy Policy in Spanish',
+    'privacy_en' => 'Privacy Policy in English',
     'haveAccount' => 'ALREDY HAVE AN ACCOUNT?',
     'nohaveAccount' => 'DON\'T HAVE AN ACCOUNT? CREATE ONE',
     'forgotpass' => 'FORGOT YOU PASSWORD?',

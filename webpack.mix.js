@@ -19,6 +19,7 @@ mix.setResourceRoot('../../');
 // mix.sass('resources/assets/sass/app.scss', 'public/css/bootstrap.min.css');
 
 mix.copy('resources/assets/js', 'public/js');
-mix.copy('resources/assets/css', 'public/css');
+mix.copy('resources/assets/css/', 'public/css/');
+
 mix.copy('resources/assets/images', 'public/images');
 mix.copy('resources/assets/fonts', 'public/fonts');

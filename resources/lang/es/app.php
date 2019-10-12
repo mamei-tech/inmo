@@ -3,6 +3,9 @@
 $date = new DateTime('now');
 
 return [
+    'send_email' => 'Enviar correo',
+    'to_email'  => 'para ...',
+    'subject'  => 'Asunto',
     'property_search'=>'BUSCAR PROPIEDAD',
     'appname' => 'Bienvenido a JEHidalgoRealEstate.com',
 
@@ -92,7 +95,7 @@ return [
     'link_in' => 'Linkedin',
     'link_youtube' => 'Youtube',
     'success_edit_profile' => 'perfil cambiado satisfactoriamente',
-
+    'success_edit' => 'Editado satisfactoriamente',
 
     'guide' => 'Guía',
     'create_guide' => 'Crear Guía',
@@ -168,7 +171,9 @@ return [
     'yourUsername' => 'su usuario',
     'yourPassword' => 'su contraseña',
     'comfirm_pass'  => 'confirme contraseña',
-    'privacy' => 'POLÍTICA DE PRIVACIDAD',
+    'privacy' => 'Política de Privacidad',
+    'privacy_es' => 'Política de Privacidad en Español',
+    'privacy_en' => 'Política de Privacidad en Inglés',
     'haveAccount' => 'YA TIENES UNA CUENTA?',
     'nohaveAccount' => '¿NO TIENES CUENTA? CRÉATE UNA',
     'forgotpass' => '¿NO RECUERDAS?',

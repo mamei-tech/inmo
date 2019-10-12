@@ -8,7 +8,9 @@ use DateTime;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -36,7 +38,7 @@ class RegisterController extends Controller
 
     public function showRegistrationForm()
     {
-        return view('blog', ['dr' => 1]);
+        return !Auth::user() ? view('blog', ['dr' => 1]) : view('blog', ['user' => Auth::user()->name]);
     }
 
     protected function validator(array $data)
@@ -61,26 +63,22 @@ class RegisterController extends Controller
         $newUser->token_verified_email  = Hash::make($data['email'].$date->format('Y-m-d H:i:s'));
 
         $newUser->save();
-
         return $newUser;
     }
 
     public function register(Request $request)
     {
-        // TODO Poner esto a funcionar con conrreo electrónico
-
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
 
-//        Mail::send("auth.register_email_verification", ["token" => $user->token_verified_email], function ($m) use ($request) {
+        //TODO Descomentariar para mandar el correo
+//        Mail::send("auth.register_email_verification", ["token" => $user->token_verified_email], function ($m) use ($user) {
 //            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
 //            $m->to($user->email)->subject(__('app.email_confirmation'));
 //        });
 
-        //return redirect(route('auth.verify', [App::getLocale(), 'user_id' => $user->id]));
-
         return view("singupok", ['user_id' => $user->id]);
-        // return view("auth.register_email_verification", ["token" => $user->token_verified_email]);
+        //return view("auth.register_email_verification", ["token" => $user->token_verified_email]);
 
     }
 
@@ -91,10 +89,9 @@ class RegisterController extends Controller
         {
             $user->email_verified_at = date('Y-m-d H:i:s');
             $user->save();
-            return redirect(route('login'))->withInput()->with('message', 'Se verifico correctamente la cuenta. Ya puede acceder!!!');
+            return redirect(route('blog'))->withInput()->with('message', 'Se verifico correctamente la cuenta. Ya puede acceder!!!');
         }
 
-//        TODO AKi es cuando no encuentra el user ver que pasa
         return redirect(route('home'))->withInput()->with('message', 'Este link no es de una cuenta valida.');
     }
 
@@ -115,18 +112,18 @@ class RegisterController extends Controller
                 'token_verified_email' => $token
             ]);
 
-//        Mail::send("auth.register_email_verification", ["token" => $token], function ($m) use ($request) {
-//            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
-//            $m->to($user->email)->subject(__('app.email_confirmation'));
-//        });
+            //TODO Descomentariar para mandar el correo
+//            Mail::send("auth.register_email_verification", ["token" => $user->token_verified_email], function ($m) use ($user) {
+//                $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
+//                $m->to($user->email)->subject(__('app.email_confirmation'));
+//            });
 
-            return redirect(route('auth.verify', [App::getLocale(), 'user_id' => $user->id]));
+            return view("singupok", [App::getLocale(), 'user_id' => $user->id]);
 
 //        Esto es temporal pq no tengo configurado el correo pa simular el flujo
             //return view("auth.register_email_verification", ["token" => $token]);
         }
 
-//        TODO AKi es cuando no encuentra el user ver que pasa
         return redirect(route('home'))->withInput()->with('message', 'Este link no es de una cuenta valida.');
     }
 }

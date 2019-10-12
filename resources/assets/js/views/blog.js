@@ -11,6 +11,9 @@ $(document).ready(function () {
 
         $('div#si').hide();
         $('div#si').removeClass('open');
+
+        tagaux = 1;
+        $('.section-sigin-sigout .arrow-floating .arrow-toggle-line').addClass('open');
     }
 
     // Open form section when error
@@ -77,6 +80,8 @@ $(document).ready(function () {
 
         $('div#si').show();
         $('div#si').addClass('open');
+
+        $('input#dr').val(0)
     });
 
     $('form#frm-singin h3.changecontext').click(function (e) {
@@ -86,6 +91,8 @@ $(document).ready(function () {
 
         $('div#si').hide();
         $('div#si').removeClass('open');
+
+        $('input#dr').val(1)
     });
 
 });
