@@ -231,7 +231,7 @@
 
 @endsection
 @push('scripts')
-    <script src="{{ asset('js/vue.js') }}"></script>
+    <script src="{{ asset('js/vue.min.js') }}"></script>
     <script src="{{ asset('js/lodash.min.js') }}"></script>
     <script src="{{ asset('js/axios.min.js') }}"></script>
     <script src="{{ asset('js/views/blog.js') }}"></script>
