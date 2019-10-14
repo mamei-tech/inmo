@@ -162,33 +162,37 @@
     @endguest
 
 
-    <div class="blogetc_container" style="padding: 50px 120px 0 !important;text-align: center;">
+    <div class="home-section-3 row">
+        <div class="col pb-0 mb-0 pr-0" style="align-items: end">
         <nav aria-label="breadcrumb" style="background: transparent;">
-            <ol class="breadcrumb" style="background: transparent;margin-bottom: 0rem;padding: .75rem 0rem;">
+            <ol class="breadcrumb row" style="background: transparent;margin-bottom: 0rem;padding: .75rem 0rem;">
                 <li class="hvr-underline-from-center"><a href="{{Route("blogetc.mostpopular", [App::getLocale()])}}"><h1>most popular</h1></a></li>
-                <li><h1 style="margin: 0 6px 0 6px;">/</h1></li>
+                <li class="hvr-underline-from-center"><h1 style="margin: 0 6px 0 6px;">/</h1></li>
                 <li class="hvr-underline-from-center"><a href="{{Route("blog", [App::getLocale()])}}"><h1>last publications</h1></a></li>
-                <li><h1 style="margin: 0 6px 0 6px;">/</h1></li>
+                <li class="hvr-underline-from-center"><h1 style="margin: 0 6px 0 6px;">/</h1></li>
                 <li class="hvr-underline-from-center active" aria-current="page"><a href="{{Route("blog", [App::getLocale()])}}"><h1>all publications</h1></a></li>
             </ol>
         </nav>
+        </div>
     </div>
 
-    <div class="row" style="padding: 20px 120px 0;">
-        <div class="col col-lg-6" style="color: #8e8e8e;">
+    <div class="home-section-3 row">
+        <div class="col-8 mb-0 pb-0" style="color: #8e8e8e;align-items: initial;">
             {{ $posts->links('vendor.pagination.simple-default') }}
         </div>
-        <div class="col col-lg-6" style="text-align: end;color: #8e8e8e;">
+        <div class="col-4 mb-0 pb-0 pr-0" style="align-items: flex-end;color: #8e8e8e;">
             {{$posts->total()}} @lang('pagination.found')
         </div>
     </div>
     {{-- POST BLOCK --}}
-    <div class='row' style="padding: 1px 120px 70px;">
+    <div class='home-section-4 postsection pt-0'>
+        <div class="row pb-4">
         @forelse($posts as $post)
             @include("blogetc::partials.index_loop")
         @empty
             <div class='alert alert-danger'>No posts</div>
         @endforelse
+        </div>
     </div>
 
 @endsection
