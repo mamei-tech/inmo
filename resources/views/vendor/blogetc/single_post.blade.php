@@ -161,14 +161,38 @@
     @endguest
 
 
-    <div class='row'>
-        <div class="col-sm-1 col-md-1 col-lg-1"></div>
-        <div class='col-sm-10 col-md-10 col-lg-10'>
+    @if(\Auth::check() && \Auth::user()->canManageBlogEtcPosts())
+        <a href="{{$post->edit_url()}}" class="btn btn-outline-secondary btn-sm pull-right float-right d-none">Edit
+            Post</a>
+    @endif
 
-            @include("blogetc::partials.show_errors")
-            @include("blogetc::partials.full_post_details")
-        </div>
-        <div class="col-sm-1 col-md-1 col-lg-1"></div>
+    <h1 class="home-section-3 row justify-content-end">{{$post->title}}</h1>
+
+    <div class="home-section-3 row" style="color: #8e8e8e;">
+        <ul class="pagination" role="navigation">
+            {{-- Previous Page Link --}}
+
+
+            @isset ($previous)
+                <li><a href="{{Route("blogetc.single", [App::getLocale(), $previous->slug])}}" rel="prev">@lang('pagination.previous') </a></li>
+            @else
+                <li class="disabled d-none" aria-disabled="true"><span>@lang('pagination.previous')</span></li>
+            @endif
+            &nbsp&nbsp
+            &nbsp&nbsp
+            {{-- Next Page Link --}}
+            @isset ($next)
+                <li><a href="{{Route("blogetc.single", [App::getLocale(), $next->slug])}}" rel="next">@lang('pagination.next')</a></li>
+            @else
+                <li class="disabled d-none" aria-disabled="true"><span>@lang('pagination.next')</span></li>
+            @endif
+        </ul>
+    </div>
+
+
+    <div class='home-section-3 row no-gutters pt-0'>
+        @include("blogetc::partials.show_errors")
+        @include("blogetc::partials.full_post_details")
     </div>
     <div class="row">
         @if(config("blogetc.comments.type_of_comments_to_show","built_in") !== 'disabled')

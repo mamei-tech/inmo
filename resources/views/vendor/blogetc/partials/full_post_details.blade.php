@@ -11,64 +11,28 @@
     <meta property="og:locale"             content="{{App::getLocale()}}" />
 @endpush
 
-
-@if(\Auth::check() && \Auth::user()->canManageBlogEtcPosts())
-    <a href="{{$post->edit_url()}}" class="btn btn-outline-secondary btn-sm pull-right float-right d-none">Edit
-        Post</a>
-@endif
-
-<h1 style="text-align: right;padding: 50px 0px 50px 0;">{{$post->title}}</h1>
-
-<div class="row col col-lg-6" style="color: #8e8e8e;">
-    <ul class="pagination" role="navigation">
-        {{-- Previous Page Link --}}
-
-
-        @isset ($previous)
-            <li><a href="{{Route("blogetc.single", [App::getLocale(), $previous->slug])}}" rel="prev">@lang('pagination.previous') </a></li>
-        @else
-            <li class="disabled d-none" aria-disabled="true"><span>@lang('pagination.previous')</span></li>
-        @endif
-        &nbsp&nbsp
-        &nbsp&nbsp
-        {{-- Next Page Link --}}
-        @isset ($next)
-            <li><a href="{{Route("blogetc.single", [App::getLocale(), $next->slug])}}" rel="next">@lang('pagination.next')</a></li>
-        @else
-            <li class="disabled d-none" aria-disabled="true"><span>@lang('pagination.next')</span></li>
-        @endif
-    </ul>
-</div>
-
-<article class="row single-post no-gutters">
-    <div class="" style="width: 100%;">
-        <div class="image-wrapper float-left pr-3" style="">
-            <?=$post->image_tag("medium", false, 'd-block mx-auto'); ?>
-        </div>
-        <div class="single-post-content-wrapper color-gray" style="">
-            {!! $post->post_body_output() !!}
-            <footer style="text-align: right;">
-                @includeWhen($post->author,"blogetc::partials.author",['post'=>$post])
-                <div class="row">
-                    <div class="col">
-                        <h3 style="color: rgb(136, 136, 136);"><strong>{{ humanize_date($post->posted_at, "M / Y") }}</strong></h3>
-                    </div>
+<div class="col-lg-12" style="display: initial;">
+    <?=$post->image_tag("medium", false, 'img-fluid d-block pr-4 pb-4', true, null, 'width: 700px;height: 360px;float:left;'); ?>
+        <p>
+        {!! $post->post_body_output() !!}
+        </p>
+        <footer style="text-align: right;">
+            @includeWhen($post->author,"blogetc::partials.author",['post'=>$post])
+            <div class="row">
+                <div class="col">
+                    <h3 style="color: rgb(136, 136, 136);"><strong>{{ humanize_date($post->posted_at, "M / Y") }}</strong></h3>
                 </div>
+            </div>
 
-                {{-- Sharing code --}}
-                @include('partials.share', [
-                    'url'       => urlencode('https://jehidalgorealestate.com/'),
-                    'title'     => urlencode($post->title),
-                    'summary'   => urlencode($summary),
-                    'image'     => urlencode($post->image_url())
-                ])
-            </footer>
-        </div>
-    </div>
-</article>
-
-@includeWhen($post->categories,"blogetc::partials.categories",['post'=>$post])
-
+            {{-- Sharing code --}}
+            @include('partials.share', [
+                'url'       => urlencode('https://jehidalgorealestate.com/'),
+                'title'     => urlencode($post->title),
+                'summary'   => urlencode($summary),
+                'image'     => urlencode($post->image_url())
+            ])
+        </footer>
+</div>
 
 <div id="sharebymail_modal" class="modal fade" tabindex="-1" role="dialog" style="display: none;" aria-hidden="true">
     <div id="frst_modal_child" class="modal-dialog" role="document" style="width: 500px">
