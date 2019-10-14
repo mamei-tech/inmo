@@ -170,10 +170,10 @@
                                   placeholder="@lang('app.yourtestimonials')">{{$data['testimonials']}}</textarea>
                     </div>
                     <input type="hidden" class="hidden" name="foto"/>
-<div>
-    {!! htmlFormSnippet() !!}
-</div>
-<div class="clearfix"> </div>
+                    <div>
+                        {!! htmlFormSnippet() !!}
+                    </div>
+                    <div class="clearfix"> </div>
                     <button type="button" onclick="sendTestimonials()" class="btn btn-yellow"  style="margin-top: 15px;">@lang('app.send')</button>
                 </form>
             </div>

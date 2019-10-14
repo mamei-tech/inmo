@@ -3,6 +3,7 @@
 @section('title', __('app.blog'))
 
 @push('styles')
+    <link href="{{ asset('css/contacts.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/blog.css') }}" rel="stylesheet">
 @endpush
 
@@ -194,15 +195,20 @@
         @include("blogetc::partials.show_errors")
         @include("blogetc::partials.full_post_details")
     </div>
-    <div class="row">
+
+    @if(\Auth::check())
+        @include("blogetc::partials.add_comment_form")
+    @endif
+
+    <div class="contact-section-testimonials" style="background: #e4e4e4;">
         @if(config("blogetc.comments.type_of_comments_to_show","built_in") !== 'disabled')
-            <div class="col" id='maincommentscontainer' style="margin-top: 6rem !important;">
-                @include("blogetc::partials.show_comments")
-            </div>
+            {{--<div class="col" id='maincommentscontainer' style="margin-top: 6rem !important;">--}}
+            @include("blogetc::partials.show_comments")
         @else
             {{--Comments are disabled--}}
         @endif
     </div>
+
 
 
 @endsection

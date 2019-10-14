@@ -2,9 +2,6 @@
 
 @case("built_in")
 {{-- default - show our own comments--}}
-@if(\Auth::check())
-    @include("blogetc::partials.add_comment_form")
-@endif
 @include("blogetc::partials.built_in_comments")
 @break
 

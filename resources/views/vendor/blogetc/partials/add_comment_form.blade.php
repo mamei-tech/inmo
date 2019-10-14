@@ -10,37 +10,27 @@
         </div>
     </div>
 
-    <div id="containercomment" class="container-signin-signout row no-gutters open"  style="display: none">
-        <div class="col-2">
+    <div id="containercomment" class="contact-section-add-testimonials pb-4" style="background-color: transparent;padding: 0;">
+    <div>
+        <div class="pt-4" style="position: relative">
+            {{--todo: agregar imagen del usuario autenticado--}}
             <img alt="..." class="img-thumbnail rounded-0" src="http://192.168.49.132/images/blog_images/default_medium.png">
         </div>
-        <div class="col-2"></div>
-        <div class="col-8">
-            <form method='post' action='{{route("blogetc.comments.add_new_comment", [App::getLocale(),$post->slug])}}' style="width: 100%;">
+
+        <div class="container-form">
+            <form id="form-send-testimonials" action="{{route("blogetc.comments.add_new_comment", [App::getLocale(),$post->slug])}}"
+                  enctype="multipart/form-data" method="POST">
                 @csrf
+                <div class="form-group form-add-testimonials-name d-none"></div>
 
-                <div class="form-group" style="width: 100%;">
-                        <textarea
-                                class="form-control rounded-0"
-                                name='comment'
-                                required
-                                id="comment"
-                                placeholder="@lang('blog.write_your_comment')"
-                                rows="7">{{old("comment")}}</textarea>
+                <div class="form-group pt-4">
+                        <textarea rows="7" class="form-control" name="comment" required="" id="comment"
+                                  placeholder="@lang('blog.write_your_comment')" style="border-radius: unset;">{{old("comment")}}</textarea>
                 </div>
-
-                @if($captcha)
-                    {{--Captcha is enabled. Load the type class, and then include the view as defined in the captcha class --}}
-                    @include($captcha->view())
-                @endif
-
-                <button type="submit" class="btn btn-yellow" style="margin-bottom: 35px;margin-top: 45px;">
-                    @lang('app.send')
-                </button>
-
+                <div class="clearfix"> </div>
+                <button type="submit" class="btn btn-yellow"  style="margin-top: 15px;">@lang('app.send')</button>
             </form>
         </div>
-
     </div>
-
+    </div>
 </div>
