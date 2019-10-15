@@ -162,7 +162,7 @@
     @endguest
 
 
-    <div class="home-section-3 row">
+    <div class="blog-section-3 row">
         <div class="col pb-0 mb-0 pr-0" style="align-items: end">
         <nav aria-label="breadcrumb" style="background: transparent;">
             <ol class="breadcrumb row" style="background: transparent;margin-bottom: 0rem;padding: .75rem 0rem;">
@@ -176,7 +176,7 @@
         </div>
     </div>
 
-    <div class="home-section-3 row">
+    <div class="blog-section-3 row">
         <div class="col-8 mb-0 pb-0" style="color: #8e8e8e;align-items: initial;">
             {{ $posts->links('vendor.pagination.simple-default') }}
         </div>
@@ -185,8 +185,8 @@
         </div>
     </div>
     {{-- POST BLOCK --}}
-    <div class='home-section-4 postsection pt-0'>
-        <div class="row pb-4">
+    <div class='blog-section-4 pt-0'>
+        <div class="row text-left" style="align-items: unset;">
         @forelse($posts as $post)
             @include("blogetc::partials.index_loop")
         @empty

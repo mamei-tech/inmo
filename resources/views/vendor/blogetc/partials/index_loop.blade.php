@@ -6,19 +6,20 @@
     $comments_count = $post->comments->count();
 @endphp
 
-{{--height: 180px;--}}
-<div class="col-xl-3 col-md-3 col-sm-6 pr-0">
-    <div class="card color-gray" style="background-color: rgb(228, 228, 228);border: none;">
-        <div><?=$post->image_tag("medium", false, "card-img-top", true, null, "max-width: 370px;height: 190px;");?></div>
-        <div class="card-title" style="margin-top: .75rem;">
-            <div style="float: left;width: 50%;">({{ $comments_count }}) {!!($comments_count ? "comments" : "comments")!!}</div>
-            <div style="float: right;">{{ humanize_date($post->posted_at, "d/m/Y") }}</div></div>
-        <div class="card-body" style="padding: 0;">
-            <h5 class="card-title text-uppercase">{{$post->title}}</h5>
-            <p class="card-text" style="height: 180px;">{!! $post->generate_introduction(200) !!}</p>
-        </div>
-        <div class="card-footer pb-b8" style="background-color: transparent;border-top: none;text-align: center;">
-            <a href="{{$post->url()}}" class="btn text-uppercase" style="border: rgb(225, 175, 90) solid 3px;color: rgb(225, 175, 90) !important;">@lang('blog.read_more')</a>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100 color-gray" style="background: transparent;border: none;">
+            <?=$post->image_tag("medium", false, "card-img-top", true, null, "max-width: 370px;height: 190px;");?>
+            <div class="card-title" style="margin-top: .75rem;">
+                <div style="float: left;width: 50%;">({{ $comments_count }}) {!!($comments_count ? "comments" : "comments")!!}</div>
+                <div style="float: right;">{{ humanize_date($post->posted_at, "d/m/Y") }}</div>
+            </div>
+            <div class="card-body" style="padding: 0;">
+                <h4 class="card-title text-uppercase color-gray">{{$post->title}}</h4>
+                <p class="card-text">{!! $post->generate_introduction(200) !!}</p>
+            </div>
+            <div class="card-footer" style="background-color: transparent;border-top: none;text-align: center;">
+                <a href="{{$post->url()}}" class="btn text-uppercase" style="border: rgb(225, 175, 90) solid 3px;color: rgb(225, 175, 90) !important;">@lang('blog.read_more')</a>
+            </div>
         </div>
     </div>
-</div>

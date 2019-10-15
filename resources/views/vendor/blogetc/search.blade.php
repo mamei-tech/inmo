@@ -160,7 +160,7 @@
         </div>
     @endguest
 
-    <div class="home-section-3 row">
+    <div class="blog-section-3 row">
         <div class="col-8 mb-0 pb-0" style="color: #8e8e8e;align-items: initial;">
             @if ($search_results->hasPages())
                 <ul class="pagination" role="navigation">
@@ -186,8 +186,8 @@
         </div>
     </div>
 
-    <div class='home-section-4 postsection pt-0'>
-        <div class="row pb-4">
+    <div class='blog-section-4 pt-0'>
+        <div class="row text-left" style="align-items: unset;">
             @forelse($search_results as $result)
 
                 <?php $post = $result->indexable; ?>

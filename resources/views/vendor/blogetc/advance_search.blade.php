@@ -164,7 +164,7 @@
             @lang('app.advance_search')
         </h1>
     </div>
-    <div class='row' style="padding: 1px 120px 70px;">
+    <div class='row advancesearch'>
         <div id="accordion" style="min-width: 100%;">
             <div class="card" v-for="(item, index) in postComputed" v-bind:key="item.year">
                 <div class="card-header" v-bind:id="'headingAccordionParent'+index" style="background: #8c8c8c;border-radius: 0 !important;padding: .95rem 1.25rem;">
@@ -188,9 +188,9 @@
                             <div class="card" v-for="(post, subindex) in item.value" v-bind:key="post.id" style="border-radius: 0;color: darkgray;font-weight: bold;">
                                 <div class="card-header row no-gutters" v-bind:id="'headingSubAccordion'+subindex" style="border-radius: 0 !important;padding: 6px 0 0 10px;border: 0;" v-bind:style="subindex % 2 ? 'background: #e4e4e4;' : 'background: #fbfbfb;'">
                                     <div class="col-8">
-                                        <h3 class="font-weight-bold" style="color: grey;">@{{ post.title }}</h3>
+                                        <h3 style="color: grey;">@{{ post.title }}</h3>
                                     </div>
-                                    <div class="col-2 text-lowercase">
+                                    <div class="col-2 text-lowercase" style="min-width: 100px;">
                                         (@{{ post.count_comments }}) @lang('blog.comments')
                                     </div>
                                     <div class="col">
@@ -207,18 +207,21 @@
                                     </div>
                                     <div class="col-auto pr-4"></div>
                                 </div>
-                                <div v-bind:id="'collapseSubAccordion'+subindex" class="collapse" data-parent="#sub-accordion">
-                                    <div class="row no-gutters" :style="subindex % 2 ? 'background: #e4e4e4;' : 'background: #fbfbfb;'" style="padding-top: 10px;">
-                                        <div class="col-3 pr-4 pb-3">
-                                            <img alt="..." class="img-thumbnail rounded-0" :src="post.image_medium" style="border: none;">
+                                <div v-bind:id="'collapseSubAccordion'+subindex" class="search-advance-section collapse" data-parent="#sub-accordion" :style="subindex % 2 ? 'background: #e4e4e4;' : 'background: #fbfbfb;'">
+
+                                    <div class="search-advance-item" :style="subindex % 2 ? 'background: #e4e4e4;' : 'background: #fbfbfb;'">
+                                        <div class="search-advance-item-img">
+                                            <img alt="..." class="img-thumbnail rounded-0" :src="post.image_medium" style="border: none;height: 200px;width: 360px;">
                                         </div>
-                                        <div class="col" :style="subindex % 2 ? 'background: #e4e4e4;' : 'background: #fbfbfb;'">
-                                            <b v-html="post.post_body"></b>
-                                            <div class="card-footer" style="background-color: transparent;border-top: none;text-align: right;padding: 20px 6px 20px 0;">
+
+                                        <div class="search-advance-item-body" :style="subindex % 2 ? 'background: #e4e4e4;' : 'background: #fbfbfb;'">
+                                            <p v-html="post.post_body" class="color-gray" style="column-fill: unset;column-gap: unset;"></p>
+                                            <div class="card-footer" style="background-color: transparent;border-top: none;text-align: right;padding: 20px 0 20px 0;">
                                                 <a :href="post.url" class="btn text-uppercase" style="border: rgb(225, 175, 90) solid 3px;color: rgb(225, 175, 90) !important;">@lang('blog.read_more')</a>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
