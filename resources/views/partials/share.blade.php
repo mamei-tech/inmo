@@ -1,5 +1,5 @@
 <div class="row social-media" style="margin-top: 3rem;">
-    <div class="col">
+    <div class="col" style="margin-bottom: 30px;">
 
         {{-- Facebook --}}
         {{-- https://developers.facebook.com/tools/debug/sharing/ --}}

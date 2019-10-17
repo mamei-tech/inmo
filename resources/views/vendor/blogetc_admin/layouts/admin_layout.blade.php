@@ -132,8 +132,8 @@
     </main>
 </div>
 
-<div class='text-center mt-5 pt-5 mb-3 text-muted'>
-    <small><a href='https://webdevetc.com/'>Laravel Blog Package provided by Webdevetc</a></small>
+<div class='text-center mt-5 pt-5 mb-3 text-muted d-none'>
+    <small></small>
 </div>
 
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>

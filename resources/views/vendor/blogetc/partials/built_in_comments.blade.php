@@ -12,7 +12,7 @@
         </div>
     </div>
 @empty
-    <div class='alert'>not comments</div>
+    <div class='alert d-none'>not comments</div>
 @endforelse
 
 @if(count($comments)> config("blogetc.comments.max_num_of_comments_to_show", 500) - 1)

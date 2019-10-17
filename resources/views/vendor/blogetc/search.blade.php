@@ -160,7 +160,7 @@
         </div>
     @endguest
 
-    <div class="blog-section-3 row">
+    <div class="blog-section-3 row no-gutters">
         <div class="col-8 mb-0 pb-0" style="color: #8e8e8e;align-items: initial;">
             @if ($search_results->hasPages())
                 <ul class="pagination" role="navigation">
@@ -197,7 +197,7 @@
                     <div class='alert alert-danger'>Unable to show this search result - unknown type</div>
                 @endif
             @empty
-                <div class='alert alert-danger'>@lang('blog.sorry_but_there_were_no_results')</div>
+                <div class='alert alert-danger d-none'>@lang('blog.sorry_but_there_were_no_results')</div>
             @endforelse
         </div>
     </div>

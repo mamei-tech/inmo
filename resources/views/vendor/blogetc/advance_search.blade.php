@@ -159,12 +159,12 @@
 
         </div>
     @endguest
-    <div class="row" style="padding: 50px 120px;justify-content: end;">
+    <div class="row no-gutters" style="padding: 50px 120px;justify-content: end;">
         <h1 style="">
             @lang('app.advance_search')
         </h1>
     </div>
-    <div class='row advancesearch'>
+    <div class='row no-gutters advancesearch'>
         <div id="accordion" style="min-width: 100%;">
             <div class="card" v-for="(item, index) in postComputed" v-bind:key="item.year">
                 <div class="card-header" v-bind:id="'headingAccordionParent'+index" style="background: #8c8c8c;border-radius: 0 !important;padding: .95rem 1.25rem;">

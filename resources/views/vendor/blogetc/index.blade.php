@@ -164,12 +164,12 @@
 
     <div class="blog-section-3 row">
         <div class="col pb-0 mb-0 pr-0" style="align-items: end">
-        <nav aria-label="breadcrumb" style="background: transparent;">
-            <ol class="breadcrumb row" style="background: transparent;margin-bottom: 0rem;padding: .75rem 0rem;">
+        <nav class="nav-breadcrumb" aria-label="breadcrumb" style="background: transparent;">
+            <ol class="breadcrumb row no-gutters" style="background: transparent;margin-bottom: 0rem;padding: .75rem 0rem;">
                 <li class="hvr-underline-from-center"><a href="{{Route("blogetc.mostpopular", [App::getLocale()])}}"><h1>most popular</h1></a></li>
-                <li class="hvr-underline-from-center"><h1 style="margin: 0 6px 0 6px;">/</h1></li>
+                <li class="hvr-underline-from-center breadcrumb-slash"><h1 style="margin: 0 6px 0 6px;">/</h1></li>
                 <li class="hvr-underline-from-center"><a href="{{Route("blog", [App::getLocale()])}}"><h1>last publications</h1></a></li>
-                <li class="hvr-underline-from-center"><h1 style="margin: 0 6px 0 6px;">/</h1></li>
+                <li class="hvr-underline-from-center breadcrumb-slash"><h1 style="margin: 0 6px 0 6px;">/</h1></li>
                 <li class="hvr-underline-from-center active" aria-current="page"><a href="{{Route("blog", [App::getLocale()])}}"><h1>all publications</h1></a></li>
             </ol>
         </nav>

@@ -167,9 +167,9 @@
             Post</a>
     @endif
 
-    <h1 class="blog-section-3 row justify-content-end">{{$post->title}}</h1>
+    <h1 class="blog-section-3 row no-gutters justify-content-end">{{$post->title}}</h1>
 
-    <div class="blog-section-3 row" style="color: #8e8e8e;">
+    <div class="blog-section-3 row no-gutters">
         <ul class="pagination" role="navigation">
             {{-- Previous Page Link --}}
 

@@ -9,7 +9,7 @@
 
     <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100 color-gray" style="background: transparent;border: none;">
-            <?=$post->image_tag("medium", false, "card-img-top", true, null, "max-width: 370px;height: 190px;");?>
+            <?=$post->image_tag("medium", false, "card-img-top", true, null, "max-width: 460px;height: 190px;border-radius: unset;");?>
             <div class="card-title" style="margin-top: .75rem;">
                 <div style="float: left;width: 50%;">({{ $comments_count }}) {!!($comments_count ? "comments" : "comments")!!}</div>
                 <div style="float: right;">{{ humanize_date($post->posted_at, "d/m/Y") }}</div>

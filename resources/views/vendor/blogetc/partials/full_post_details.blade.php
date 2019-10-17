@@ -12,8 +12,8 @@
 @endpush
 
 <div class="col-lg-12" style="display: initial;">
-    <?=$post->image_tag("medium", false, 'img-fluid d-block pr-4 pb-4', true, null, 'width: 700px;height: 360px;float:left;'); ?>
-        <p>
+    <?=$post->image_tag("medium", false, 'post-details-image img-fluid d-block pr-4 pb-4', true, null, 'width: 700px;height: 360px;float:left;'); ?>
+        <p class="post-details-body">
         {!! $post->post_body_output() !!}
         </p>
         <footer style="text-align: right;">
