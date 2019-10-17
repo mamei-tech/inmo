@@ -162,7 +162,7 @@
     @endguest
 
 
-    <div class="blog-section-3 row">
+    <div class="blog-section-3 row no-gutters">
         <div class="col pb-0 mb-0 pr-0" style="align-items: end">
         <nav class="nav-breadcrumb" aria-label="breadcrumb" style="background: transparent;">
             <ol class="breadcrumb row no-gutters" style="background: transparent;margin-bottom: 0rem;padding: .75rem 0rem;">
@@ -176,7 +176,7 @@
         </div>
     </div>
 
-    <div class="blog-section-3 row">
+    <div class="blog-section-3 row no-gutters">
         <div class="col-8 mb-0 pb-0" style="color: #8e8e8e;align-items: initial;">
             {{ $posts->links('vendor.pagination.simple-default') }}
         </div>
