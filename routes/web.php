@@ -100,6 +100,9 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
             Route::get('/mostpopular', 'BlogEtcReaderController@mostpopular')
                 ->name('blogetc.mostpopular');
 
+            Route::get('/lastpublications', 'BlogEtcReaderController@lastpublications')
+                ->name('blogetc.lastpublications');
+
             Route::get('/search', 'BlogEtcReaderController@search')
                 ->name('blogetc.search');
 

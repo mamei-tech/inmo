@@ -290,11 +290,11 @@
             },
 
             created: function () {
-                if (debug) console.debug('-- hook created triggered in advancesearch--');
+                // if (debug) console.debug('-- hook created triggered in advancesearch--');
             },
 
             mounted: function () {
-                if (debug) console.debug('-- hook mounted triggered in advancesearch--');
+                // if (debug) console.debug('-- hook mounted triggered in advancesearch--');
                 this.showPostsByYearRequest()
             }
         });
