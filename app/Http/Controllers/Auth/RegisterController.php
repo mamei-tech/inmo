@@ -56,7 +56,7 @@ class RegisterController extends Controller
 
         $newUser                        = new User;
 
-        $newUser->provider              = 'Local';
+        $newUser->provider_name         = 'local';
         $newUser->name                  = $data['name'];
         $newUser->email                 = $data['email'];
         $newUser->password              = Hash::make($data['password']);
