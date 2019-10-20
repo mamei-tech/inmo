@@ -30,4 +30,5 @@ return [
     'email_check_info'  => 'Before proceeding, please check your email for a verification link.',
     'email_resend1' => 'If you did not receive the email',
     'email_resend2' => 'click here to request another',
+    'exit' => 'Exit',
 ];

@@ -86,7 +86,10 @@ class LoginController extends Controller
         $request->session()->invalidate();
         session(['locale' => app()->getLocale()]);
 
-        return $this->loggedOut($request) ?: redirect("/".app()->getLocale()."/admin");
+        if($request->has('from') && $request->get('from') == 'blog')                        // Logout from blog
+            return redirect("/".app()->getLocale()."/blog");
+        else
+            return $this->loggedOut($request) ?: redirect("/".app()->getLocale()."/admin");
     }
 
     /**

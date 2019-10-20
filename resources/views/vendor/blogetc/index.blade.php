@@ -24,6 +24,10 @@
         @include("blogetc::partials.section_login")
     @endguest
 
+    @auth
+        @include("blogetc::partials.section_logout")
+    @endauth
+
 
     <div class="blog-section-3 row no-gutters">
         <div class="col pb-0 mb-0 pr-0" style="align-items: end">

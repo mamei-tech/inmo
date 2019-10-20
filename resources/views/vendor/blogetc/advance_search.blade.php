@@ -23,6 +23,10 @@
         @include("blogetc::partials.section_login")
     @endguest
 
+    @auth
+        @include("blogetc::partials.section_logout")
+    @endauth
+
     <div class="row no-gutters" style="padding: 50px 120px;justify-content: end;">
         <h1 style="">
             @lang('app.advance_search')
@@ -104,7 +108,7 @@
     <script src="{{ asset('js/views/blog.js') }}"></script>
 
     <script type="text/javascript">
-        let debug = true;
+        let debug = false;
         let BASE_URL =  "{{ env('APP_URL')  }}";
 
         // $(document).ready(function() {

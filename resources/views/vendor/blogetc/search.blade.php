@@ -23,6 +23,10 @@
         @include("blogetc::partials.section_login")
     @endguest
 
+    @auth
+        @include("blogetc::partials.section_logout")
+    @endauth
+
     <div class="blog-section-3 row no-gutters">
         <div class="col-8 mb-0 pb-0" style="color: #8e8e8e;align-items: initial;">
             @if ($search_results->hasPages())

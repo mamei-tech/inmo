@@ -30,5 +30,6 @@ return [
     'email_check_info'  => 'Antes de proceder, por favor revise un bandeja de entrada para confirmar su registro.',
     'email_resend1' => 'Si Ud. no recibe el email',
     'email_resend2' => 'haga click para otra solicitud',
+    'exit' => 'Salir',
 
 ];

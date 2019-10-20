@@ -24,6 +24,10 @@
         @include("blogetc::partials.section_login")
     @endguest
 
+    @auth
+        @include("blogetc::partials.section_logout")
+    @endauth
+
     @if(\Auth::check() && \Auth::user()->canManageBlogEtcPosts())
         <a href="{{$post->edit_url()}}" class="btn btn-outline-secondary btn-sm pull-right float-right d-none">Edit
             Post</a>
