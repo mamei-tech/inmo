@@ -786,6 +786,10 @@ textarea {
     resize: none;
 }
 
+input.form-control::placeholder {
+    opacity: 0.5;
+}
+
 .form-control:focus{
     border-color: rgb(225, 175, 90);
     box-shadow: 0 0 0 0.2rem rgba(225, 175, 90, .10);
@@ -794,9 +798,6 @@ textarea {
 .modal-footer>.btn{
     margin: 0 0 5px 0;
 }
-
-
-
 
 
 /*Nuevo navbar*/

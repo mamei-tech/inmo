@@ -99,7 +99,7 @@ return [
     'description' => 'description',
     'description_es' => 'Description in Spanish',
     'description_en' => 'Description in English',
-    'suscribe_guides' => 'subcribe to our newsletter',
+    'suscribe_guides' => 'subscribe to our newsletter',
     'suscribe_subtitle_guides' => 'to receive up to date information about the Miami Real Estate market',
     'create_slider' => 'Create Slide',
     'edit_slider' => 'Edit Slide',
