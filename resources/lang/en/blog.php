@@ -45,7 +45,7 @@ return [
     'the_title_blog_post_description'   => 'The title of the blog post',
     'the_subtitle_blog_post_description'=> 'The subtitle of the blog post (optional)',
     'the_slug_description'              => 'The slug (leave blank to auto generate) - i.e.',
-    'body_description'                  =>'Please note that any HTML (including any JS code) that is entered here will be echoed (without escaping)',
+    'body_description'                  => 'Please note that any HTML (including any JS code) that is entered here will be echoed (without escaping)',
     'post_slug'                         => 'Post Slug',
     'is_published_description'          => 'Should this be published? If not, then it won\'t be publicly viewable.',
     'no_post_description'               => 'No posts to show you. Why don\'t you add one?',
@@ -53,6 +53,10 @@ return [
     'delete_comment_alert'              => 'Are you sure you want to delete this blog post comment? You cannot undo this action!',
     'on'                                => 'on',
     'logged_in_as'                      => 'Logged in as',
-
+    'change_language_description'       => 'This value is the language of the publication',
+    'change_lang'                       => 'Language',
+    'view_post'                         => 'View post',
+    'editing_post'                      => 'Editing post',
+    'language'                          => 'Language',
 
 ];
