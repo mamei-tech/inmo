@@ -18,7 +18,8 @@
                     <dd class="">{{$post->author_string()}}</dd>
                     <dt class="">@lang('blog.posted_at')</dt>
                     <dd class="">{{$post->posted_at}}</dd>
-
+                    <dt class="">@lang('blog.language')</dt>
+                    <dd class="">{{$post->lang}}</dd>
 
                     <dt class="">@lang('blog.is_published')</dt>
                     <dd class="">

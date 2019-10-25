@@ -53,5 +53,10 @@ return [
     'delete_comment_alert'              => 'Seguro que deseas eliminar este comentario? Esta acción es permanente!',
     'on'                                => 'el',
     'logged_in_as'                      => 'Autenticado cómo',
+    'change_language_description'       => 'Este valor representa el idioma de la publicación',
+    'change_lang'                       => 'Cambiar idioma',  
+    'view_post'                         => 'Ver publicación',
+    'editing_post'                      => 'Editando la publicación',   
+    'language'                          => 'Idioma',   
 ];
 

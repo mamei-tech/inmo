@@ -2,8 +2,8 @@
 @section("content")
 
 
-    <h5>Admin - Editing post
-    <a target='_blank' href='{{$post->url()}}' class='float-right btn btn-primary'>View post</a>
+    <h5>@lang('blog.editing_post')
+        <a target='_blank' href='{{$post->url()}}' class='float-right btn btn-primary'>@lang('blog.view_post')</a>
     </h5>
 
     <form method='post' action='{{route("blogetc.admin.update_post", [App::getLocale(),$post->id])}}'  enctype="multipart/form-data" >

@@ -12,7 +12,22 @@
     <small id="blog_subtitle_help" class="form-text text-muted">@lang('blog.the_subtitle_blog_post_description')</small>
 </div>
 
+<div class="row">
+    <div class='col-sm-6 col-md-4'>
+        <div class="form-group">
+            <label for="blog_change_lang">@lang('blog.language')</label>
 
+            <select name='lang' class='form-control' id='blog_change_lang'
+                    aria-describedby='blog_change_language_help'>
+                @foreach ($lang_enum as $item)
+                    <option @if( $item == $post->lang ) selected='selected' @endif value="{{ $item }}">{{ $item }}</option>
+                @endforeach
+            </select>
+            <small id="blog_change_language_help" class="form-text text-muted">@lang('blog.change_language_description')
+            </small>
+        </div>
+    </div>
+</div>
 <div class='row'>
 
 
