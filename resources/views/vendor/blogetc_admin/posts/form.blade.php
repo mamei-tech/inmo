@@ -123,21 +123,21 @@
     <label for="blog_seo_title">SEO: {{"<title>"}} tag (optional)</label>
     <input class="form-control" id="blog_seo_title" aria-describedby="blog_seo_title_help"
               name='seo_title' tyoe='text' value='{{old("seo_title",$post->seo_title)}}' >
-    <small id="blog_seo_title_help" class="form-text text-muted">Enter a value for the {{"<title>"}} tag. If nothing is provided here we will just use the normal post title from above (optional)</small>
+    <small id="blog_seo_title_help" class="form-text text-muted">@lang('blog.seo_title_tag')</small>
 </div>
 
 <div class="form-group">
     <label for="blog_meta_desc">Meta Desc (optional)</label>
     <textarea class="form-control" id="blog_meta_desc" aria-describedby="blog_meta_desc_help"
               name='meta_desc'>{{old("meta_desc",$post->meta_desc)}}</textarea>
-    <small id="blog_meta_desc_help" class="form-text text-muted">Meta description (optional)</small>
+    <small id="blog_meta_desc_help" class="form-text text-muted">@lang('blog.meta_desc_description')</small>
 </div>
 
 <div class="form-group">
     <label for="blog_short_description">Short Desc (optional)</label>
     <textarea class="form-control" id="blog_short_description" aria-describedby="blog_short_description_help"
               name='short_description'>{{old("short_description",$post->short_description)}}</textarea>
-    <small id="blog_short_description_help" class="form-text text-muted">Short description (optional - only useful if you use in your template views)</small>
+    <small id="blog_short_description_help" class="form-text text-muted">@lang('blog.short_desc_description')</small>
 </div>
 
 @if(config("blogetc.image_upload_enabled",true))
@@ -148,7 +148,7 @@
                 display: none;
             }
         </style>
-        <h4>Featured Images</h4>
+        <h4>@lang('blog.featured_images')</h4>
 
 
         @foreach(config("blogetc.image_sizes") as $size_key =>$size_info)
@@ -178,9 +178,8 @@
         @endforeach
 
         <p>
-            By default it will resize for all images based on the first image. If you want to select specific images for
-            each size, please click: <span onclick='$(this).parent().hide(); $(".image_upload_other_sizes").slideDown()'
-                                           class='btn btn-light btn-sm'>Show other sizes</span>
+            @lang('blog.images_resize') <span onclick='$(this).parent().hide(); $(".image_upload_other_sizes").slideDown()'
+                                           class='btn btn-light btn-sm'>@lang('blog.show_other_sizes')</span>
         </p>
 
     </div>

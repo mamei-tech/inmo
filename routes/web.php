@@ -210,6 +210,10 @@ Route::prefix('{lang?}')->middleware(['web'])->group(function () {
                     ->name('blogetc.admin.categories.destroy_category');
 
             });
+
+            // ckeditor upload images
+            Route::get('/ckeditor', 'CkeditorController@index');
+            Route::post('/ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
         });
     });
 });

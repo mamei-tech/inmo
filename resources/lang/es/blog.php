@@ -57,6 +57,15 @@ return [
     'change_lang'                       => 'Cambiar idioma',  
     'view_post'                         => 'Ver publicación',
     'editing_post'                      => 'Editando la publicación',   
-    'language'                          => 'Idioma',   
+    'language'                          => 'Idioma', 
+    'alert_no_posts'                    => 'No hay publicaciones. Por qué no agregas una?',  
+    'seo_title_tag'                     => 'Entra una valor para la etiqueta title. Si no se proporciona ninguna, usaremos el título de la publicación (opcional)',
+    'meta_desc_description'             => 'Meta descripción (opcional)',
+    'short_desc_description'            => 'Descripción corta (opcional - util se se emplean en la vista)',
+    'featured_images'                   => 'Imágenes destacadas',
+    'images_resize'                     => 'Por defecto se reajustan las imágenes basadas en la primera imagen. Si usted quiere seleccionar imágenes específicas para cada tamaño, por favor haga clic:',
+    'show_other_sizes'                  => 'Mostrar otros tamaños',
+
+    
 ];
 

@@ -58,5 +58,12 @@ return [
     'view_post'                         => 'View post',
     'editing_post'                      => 'Editing post',
     'language'                          => 'Language',
+    'alert_no_posts'                    => 'No posts to show you. Why don\'t you add one?',
+    'seo_title_tag'                     => 'Enter a value for the title tag. If nothing is provided here we will just use the normal post title from above (optional)',
+    'meta_desc_description'             => 'Meta description (optional)',
+    'short_desc_description'            => 'Short description (optional - only useful if you use in your template views)',
+    'featured_images'                   => 'Featured Images',
+    'images_resize'                     => 'By default it will resize for all images based on the first image. If you want to select specific images for each size, please click:',
+    'show_other_sizes'                  => 'Show other sizes',
 
 ];
