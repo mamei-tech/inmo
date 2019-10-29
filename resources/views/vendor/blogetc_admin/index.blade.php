@@ -47,7 +47,7 @@
             </div>
         </div>
     @empty
-        <div class='alert alert-warning'>No posts to show you. Why don't you add one?</div>
+        <div class='alert alert-warning'>@lang('blog.alert_no_posts')</div>
     @endforelse
 
 
