@@ -72,10 +72,10 @@ class RegisterController extends Controller
         event(new Registered($user = $this->create($request->all())));
 
         //TODO Descomentariar para mandar el correo
-//        Mail::send("auth.register_email_verification", ["token" => $user->token_verified_email], function ($m) use ($user) {
-//            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
-//            $m->to($user->email)->subject(__('app.email_confirmation'));
-//        });
+        Mail::send("auth.register_email_verification", ["token" => $user->token_verified_email], function ($m) use ($user) {
+            $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
+            $m->to($user->email)->subject(__('auth.email_confirmation'));
+        });
 
         return view("singupok", ['user_id' => $user->id]);
         //return view("auth.register_email_verification", ["token" => $user->token_verified_email]);
@@ -113,10 +113,10 @@ class RegisterController extends Controller
             ]);
 
             //TODO Descomentariar para mandar el correo
-//            Mail::send("auth.register_email_verification", ["token" => $user->token_verified_email], function ($m) use ($user) {
-//                $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
-//                $m->to($user->email)->subject(__('app.email_confirmation'));
-//            });
+            Mail::send("auth.register_email_verification", ["token" => $user->token_verified_email], function ($m) use ($user) {
+                $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
+                $m->to($user->email)->subject(__('auth.email_confirmation'));
+            });
 
             return view("singupok", [App::getLocale(), 'user_id' => $user->id]);
 

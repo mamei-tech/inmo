@@ -68,7 +68,7 @@
                     <input type="email" class="form-control" name="email-suscribe" required=""
                            placeholder="@lang('app.yourEmail')" style="margin-right: 10px;">
 
-                <button type="button" class="btn btn-yellow" onclick="addSubcriptor()">@lang('app.join')</button>
+                <button type="button" class="btn btn-yellow" id="btn-add-subcriptor">@lang('app.join')</button>
             </div>
 
         </div>

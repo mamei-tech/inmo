@@ -31,4 +31,5 @@ return [
     'email_resend1' => 'If you did not receive the email',
     'email_resend2' => 'click here to request another',
     'exit' => 'Exit',
+    'email_confirmation' => 'Mail Confirmation'
 ];

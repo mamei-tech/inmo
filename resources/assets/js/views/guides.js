@@ -12,6 +12,10 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
+    $('#btn-add-subcriptor').click(function(i,o){
+        addSubcriptor();
+    });
+
     $('.text-previous').html(window.messages.previous);
     $('.text-next').html(window.messages.next);
     nextPage();

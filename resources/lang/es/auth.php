@@ -31,5 +31,6 @@ return [
     'email_resend1' => 'Si Ud. no recibe el email',
     'email_resend2' => 'haga click para otra solicitud',
     'exit' => 'Salir',
+    'email_confirmation' => 'Confirmación de Correo'
 
 ];
