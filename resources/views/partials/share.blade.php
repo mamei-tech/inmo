@@ -3,8 +3,8 @@
 
         {{-- Facebook --}}
         {{-- https://developers.facebook.com/tools/debug/sharing/ --}}
-        {{-- <a href="https://www.facebook.com/sharer/sharer.php?p[url]={{urlencode($url)}}&amp;p[title]={{$title}}&amp;p[summary]={{$summary}}&amp;&p[images][0]={{urlencode($image)}}" target="_blank"> --}}
-        <a class="social-media-link" href="https://www.facebook.com/sharer/sharer.php?p[url]={{$url}}" target="_blank">
+        {{-- <a href="https://www.facebook.com/sharer/sharer.php?p[url]={{urlencode($url)}}&;p[title]={{$title}}&;p[summary]={{$summary}}&;&p[images][0]={{urlencode($image)}}" target="_blank"> --}}
+        <a class="social-media-link" href="https://www.facebook.com/sharer.php?u={{$url}}" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" style="height: 30px;width: 15px;margin-top:5px;margin-right: 15px;" viewBox="0 0 11 26">
                 <title>Facebook</title>
                 <g id="Capa_2" data-name="Capa 2">
@@ -17,10 +17,9 @@
 
         {{-- Linked In --}}
         {{-- !!! Revisar si el link de compartir de linked in es http o https --}}
-        <a class="social-media-link" href="https://www.linkedin.com/shareArticle?mini=true&url={{$url}}&amp;title={{$title}}&amp;&summary={{$summary}}&amp;source=jehidalgorealestate.com" target="_blank">
+        <a class="social-media-link" href="https://www.linkedin.com/shareArticle?&url={{$url}}&title={{$title}}" target="_blank">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 26" style="height: 30px;width: 30px;margin-top:5px;margin-right: 15px;">
                 <title>Linkedin</title>
-                {{-- TODO we need the linked-in svg theme --}}
                 <g id="Capa_2" data-name="Capa 1">
                     <path class="cls-1" d="M.3,7.8H5.45V24H.3ZM2.91,0A2.74,2.74,0,0,0,0,2.8a2.72,2.72,0,0,0,2.84,2.8h0A2.73,2.73,0,0,0,5.78,2.8,2.72,2.72,0,0,0,2.91,0ZM18.08,7.42a5.05,5.05,0,0,0-4.64,2.68V7.8H8.3s.06,1.52,0,16.2h5.14V15a4.28,4.28,0,0,1,.17-1.32,2.83,2.83,0,0,1,2.64-2c1.86,0,2.61,1.49,2.61,3.66V24H24V14.71C24,9.74,21.47,7.42,18.08,7.42Z"></path>
                 </g>
@@ -30,7 +29,7 @@
 
         {{-- Pinterest --}}
         {{-- https://developers.pinterest.com/tools/widget-builder/ --}}
-        <a class="social-media-link" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/button/?url={{$url}}&amp;media={{$image}}&amp;&description={{$summary}}" target="_blank">
+            <a class="social-media-link" data-pin-do="buttonPin" href="https://www.pinterest.com/pin/create/bookmarklet/?url={{$url}}&media={{$image}}&description={{$title}}" target="_blank">
             {{-- <img src=""/> --}}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17 17" style="height: 30px;width: 30px;margin-top:5px;margin-right: 15px;">
                 <title>Pinterest</title>
