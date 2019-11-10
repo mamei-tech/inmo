@@ -12,8 +12,12 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    $('#btn-add-subcriptor').click(function(i,o){
+    $('#btn-add-subcriptor').click(function(){
         addSubcriptor();
+    });
+
+    $('.btn-download-guide').click(function(e){
+        downloadGuide(e.currentTarget);
     });
 
     $('.text-previous').html(window.messages.previous);
@@ -41,7 +45,6 @@ function nextPage(){
     })
 
     pageActive++;
-    console.log(pageActive)
     $('.page-active').html(pageActive);
 }
 function previousPage(){

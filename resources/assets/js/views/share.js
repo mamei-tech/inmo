@@ -30,6 +30,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.social-media a.social-media-mail', function (e) {
+        $('input#mail_subject').val($('h1.blog-section-3').html());
         $("div#sharebymail_modal").modal('show')
     });
 

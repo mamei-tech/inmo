@@ -40,15 +40,14 @@
                     <div class="col-xl-3 col-sm-12" style="display: none; flex-direction: column">
 
                         <div class="container-img-guide" style="position:relative; background-image: url('{{ $g->imagePath }}')">
-                            <div class="overlay-guides"></div>
-                            <h3 class="color-yellow" style="z-index: 2">{{App::getLocale()=="es"? $g->text_es : $g->text_en}}</h3>
+                            {{--<div class="overlay-guides"></div>--}}
                         </div>
 
-
+                        <h4 class="color-yellow mt-3 justify-content-center" style="display: flex;">{{App::getLocale()=="es"? $g->text_es : $g->text_en}}</h4>
                         <p style="margin-top: 15px;flex: 1" class="color-gray container-guides-info">{{App::getLocale()=="es"? $g->description_es : $g->description_en}}</p>
 
                         <div style="display: flex;justify-content: center;" id="container-btn-download">
-                            <button type="button" id="btn-{{ $g->id }}" onclick="downloadGuide(this)" class="btn btn-yellow">@lang('app.download')</button>
+                            <button type="button" id="btn-{{ $g->id }}" class="btn btn-yellow btn-download-guide">@lang('app.download')</button>
                         </div>
 
                     </div>
@@ -61,17 +60,17 @@
         <h3 style="margin-top: 15px;" class="color-white"> {{ __('app.suscribe_subtitle_guides') }}  </h3>
 
         <form id="form-add-subcriptor" action="" method="post">
-        <div class="row">
+            <div class="row">
 
-            <div id="container-suscribe" style="margin-top: 40px;" class="offset-lg-3 col-lg-9 col-sm-12">
+                <div id="container-suscribe" style="margin-top: 40px;" class="offset-lg-3 col-lg-9 col-sm-12">
 
                     <input type="email" class="form-control" name="email-suscribe" required=""
                            placeholder="@lang('app.yourEmail')" style="margin-right: 10px;">
 
-                <button type="button" class="btn btn-yellow" id="btn-add-subcriptor">@lang('app.join')</button>
-            </div>
+                    <button type="button" class="btn btn-yellow" id="btn-add-subcriptor">@lang('app.join')</button>
+                </div>
 
-        </div>
+            </div>
         </form>
     </div>
 @endsection

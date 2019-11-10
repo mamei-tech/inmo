@@ -19,7 +19,7 @@ return [
     'welcome_admin_panel'               => 'Bienvenido al panel de administración de su blog.',
     'manage_comments'                   => 'Administre sus comentarios',
     'contact_me'                        => 'Contáctame',
-    'read_more'                         => 'Lea más',
+    'read_more'                         => 'Leer más',
     'written_by'                        => 'escrito por',
     'can_writte_your_coment_here'       => 'puedes escribir tu comentario aquí',
     'write_your_comment'                => 'escriba su comentario',
