@@ -491,7 +491,7 @@ h3.color-yellow a:hover {
 
     .blog-section-3 > div {
         align-items: center;
-        text-align: center;
+        /*text-align: center;*/
     }
 
     .blog-section-3 > div p {

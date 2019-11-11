@@ -46,9 +46,7 @@
             </div>
 
             <div class="modal-body">
-                <form id="form-send-mail" action="mailto:" enctype="text/plain" method="GET">
-                    @csrf
-
+                <form id="form-send-mail" name="send-email" action="mailto:" enctype="multipart/form-data" method="GET">
                     <div class="form-group form-add-testimonials-name">
                         <input type="email" class="form-control" id="mail_input" name="mail_input" required="" placeholder="@lang('app.to_email')" value="">
                     </div>
