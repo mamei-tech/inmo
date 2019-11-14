@@ -37,19 +37,26 @@
             <div id="container-guides" class="row">
                 @foreach ($guides as $g)
 
-                    <div class="col-xl-3 col-sm-12" style="display: none; flex-direction: column">
+                    <div class="col-md-6 col-lg-4 mb-5">
 
-                        <div class="container-img-guide" style="position:relative; background-image: url('{{ $g->imagePath }}')">
-                            {{--<div class="overlay-guides"></div>--}}
+                        <div class="row g">
+
+                            <div class="col-6 pic-cont">
+                                <div class="container-img-guide" style="position:relative; background-image: url('{{ $g->imagePath }}')">
+                                    {{--<div class="overlay-guides"></div>--}}
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                {{--<h4 class="color-yellow justify-content-center">{{App::getLocale()=="es"? $g->text_es : $g->text_en}}</h4>--}}
+                                <p class="color-gray container-guides-info">{{App::getLocale()=="es"? $g->description_es : $g->description_en}}</p>
+
+                                <div id="container-btn-download">
+                                    <button type="button" id="btn-{{ $g->id }}" class="btn btn-yellow btn-download-guide">@lang('app.download')</button>
+                                </div>
+                            </div>
+
                         </div>
-
-                        <h4 class="color-yellow mt-3 justify-content-center" style="display: flex;">{{App::getLocale()=="es"? $g->text_es : $g->text_en}}</h4>
-                        <p style="margin-top: 15px;flex: 1" class="color-gray container-guides-info">{{App::getLocale()=="es"? $g->description_es : $g->description_en}}</p>
-
-                        <div style="display: flex;justify-content: center;" id="container-btn-download">
-                            <button type="button" id="btn-{{ $g->id }}" class="btn btn-yellow btn-download-guide">@lang('app.download')</button>
-                        </div>
-
                     </div>
                 @endforeach
             </div>
