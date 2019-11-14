@@ -20,19 +20,16 @@
         </form>
 
         <div style="margin-top: 20px;">
-            <div class="pagination-guide">
-                <button class="btn" style="display: flex; padding-left: 0; padding-right: 0" onclick="previousPage()">
-                    <span style="margin-top: 1px;"><< </span>
-                    <span class="text-previous" style="margin-left: 5px;"></span>
-                </button>
-                <button class="page-active btn btn-no-hover" style="margin-left: 15px;font-size: 14px;padding-left: 0;padding-right: 0;">1</button>
-                <button class="btn btn-no-hover" style="margin-right: 3px; margin-left: 3px;font-size: 14px;padding-left: 0;padding-right: 0;">/</button>
-                <button class="total-guides btn btn-no-hover" style="margin-right: 15px;font-size: 14px;padding-left: 0;padding-right: 0;">{{ ceil($guides->count() / 4) }}</button>
-                <button class="btn" style="display: flex; padding-left: 0;padding-right: 0;" onclick="nextPage()">
-                    <span class="text-next" style="margin-right: 5px;"></span>
-                    <span> >> </span>
-                </button>
-            </div>
+            @if ($guides instanceof \Illuminate\Pagination\LengthAwarePaginator)
+                <div class="blog-section-3 row no-gutters" style="font-size: 13px;">
+                    <div class="col-8 mb-0 pb-0" style="color: #8e8e8e;align-items: initial;">
+                        {{ $guides->links('vendor.pagination.simple-default') }}
+                    </div>
+                    <div class="col-4 mb-0 pb-0 pr-0" style="align-items: flex-end;color: #8e8e8e;">
+                        {{$guides->total()}} @lang('pagination.found')
+                    </div>
+                </div>
+            @endif
 
             <div id="container-guides" class="row">
                 @foreach ($guides as $g)
