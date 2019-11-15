@@ -22,7 +22,7 @@ class GuideController extends Controller
 
     public function index()
     {
-        $guides = Guide::query()->orderBy("created_at")->get();
+        $guides = Guide::query()->orderBy("created_at")->paginate(3);//->get();
         return view('guides', ['guides' => $guides]);
     }
 
