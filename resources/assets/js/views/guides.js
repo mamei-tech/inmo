@@ -22,7 +22,7 @@ $(document).ready(function () {
 
     $('.text-previous').html(window.messages.previous);
     $('.text-next').html(window.messages.next);
-    nextPage();
+    // nextPage();
 });
 
 function nextPage(){

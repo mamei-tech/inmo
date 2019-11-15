@@ -21,14 +21,14 @@
 
         <div style="margin-top: 20px;">
             <div class="pagination-guide">
-                <button class="btn" style="display: flex; padding-left: 0; padding-right: 0" onclick="previousPage()">
+                <button class="btn" style="display: flex; padding-left: 0; padding-right: 0">
                     <span style="margin-top: 1px;"><< </span>
                     <span class="text-previous" style="margin-left: 5px;"></span>
                 </button>
                 <button class="page-active btn btn-no-hover" style="margin-left: 15px;font-size: 14px;padding-left: 0;padding-right: 0;">1</button>
                 <button class="btn btn-no-hover" style="margin-right: 3px; margin-left: 3px;font-size: 14px;padding-left: 0;padding-right: 0;">/</button>
                 <button class="total-guides btn btn-no-hover" style="margin-right: 15px;font-size: 14px;padding-left: 0;padding-right: 0;">{{ ceil($guides->count() / 4) }}</button>
-                <button class="btn" style="display: flex; padding-left: 0;padding-right: 0;" onclick="nextPage()">
+                <button class="btn" style="display: flex; padding-left: 0;padding-right: 0;">
                     <span class="text-next" style="margin-right: 5px;"></span>
                     <span> >> </span>
                 </button>
