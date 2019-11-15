@@ -111,6 +111,18 @@ div.pic-cont{
     transform: scale(1.1);
 }
 
+@media (max-width: 1920px) {
+    .container-img-guide {
+        height: 444px !important;
+    }
+}
+
+@media (max-width: 1366px) {
+    .container-img-guide {
+        height: 312px !important;
+    }
+}
+
 @media (max-width: 1249px) {
     .guide-section-0 {
         padding: 50px 100px;
