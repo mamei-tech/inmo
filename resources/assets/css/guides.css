@@ -57,6 +57,9 @@
 
 .guide-section-0 .container-guides-info{
     text-align: left;
+    height: 240px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 div.pic-cont{
@@ -180,6 +183,10 @@ div.pic-cont{
     #container-btn-download{
         margin-bottom: 15px;
     }
+
+    .guide-section-0 .container-guides-info {
+        height: 240px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -189,6 +196,10 @@ div.pic-cont{
 
     .container-img-guide{
         height: 562px !important;
+    }
+
+    .guide-section-0 .container-guides-info {
+        height: 500px;
     }
 }
 
@@ -200,6 +211,10 @@ div.pic-cont{
     .container-img-guide{
         height: 490px !important;
     }
+
+    .guide-section-0 .container-guides-info {
+        height: 430px;
+    }
 }
 
 @media (max-width: 590px) {
@@ -209,6 +224,10 @@ div.pic-cont{
 
     .container-img-guide{
         height: 420px !important;
+    }
+
+    .guide-section-0 .container-guides-info {
+        height: 360px;
     }
 }
 
@@ -220,6 +239,10 @@ div.pic-cont{
     .container-img-guide{
         height: 350px !important;
     }
+
+    .guide-section-0 .container-guides-info {
+        height: 290px;
+    }
 }
 
 @media (max-width: 414px) {
@@ -230,6 +253,10 @@ div.pic-cont{
     .container-img-guide{
         height: 316px !important;
     }
+
+    .guide-section-0 .container-guides-info {
+        height: 256px;
+    }
 }
 
 @media (max-width: 400px) {
@@ -239,6 +266,10 @@ div.pic-cont{
 
     .container-img-guide {
         height: 300px !important;
+    }
+
+    .guide-section-0 .container-guides-info {
+        height: 244px;
     }
 }
 

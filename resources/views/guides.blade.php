@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('title', __('app.guides'))
 
 @push('styles')
@@ -45,8 +46,7 @@
                             </div>
 
                             <div class="col-6">
-                                {{--<h4 class="color-yellow justify-content-center">{{App::getLocale()=="es"? $g->text_es : $g->text_en}}</h4>--}}
-                                <p class="color-gray container-guides-info">{{App::getLocale()=="es"? $g->description_es : $g->description_en}}</p>
+                                <p class="color-gray container-guides-info mb-0">{{App::getLocale()=="es"? $g->description_es : $g->description_en}}</p>
 
                                 <div id="container-btn-download">
                                     <button type="button" id="btn-{{ $g->id }}" class="btn btn-yellow btn-download-guide">@lang('app.download')</button>
