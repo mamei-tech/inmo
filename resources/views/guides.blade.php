@@ -37,7 +37,7 @@
 
                     <div class="col-md-6 col-lg-4 mb-5">
 
-                        <div class="row g">
+                        <div class="row g base-height">
 
                             <div class="col-6 pic-cont">
                                 <div class="container-img-guide" style="position:relative; background-image: url('{{ $g->imagePath }}')">
@@ -48,7 +48,7 @@
                             <div class="col-6">
                                 <p class="color-gray container-guides-info mb-0">{{App::getLocale()=="es"? $g->description_es : $g->description_en}}</p>
 
-                                <div id="container-btn-download">
+                                <div id="container-btn-download" style="text-align: center;">
                                     <button type="button" id="btn-{{ $g->id }}" class="btn btn-yellow btn-download-guide">@lang('app.download')</button>
                                 </div>
                             </div>
