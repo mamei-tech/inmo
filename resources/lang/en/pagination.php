@@ -16,5 +16,6 @@ return [
     'previous'  => '<<&nbsp previous &nbsp',
     'next'      => '&nbsp next&nbsp>>',
     'found'     => 'found',
+    'document'  => 'document',
 
 ];

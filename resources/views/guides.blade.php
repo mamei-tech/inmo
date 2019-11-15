@@ -26,7 +26,7 @@
                         {{ $guides->links('vendor.pagination.simple-default') }}
                     </div>
                     <div class="col-4 mb-0 pb-0 pr-0" style="align-items: flex-end;color: #8e8e8e;">
-                        {{$guides->total()}} @lang('pagination.found')
+                        {{$guides->total()}} {{str_plural(__('pagination.document'), $guides->total() ? 2 : -1)}}
                     </div>
                 </div>
             @endif
