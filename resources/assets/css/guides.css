@@ -292,6 +292,14 @@ div.pic-cont{
     div.row.g{
         height: 400px !important;
     }
+
+    .base-height {
+        --height-img-guide:260px;
+    }
+
+    .container-img-guide {
+        height: 260px !important;
+    }
 }
 
 @media (max-width: 330px) {
