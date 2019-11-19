@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('title', __('app.guides'))
 
 @push('styles')
@@ -20,37 +21,39 @@
         </form>
 
         <div style="margin-top: 20px;">
-            <div class="pagination-guide">
-                <button class="btn" style="display: flex; padding-left: 0; padding-right: 0" onclick="previousPage()">
-                    <span style="margin-top: 1px;"><< </span>
-                    <span class="text-previous" style="margin-left: 5px;"></span>
-                </button>
-                <button class="page-active btn btn-no-hover" style="margin-left: 15px;font-size: 14px;padding-left: 0;padding-right: 0;">1</button>
-                <button class="btn btn-no-hover" style="margin-right: 3px; margin-left: 3px;font-size: 14px;padding-left: 0;padding-right: 0;">/</button>
-                <button class="total-guides btn btn-no-hover" style="margin-right: 15px;font-size: 14px;padding-left: 0;padding-right: 0;">{{ ceil($guides->count() / 4) }}</button>
-                <button class="btn" style="display: flex; padding-left: 0;padding-right: 0;" onclick="nextPage()">
-                    <span class="text-next" style="margin-right: 5px;"></span>
-                    <span> >> </span>
-                </button>
-            </div>
+            @if ($guides instanceof \Illuminate\Pagination\LengthAwarePaginator)
+                <div class="blog-section-3 row no-gutters" style="font-size: 13px;">
+                    <div class="col-8 mb-0 pb-0" style="color: #8e8e8e;align-items: initial;">
+                        {{ $guides->links('vendor.pagination.simple-default') }}
+                    </div>
+                    <div class="col-4 mb-0 pb-0 pr-0" style="align-items: flex-end;color: #8e8e8e;">
+                        {{$guides->total()}} {{str_plural(__('pagination.document'), $guides->total() ? 2 : -1)}}
+                    </div>
+                </div>
+            @endif
 
             <div id="container-guides" class="row">
                 @foreach ($guides as $g)
 
-                    <div class="col-xl-3 col-sm-12" style="display: none; flex-direction: column">
+                    <div class="col-md-6 col-lg-4 mb-5">
 
-                        <div class="container-img-guide" style="position:relative; background-image: url('{{ $g->imagePath }}')">
-                            {{--<div class="overlay-guides"></div>--}}
-                            <h3 class="color-yellow" style="z-index: 2">{{App::getLocale()=="es"? $g->text_es : $g->text_en}}</h3>
+                        <div class="row g base-height">
+
+                            <div class="col-6 pic-cont">
+                                <div class="container-img-guide" style="position:relative; background-image: url('{{ App::getLocale()=="es" ? $g->imagesPath : $g->imagePath }}')">
+                                    {{--<div class="overlay-guides"></div>--}}
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <p class="color-gray container-guides-info mb-0">{{App::getLocale()=="es"? $g->description_es : $g->description_en}}</p>
+
+                                <div id="container-btn-download" style="text-align: center;">
+                                    <button type="button" id="btn-{{ $g->id }}" class="btn btn-yellow btn-download-guide">@lang('app.download')</button>
+                                </div>
+                            </div>
+
                         </div>
-
-
-                        <p style="margin-top: 15px;flex: 1" class="color-gray container-guides-info">{{App::getLocale()=="es"? $g->description_es : $g->description_en}}</p>
-
-                        <div style="display: flex;justify-content: center;" id="container-btn-download">
-                            <button type="button" id="btn-{{ $g->id }}" class="btn btn-yellow btn-download-guide">@lang('app.download')</button>
-                        </div>
-
                     </div>
                 @endforeach
             </div>
@@ -61,17 +64,17 @@
         <h3 style="margin-top: 15px;" class="color-white"> {{ __('app.suscribe_subtitle_guides') }}  </h3>
 
         <form id="form-add-subcriptor" action="" method="post">
-        <div class="row">
+            <div class="row">
 
-            <div id="container-suscribe" style="margin-top: 40px;" class="offset-lg-3 col-lg-9 col-sm-12">
+                <div id="container-suscribe" style="margin-top: 40px;" class="offset-lg-3 col-lg-9 col-sm-12">
 
-                <input type="email" class="form-control" name="email-suscribe" required=""
-                       placeholder="@lang('app.yourEmail')" style="margin-right: 10px;">
+                    <input type="email" class="form-control" name="email-suscribe" required=""
+                           placeholder="@lang('app.yourEmail')" style="margin-right: 10px;">
 
-                <button type="button" class="btn btn-yellow" id="btn-add-subcriptor">@lang('app.join')</button>
+                    <button type="button" class="btn btn-yellow" id="btn-add-subcriptor">@lang('app.join')</button>
+                </div>
+
             </div>
-
-        </div>
         </form>
     </div>
 @endsection

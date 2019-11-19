@@ -13,8 +13,9 @@ return [
     |
     */
 
-    'previous'  => '&laquo; &nbsp previous ',
-    'next'      => ' next &nbsp &raquo;',
+    'previous'  => '<<&nbsp previous &nbsp',
+    'next'      => '&nbsp next&nbsp>>',
     'found'     => 'found',
+    'document'  => 'document',
 
 ];

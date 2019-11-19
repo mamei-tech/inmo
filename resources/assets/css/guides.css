@@ -1,11 +1,14 @@
+.base-height {
+    --height-img-guide:300px;
+}
+
 .guide-section-0 {
     background-color: rgb(228, 228, 228);
-    padding: 60px 120px;
     text-align: right;
     display: flex;
     flex-direction: column;
     margin-top: -120px;
-    padding-top: 160px;
+    padding: 160px 120px 60px;
 }
 
 .guide-section-0 h3.subtitle{
@@ -57,10 +60,18 @@
 
 .guide-section-0 .container-guides-info{
     text-align: left;
+    height: calc(var(--height-img-guide) - 58px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+div.pic-cont{
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .guide-section-0 .container-img-guide{
-    height: 140px;
+    height: 300px;
     background-size: cover;
     background-position: center center;
     display: flex;
@@ -103,14 +114,34 @@
     transform: scale(1.1);
 }
 
-@media (max-width: 1249px) {
-    .guide-section-0 {
-        padding: 50px 100px;
-        margin-top: -80px;
-        padding-top: 120px;
+@media (max-width: 1920px) {
+
+    .container-img-guide{
+        height: 444px !important;
     }
 
-    .guide-section-0 button{
+    .base-height {
+        --height-img-guide:444px;
+    }
+}
+
+@media (max-width: 1366px) {
+    .container-img-guide {
+        height: 312px !important;
+    }
+
+    .base-height {
+        --height-img-guide:312px;
+    }
+}
+
+@media (max-width: 1249px) {
+    .guide-section-0 {
+        margin-top: -80px;
+        padding: 120px 100px 50px;
+    }
+
+    .guide-section-0 button {
         margin: 20px 0 0 0;
     }
 
@@ -123,16 +154,15 @@
         padding: 50px 100px;
     }
 
-    #container-btn-download{
+    #container-btn-download {
         margin-bottom: 30px;
     }
 }
 
 @media (max-width: 960px) {
     .guide-section-0 {
-        padding: 50px 30px;
-        text-align: center;
-        padding-top: 110px;
+        /*text-align: center;*/
+        padding: 110px 30px 50px;
     }
 
     .guide-section-0 button{
@@ -168,11 +198,112 @@
         margin-right: 0;
     }
 
-    .guide-section-0 .container-guides-info{
-        text-align: center;
-    }
-
     #container-btn-download{
         margin-bottom: 15px;
+    }
+
+}
+
+@media (max-width: 767px) {
+    div.row.g{
+        height: 530px !important;
+    }
+
+    .base-height {
+        --height-img-guide:562px;
+    }
+
+    .container-img-guide{
+        height: 562px !important;
+    }
+}
+
+@media (max-width: 646px) {
+    div.row.g{
+        height: 465px !important;
+    }
+
+    .base-height {
+        --height-img-guide:490px;
+    }
+
+    .container-img-guide{
+        height: 490px !important;
+    }
+}
+
+@media (max-width: 590px) {
+    div.row.g{
+        height: 390px !important;
+    }
+
+    .base-height {
+        --height-img-guide:562px;
+    }
+
+    .container-img-guide{
+        height: 562px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    div.row.g{
+        height: 320px !important;
+    }
+
+    .base-height {
+        --height-img-guide:350px;
+    }
+
+    .container-img-guide{
+        height: 350px !important;
+    }
+}
+
+@media (max-width: 414px) {
+    div.row.g{
+        height: 302px !important;
+    }
+
+    .base-height {
+        --height-img-guide:316px;
+    }
+
+    .container-img-guide{
+        height: 316px !important;
+    }
+}
+
+@media (max-width: 400px) {
+    div.row.g{
+        height: 325px !important;
+    }
+
+    .base-height {
+        --height-img-guide:300px;
+    }
+
+    .container-img-guide {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 368px) {
+    div.row.g{
+        height: 400px !important;
+    }
+
+    .base-height {
+        --height-img-guide:260px;
+    }
+
+    .container-img-guide {
+        height: 260px !important;
+    }
+}
+
+@media (max-width: 330px) {
+    div.row.g{
+        height: 440px !important;
     }
 }

@@ -45,7 +45,7 @@
 
 
     @if ($posts instanceof \Illuminate\Pagination\LengthAwarePaginator)
-    <div class="blog-section-3 row no-gutters">
+    <div class="blog-section-3 row no-gutters" style="font-size: 13px;">
         <div class="col-8 mb-0 pb-0" style="color: #8e8e8e;align-items: initial;">
             {{ $posts->links('vendor.pagination.simple-default') }}
         </div>

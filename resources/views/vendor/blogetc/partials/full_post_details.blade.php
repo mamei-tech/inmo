@@ -3,7 +3,7 @@
 @endphp
 
 @push('blogmeta')
-    <meta property="og:url"                content="https://jehidalgorealestate.com/" />
+    <meta property="og:url"                content="https://jehidalgorealestate.com/{{Request::path()}}"/>
     <meta property="og:type"               content="article" />
     <meta property="og:title"              content="{{$post->title}}" />
     <meta property="og:description"        content="{{$summary}}" />
@@ -20,16 +20,16 @@
             @includeWhen($post->author,"blogetc::partials.author",['post'=>$post])
             <div class="row">
                 <div class="col">
-                    <h3 style="color: rgb(136, 136, 136);"><strong>{{ humanize_date($post->posted_at, "M / Y") }}</strong></h3>
+                    <h3 style="color: rgb(136, 136, 136);"><strong>{{ humanize_date($post->posted_at, "D / M / Y") }}</strong></h3>
                 </div>
             </div>
 
             {{-- Sharing code --}}
             @include('partials.share', [
-                'url'       => urlencode('https://jehidalgorealestate.com/'),
-                'title'     => urlencode($post->title),
-                'summary'   => urlencode($summary),
-                'image'     => urlencode($post->image_url())
+                'url'       => 'https://jehidalgorealestate.com/'.Request::path(),
+                'title'     => $post->title,
+                'summary'   => $summary,
+                'image'     => $post->image_url()
             ])
         </footer>
 </div>
@@ -46,9 +46,7 @@
             </div>
 
             <div class="modal-body">
-                <form id="form-send-mail" action="mailto:" enctype="text/plain" method="GET">
-                    @csrf
-
+                <form id="form-send-mail" name="send-email" action="mailto:" enctype="multipart/form-data" method="GET">
                     <div class="form-group form-add-testimonials-name">
                         <input type="email" class="form-control" id="mail_input" name="mail_input" required="" placeholder="@lang('app.to_email')" value="">
                     </div>

@@ -15,7 +15,7 @@
                 <div style="float: right;">{{ humanize_date($post->posted_at, "m/d/Y") }}</div>
             </div>
             <div class="card-body" style="padding: 0;">
-                <h4 class="card-title text-uppercase color-gray">{{$post->title}}</h4>
+                <h4 class="card-title text-uppercase color-yellow">{{$post->title}}</h4>
                 <p class="card-text">{!! $post->generate_introduction(200) !!}</p>
             </div>
             <div class="card-footer" style="background-color: transparent;border-top: none;text-align: center;">

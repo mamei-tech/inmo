@@ -99,10 +99,20 @@ h4 {
     border: 3px solid;
 }
 
-.btn:hover {
+.btn:hover, .pagination > li:hover {
     transition: all 0.2s 0.1s ease-in-out;
     transform: scale(1.1);
 }
+
+.pagination > li a:focus, .pagination > li a:hover {
+    text-decoration: none;
+}
+
+.pagination > li a {
+    color: #8e8e8e;
+}
+
+
 
 .btn-white, .btn-white:hover {
     color: rgb(255, 255, 255);
