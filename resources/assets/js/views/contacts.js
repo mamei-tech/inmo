@@ -60,6 +60,14 @@ $(document).ready(function () {
     document.getElementById("preview").onclick = function () {
         $("#exampleModal").modal('show')
     };
+
+    $('#button-send-contact').click(function(){
+        sendContact();
+    })
+
+    $('#button-send-testimonials').click(function(){
+        sendTestimonials();
+    })
 });
 
 function sendTestimonials() {
