@@ -10,7 +10,7 @@ class Guide extends Model
     protected $table = "guides";
 
     protected $fillable = [
-       'text_es', 'text_en', 'guide_es', 'guide_en', 'updated_at', 'image', 'description_es', 'description_en'
+       'text_es', 'text_en', 'guide_es', 'guide_en', 'updated_at', 'image', 'images', 'description_es', 'description_en'
     ];
 
     public function getGuideEsPathAttribute()
@@ -33,6 +33,14 @@ class Guide extends Model
     {
         if ($this->image)
             return Storage::url("{$this->image}");
+
+        return null;
+    }
+
+    public function getImagesPathAttribute()
+    {
+        if ($this->images)
+            return Storage::url("{$this->images}");
 
         return null;
     }

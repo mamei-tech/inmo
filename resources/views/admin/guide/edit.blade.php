@@ -148,9 +148,33 @@
                                     @endif
                                 </div>
                             </div>
+
                             <div  class="form-group row">
                                 <div class="col-md-12">
                                     <img class="img-thumbnail" style="width: 100%" src="{{$guide->imagePath  }}"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="image"
+                                       class="col-md-3 col-form-label text-md-right">Image [ES]</label>
+
+                                <div class="col-md-9">
+                                    <input id="images" type="file"
+                                           class="form-control{{ $errors->has('images') ? ' is-invalid' : '' }}"
+                                           name="images" value="{{ old('images') }}">
+
+                                    @if ($errors->has('image'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('image') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div  class="form-group row">
+                                <div class="col-md-12">
+                                    <img class="img-thumbnail" style="width: 100%" src="{{$guide->imagesPath  }}"/>
                                 </div>
                             </div>
 
