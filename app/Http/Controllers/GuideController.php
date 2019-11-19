@@ -103,6 +103,7 @@ class GuideController extends Controller
         $path_es = $request->file('guideEs')->store('public/guides');
         $path_en = $request->file('guideEn')->store('public/guides');
         $path_image = $request->file('image')->store('public/guides');
+        $path_images = $request->file('images')->store('public/guides');
 
         DB::table('guides')->insert(
             [
@@ -111,6 +112,7 @@ class GuideController extends Controller
                 'guide_es' => $path_es,
                 'guide_en' => $path_en,
                 'image' => $path_image,
+                'images' => $path_images,
                 'description_en' => $request->description_en,
                 'description_es' => $request->description_es,
                 'created_at' => new DateTime(),
@@ -144,6 +146,7 @@ class GuideController extends Controller
         $path_es = null;
         $path_en = null;
         $path_image = null;
+        $path_images = null;
 
         $uploadedImage = $request->file('guide_es');
         if ($uploadedImage) {
@@ -163,6 +166,12 @@ class GuideController extends Controller
             $path_image = $uploadedImage->store('public/guides');
         }
 
+        $uploadedImage = $request->file('images');
+        if ($uploadedImage) {
+            Storage::delete($guide->images);
+            $path_images = $uploadedImage->store('public/guides');
+        }
+
         $guide->fill([
             'text_es' => $request->text_es,
             'text_en' => $request->text_en,
@@ -171,6 +180,7 @@ class GuideController extends Controller
             'guide_es' => $path_es ? $path_es : $guide->guide_es,
             'guide_en' => $path_en ? $path_en : $guide->guide_en,
             'image' => $path_image ? $path_image : $guide->image,
+            'images' => $path_images ? $path_images : $guide->images,
             'updated_at' => new DateTime()
         ]);
         $guide->save();

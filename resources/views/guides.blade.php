@@ -40,7 +40,7 @@
                         <div class="row g base-height">
 
                             <div class="col-6 pic-cont">
-                                <div class="container-img-guide" style="position:relative; background-image: url('{{ $g->imagePath }}')">
+                                <div class="container-img-guide" style="position:relative; background-image: url('{{ App::getLocale()=="es" ? $g->imagesPath : $g->imagePath }}')">
                                     {{--<div class="overlay-guides"></div>--}}
                                 </div>
                             </div>
