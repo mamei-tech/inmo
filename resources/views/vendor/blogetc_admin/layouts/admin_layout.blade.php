@@ -12,17 +12,12 @@
 
 
     <!-- jQuery 3.3.1 is only used for hide(), show() and slideDown(). All other features use vanilla JS -->
-    <script
-            src="{{ asset('js/jquery.min.js') }}"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
+    <script defer
+            src="{{ asset('js/jquery.min.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito" crossorigin="anonymous">
 
     <!-- Styles -->
@@ -134,7 +129,7 @@
     <small></small>
 </div>
 
-<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script defer src="{{ asset('js/bootstrap.min.js') }}"></script>
 @if( config("blogetc.use_wysiwyg") && config("blogetc.echo_html") && (in_array( \Request::route()->getName() ,[ 'blogetc.admin.create_post' , 'blogetc.admin.edit_post'  ])))
     <script src="https://cdn.ckeditor.com/4.13.0/standard-all/ckeditor.js"></script>
     <script>
@@ -147,7 +142,5 @@
         }
     </script>
 @endif
-
-
 </body>
 </html>
