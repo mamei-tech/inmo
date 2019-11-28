@@ -94,7 +94,7 @@
                         </a>
                     </div>
                     <div>
-                        <button type="button" onclick="sendContact()" class="btn btn-yellow">@lang('app.send')</button>
+                        <button type="button" id="button-send-contact" class="btn btn-yellow">@lang('app.send')</button>
                     </div>
                 </div>
             </form>
@@ -174,7 +174,7 @@
                         {!! htmlFormSnippet() !!}
                     </div>
                     <div class="clearfix"> </div>
-                    <button type="button" onclick="sendTestimonials()" class="btn btn-yellow"  style="margin-top: 15px;">@lang('app.send')</button>
+                    <button type="button" id="button-send-testimonials" class="btn btn-yellow"  style="margin-top: 15px;">@lang('app.send')</button>
                 </form>
             </div>
         </div>

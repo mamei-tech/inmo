@@ -59,6 +59,10 @@ class GuideController extends Controller
             $m->to($request->email)->subject(__('app.download_guides'));
         });
 
+        if (!Newsletter::hasMember($request->email)){
+            Newsletter::subscribePending($request->email);
+        }
+
         return ["success"=>true, "message"=>__('app.check_email')];
     }
 
@@ -192,6 +196,6 @@ class GuideController extends Controller
         if (!Newsletter::hasMember($request->email)){
             Newsletter::subscribePending($request->email);
         }
-        return ["success"=>true, "message"=>__('app.check_email')]; //TODO Poner msg bin
+        return ["success"=>true, "message"=>__('app.check_email')]; //TODO Poner msg bien
     }
 }

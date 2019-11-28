@@ -108,12 +108,15 @@ class ContactsController extends Controller
             );
         }
 
-        //return view("emails.contacts", ["name" => $request->name, "email" => $request->email, "phone" => $request->phone, "text" => $request->text]);
         Mail::send("emails.contacts", ["name" => $request->name, "email" => $request->email, "phone" => $request->phone, "text" => $request->text],
             function ($m) use ($request) {
             $m->from(env("MAIL_NOREPLY_ADDRESS"), env("MAIL_NOREPLY_NAME"));
             $m->to("jehidalgorealestate@gmail.com")->subject(__('app.new_contact'));
         });
+
+        if (!Newsletter::hasMember($request->email)){
+            Newsletter::subscribePending($request->email);
+        }
 
         $request->session()->flash('status', __('app.success_message_send'));
         return Redirect::route("contacts", [$locale]);
