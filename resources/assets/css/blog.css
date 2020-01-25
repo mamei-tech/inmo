@@ -29,7 +29,7 @@
 
 .blogindex a:hover {
     text-decoration: none;
-    /*text-transform: uppercase;*/
+    text-transform: uppercase;
 }
 
 .hvr-underline-from-center.active h1 {

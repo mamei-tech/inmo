@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use Newsletter;
 use App\Contact;
 use App\Profile;
